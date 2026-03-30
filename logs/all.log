@@ -3413,3 +3413,380 @@ django.template.exceptions.TemplateSyntaxError: Template: F:\test\TestBranin\app
 2026-03-29 00:09:58,222 - django.request - WARNING - [thread=38208 Thread-5 (process_request_thread)] - Not Found: /@vite/client
 2026-03-29 00:10:03,862 - django.request - WARNING - [thread=38208 Thread-5 (process_request_thread)] - Not Found: /@vite/client
 2026-03-29 00:10:04,510 - django.request - WARNING - [thread=38208 Thread-5 (process_request_thread)] - Not Found: /@vite/client
+2026-03-30 21:47:56,347 - django.utils.autoreload - INFO - [thread=29240 MainThread] - Watching for file changes with StatReloader
+2026-03-30 21:48:03,668 - LLMServiceFactory - INFO - [thread=29240 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-03-30 21:48:03,697 - LLMServiceFactory - INFO - [thread=29240 MainThread] - 使用数据库中的 AI 配置
+2026-03-30 21:48:04,947 - apps.core.views - WARNING - [thread=29240 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-30 21:48:05,167 - LLMServiceFactory - INFO - [thread=29240 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-03-30 21:48:05,169 - LLMServiceFactory - INFO - [thread=29240 MainThread] - 使用数据库中的 AI 配置
+2026-03-30 21:48:05,170 - apps.ai_agents.test_case_generator.views - WARNING - [thread=29240 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-30 21:48:05,187 - LLMServiceFactory - INFO - [thread=29240 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-03-30 21:48:05,188 - LLMServiceFactory - INFO - [thread=29240 MainThread] - 使用数据库中的 AI 配置
+2026-03-30 21:48:05,188 - apps.ai_agents.test_case_reviewer.views - WARNING - [thread=29240 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-30 21:48:29,025 - django.request - WARNING - [thread=19808 Thread-5 (process_request_thread)] - Not Found: /@vite/client
+2026-03-30 21:48:36,774 - django.request - WARNING - [thread=28732 Thread-6 (process_request_thread)] - Not Found: /@vite/client
+2026-03-30 21:49:04,080 - django.request - WARNING - [thread=19808 Thread-5 (process_request_thread)] - Not Found: /@vite/client
+2026-03-30 21:52:31,031 - django.request - WARNING - [thread=19808 Thread-5 (process_request_thread)] - Not Found: /@vite/client
+2026-03-30 21:52:43,583 - apps.ai_agents.test_case_generator.views - INFO - [thread=19808 Thread-5 (process_request_thread)] - ===== 进入 generate 视图函数 =====
+2026-03-30 21:52:43,583 - apps.ai_agents.test_case_generator.views - INFO - [thread=19808 Thread-5 (process_request_thread)] - 请求方法：GET
+2026-03-30 21:52:43,586 - apps.ai_agents.test_case_generator.views - INFO - [thread=19808 Thread-5 (process_request_thread)] - 从数据库加载 AI 配置成功，模型：deepseek-chat
+2026-03-30 21:52:43,629 - django.request - WARNING - [thread=19808 Thread-5 (process_request_thread)] - Not Found: /@vite/client
+2026-03-30 21:52:45,714 - django.request - WARNING - [thread=19808 Thread-5 (process_request_thread)] - Not Found: /@vite/client
+2026-03-30 21:52:46,813 - django.request - WARNING - [thread=19808 Thread-5 (process_request_thread)] - Not Found: /@vite/client
+2026-03-30 21:52:48,158 - apps.ai_agents.test_case_generator.views - INFO - [thread=19808 Thread-5 (process_request_thread)] - ===== 进入 generate 视图函数 =====
+2026-03-30 21:52:48,159 - apps.ai_agents.test_case_generator.views - INFO - [thread=19808 Thread-5 (process_request_thread)] - 请求方法：GET
+2026-03-30 21:52:48,161 - apps.ai_agents.test_case_generator.views - INFO - [thread=19808 Thread-5 (process_request_thread)] - 从数据库加载 AI 配置成功，模型：deepseek-chat
+2026-03-30 21:52:48,190 - django.request - WARNING - [thread=19808 Thread-5 (process_request_thread)] - Not Found: /@vite/client
+2026-03-30 21:52:55,425 - django.request - WARNING - [thread=19808 Thread-5 (process_request_thread)] - Not Found: /@vite/client
+2026-03-30 21:53:00,088 - apps.ai_agents.test_case_generator.views - INFO - [thread=19808 Thread-5 (process_request_thread)] - ===== 进入 generate 视图函数 =====
+2026-03-30 21:53:00,088 - apps.ai_agents.test_case_generator.views - INFO - [thread=19808 Thread-5 (process_request_thread)] - 请求方法：GET
+2026-03-30 21:53:00,091 - apps.ai_agents.test_case_generator.views - INFO - [thread=19808 Thread-5 (process_request_thread)] - 从数据库加载 AI 配置成功，模型：deepseek-chat
+2026-03-30 21:53:00,119 - django.request - WARNING - [thread=19808 Thread-5 (process_request_thread)] - Not Found: /@vite/client
+2026-03-30 21:53:04,070 - django.request - WARNING - [thread=28732 Thread-6 (process_request_thread)] - Not Found: /@vite/client
+2026-03-30 21:57:29,474 - django.request - WARNING - [thread=19808 Thread-5 (process_request_thread)] - Not Found: /@vite/client
+2026-03-30 21:58:07,794 - django.request - WARNING - [thread=4024 Thread-7 (process_request_thread)] - Not Found: /@vite/client
+2026-03-30 21:58:14,757 - django.request - WARNING - [thread=19808 Thread-5 (process_request_thread)] - Not Found: /@vite/client
+2026-03-30 21:58:17,062 - django.request - WARNING - [thread=19808 Thread-5 (process_request_thread)] - Not Found: /@vite/client
+2026-03-30 21:58:17,887 - django.request - WARNING - [thread=19808 Thread-5 (process_request_thread)] - Not Found: /@vite/client
+2026-03-30 21:58:20,126 - django.request - WARNING - [thread=4024 Thread-7 (process_request_thread)] - Not Found: /@vite/client
+2026-03-30 21:58:21,114 - django.request - WARNING - [thread=19808 Thread-5 (process_request_thread)] - Not Found: /@vite/client
+2026-03-30 21:58:22,804 - django.request - WARNING - [thread=19808 Thread-5 (process_request_thread)] - Not Found: /@vite/client
+2026-03-30 21:58:23,420 - django.request - WARNING - [thread=19808 Thread-5 (process_request_thread)] - Not Found: /@vite/client
+2026-03-30 21:58:24,247 - django.request - WARNING - [thread=19808 Thread-5 (process_request_thread)] - Not Found: /@vite/client
+2026-03-30 21:58:24,939 - django.request - WARNING - [thread=19808 Thread-5 (process_request_thread)] - Not Found: /@vite/client
+2026-03-30 21:58:25,507 - django.request - WARNING - [thread=4024 Thread-7 (process_request_thread)] - Not Found: /@vite/client
+2026-03-30 21:58:26,301 - django.request - WARNING - [thread=19808 Thread-5 (process_request_thread)] - Not Found: /@vite/client
+2026-03-30 21:58:29,319 - django.request - WARNING - [thread=4024 Thread-7 (process_request_thread)] - Not Found: /@vite/client
+2026-03-30 21:58:29,853 - django.request - WARNING - [thread=19808 Thread-5 (process_request_thread)] - Not Found: /@vite/client
+2026-03-30 21:59:39,290 - django.request - WARNING - [thread=19808 Thread-5 (process_request_thread)] - Not Found: /@vite/client
+2026-03-30 21:59:52,611 - django.request - WARNING - [thread=19808 Thread-5 (process_request_thread)] - Not Found: /@vite/client
+2026-03-30 22:00:13,445 - django.request - WARNING - [thread=19808 Thread-5 (process_request_thread)] - Not Found: /@vite/client
+2026-03-30 22:01:22,314 - django.request - WARNING - [thread=19808 Thread-5 (process_request_thread)] - Not Found: /@vite/client
+2026-03-30 22:01:25,845 - django.request - WARNING - [thread=19808 Thread-5 (process_request_thread)] - Not Found: /@vite/client
+2026-03-30 22:01:25,963 - django.request - WARNING - [thread=19808 Thread-5 (process_request_thread)] - Not Found: /@vite/client
+2026-03-30 22:01:26,553 - django.request - WARNING - [thread=19808 Thread-5 (process_request_thread)] - Not Found: /@vite/client
+2026-03-30 22:01:27,197 - apps.ai_agents.test_case_generator.views - INFO - [thread=19808 Thread-5 (process_request_thread)] - ===== 进入 generate 视图函数 =====
+2026-03-30 22:01:27,197 - apps.ai_agents.test_case_generator.views - INFO - [thread=19808 Thread-5 (process_request_thread)] - 请求方法：GET
+2026-03-30 22:01:27,200 - apps.ai_agents.test_case_generator.views - INFO - [thread=19808 Thread-5 (process_request_thread)] - 从数据库加载 AI 配置成功，模型：deepseek-chat
+2026-03-30 22:01:27,229 - django.request - WARNING - [thread=19808 Thread-5 (process_request_thread)] - Not Found: /@vite/client
+2026-03-30 22:01:32,523 - django.request - WARNING - [thread=19808 Thread-5 (process_request_thread)] - Not Found: /@vite/client
+2026-03-30 22:01:35,836 - django.request - WARNING - [thread=19808 Thread-5 (process_request_thread)] - Not Found: /@vite/client
+2026-03-30 22:01:36,761 - apps.ai_agents.iface_case_generator.views - INFO - [thread=19808 Thread-5 (process_request_thread)] - ===== 进入iface_case_generator视图函数 =====
+2026-03-30 22:01:36,762 - apps.ai_agents.iface_case_generator.views - INFO - [thread=19808 Thread-5 (process_request_thread)] - 请求方法: GET
+2026-03-30 22:01:36,824 - django.request - WARNING - [thread=19808 Thread-5 (process_request_thread)] - Not Found: /@vite/client
+2026-03-30 22:01:38,386 - django.request - WARNING - [thread=4024 Thread-7 (process_request_thread)] - Not Found: /@vite/client
+2026-03-30 22:01:39,447 - django.request - WARNING - [thread=4024 Thread-7 (process_request_thread)] - Not Found: /@vite/client
+2026-03-30 22:01:41,218 - apps.ai_agents.test_case_generator.views - INFO - [thread=19808 Thread-5 (process_request_thread)] - ===== 进入 generate 视图函数 =====
+2026-03-30 22:01:41,218 - apps.ai_agents.test_case_generator.views - INFO - [thread=19808 Thread-5 (process_request_thread)] - 请求方法：GET
+2026-03-30 22:01:41,221 - apps.ai_agents.test_case_generator.views - INFO - [thread=19808 Thread-5 (process_request_thread)] - 从数据库加载 AI 配置成功，模型：deepseek-chat
+2026-03-30 22:01:41,250 - django.request - WARNING - [thread=19808 Thread-5 (process_request_thread)] - Not Found: /@vite/client
+2026-03-30 22:03:08,030 - apps.ai_agents.test_case_generator.views - INFO - [thread=19808 Thread-5 (process_request_thread)] - ===== 进入 generate 视图函数 =====
+2026-03-30 22:03:08,031 - apps.ai_agents.test_case_generator.views - INFO - [thread=19808 Thread-5 (process_request_thread)] - 请求方法：GET
+2026-03-30 22:03:08,033 - apps.ai_agents.test_case_generator.views - INFO - [thread=19808 Thread-5 (process_request_thread)] - 从数据库加载 AI 配置成功，模型：deepseek-chat
+2026-03-30 22:03:12,383 - django.request - WARNING - [thread=19808 Thread-5 (process_request_thread)] - Not Found: /@vite/client
+2026-03-30 22:04:14,944 - django.request - WARNING - [thread=19808 Thread-5 (process_request_thread)] - Not Found: /@vite/client
+2026-03-30 22:04:21,077 - django.request - WARNING - [thread=19808 Thread-5 (process_request_thread)] - Not Found: /@vite/client
+2026-03-30 22:04:41,882 - django.request - WARNING - [thread=19808 Thread-5 (process_request_thread)] - Not Found: /@vite/client
+2026-03-30 22:04:42,840 - django.request - WARNING - [thread=19808 Thread-5 (process_request_thread)] - Not Found: /@vite/client
+2026-03-30 22:06:44,066 - django.request - WARNING - [thread=19808 Thread-5 (process_request_thread)] - Not Found: /@vite/client
+2026-03-30 22:06:45,545 - django.request - WARNING - [thread=19808 Thread-5 (process_request_thread)] - Not Found: /@vite/client
+2026-03-30 22:06:49,931 - apps.ai_agents.test_case_generator.views - INFO - [thread=19808 Thread-5 (process_request_thread)] - ===== 进入 generate 视图函数 =====
+2026-03-30 22:06:49,931 - apps.ai_agents.test_case_generator.views - INFO - [thread=19808 Thread-5 (process_request_thread)] - 请求方法：GET
+2026-03-30 22:06:49,944 - apps.ai_agents.test_case_generator.views - INFO - [thread=19808 Thread-5 (process_request_thread)] - 从数据库加载 AI 配置成功，模型：deepseek-chat
+2026-03-30 22:06:49,975 - django.request - WARNING - [thread=19808 Thread-5 (process_request_thread)] - Not Found: /@vite/client
+2026-03-30 22:06:51,195 - django.request - WARNING - [thread=19808 Thread-5 (process_request_thread)] - Not Found: /@vite/client
+2026-03-30 22:06:55,074 - apps.ai_agents.test_case_generator.views - INFO - [thread=19808 Thread-5 (process_request_thread)] - ===== 进入 generate 视图函数 =====
+2026-03-30 22:06:55,074 - apps.ai_agents.test_case_generator.views - INFO - [thread=19808 Thread-5 (process_request_thread)] - 请求方法：GET
+2026-03-30 22:06:55,077 - apps.ai_agents.test_case_generator.views - INFO - [thread=19808 Thread-5 (process_request_thread)] - 从数据库加载 AI 配置成功，模型：deepseek-chat
+2026-03-30 22:06:55,105 - django.request - WARNING - [thread=19808 Thread-5 (process_request_thread)] - Not Found: /@vite/client
+2026-03-30 22:07:00,276 - django.request - WARNING - [thread=19808 Thread-5 (process_request_thread)] - Not Found: /@vite/client
+2026-03-30 22:07:01,105 - django.request - WARNING - [thread=20632 Thread-8 (process_request_thread)] - Not Found: /@vite/client
+2026-03-30 22:07:02,219 - django.request - WARNING - [thread=20632 Thread-8 (process_request_thread)] - Not Found: /@vite/client
+2026-03-30 22:08:04,848 - apps.ai_agents.test_case_generator.views - INFO - [thread=19808 Thread-5 (process_request_thread)] - ===== 进入 generate 视图函数 =====
+2026-03-30 22:08:04,849 - apps.ai_agents.test_case_generator.views - INFO - [thread=19808 Thread-5 (process_request_thread)] - 请求方法：GET
+2026-03-30 22:08:04,852 - apps.ai_agents.test_case_generator.views - INFO - [thread=19808 Thread-5 (process_request_thread)] - 从数据库加载 AI 配置成功，模型：deepseek-chat
+2026-03-30 22:08:04,881 - django.request - WARNING - [thread=19808 Thread-5 (process_request_thread)] - Not Found: /@vite/client
+2026-03-30 22:08:06,355 - apps.ai_agents.test_case_generator.views - INFO - [thread=19808 Thread-5 (process_request_thread)] - ===== 进入 generate 视图函数 =====
+2026-03-30 22:08:06,355 - apps.ai_agents.test_case_generator.views - INFO - [thread=19808 Thread-5 (process_request_thread)] - 请求方法：GET
+2026-03-30 22:08:06,358 - apps.ai_agents.test_case_generator.views - INFO - [thread=19808 Thread-5 (process_request_thread)] - 从数据库加载 AI 配置成功，模型：deepseek-chat
+2026-03-30 22:08:08,565 - django.request - WARNING - [thread=19808 Thread-5 (process_request_thread)] - Not Found: /@vite/client
+2026-03-30 22:08:10,656 - apps.ai_agents.test_case_generator.views - INFO - [thread=19808 Thread-5 (process_request_thread)] - ===== 进入 generate 视图函数 =====
+2026-03-30 22:08:10,656 - apps.ai_agents.test_case_generator.views - INFO - [thread=19808 Thread-5 (process_request_thread)] - 请求方法：GET
+2026-03-30 22:08:10,659 - apps.ai_agents.test_case_generator.views - INFO - [thread=19808 Thread-5 (process_request_thread)] - 从数据库加载 AI 配置成功，模型：deepseek-chat
+2026-03-30 22:08:23,194 - django.request - WARNING - [thread=20632 Thread-8 (process_request_thread)] - Not Found: /@vite/client
+2026-03-30 22:08:26,735 - apps.ai_agents.test_case_generator.views - INFO - [thread=20632 Thread-8 (process_request_thread)] - ===== 进入 generate 视图函数 =====
+2026-03-30 22:08:26,735 - apps.ai_agents.test_case_generator.views - INFO - [thread=20632 Thread-8 (process_request_thread)] - 请求方法：GET
+2026-03-30 22:08:26,738 - apps.ai_agents.test_case_generator.views - INFO - [thread=20632 Thread-8 (process_request_thread)] - 从数据库加载 AI 配置成功，模型：deepseek-chat
+2026-03-30 22:08:26,773 - django.request - WARNING - [thread=20632 Thread-8 (process_request_thread)] - Not Found: /@vite/client
+2026-03-30 22:09:12,233 - apps.ai_agents.test_case_generator.views - INFO - [thread=20632 Thread-8 (process_request_thread)] - ===== 进入 generate 视图函数 =====
+2026-03-30 22:09:12,233 - apps.ai_agents.test_case_generator.views - INFO - [thread=20632 Thread-8 (process_request_thread)] - 请求方法：GET
+2026-03-30 22:09:12,247 - apps.ai_agents.test_case_generator.views - INFO - [thread=20632 Thread-8 (process_request_thread)] - 从数据库加载 AI 配置成功，模型：deepseek-chat
+2026-03-30 22:09:17,583 - django.request - WARNING - [thread=20632 Thread-8 (process_request_thread)] - Not Found: /@vite/client
+2026-03-30 22:10:52,259 - apps.ai_agents.test_case_generator.views - INFO - [thread=20632 Thread-8 (process_request_thread)] - ===== 进入 generate 视图函数 =====
+2026-03-30 22:10:52,259 - apps.ai_agents.test_case_generator.views - INFO - [thread=20632 Thread-8 (process_request_thread)] - 请求方法：GET
+2026-03-30 22:10:52,262 - apps.ai_agents.test_case_generator.views - INFO - [thread=20632 Thread-8 (process_request_thread)] - 从数据库加载 AI 配置成功，模型：deepseek-chat
+2026-03-30 22:10:58,261 - django.request - WARNING - [thread=20632 Thread-8 (process_request_thread)] - Not Found: /@vite/client
+2026-03-30 22:11:02,683 - django.request - WARNING - [thread=20632 Thread-8 (process_request_thread)] - Not Found: /@vite/client
+2026-03-30 22:11:09,087 - django.request - WARNING - [thread=20632 Thread-8 (process_request_thread)] - Not Found: /@vite/client
+2026-03-30 22:11:13,121 - django.request - WARNING - [thread=1724 Thread-9 (process_request_thread)] - Not Found: /@vite/client
+2026-03-30 22:11:14,796 - django.request - WARNING - [thread=25488 Thread-10 (process_request_thread)] - Not Found: /@vite/client
+2026-03-30 22:11:15,685 - apps.ai_agents.test_case_generator.views - INFO - [thread=1724 Thread-9 (process_request_thread)] - ===== 进入 generate 视图函数 =====
+2026-03-30 22:11:15,685 - apps.ai_agents.test_case_generator.views - INFO - [thread=1724 Thread-9 (process_request_thread)] - 请求方法：GET
+2026-03-30 22:11:15,688 - apps.ai_agents.test_case_generator.views - INFO - [thread=1724 Thread-9 (process_request_thread)] - 从数据库加载 AI 配置成功，模型：deepseek-chat
+2026-03-30 22:11:15,725 - django.request - WARNING - [thread=1724 Thread-9 (process_request_thread)] - Not Found: /@vite/client
+2026-03-30 22:13:08,286 - apps.ai_agents.test_case_generator.views - INFO - [thread=1724 Thread-9 (process_request_thread)] - ===== 进入 generate 视图函数 =====
+2026-03-30 22:13:08,286 - apps.ai_agents.test_case_generator.views - INFO - [thread=1724 Thread-9 (process_request_thread)] - 请求方法：GET
+2026-03-30 22:13:08,289 - apps.ai_agents.test_case_generator.views - INFO - [thread=1724 Thread-9 (process_request_thread)] - 从数据库加载 AI 配置成功，模型：deepseek-chat
+2026-03-30 22:13:11,385 - django.request - WARNING - [thread=1724 Thread-9 (process_request_thread)] - Not Found: /@vite/client
+2026-03-30 22:13:14,322 - django.request - WARNING - [thread=25488 Thread-10 (process_request_thread)] - Not Found: /@vite/client
+2026-03-30 22:13:15,380 - django.request - WARNING - [thread=1724 Thread-9 (process_request_thread)] - Not Found: /@vite/client
+2026-03-30 22:13:17,172 - django.request - WARNING - [thread=1724 Thread-9 (process_request_thread)] - Not Found: /@vite/client
+2026-03-30 22:13:17,578 - django.request - WARNING - [thread=1724 Thread-9 (process_request_thread)] - Not Found: /@vite/client
+2026-03-30 22:13:18,877 - django.request - WARNING - [thread=1724 Thread-9 (process_request_thread)] - Not Found: /@vite/client
+2026-03-30 22:13:19,436 - django.request - WARNING - [thread=25488 Thread-10 (process_request_thread)] - Not Found: /@vite/client
+2026-03-30 22:13:19,912 - django.request - WARNING - [thread=1724 Thread-9 (process_request_thread)] - Not Found: /@vite/client
+2026-03-30 22:13:21,839 - django.request - WARNING - [thread=1724 Thread-9 (process_request_thread)] - Not Found: /@vite/client
+2026-03-30 22:13:23,013 - apps.ai_agents.test_case_generator.views - INFO - [thread=1724 Thread-9 (process_request_thread)] - ===== 进入 generate 视图函数 =====
+2026-03-30 22:13:23,013 - apps.ai_agents.test_case_generator.views - INFO - [thread=1724 Thread-9 (process_request_thread)] - 请求方法：GET
+2026-03-30 22:13:23,025 - apps.ai_agents.test_case_generator.views - INFO - [thread=1724 Thread-9 (process_request_thread)] - 从数据库加载 AI 配置成功，模型：deepseek-chat
+2026-03-30 22:13:23,054 - django.request - WARNING - [thread=1724 Thread-9 (process_request_thread)] - Not Found: /@vite/client
+2026-03-30 22:17:21,790 - apps.ai_agents.test_case_generator.views - INFO - [thread=1724 Thread-9 (process_request_thread)] - ===== 进入 generate 视图函数 =====
+2026-03-30 22:17:21,790 - apps.ai_agents.test_case_generator.views - INFO - [thread=1724 Thread-9 (process_request_thread)] - 请求方法：GET
+2026-03-30 22:17:21,803 - apps.ai_agents.test_case_generator.views - INFO - [thread=1724 Thread-9 (process_request_thread)] - 从数据库加载 AI 配置成功，模型：deepseek-chat
+2026-03-30 22:17:24,370 - django.request - WARNING - [thread=1724 Thread-9 (process_request_thread)] - Not Found: /@vite/client
+2026-03-30 22:24:23,579 - apps.ai_agents.test_case_generator.views - INFO - [thread=12412 Thread-11 (process_request_thread)] - ===== 进入 generate 视图函数 =====
+2026-03-30 22:24:23,580 - apps.ai_agents.test_case_generator.views - INFO - [thread=12412 Thread-11 (process_request_thread)] - 请求方法：GET
+2026-03-30 22:24:23,583 - apps.ai_agents.test_case_generator.views - INFO - [thread=12412 Thread-11 (process_request_thread)] - 从数据库加载 AI 配置成功，模型：deepseek-chat
+2026-03-30 22:24:26,638 - django.request - WARNING - [thread=12412 Thread-11 (process_request_thread)] - Not Found: /@vite/client
+2026-03-30 22:24:32,421 - django.request - WARNING - [thread=20736 Thread-12 (process_request_thread)] - Not Found: /@vite/client
+2026-03-30 22:24:33,010 - apps.ai_agents.test_case_generator.views - INFO - [thread=12412 Thread-11 (process_request_thread)] - ===== 进入 generate 视图函数 =====
+2026-03-30 22:24:33,010 - apps.ai_agents.test_case_generator.views - INFO - [thread=12412 Thread-11 (process_request_thread)] - 请求方法：GET
+2026-03-30 22:24:33,013 - apps.ai_agents.test_case_generator.views - INFO - [thread=12412 Thread-11 (process_request_thread)] - 从数据库加载 AI 配置成功，模型：deepseek-chat
+2026-03-30 22:24:33,045 - django.request - WARNING - [thread=12412 Thread-11 (process_request_thread)] - Not Found: /@vite/client
+2026-03-30 22:27:50,169 - apps.ai_agents.test_case_generator.views - INFO - [thread=12412 Thread-11 (process_request_thread)] - ===== 进入 generate 视图函数 =====
+2026-03-30 22:27:50,170 - apps.ai_agents.test_case_generator.views - INFO - [thread=12412 Thread-11 (process_request_thread)] - 请求方法：GET
+2026-03-30 22:27:50,173 - apps.ai_agents.test_case_generator.views - INFO - [thread=12412 Thread-11 (process_request_thread)] - 从数据库加载 AI 配置成功，模型：deepseek-chat
+2026-03-30 22:27:50,277 - django.request - WARNING - [thread=12412 Thread-11 (process_request_thread)] - Not Found: /@vite/client
+2026-03-30 22:27:51,381 - apps.ai_agents.test_case_generator.views - INFO - [thread=12412 Thread-11 (process_request_thread)] - ===== 进入 generate 视图函数 =====
+2026-03-30 22:27:51,381 - apps.ai_agents.test_case_generator.views - INFO - [thread=12412 Thread-11 (process_request_thread)] - 请求方法：GET
+2026-03-30 22:27:51,394 - apps.ai_agents.test_case_generator.views - INFO - [thread=12412 Thread-11 (process_request_thread)] - 从数据库加载 AI 配置成功，模型：deepseek-chat
+2026-03-30 22:27:51,477 - django.request - WARNING - [thread=12412 Thread-11 (process_request_thread)] - Not Found: /@vite/client
+2026-03-30 22:27:53,485 - apps.ai_agents.test_case_generator.views - INFO - [thread=12412 Thread-11 (process_request_thread)] - ===== 进入 generate 视图函数 =====
+2026-03-30 22:27:53,485 - apps.ai_agents.test_case_generator.views - INFO - [thread=12412 Thread-11 (process_request_thread)] - 请求方法：GET
+2026-03-30 22:27:53,497 - apps.ai_agents.test_case_generator.views - INFO - [thread=12412 Thread-11 (process_request_thread)] - 从数据库加载 AI 配置成功，模型：deepseek-chat
+2026-03-30 22:27:55,662 - django.request - WARNING - [thread=12412 Thread-11 (process_request_thread)] - Not Found: /@vite/client
+2026-03-30 22:28:27,588 - apps.ai_agents.test_case_generator.views - INFO - [thread=12412 Thread-11 (process_request_thread)] - ===== 进入 generate 视图函数 =====
+2026-03-30 22:28:27,589 - apps.ai_agents.test_case_generator.views - INFO - [thread=12412 Thread-11 (process_request_thread)] - 请求方法：GET
+2026-03-30 22:28:27,592 - apps.ai_agents.test_case_generator.views - INFO - [thread=12412 Thread-11 (process_request_thread)] - 从数据库加载 AI 配置成功，模型：deepseek-chat
+2026-03-30 22:28:27,763 - django.request - WARNING - [thread=12412 Thread-11 (process_request_thread)] - Not Found: /@vite/client
+2026-03-30 22:28:30,086 - django.request - WARNING - [thread=20736 Thread-12 (process_request_thread)] - Not Found: /@vite/client
+2026-03-30 22:28:31,440 - django.request - WARNING - [thread=12412 Thread-11 (process_request_thread)] - Not Found: /@vite/client
+2026-03-30 22:28:32,335 - django.request - WARNING - [thread=20736 Thread-12 (process_request_thread)] - Not Found: /@vite/client
+2026-03-30 22:28:34,585 - django.request - WARNING - [thread=12412 Thread-11 (process_request_thread)] - Not Found: /@vite/client
+2026-03-30 22:28:35,034 - django.request - WARNING - [thread=12412 Thread-11 (process_request_thread)] - Not Found: /@vite/client
+2026-03-30 22:28:35,649 - django.request - WARNING - [thread=12412 Thread-11 (process_request_thread)] - Not Found: /@vite/client
+2026-03-30 22:28:36,577 - django.request - WARNING - [thread=12412 Thread-11 (process_request_thread)] - Not Found: /@vite/client
+2026-03-30 22:28:40,209 - apps.ai_agents.test_case_generator.views - INFO - [thread=12412 Thread-11 (process_request_thread)] - ===== 进入 generate 视图函数 =====
+2026-03-30 22:28:40,209 - apps.ai_agents.test_case_generator.views - INFO - [thread=12412 Thread-11 (process_request_thread)] - 请求方法：GET
+2026-03-30 22:28:40,222 - apps.ai_agents.test_case_generator.views - INFO - [thread=12412 Thread-11 (process_request_thread)] - 从数据库加载 AI 配置成功，模型：deepseek-chat
+2026-03-30 22:28:40,250 - django.request - WARNING - [thread=12412 Thread-11 (process_request_thread)] - Not Found: /@vite/client
+2026-03-30 22:36:44,871 - django.utils.autoreload - INFO - [thread=9268 MainThread] - Watching for file changes with StatReloader
+2026-03-30 22:36:48,179 - LLMServiceFactory - INFO - [thread=9268 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-03-30 22:36:48,194 - LLMServiceFactory - INFO - [thread=9268 MainThread] - 使用数据库中的 AI 配置
+2026-03-30 22:36:49,163 - apps.core.views - WARNING - [thread=9268 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-30 22:36:49,327 - LLMServiceFactory - INFO - [thread=9268 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-03-30 22:36:49,328 - LLMServiceFactory - INFO - [thread=9268 MainThread] - 使用数据库中的 AI 配置
+2026-03-30 22:36:49,330 - apps.ai_agents.test_case_generator.views - WARNING - [thread=9268 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-30 22:36:49,341 - LLMServiceFactory - INFO - [thread=9268 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-03-30 22:36:49,342 - LLMServiceFactory - INFO - [thread=9268 MainThread] - 使用数据库中的 AI 配置
+2026-03-30 22:36:49,343 - apps.ai_agents.test_case_reviewer.views - WARNING - [thread=9268 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-30 22:37:00,031 - apps.ai_agents.test_case_generator.views - INFO - [thread=28912 Thread-13 (process_request_thread)] - ===== 进入 generate 视图函数 =====
+2026-03-30 22:37:00,031 - apps.ai_agents.test_case_generator.views - INFO - [thread=28912 Thread-13 (process_request_thread)] - 请求方法：GET
+2026-03-30 22:37:00,035 - apps.ai_agents.test_case_generator.views - INFO - [thread=28912 Thread-13 (process_request_thread)] - 从数据库加载 AI 配置成功，模型：deepseek-chat
+2026-03-30 22:37:00,179 - django.request - WARNING - [thread=28912 Thread-13 (process_request_thread)] - Not Found: /@vite/client
+2026-03-30 22:37:13,591 - apps.ai_agents.test_case_generator.views - INFO - [thread=28912 Thread-13 (process_request_thread)] - ===== 进入 generate 视图函数 =====
+2026-03-30 22:37:13,592 - apps.ai_agents.test_case_generator.views - INFO - [thread=28912 Thread-13 (process_request_thread)] - 请求方法：GET
+2026-03-30 22:37:13,594 - apps.ai_agents.test_case_generator.views - INFO - [thread=28912 Thread-13 (process_request_thread)] - 从数据库加载 AI 配置成功，模型：deepseek-chat
+2026-03-30 22:37:13,669 - django.request - WARNING - [thread=28912 Thread-13 (process_request_thread)] - Not Found: /@vite/client
+2026-03-30 22:37:24,195 - django.request - WARNING - [thread=28912 Thread-13 (process_request_thread)] - Not Found: /@vite/client
+2026-03-30 22:37:31,023 - django.request - WARNING - [thread=28912 Thread-13 (process_request_thread)] - Not Found: /@vite/client
+2026-03-30 22:37:58,376 - apps.ai_agents.test_case_generator.views - INFO - [thread=28912 Thread-13 (process_request_thread)] - ===== 进入 generate 视图函数 =====
+2026-03-30 22:37:58,376 - apps.ai_agents.test_case_generator.views - INFO - [thread=28912 Thread-13 (process_request_thread)] - 请求方法：GET
+2026-03-30 22:37:58,389 - apps.ai_agents.test_case_generator.views - INFO - [thread=28912 Thread-13 (process_request_thread)] - 从数据库加载 AI 配置成功，模型：deepseek-chat
+2026-03-30 22:37:58,433 - django.request - WARNING - [thread=28912 Thread-13 (process_request_thread)] - Not Found: /@vite/client
+2026-03-30 22:39:30,816 - apps.ai_agents.test_case_generator.views - INFO - [thread=28912 Thread-13 (process_request_thread)] - ===== 进入 generate 视图函数 =====
+2026-03-30 22:39:30,816 - apps.ai_agents.test_case_generator.views - INFO - [thread=28912 Thread-13 (process_request_thread)] - 请求方法：GET
+2026-03-30 22:39:30,820 - apps.ai_agents.test_case_generator.views - INFO - [thread=28912 Thread-13 (process_request_thread)] - 从数据库加载 AI 配置成功，模型：deepseek-chat
+2026-03-30 22:39:33,455 - django.request - WARNING - [thread=28912 Thread-13 (process_request_thread)] - Not Found: /@vite/client
+2026-03-30 22:40:07,220 - django.request - WARNING - [thread=28912 Thread-13 (process_request_thread)] - Not Found: /@vite/client
+2026-03-30 22:40:11,591 - django.request - WARNING - [thread=28912 Thread-13 (process_request_thread)] - Not Found: /@vite/client
+2026-03-30 22:40:12,210 - apps.ai_agents.test_case_generator.views - INFO - [thread=28912 Thread-13 (process_request_thread)] - ===== 进入 generate 视图函数 =====
+2026-03-30 22:40:12,211 - apps.ai_agents.test_case_generator.views - INFO - [thread=28912 Thread-13 (process_request_thread)] - 请求方法：GET
+2026-03-30 22:40:12,214 - apps.ai_agents.test_case_generator.views - INFO - [thread=28912 Thread-13 (process_request_thread)] - 从数据库加载 AI 配置成功，模型：deepseek-chat
+2026-03-30 22:40:12,258 - django.request - WARNING - [thread=28912 Thread-13 (process_request_thread)] - Not Found: /@vite/client
+2026-03-30 22:41:41,102 - django.utils.autoreload - INFO - [thread=12784 MainThread] - Watching for file changes with StatReloader
+2026-03-30 22:41:44,259 - LLMServiceFactory - INFO - [thread=12784 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-03-30 22:41:44,275 - LLMServiceFactory - INFO - [thread=12784 MainThread] - 使用数据库中的 AI 配置
+2026-03-30 22:41:45,225 - apps.core.views - WARNING - [thread=12784 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-30 22:41:45,376 - LLMServiceFactory - INFO - [thread=12784 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-03-30 22:41:45,378 - LLMServiceFactory - INFO - [thread=12784 MainThread] - 使用数据库中的 AI 配置
+2026-03-30 22:41:45,379 - apps.ai_agents.test_case_generator.views - WARNING - [thread=12784 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-30 22:41:45,390 - LLMServiceFactory - INFO - [thread=12784 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-03-30 22:41:45,391 - LLMServiceFactory - INFO - [thread=12784 MainThread] - 使用数据库中的 AI 配置
+2026-03-30 22:41:45,391 - apps.ai_agents.test_case_reviewer.views - WARNING - [thread=12784 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-30 22:41:58,501 - apps.ai_agents.test_case_generator.views - INFO - [thread=28912 Thread-13 (process_request_thread)] - ===== 进入 generate 视图函数 =====
+2026-03-30 22:41:58,502 - apps.ai_agents.test_case_generator.views - INFO - [thread=28912 Thread-13 (process_request_thread)] - 请求方法：GET
+2026-03-30 22:41:58,504 - apps.ai_agents.test_case_generator.views - INFO - [thread=28912 Thread-13 (process_request_thread)] - 从数据库加载 AI 配置成功，模型：deepseek-chat
+2026-03-30 22:41:58,550 - django.request - WARNING - [thread=28912 Thread-13 (process_request_thread)] - Not Found: /@vite/client
+2026-03-30 22:42:49,854 - apps.ai_agents.test_case_generator.views - INFO - [thread=28912 Thread-13 (process_request_thread)] - ===== 进入 generate 视图函数 =====
+2026-03-30 22:42:49,854 - apps.ai_agents.test_case_generator.views - INFO - [thread=28912 Thread-13 (process_request_thread)] - 请求方法：GET
+2026-03-30 22:42:49,857 - apps.ai_agents.test_case_generator.views - INFO - [thread=28912 Thread-13 (process_request_thread)] - 从数据库加载 AI 配置成功，模型：deepseek-chat
+2026-03-30 22:42:53,088 - django.request - WARNING - [thread=28912 Thread-13 (process_request_thread)] - Not Found: /@vite/client
+2026-03-30 22:43:09,049 - apps.ai_agents.test_case_generator.views - INFO - [thread=28912 Thread-13 (process_request_thread)] - ===== 进入 generate 视图函数 =====
+2026-03-30 22:43:09,050 - apps.ai_agents.test_case_generator.views - INFO - [thread=28912 Thread-13 (process_request_thread)] - 请求方法：GET
+2026-03-30 22:43:09,052 - apps.ai_agents.test_case_generator.views - INFO - [thread=28912 Thread-13 (process_request_thread)] - 从数据库加载 AI 配置成功，模型：deepseek-chat
+2026-03-30 22:43:12,764 - django.request - WARNING - [thread=28912 Thread-13 (process_request_thread)] - Not Found: /@vite/client
+2026-03-30 22:44:52,264 - django.utils.autoreload - INFO - [thread=14720 MainThread] - Watching for file changes with StatReloader
+2026-03-30 22:44:55,475 - LLMServiceFactory - INFO - [thread=14720 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-03-30 22:44:55,491 - LLMServiceFactory - INFO - [thread=14720 MainThread] - 使用数据库中的 AI 配置
+2026-03-30 22:44:56,435 - apps.core.views - WARNING - [thread=14720 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-30 22:44:56,584 - LLMServiceFactory - INFO - [thread=14720 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-03-30 22:44:56,586 - LLMServiceFactory - INFO - [thread=14720 MainThread] - 使用数据库中的 AI 配置
+2026-03-30 22:44:56,587 - apps.ai_agents.test_case_generator.views - WARNING - [thread=14720 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-30 22:44:56,599 - LLMServiceFactory - INFO - [thread=14720 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-03-30 22:44:56,600 - LLMServiceFactory - INFO - [thread=14720 MainThread] - 使用数据库中的 AI 配置
+2026-03-30 22:44:56,600 - apps.ai_agents.test_case_reviewer.views - WARNING - [thread=14720 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-30 22:45:07,156 - apps.ai_agents.test_case_generator.views - INFO - [thread=28912 Thread-13 (process_request_thread)] - ===== 进入 generate 视图函数 =====
+2026-03-30 22:45:07,156 - apps.ai_agents.test_case_generator.views - INFO - [thread=28912 Thread-13 (process_request_thread)] - 请求方法：GET
+2026-03-30 22:45:07,168 - apps.ai_agents.test_case_generator.views - INFO - [thread=28912 Thread-13 (process_request_thread)] - 从数据库加载 AI 配置成功，模型：deepseek-chat
+2026-03-30 22:45:07,228 - django.request - WARNING - [thread=28912 Thread-13 (process_request_thread)] - Not Found: /@vite/client
+2026-03-30 22:45:22,687 - apps.ai_agents.test_case_generator.views - INFO - [thread=28912 Thread-13 (process_request_thread)] - ===== 进入 generate 视图函数 =====
+2026-03-30 22:45:22,687 - apps.ai_agents.test_case_generator.views - INFO - [thread=28912 Thread-13 (process_request_thread)] - 请求方法：GET
+2026-03-30 22:45:22,690 - apps.ai_agents.test_case_generator.views - INFO - [thread=28912 Thread-13 (process_request_thread)] - 从数据库加载 AI 配置成功，模型：deepseek-chat
+2026-03-30 22:45:22,767 - django.request - WARNING - [thread=28912 Thread-13 (process_request_thread)] - Not Found: /@vite/client
+2026-03-30 22:45:43,114 - apps.ai_agents.test_case_generator.views - INFO - [thread=28912 Thread-13 (process_request_thread)] - ===== 进入 generate 视图函数 =====
+2026-03-30 22:45:43,114 - apps.ai_agents.test_case_generator.views - INFO - [thread=28912 Thread-13 (process_request_thread)] - 请求方法：GET
+2026-03-30 22:45:43,126 - apps.ai_agents.test_case_generator.views - INFO - [thread=28912 Thread-13 (process_request_thread)] - 从数据库加载 AI 配置成功，模型：deepseek-chat
+2026-03-30 22:45:43,179 - django.request - WARNING - [thread=28912 Thread-13 (process_request_thread)] - Not Found: /@vite/client
+2026-03-30 22:45:56,577 - django.request - WARNING - [thread=28912 Thread-13 (process_request_thread)] - Not Found: /@vite/client
+2026-03-30 22:46:01,882 - apps.ai_agents.test_case_generator.views - INFO - [thread=28912 Thread-13 (process_request_thread)] - ===== 进入 generate 视图函数 =====
+2026-03-30 22:46:01,883 - apps.ai_agents.test_case_generator.views - INFO - [thread=28912 Thread-13 (process_request_thread)] - 请求方法：GET
+2026-03-30 22:46:01,885 - apps.ai_agents.test_case_generator.views - INFO - [thread=28912 Thread-13 (process_request_thread)] - 从数据库加载 AI 配置成功，模型：deepseek-chat
+2026-03-30 22:46:01,929 - django.request - WARNING - [thread=28912 Thread-13 (process_request_thread)] - Not Found: /@vite/client
+2026-03-30 22:51:19,057 - django.utils.autoreload - INFO - [thread=12736 MainThread] - Watching for file changes with StatReloader
+2026-03-30 22:51:22,291 - LLMServiceFactory - INFO - [thread=12736 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-03-30 22:51:22,306 - LLMServiceFactory - INFO - [thread=12736 MainThread] - 使用数据库中的 AI 配置
+2026-03-30 22:51:23,275 - apps.core.views - WARNING - [thread=12736 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-30 22:51:23,426 - LLMServiceFactory - INFO - [thread=12736 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-03-30 22:51:23,428 - LLMServiceFactory - INFO - [thread=12736 MainThread] - 使用数据库中的 AI 配置
+2026-03-30 22:51:23,429 - apps.ai_agents.test_case_generator.views - WARNING - [thread=12736 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-30 22:51:23,440 - LLMServiceFactory - INFO - [thread=12736 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-03-30 22:51:23,441 - LLMServiceFactory - INFO - [thread=12736 MainThread] - 使用数据库中的 AI 配置
+2026-03-30 22:51:23,441 - apps.ai_agents.test_case_reviewer.views - WARNING - [thread=12736 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-30 22:51:35,696 - apps.ai_agents.test_case_generator.views - INFO - [thread=18800 Thread-14 (process_request_thread)] - ===== 进入 generate 视图函数 =====
+2026-03-30 22:51:35,697 - apps.ai_agents.test_case_generator.views - INFO - [thread=18800 Thread-14 (process_request_thread)] - 请求方法：GET
+2026-03-30 22:51:35,700 - apps.ai_agents.test_case_generator.views - INFO - [thread=18800 Thread-14 (process_request_thread)] - 从数据库加载 AI 配置成功，模型：deepseek-chat
+2026-03-30 22:51:35,768 - django.request - WARNING - [thread=18800 Thread-14 (process_request_thread)] - Not Found: /@vite/client
+2026-03-30 22:51:59,067 - apps.ai_agents.test_case_generator.views - INFO - [thread=18800 Thread-14 (process_request_thread)] - ===== 进入 generate 视图函数 =====
+2026-03-30 22:51:59,067 - apps.ai_agents.test_case_generator.views - INFO - [thread=18800 Thread-14 (process_request_thread)] - 请求方法：GET
+2026-03-30 22:51:59,079 - apps.ai_agents.test_case_generator.views - INFO - [thread=18800 Thread-14 (process_request_thread)] - 从数据库加载 AI 配置成功，模型：deepseek-chat
+2026-03-30 22:51:59,135 - django.request - WARNING - [thread=18800 Thread-14 (process_request_thread)] - Not Found: /@vite/client
+2026-03-30 22:52:30,362 - apps.ai_agents.test_case_generator.views - INFO - [thread=18800 Thread-14 (process_request_thread)] - ===== 进入 generate 视图函数 =====
+2026-03-30 22:52:30,362 - apps.ai_agents.test_case_generator.views - INFO - [thread=18800 Thread-14 (process_request_thread)] - 请求方法：GET
+2026-03-30 22:52:30,365 - apps.ai_agents.test_case_generator.views - INFO - [thread=18800 Thread-14 (process_request_thread)] - 从数据库加载 AI 配置成功，模型：deepseek-chat
+2026-03-30 22:52:30,429 - django.request - WARNING - [thread=18800 Thread-14 (process_request_thread)] - Not Found: /@vite/client
+2026-03-30 22:52:37,631 - django.request - WARNING - [thread=18800 Thread-14 (process_request_thread)] - Not Found: /@vite/client
+2026-03-30 22:52:43,362 - apps.ai_agents.test_case_generator.views - INFO - [thread=18800 Thread-14 (process_request_thread)] - ===== 进入 generate 视图函数 =====
+2026-03-30 22:52:43,362 - apps.ai_agents.test_case_generator.views - INFO - [thread=18800 Thread-14 (process_request_thread)] - 请求方法：GET
+2026-03-30 22:52:43,375 - apps.ai_agents.test_case_generator.views - INFO - [thread=18800 Thread-14 (process_request_thread)] - 从数据库加载 AI 配置成功，模型：deepseek-chat
+2026-03-30 22:52:43,430 - django.request - WARNING - [thread=18800 Thread-14 (process_request_thread)] - Not Found: /@vite/client
+2026-03-30 22:57:09,568 - django.utils.autoreload - INFO - [thread=2784 MainThread] - Watching for file changes with StatReloader
+2026-03-30 22:57:12,856 - LLMServiceFactory - INFO - [thread=2784 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-03-30 22:57:12,861 - LLMServiceFactory - INFO - [thread=2784 MainThread] - 使用数据库中的 AI 配置
+2026-03-30 22:57:13,812 - apps.core.views - WARNING - [thread=2784 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-30 22:57:13,964 - LLMServiceFactory - INFO - [thread=2784 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-03-30 22:57:13,965 - LLMServiceFactory - INFO - [thread=2784 MainThread] - 使用数据库中的 AI 配置
+2026-03-30 22:57:13,967 - apps.ai_agents.test_case_generator.views - WARNING - [thread=2784 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-30 22:57:13,978 - LLMServiceFactory - INFO - [thread=2784 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-03-30 22:57:13,979 - LLMServiceFactory - INFO - [thread=2784 MainThread] - 使用数据库中的 AI 配置
+2026-03-30 22:57:13,979 - apps.ai_agents.test_case_reviewer.views - WARNING - [thread=2784 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-30 22:57:25,653 - apps.ai_agents.test_case_generator.views - INFO - [thread=18800 Thread-14 (process_request_thread)] - ===== 进入 generate 视图函数 =====
+2026-03-30 22:57:25,654 - apps.ai_agents.test_case_generator.views - INFO - [thread=18800 Thread-14 (process_request_thread)] - 请求方法：GET
+2026-03-30 22:57:25,656 - apps.ai_agents.test_case_generator.views - INFO - [thread=18800 Thread-14 (process_request_thread)] - 从数据库加载 AI 配置成功，模型：deepseek-chat
+2026-03-30 22:57:25,732 - django.request - WARNING - [thread=18800 Thread-14 (process_request_thread)] - Not Found: /@vite/client
+2026-03-30 22:57:31,483 - django.request - WARNING - [thread=18800 Thread-14 (process_request_thread)] - Not Found: /@vite/client
+2026-03-30 22:57:39,165 - apps.ai_agents.test_case_generator.views - INFO - [thread=18800 Thread-14 (process_request_thread)] - ===== 进入 generate 视图函数 =====
+2026-03-30 22:57:39,166 - apps.ai_agents.test_case_generator.views - INFO - [thread=18800 Thread-14 (process_request_thread)] - 请求方法：GET
+2026-03-30 22:57:39,178 - apps.ai_agents.test_case_generator.views - INFO - [thread=18800 Thread-14 (process_request_thread)] - 从数据库加载 AI 配置成功，模型：deepseek-chat
+2026-03-30 22:57:39,238 - django.request - WARNING - [thread=18800 Thread-14 (process_request_thread)] - Not Found: /@vite/client
+2026-03-30 22:58:01,626 - apps.ai_agents.test_case_generator.views - INFO - [thread=18800 Thread-14 (process_request_thread)] - ===== 进入 generate 视图函数 =====
+2026-03-30 22:58:01,626 - apps.ai_agents.test_case_generator.views - INFO - [thread=18800 Thread-14 (process_request_thread)] - 请求方法：GET
+2026-03-30 22:58:01,638 - apps.ai_agents.test_case_generator.views - INFO - [thread=18800 Thread-14 (process_request_thread)] - 从数据库加载 AI 配置成功，模型：deepseek-chat
+2026-03-30 22:58:19,510 - django.request - WARNING - [thread=27636 Thread-15 (process_request_thread)] - Not Found: /@vite/client
+2026-03-30 22:58:54,769 - django.utils.autoreload - INFO - [thread=29620 MainThread] - Watching for file changes with StatReloader
+2026-03-30 22:58:57,968 - LLMServiceFactory - INFO - [thread=29620 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-03-30 22:58:57,983 - LLMServiceFactory - INFO - [thread=29620 MainThread] - 使用数据库中的 AI 配置
+2026-03-30 22:58:58,922 - apps.core.views - WARNING - [thread=29620 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-30 22:58:59,068 - LLMServiceFactory - INFO - [thread=29620 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-03-30 22:58:59,070 - LLMServiceFactory - INFO - [thread=29620 MainThread] - 使用数据库中的 AI 配置
+2026-03-30 22:58:59,071 - apps.ai_agents.test_case_generator.views - WARNING - [thread=29620 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-30 22:58:59,082 - LLMServiceFactory - INFO - [thread=29620 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-03-30 22:58:59,083 - LLMServiceFactory - INFO - [thread=29620 MainThread] - 使用数据库中的 AI 配置
+2026-03-30 22:58:59,083 - apps.ai_agents.test_case_reviewer.views - WARNING - [thread=29620 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-30 22:59:14,075 - apps.ai_agents.test_case_generator.views - INFO - [thread=18800 Thread-14 (process_request_thread)] - ===== 进入 generate 视图函数 =====
+2026-03-30 22:59:14,075 - apps.ai_agents.test_case_generator.views - INFO - [thread=18800 Thread-14 (process_request_thread)] - 请求方法：GET
+2026-03-30 22:59:14,078 - apps.ai_agents.test_case_generator.views - INFO - [thread=18800 Thread-14 (process_request_thread)] - 从数据库加载 AI 配置成功，模型：deepseek-chat
+2026-03-30 22:59:15,882 - django.request - WARNING - [thread=18800 Thread-14 (process_request_thread)] - Not Found: /@vite/client
+2026-03-30 22:59:38,165 - apps.ai_agents.test_case_generator.views - INFO - [thread=18800 Thread-14 (process_request_thread)] - ===== 进入 generate 视图函数 =====
+2026-03-30 22:59:38,166 - apps.ai_agents.test_case_generator.views - INFO - [thread=18800 Thread-14 (process_request_thread)] - 请求方法：GET
+2026-03-30 22:59:38,169 - apps.ai_agents.test_case_generator.views - INFO - [thread=18800 Thread-14 (process_request_thread)] - 从数据库加载 AI 配置成功，模型：deepseek-chat
+2026-03-30 22:59:43,332 - django.request - WARNING - [thread=18800 Thread-14 (process_request_thread)] - Not Found: /@vite/client
+2026-03-30 23:00:18,592 - django.request - WARNING - [thread=18800 Thread-14 (process_request_thread)] - Not Found: /@vite/client
+2026-03-30 23:00:18,894 - apps.ai_agents.test_case_generator.views - INFO - [thread=18800 Thread-14 (process_request_thread)] - ===== 进入 generate 视图函数 =====
+2026-03-30 23:00:18,895 - apps.ai_agents.test_case_generator.views - INFO - [thread=18800 Thread-14 (process_request_thread)] - 请求方法：GET
+2026-03-30 23:00:18,897 - apps.ai_agents.test_case_generator.views - INFO - [thread=18800 Thread-14 (process_request_thread)] - 从数据库加载 AI 配置成功，模型：deepseek-chat
+2026-03-30 23:00:18,979 - django.request - WARNING - [thread=18800 Thread-14 (process_request_thread)] - Not Found: /@vite/client
+2026-03-30 23:00:21,519 - django.request - WARNING - [thread=27636 Thread-15 (process_request_thread)] - Not Found: /@vite/client
+2026-03-30 23:00:22,480 - django.request - WARNING - [thread=18800 Thread-14 (process_request_thread)] - Not Found: /@vite/client
+2026-03-30 23:00:23,053 - django.request - WARNING - [thread=27636 Thread-15 (process_request_thread)] - Not Found: /@vite/client
+2026-03-30 23:00:23,874 - apps.ai_agents.test_case_generator.views - INFO - [thread=18800 Thread-14 (process_request_thread)] - ===== 进入 generate 视图函数 =====
+2026-03-30 23:00:23,874 - apps.ai_agents.test_case_generator.views - INFO - [thread=18800 Thread-14 (process_request_thread)] - 请求方法：GET
+2026-03-30 23:00:23,888 - apps.ai_agents.test_case_generator.views - INFO - [thread=18800 Thread-14 (process_request_thread)] - 从数据库加载 AI 配置成功，模型：deepseek-chat
+2026-03-30 23:00:23,942 - django.request - WARNING - [thread=18800 Thread-14 (process_request_thread)] - Not Found: /@vite/client
+2026-03-30 23:01:43,628 - django.utils.autoreload - INFO - [thread=25560 MainThread] - Watching for file changes with StatReloader
+2026-03-30 23:01:46,761 - LLMServiceFactory - INFO - [thread=25560 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-03-30 23:01:46,777 - LLMServiceFactory - INFO - [thread=25560 MainThread] - 使用数据库中的 AI 配置
+2026-03-30 23:01:47,718 - apps.core.views - WARNING - [thread=25560 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-30 23:01:47,866 - LLMServiceFactory - INFO - [thread=25560 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-03-30 23:01:47,868 - LLMServiceFactory - INFO - [thread=25560 MainThread] - 使用数据库中的 AI 配置
+2026-03-30 23:01:47,869 - apps.ai_agents.test_case_generator.views - WARNING - [thread=25560 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-30 23:01:47,880 - LLMServiceFactory - INFO - [thread=25560 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-03-30 23:01:47,881 - LLMServiceFactory - INFO - [thread=25560 MainThread] - 使用数据库中的 AI 配置
+2026-03-30 23:01:47,881 - apps.ai_agents.test_case_reviewer.views - WARNING - [thread=25560 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-30 23:01:56,164 - apps.ai_agents.test_case_generator.views - INFO - [thread=18800 Thread-14 (process_request_thread)] - ===== 进入 generate 视图函数 =====
+2026-03-30 23:01:56,165 - apps.ai_agents.test_case_generator.views - INFO - [thread=18800 Thread-14 (process_request_thread)] - 请求方法：GET
+2026-03-30 23:01:56,178 - apps.ai_agents.test_case_generator.views - INFO - [thread=18800 Thread-14 (process_request_thread)] - 从数据库加载 AI 配置成功，模型：deepseek-chat
+2026-03-30 23:01:56,243 - django.request - WARNING - [thread=18800 Thread-14 (process_request_thread)] - Not Found: /@vite/client
+2026-03-30 23:02:34,275 - apps.ai_agents.test_case_generator.views - INFO - [thread=18800 Thread-14 (process_request_thread)] - ===== 进入 generate 视图函数 =====
+2026-03-30 23:02:34,275 - apps.ai_agents.test_case_generator.views - INFO - [thread=18800 Thread-14 (process_request_thread)] - 请求方法：GET
+2026-03-30 23:02:34,278 - apps.ai_agents.test_case_generator.views - INFO - [thread=18800 Thread-14 (process_request_thread)] - 从数据库加载 AI 配置成功，模型：deepseek-chat
+2026-03-30 23:02:46,220 - django.request - WARNING - [thread=18800 Thread-14 (process_request_thread)] - Not Found: /@vite/client
+2026-03-30 23:04:30,937 - django.utils.autoreload - INFO - [thread=16288 MainThread] - Watching for file changes with StatReloader
+2026-03-30 23:04:34,087 - LLMServiceFactory - INFO - [thread=16288 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-03-30 23:04:34,101 - LLMServiceFactory - INFO - [thread=16288 MainThread] - 使用数据库中的 AI 配置
+2026-03-30 23:04:35,055 - apps.core.views - WARNING - [thread=16288 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-30 23:04:35,210 - LLMServiceFactory - INFO - [thread=16288 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-03-30 23:04:35,211 - LLMServiceFactory - INFO - [thread=16288 MainThread] - 使用数据库中的 AI 配置
+2026-03-30 23:04:35,213 - apps.ai_agents.test_case_generator.views - WARNING - [thread=16288 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-30 23:04:35,223 - LLMServiceFactory - INFO - [thread=16288 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-03-30 23:04:35,224 - LLMServiceFactory - INFO - [thread=16288 MainThread] - 使用数据库中的 AI 配置
+2026-03-30 23:04:35,225 - apps.ai_agents.test_case_reviewer.views - WARNING - [thread=16288 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-30 23:04:45,553 - apps.ai_agents.test_case_generator.views - INFO - [thread=18800 Thread-14 (process_request_thread)] - ===== 进入 generate 视图函数 =====
+2026-03-30 23:04:45,553 - apps.ai_agents.test_case_generator.views - INFO - [thread=18800 Thread-14 (process_request_thread)] - 请求方法：GET
+2026-03-30 23:04:45,556 - apps.ai_agents.test_case_generator.views - INFO - [thread=18800 Thread-14 (process_request_thread)] - 从数据库加载 AI 配置成功，模型：deepseek-chat
+2026-03-30 23:04:45,630 - django.request - WARNING - [thread=18800 Thread-14 (process_request_thread)] - Not Found: /@vite/client
+2026-03-30 23:04:50,568 - django.request - WARNING - [thread=18800 Thread-14 (process_request_thread)] - Not Found: /@vite/client
+2026-03-30 23:04:55,418 - apps.ai_agents.test_case_generator.views - INFO - [thread=18800 Thread-14 (process_request_thread)] - ===== 进入 generate 视图函数 =====
+2026-03-30 23:04:55,418 - apps.ai_agents.test_case_generator.views - INFO - [thread=18800 Thread-14 (process_request_thread)] - 请求方法：GET
+2026-03-30 23:04:55,431 - apps.ai_agents.test_case_generator.views - INFO - [thread=18800 Thread-14 (process_request_thread)] - 从数据库加载 AI 配置成功，模型：deepseek-chat
+2026-03-30 23:04:55,489 - django.request - WARNING - [thread=18800 Thread-14 (process_request_thread)] - Not Found: /@vite/client

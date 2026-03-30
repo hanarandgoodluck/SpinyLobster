@@ -161,3 +161,12 @@
 2026-03-28 23:48:09,727 - apps.ai_agents.test_case_reviewer.views - WARNING - [thread=37812 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
 2026-03-28 23:56:46,947 - apps.ai_agents.test_case_reviewer.views - WARNING - [thread=31096 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
 2026-03-29 00:00:59,938 - apps.ai_agents.test_case_reviewer.views - WARNING - [thread=24268 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-30 21:48:05,188 - apps.ai_agents.test_case_reviewer.views - WARNING - [thread=29240 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-30 22:36:49,343 - apps.ai_agents.test_case_reviewer.views - WARNING - [thread=9268 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-30 22:41:45,391 - apps.ai_agents.test_case_reviewer.views - WARNING - [thread=12784 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-30 22:44:56,600 - apps.ai_agents.test_case_reviewer.views - WARNING - [thread=14720 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-30 22:51:23,441 - apps.ai_agents.test_case_reviewer.views - WARNING - [thread=12736 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-30 22:57:13,979 - apps.ai_agents.test_case_reviewer.views - WARNING - [thread=2784 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-30 22:58:59,083 - apps.ai_agents.test_case_reviewer.views - WARNING - [thread=29620 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-30 23:01:47,881 - apps.ai_agents.test_case_reviewer.views - WARNING - [thread=25560 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-30 23:04:35,225 - apps.ai_agents.test_case_reviewer.views - WARNING - [thread=16288 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.

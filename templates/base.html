@@ -10,7 +10,7 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <!-- Element Plus -->
-    <link rel="stylesheet" href="https://unpkg.com/element-plus@2.5.6/dist/index.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/element-plus@2.5.6/dist/index.css">
     <style>
         * {
             box-sizing: border-box;
@@ -142,19 +142,6 @@
             <!-- 导航菜单 -->
             <div class="nav-menu">
                 <ul class="nav">
-                    <li class="nav-item">
-                        <a class="nav-link {% if request.path == '/' %}active{% endif %}" href="/">
-                            <i class="fas fa-home"></i>
-                            首页
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link {% if '/projects/' in request.path and not current_project %}active{% endif %}" href="/projects/">
-                            <i class="fas fa-folder"></i>
-                            项目管理
-                        </a>
-                    </li>
-                    
                     <!-- 项目功能菜单 - 当选择具体项目时显示 -->
                     {% if current_project %}
                         <li class="nav-item">
@@ -189,6 +176,18 @@
                         </li>
                     {% else %}
                         <!-- 默认菜单 - 未选择项目时显示 -->
+                        <li class="nav-item">
+                            <a class="nav-link {% if request.path == '/' %}active{% endif %}" href="/">
+                                <i class="fas fa-home"></i>
+                                首页
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {% if '/projects/' in request.path and not current_project %}active{% endif %}" href="/projects/">
+                                <i class="fas fa-folder"></i>
+                                项目管理
+                            </a>
+                        </li>
                         <li class="nav-item">
                             <a class="nav-link {% if '/ai_config/' in request.path %}active{% endif %}" href="/ai_config/">
                                 <i class="fas fa-robot"></i>
@@ -227,7 +226,7 @@
     <!-- Vue 3 -->
     <script src="https://unpkg.com/vue@3.4.21/dist/vue.global.js"></script>
     <!-- Element Plus -->
-    <script src="https://unpkg.com/element-plus@2.5.6/dist/index.full.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/element-plus@2.5.6/dist/index.full.js"></script>
     {% block extra_js %}{% endblock %}
 </body>
 </html>

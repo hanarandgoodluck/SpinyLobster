@@ -5,7 +5,8 @@
 
 {% block content %}
 <div class="card">
-    <div class="card-header">
+    <div class="card-header" style="font-size: 1.25rem; font-weight: 600; color: #303133; background-color: #f5f7fa; border-bottom: 1px solid #e4e7ed;">
+        <i class="fas fa-plus-circle mr-2 text-primary"></i>
         测试用例生成
     </div>
     <div class="card-body">
@@ -14,110 +15,100 @@
             
             <div class="form-group mb-3">
                 <label for="llm-provider">选择大模型:</label>
-                <div class="input-group">
-                    <input type="text" class="form-control" id="llm-model-name" name="llm_model_name" 
-                           value="{{ llm_model_name }}" readonly 
-                           placeholder="从 AI 配置页面自动获取">
-                    <div class="input-group-append">
-                        <span class="input-group-text">
-                            <i class="fas fa-info-circle" title="该值来自 AI 配置页面的 Model Name 字段"></i>
-                        </span>
-                    </div>
-                </div>
+                <el-select 
+                    id="llm-model-name" 
+                    v-model="llmModelName" 
+                    class="w-full" 
+                    disabled
+                    placeholder="从 AI 配置页面自动获取"
+                >
+                    <el-option 
+                        :value="'{{ llm_model_name }}'" 
+                        :label="'{{ llm_model_name }}'"
+                    ></el-option>
+                </el-select>
+                <el-tooltip content="该值来自 AI 配置页面的 Model Name 字段" placement="right">
+                    <i class="fas fa-info-circle text-info mt-1"></i>
+                </el-tooltip>
                 <small class="form-text text-muted">此字段为只读，值来自 AI 配置页面的 Model Name 设置</small>
             </div>
             
-            <div class="form-group">
+            <div class="form-group mb-3">
                 <label id="input-text-label" for="input-text">需求描述:</label>
-                <textarea id="input-text" name="requirements" class="form-control" rows="10" required>{{ requirements }}</textarea>
+                <el-input
+                    id="input-text"
+                    v-model="requirements"
+                    type="textarea"
+                    :rows="10"
+                    placeholder="请输入需求描述"
+                    required
+                    class="w-full"
+                ></el-input>
             </div>
             
-            <div class="row mb-3">
+            <div class="row mb-3" style="display: flex; align-items: flex-end;">
                 <div class="col-md-4">
-                    <label>
-                        测试用例设计方法:
-                        <button type="button" class="btn btn-sm btn-link p-0 ml-2" onclick="toggleAllCheckboxes('.case-design-method', true)">全选</button>
-                        <button type="button" class="btn btn-sm btn-link p-0 ml-1" onclick="toggleAllCheckboxes('.case-design-method', false)">取消全选</button>
-                    </label>
-                    <div class="border rounded p-2" style="max-height: 200px; overflow-y: auto;">
-                        <div class="custom-control custom-checkbox">
-                            <input type="checkbox" class="custom-control-input case-design-method" id="method-equivalence_partitioning" value="equivalence_partitioning">
-                            <label class="custom-control-label" for="method-equivalence_partitioning">等价类划分法</label>
-                        </div>
-                        <div class="custom-control custom-checkbox">
-                            <input type="checkbox" class="custom-control-input case-design-method" id="method-boundary_value" value="boundary_value">
-                            <label class="custom-control-label" for="method-boundary_value">边界值分析法</label>
-                        </div>
-                        <div class="custom-control custom-checkbox">
-                            <input type="checkbox" class="custom-control-input case-design-method" id="method-decision_table" value="decision_table">
-                            <label class="custom-control-label" for="method-decision_table">判定表法</label>
-                        </div>
-                        <div class="custom-control custom-checkbox">
-                            <input type="checkbox" class="custom-control-input case-design-method" id="method-cause_effect" value="cause_effect">
-                            <label class="custom-control-label" for="method-cause_effect">因果图法</label>
-                        </div>
-                        <div class="custom-control custom-checkbox">
-                            <input type="checkbox" class="custom-control-input case-design-method" id="method-orthogonal_array" value="orthogonal_array">
-                            <label class="custom-control-label" for="method-orthogonal_array">正交分析法</label>
-                        </div>
-                        <div class="custom-control custom-checkbox">
-                            <input type="checkbox" class="custom-control-input case-design-method" id="method-scenario" value="scenario">
-                            <label class="custom-control-label" for="method-scenario">场景法</label>
-                        </div>
-                    </div>
+                    <label>测试用例设计方法:</label>
+                    <el-select
+                        v-model="caseDesignMethods"
+                        multiple
+                        collapse-tags
+                        collapse-tags-tooltip
+                        placeholder="请选择测试用例设计方法"
+                        class="w-full"
+                    >
+                        <el-option value="equivalence_partitioning" label="等价类划分法"></el-option>
+                        <el-option value="boundary_value" label="边界值分析法"></el-option>
+                        <el-option value="decision_table" label="判定表法"></el-option>
+                        <el-option value="cause_effect" label="因果图法"></el-option>
+                        <el-option value="orthogonal_array" label="正交分析法"></el-option>
+                        <el-option value="scenario" label="场景法"></el-option>
+                    </el-select>
                 </div>
                 <div class="col-md-4">
-                    <label>
-                        用例类型:
-                        <button type="button" class="btn btn-sm btn-link p-0 ml-2" onclick="toggleAllCheckboxes('.case-category', true)">全选</button>
-                        <button type="button" class="btn btn-sm btn-link p-0 ml-1" onclick="toggleAllCheckboxes('.case-category', false)">取消全选</button>
-                    </label>
-                    <div class="border rounded p-2" style="max-height: 200px; overflow-y: auto;">
-                        <div class="custom-control custom-checkbox">
-                            <input type="checkbox" class="custom-control-input case-category" id="category-functional" value="functional">
-                            <label class="custom-control-label" for="category-functional">功能测试</label>
-                        </div>
-                        <div class="custom-control custom-checkbox">
-                            <input type="checkbox" class="custom-control-input case-category" id="category-performance" value="performance">
-                            <label class="custom-control-label" for="category-performance">性能测试</label>
-                        </div>
-                        <div class="custom-control custom-checkbox">
-                            <input type="checkbox" class="custom-control-input case-category" id="category-compatibility" value="compatibility">
-                            <label class="custom-control-label" for="category-compatibility">兼容性测试</label>
-                        </div>
-                        <div class="custom-control custom-checkbox">
-                            <input type="checkbox" class="custom-control-input case-category" id="category-security" value="security">
-                            <label class="custom-control-label" for="category-security">安全性测试</label>
-                        </div>
-                    </div>
+                    <label>用例类型:</label>
+                    <el-select
+                        v-model="caseCategories"
+                        multiple
+                        collapse-tags
+                        collapse-tags-tooltip
+                        placeholder="请选择用例类型"
+                        class="w-full"
+                    >
+                        <el-option value="functional" label="功能测试"></el-option>
+                        <el-option value="performance" label="性能测试"></el-option>
+                        <el-option value="compatibility" label="兼容性测试"></el-option>
+                        <el-option value="security" label="安全性测试"></el-option>
+                    </el-select>
                 </div>
                 <div class="col-md-4">
                     <label for="case_count">生成用例条数:
-                        <i class="fas fa-info-circle text-primary" 
-                           data-toggle="tooltip" 
-                           data-html="true"
-                           data-placement="right"
-                           data-original-title="1. 由于大模型机制所限，大模型不一定返回足够数量的用例，比如你指定了100条，但大模型可能仅返回20条。<br>2. 大模型所需生成用例数量越多，耗时越久。">
-                        </i>
+                        <el-tooltip content="1. 由于大模型机制所限，大模型不一定返回足够数量的用例，比如你指定了100条，但大模型可能仅返回20条。2. 大模型所需生成用例数量越多，耗时越久。" placement="right">
+                            <i class="fas fa-info-circle text-primary ml-2"></i>
+                        </el-tooltip>
                     </label>
-                    <select class="form-control" id="case_count" name="case_count">
-                        <option value="1">1条</option>
-                        <option value="10">10条</option>
-                        <option value="20">20条</option>
-                        <option value="30">30条</option>
-                        <option value="40">40条</option>
-                        <option value="50">50条</option>
-                        <option value="60">60条</option>
-                        <option value="70">70条</option>
-                        <option value="80">80条</option>
-                        <option value="90">90条</option>
-                        <option value="100">100条</option>
-                    </select>
+                    <el-select
+                        id="case_count"
+                        v-model="caseCount"
+                        placeholder="请选择生成用例条数"
+                        class="w-full"
+                    >
+                        <el-option value="1">1条</el-option>
+                        <el-option value="10">10条</el-option>
+                        <el-option value="20">20条</el-option>
+                        <el-option value="30">30条</el-option>
+                        <el-option value="40">40条</el-option>
+                        <el-option value="50">50条</el-option>
+                        <el-option value="60">60条</el-option>
+                        <el-option value="70">70条</el-option>
+                        <el-option value="80">80条</el-option>
+                        <el-option value="90">90条</el-option>
+                        <el-option value="100">100条</el-option>
+                    </el-select>
                 </div>
-            </div>
-            
-            <div class="text-right">
-                <button type="submit" id="generate-button" class="btn btn-primary">生成测试用例</button>
+                <div class="col-md-12 mt-3 text-right">
+                    <el-button type="primary" id="generate-button" native-type="submit">生成测试用例</el-button>
+                </div>
             </div>
         </form>
         
@@ -219,6 +210,28 @@
 .tooltip.bs-tooltip-right .arrow::before {
     border-right-color: #333;
 }
+
+/* 自定义多选框样式，实现每行最多3个标签自动换行 */
+.custom-select .el-select__tags {
+    flex-wrap: wrap !important;
+    align-content: flex-start !important;
+    min-height: 32px !important;
+    width: 100% !important;
+}
+
+.custom-select .el-select__tags .el-tag {
+    margin-right: 8px !important;
+    margin-bottom: 4px !important;
+    max-width: 30% !important;
+    box-sizing: border-box !important;
+    flex: 0 0 auto !important;
+}
+
+.custom-select .el-select__input {
+    flex: 0 0 100% !important;
+    min-width: 100px !important;
+    margin-top: 4px !important;
+}
 </style>
 
 {% block extra_js %}
@@ -231,6 +244,23 @@
             $('[data-toggle="tooltip"]').tooltip();
         }
     });
+    
+    // 初始化 Vue 应用
+    if (typeof Vue !== 'undefined' && typeof ElementPlus !== 'undefined') {
+        const { createApp } = Vue;
+        
+        createApp({
+            data() {
+                return {
+                    llmModelName: '{{ llm_model_name }}',
+                    requirements: '{{ requirements }}',
+                    caseDesignMethods: [],
+                    caseCategories: [],
+                    caseCount: '10'
+                };
+            }
+        }).use(ElementPlus).mount('#app');
+    }
 </script>
 {% endblock %}
 

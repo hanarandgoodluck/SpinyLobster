@@ -86,18 +86,37 @@ document.addEventListener('DOMContentLoaded', function() {
         const loadingIndicator = document.getElementById('loading-indicator');
         const generateButton = document.getElementById('generate-button');
         const resultContainer = document.getElementById('result-container');
-        const inputText = document.getElementById('input-text');
         
-        // 获取输入文本
-        const inputTextValue = inputText?.value?.trim();
+        // 尝试从Vue实例获取requirements
+        let inputTextValue = '';
+        const app = document.querySelector('#app')?._vnode?.component?.proxy;
+        if (app && app.requirements) {
+            inputTextValue = app.requirements.trim();
+        } else if (document.getElementById('input-text')) {
+            // 回退方案：尝试从DOM元素获取
+            inputTextValue = document.getElementById('input-text').value?.trim() || '';
+        }
         
-        // 从复选框获取选中的测试用例设计方法
-        const designMethodsCheckboxes = document.querySelectorAll('.case-design-method:checked');
-        const selectedDesignMethods = Array.from(designMethodsCheckboxes).map(cb => cb.value);
+        // 尝试从Vue实例获取选中的测试用例设计方法和用例类型
+        let selectedDesignMethods = [];
+        let selectedCaseCategories = [];
+        let caseCountValue = '10';
+        const vueApp = document.querySelector('#app')?._vnode?.component?.proxy;
         
-        // 从复选框获取选中的用例类型
-        const caseCategoriesCheckboxes = document.querySelectorAll('.case-category:checked');
-        const selectedCaseCategories = Array.from(caseCategoriesCheckboxes).map(cb => cb.value);
+        if (vueApp) {
+            selectedDesignMethods = vueApp.caseDesignMethods || [];
+            selectedCaseCategories = vueApp.caseCategories || [];
+            caseCountValue = vueApp.caseCount || '10';
+        } else {
+            // 回退方案：尝试从DOM元素获取
+            const designMethodsCheckboxes = document.querySelectorAll('.case-design-method:checked');
+            selectedDesignMethods = Array.from(designMethodsCheckboxes).map(cb => cb.value);
+            
+            const caseCategoriesCheckboxes = document.querySelectorAll('.case-category:checked');
+            selectedCaseCategories = Array.from(caseCategoriesCheckboxes).map(cb => cb.value);
+            
+            caseCountValue = document.getElementById('case_count')?.value || '10';
+        }
         
         if (!inputTextValue) {
             showNotification('请输入需求描述', 'error');
@@ -133,12 +152,22 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         
         // 构造请求数据
+        // 尝试从Vue实例获取llmModelName
+        let llmModelName = 'deepseek-chat';
+        const vueApp2 = document.querySelector('#app')?._vnode?.component?.proxy;
+        if (vueApp2 && vueApp2.llmModelName) {
+            llmModelName = vueApp2.llmModelName;
+        } else if (document.getElementById('llm-model-name')) {
+            // 回退方案：尝试从DOM元素获取
+            llmModelName = document.getElementById('llm-model-name').value || 'deepseek-chat';
+        }
+        
         const requestData = {
             requirements: inputTextValue,
-            llm_model_name: document.getElementById('llm-model-name')?.value || 'deepseek-chat',
+            llm_model_name: llmModelName,
             case_design_methods: selectedDesignMethods,
             case_categories: selectedCaseCategories,
-            case_count: document.getElementById('case_count')?.value || '10'
+            case_count: caseCountValue
         };
         
         console.log('发送的数据:', requestData);
@@ -288,7 +317,16 @@ document.addEventListener('DOMContentLoaded', function() {
             saveButton.addEventListener('click', function() {
                 const savedTestCases = JSON.parse(sessionStorage.getItem('generatedTestCases') || '[]');
                 const inputTextValue = sessionStorage.getItem('inputText') || '';
-                const llmModelName = document.getElementById('llm-model-name')?.value || 'deepseek-chat';
+                
+                // 尝试从Vue实例获取llmModelName
+                let llmModelName = 'deepseek-chat';
+                const vueApp3 = document.querySelector('#app')?._vnode?.component?.proxy;
+                if (vueApp3 && vueApp3.llmModelName) {
+                    llmModelName = vueApp3.llmModelName;
+                } else if (document.getElementById('llm-model-name')) {
+                    // 回退方案：尝试从DOM元素获取
+                    llmModelName = document.getElementById('llm-model-name').value || 'deepseek-chat';
+                }
                 
                 // 从 URL 获取 project_id
                 const urlParams = new URLSearchParams(window.location.search);

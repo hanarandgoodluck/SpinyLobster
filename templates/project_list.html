@@ -4,230 +4,245 @@
 
 {% block extra_css %}
 <style>
+    /* 全局样式重置 */
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    /* 页面容器 */
+    .container {
+        width: 100%;
+        padding: 0 20px;
+        margin: 0 auto;
+    }
+
+    /* 页面标题区域 */
+    .page-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 30px;
+        padding-bottom: 15px;
+        border-bottom: 1px solid #ebeef5;
+    }
+
+    .page-title {
+        font-size: 24px;
+        font-weight: 600;
+        color: #303133;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    /* 项目卡片 */
     .project-card {
-        transition: transform 0.2s;
+        background: #ffffff;
+        border: 1px solid #ebeef5;
+        border-radius: 12px;
+        padding: 24px;
         margin-bottom: 20px;
-        border-radius: 8px;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.08);
+        transition: all 0.3s ease;
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
     }
 
     .project-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        transform: translateY(-8px);
+        box-shadow: 0 12px 20px 0 rgba(0, 0, 0, 0.12);
+        border-color: #409eff;
+    }
+
+    .project-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 4px;
+        height: 100%;
+        background: linear-gradient(180deg, #409eff 0%, #66b1ff 100%);
+        border-radius: 12px 0 0 12px;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    .project-card:hover::before {
+        opacity: 1;
+    }
+
+    /* 卡片头部 */
+    .card-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-bottom: 16px;
+    }
+
+    .project-name {
+        font-size: 18px;
+        font-weight: 600;
+        color: #303133;
+        margin: 0;
+        flex: 1;
     }
 
     .project-version-badge {
-        background-color: #409eff;
+        background: linear-gradient(135deg, #409eff 0%, #66b1ff 100%);
         color: white;
-        padding: 5px 10px;
-        border-radius: 12px;
-        font-size: 0.85em;
+        padding: 6px 12px;
+        border-radius: 20px;
+        font-size: 12px;
+        font-weight: 500;
+        margin-left: 12px;
+    }
+
+    /* 项目描述 */
+    .project-description {
+        color: #606266;
+        font-size: 14px;
+        line-height: 1.5;
+        margin-bottom: 20px;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    /* 项目统计信息 */
+    .project-stats {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+        padding: 12px 16px;
+        background: #f5f7fa;
+        border-radius: 8px;
     }
 
     .test-case-count {
-        background-color: #67c23a;
-        color: white;
-        padding: 5px 10px;
-        border-radius: 12px;
-        font-size: 0.85em;
-    }
-
-    .card {
-        border: 1px solid #ebeef5;
-        background-color: white;
-    }
-
-    .card-body {
-        padding: 20px;
-    }
-
-    .card-title {
-        font-size: 1.25rem;
-        font-weight: 600;
-        margin-bottom: 0.5rem;
-    }
-
-    .card-text {
-        color: #606266;
-        font-size: 0.875rem;
-    }
-
-    .text-muted {
-        color: #909399;
-    }
-
-    .small {
-        font-size: 0.875rem;
-    }
-
-    .d-flex {
         display: flex;
-    }
-
-    .justify-content-between {
-        justify-content: space-between;
-    }
-
-    .align-items-center {
         align-items: center;
+        gap: 6px;
+        background: linear-gradient(135deg, #67c23a 0%, #85ce61 100%);
+        color: white;
+        padding: 6px 12px;
+        border-radius: 20px;
+        font-size: 13px;
+        font-weight: 500;
     }
 
-    .align-items-start {
-        align-items: flex-start;
+    .project-date {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        color: #909399;
+        font-size: 13px;
     }
 
-    .mb-2 {
-        margin-bottom: 0.5rem;
-    }
-
-    .mb-3 {
-        margin-bottom: 1rem;
-    }
-
-    .mb-4 {
-        margin-bottom: 1.5rem;
-    }
-
-    .mt-3 {
-        margin-top: 0.75rem;
-    }
-
-    .w-100 {
-        width: 100%;
-    }
-
-    .text-center {
-        text-align: center;
-    }
-
-    .py-5 {
-        padding-top: 3rem;
-        padding-bottom: 3rem;
+    /* 操作按钮组 */
+    .action-buttons {
+        display: flex;
+        gap: 8px;
+        border-top: 1px solid #ebeef5;
+        padding-top: 16px;
     }
 
     .btn {
-        display: inline-flex;
+        flex: 1;
+        display: flex;
         align-items: center;
         justify-content: center;
         padding: 8px 16px;
-        border: none;
-        border-radius: 4px;
-        font-size: 14px;
+        border: 1px solid transparent;
+        border-radius: 6px;
+        font-size: 13px;
+        font-weight: 500;
         cursor: pointer;
-        transition: all 0.3s;
+        transition: all 0.3s ease;
+        gap: 6px;
     }
 
-    .btn-primary {
-        background-color: #409eff;
+    .btn-view {
+        background: #ecf5ff;
+        color: #409eff;
+        border-color: #d9ecff;
+    }
+
+    .btn-view:hover {
+        background: #409eff;
         color: white;
     }
 
-    .btn-primary:hover {
-        background-color: #66b1ff;
+    .btn-edit {
+        background: #f0f9eb;
+        color: #67c23a;
+        border-color: #e6f7dd;
     }
 
-    .btn-outline-primary {
-        background-color: white;
-        border: 1px solid #409eff;
-        color: #409eff;
+    .btn-edit:hover {
+        background: #67c23a;
+        color: white;
     }
 
-    .btn-outline-primary:hover {
-        background-color: #ecf5ff;
-    }
-
-    .btn-outline-secondary {
-        background-color: white;
-        border: 1px solid #909399;
-        color: #606266;
-    }
-
-    .btn-outline-secondary:hover {
-        background-color: #f4f4f5;
-    }
-
-    .btn-outline-danger {
-        background-color: white;
-        border: 1px solid #f56c6c;
+    .btn-delete {
+        background: #fef0f0;
         color: #f56c6c;
+        border-color: #fbc4c4;
     }
 
-    .btn-outline-danger:hover {
-        background-color: #fef0f0;
+    .btn-delete:hover {
+        background: #f56c6c;
+        color: white;
     }
 
-    .btn-sm {
-        padding: 5px 10px;
-        font-size: 12px;
-    }
-
-    .btn-group {
+    /* 响应式布局 */
+    .row {
         display: flex;
-        gap: 8px;
-    }
-
-    .btn i {
-        margin-right: 6px;
+        flex-wrap: wrap;
+        margin: 0 -12px;
     }
 
     .col-md-6 {
         flex: 0 0 50%;
         max-width: 50%;
+        padding: 0 12px;
     }
 
     .col-lg-4 {
         flex: 0 0 33.333333%;
         max-width: 33.333333%;
+        padding: 0 12px;
     }
 
     .col-12 {
         flex: 0 0 100%;
         max-width: 100%;
+        padding: 0 12px;
     }
 
-    .row {
-        display: flex;
-        flex-wrap: wrap;
-        margin: 0 -10px;
-    }
-
-    .row > div {
-        padding: 0 10px;
-    }
-
-    .container {
-        width: 100%;
-        padding-right: 15px;
-        padding-left: 15px;
-        margin-right: auto;
-        margin-left: auto;
-    }
-
-    .mt-4 {
-        margin-top: 1.5rem;
-    }
-
-    h2 {
-        font-size: 1.75rem;
-        font-weight: 600;
-        margin: 0;
-    }
-
+    /* 加载状态 */
     .loading-container {
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        min-height: 300px;
+        min-height: 400px;
+        padding: 40px 0;
     }
 
     .loading-spinner {
-        width: 50px;
-        height: 50px;
-        border: 4px solid #f3f3f3;
-        border-top: 4px solid #409eff;
+        width: 60px;
+        height: 60px;
+        border: 3px solid #f3f3f3;
+        border-top: 3px solid #409eff;
         border-radius: 50%;
         animation: spin 1s linear infinite;
+        margin-bottom: 20px;
     }
 
     @keyframes spin {
@@ -235,19 +250,121 @@
         100% { transform: rotate(360deg); }
     }
 
+    .loading-text {
+        color: #909399;
+        font-size: 14px;
+    }
+
+    /* 空状态 */
     .empty-state {
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        min-height: 300px;
-        color: #909399;
+        min-height: 400px;
+        padding: 60px 0;
+        text-align: center;
     }
 
-    .empty-state i {
-        font-size: 3rem;
-        margin-bottom: 1rem;
+    .empty-icon {
+        font-size: 64px;
+        color: #c0c4cc;
+        margin-bottom: 20px;
+        opacity: 0.5;
     }
+
+    .empty-title {
+        font-size: 18px;
+        font-weight: 600;
+        color: #606266;
+        margin-bottom: 8px;
+    }
+
+    .empty-desc {
+        font-size: 14px;
+        color: #909399;
+        margin-bottom: 30px;
+    }
+
+    /* 新建项目按钮 */
+    .btn-primary {
+        background: linear-gradient(135deg, #409eff 0%, #66b1ff 100%);
+        color: white;
+        border: none;
+        border-radius: 6px;
+        padding: 10px 20px;
+        font-size: 14px;
+        font-weight: 500;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        box-shadow: 0 2px 8px rgba(64, 158, 255, 0.3);
+    }
+
+    .btn-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(64, 158, 255, 0.4);
+    }
+
+    /* 响应式调整 */
+    @media (max-width: 992px) {
+        .col-lg-4 {
+            flex: 0 0 50%;
+            max-width: 50%;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .col-md-6 {
+            flex: 0 0 100%;
+            max-width: 100%;
+        }
+
+        .page-header {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        .project-stats {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .action-buttons {
+            flex-direction: column;
+        }
+
+        .btn {
+            width: 100%;
+        }
+    }
+
+    /* 动画效果 */
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .project-card {
+        animation: fadeInUp 0.5s ease forwards;
+    }
+
+    .project-card:nth-child(1) { animation-delay: 0.1s; }
+    .project-card:nth-child(2) { animation-delay: 0.2s; }
+    .project-card:nth-child(3) { animation-delay: 0.3s; }
+    .project-card:nth-child(4) { animation-delay: 0.4s; }
+    .project-card:nth-child(5) { animation-delay: 0.5s; }
+    .project-card:nth-child(6) { animation-delay: 0.6s; }
 </style>
 {% endblock %}
 
@@ -257,9 +374,9 @@
         <!-- 从 Django 模板获取 CSRF token -->
         <meta name="csrf-token" content="{{ csrf_token }}">
     
-    <div class="d-flex justify-content-between align-items-center mb-4">
-        <h2><i class="fas fa-folder"></i> 项目管理</h2>
-        <button class="btn btn-primary" @click="createDialogVisible = true">
+    <div class="page-header">
+        <h2 class="page-title"><i class="fas fa-folder"></i> 项目管理</h2>
+        <button class="btn-primary" @click="createDialogVisible = true">
             <i class="fas fa-plus"></i> 新建项目
         </button>
     </div>
@@ -270,46 +387,45 @@
         <div class="col-12" v-if="loading">
             <div class="loading-container">
                 <div class="loading-spinner"></div>
-                <p class="mt-3 text-muted">正在加载项目列表...</p>
+                <p class="loading-text">正在加载项目列表...</p>
             </div>
         </div>
         
         <!-- 空状态 -->
         <div class="col-12" v-else-if="projects.length === 0">
             <div class="empty-state">
-                <i class="fas fa-folder-open"></i>
-                <p class="mt-3">暂无项目，点击右上角创建第一个项目吧！</p>
+                <i class="fas fa-folder-open empty-icon"></i>
+                <h3 class="empty-title">暂无项目</h3>
+                <p class="empty-desc">点击右上角创建第一个项目吧！</p>
             </div>
         </div>
         
         <!-- 项目卡片列表 -->
         <div class="col-md-6 col-lg-4" v-for="project in projects" :key="project.id">
-            <div class="card project-card" @click="viewProject(project.id)">
-                <div class="card-body">
-                    <div class="d-flex justify-content-between align-items-start mb-2">
-                        <h5 class="card-title mb-0">{{ project.name }}</h5>
-                        <span class="project-version-badge">{{ project.version }}</span>
-                    </div>
-                    <p class="card-text text-muted small mb-2">{{ project.description|default:'无描述' }}</p>
-                    <div class="d-flex justify-content-between align-items-center mb-3">
-                        <span class="test-case-count">
-                            <i class="fas fa-tasks"></i> {{ project.test_case_count }} 个测试用例
-                        </span>
-                        <small class="text-muted">
-                            <i class="far fa-clock"></i> {{ project.created_at }}
-                        </small>
-                    </div>
-                    <div class="btn-group w-100" @click.stop>
-                        <button class="btn btn-outline-primary btn-sm" @click="viewProject(project.id)">
-                            <i class="fas fa-eye"></i> 查看
-                        </button>
-                        <button class="btn btn-outline-secondary btn-sm" @click="editProject(project.id, project.name, project.version, project.description)">
-                            <i class="fas fa-edit"></i> 编辑
-                        </button>
-                        <button class="btn btn-outline-danger btn-sm" @click="deleteProject(project.id, project.name)">
-                            <i class="fas fa-trash"></i> 删除
-                        </button>
-                    </div>
+            <div class="project-card" @click="viewProject(project.id)">
+                <div class="card-header">
+                    <h3 class="project-name">{{ project.name }}</h3>
+                    <span class="project-version-badge">{{ project.version }}</span>
+                </div>
+                <p class="project-description">{{ project.description|default:'无描述' }}</p>
+                <div class="project-stats">
+                    <span class="test-case-count">
+                        <i class="fas fa-tasks"></i> {{ project.test_case_count }} 个测试用例
+                    </span>
+                    <span class="project-date">
+                        <i class="far fa-clock"></i> {{ project.created_at }}
+                    </span>
+                </div>
+                <div class="action-buttons" @click.stop>
+                    <button class="btn btn-view" @click="viewProject(project.id)">
+                        <i class="fas fa-eye"></i> 查看
+                    </button>
+                    <button class="btn btn-edit" @click="editProject(project.id, project.name, project.version, project.description)">
+                        <i class="fas fa-edit"></i> 编辑
+                    </button>
+                    <button class="btn btn-delete" @click="deleteProject(project.id, project.name)">
+                        <i class="fas fa-trash"></i> 删除
+                    </button>
                 </div>
             </div>
         </div>
