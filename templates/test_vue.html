@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue.js 测试页面</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="/static/js/extra/bootstrap.min.css">
+</head>
+<body>
+    <div id="test-app" class="container mt-4">
+        <div class="card">
+            <div class="card-header bg-primary text-white">
+                <h5 class="mb-0">Vue.js 测试页面</h5>
+            </div>
+            <div class="card-body">
+                <p>Vue.js 版本: {{ vueVersion }}</p>
+                <p>当前时间: {{ currentTime }}</p>
+                <button class="btn btn-primary" @click="updateTime">更新时间</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/js/extra/jquery.min.js"></script>
+    <script src="/static/js/extra/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/vue@3.4.21/dist/vue.global.js"></script>
+    <script>
+    (function() {
+        'use strict';
+        console.log('Vue script loaded');
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('DOM fully loaded');
+            
+            if (typeof Vue === 'undefined') {
+                console.error('Vue is not loaded');
+                return;
+            }
+            
+            const { createApp } = Vue;
+            console.log('Vue is available:', typeof Vue);
+            
+            const appDiv = document.getElementById('test-app');
+            console.log('App div found:', !!appDiv);
+            
+            if (!appDiv) {
+                console.error('Element #test-app not found');
+                return;
+            }
+            
+            console.log('Creating Vue app...');
+            
+            const app = createApp({
+                data() {
+                    return {
+                        vueVersion: Vue.version || '3.4.21',
+                        currentTime: new Date().toLocaleString()
+                    };
+                },
+                methods: {
+                    updateTime() {
+                        this.currentTime = new Date().toLocaleString();
+                    }
+                },
+                mounted() {
+                    console.log('Vue app mounted!');
+                }
+            });
+            
+            app.mount('#test-app');
+            
+            console.log('Vue app initialization complete');
+        });
+    })();
+    </script>
+</body>
+</html>

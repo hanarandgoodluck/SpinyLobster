@@ -3,7 +3,7 @@ from django.http import JsonResponse
 from django.views.decorators.http import require_http_methods
 import json
 
-from .models import TestCase, KnowledgeBase
+from .models import TestCase, KnowledgeBase, Project
 from ..knowledge.service import get_knowledgeService_instance
 
 # 初始化服务
@@ -36,13 +36,22 @@ PROVIDERS = {k: v for k, v in llm_config.items() if k != 'default_provider'}
 # 获取默认提供商的配置
 DEFAULT_LLM_CONFIG = PROVIDERS.get(DEFAULT_PROVIDER, {})
 
-# 创建LLM服务实例
-llm_service = LLMServiceFactory.create(
-    provider=DEFAULT_PROVIDER,
-    **DEFAULT_LLM_CONFIG
-)
+# 创建 LLM 服务实例
+try:
+    llm_service = LLMServiceFactory.create(
+        provider=DEFAULT_PROVIDER,
+        **DEFAULT_LLM_CONFIG
+    )
+except ValueError as e:
+    logger.warning(f"无法创建 LLM 服务：{e}")
+    llm_service = None
 
-knowledge_service = get_knowledgeService_instance()
+knowledge_service = None
+try:
+    knowledge_service = get_knowledgeService_instance()
+except LookupError as e:
+    logger.warning(f"无法创建 Knowledge 服务：{e}")
+    knowledge_service = None
 
 # test_case_generator = TestCaseGeneratorAgent(llm_service, knowledge_service)
 #test_case_reviewer = TestCaseReviewerAgent(llm_service, knowledge_service)
@@ -349,4 +358,194 @@ def upload_single_file(request):
         'success': False,
         'error': '不支持的请求方法'
     })
+
+
+# ============== 项目管理相关视图 ==============
+
+def project_list_view(request):
+    """项目管理页面"""
+    return render(request, 'project_list.html')
+
+@require_http_methods(["GET", "POST"])
+def project_list_create(request):
+    """
+    获取项目列表或创建新项目
+    GET: 获取所有项目
+    POST: 创建新项目
+    """
+    try:
+        if request.method == "GET":
+            # 获取所有项目，按创建时间倒序
+            # 使用 select_related 和 prefetch_related 优化查询
+            projects = Project.objects.all().order_by('-created_at')
+            
+            project_list = []
+            for project in projects:
+                project_list.append({
+                    'id': project.id,
+                    'name': project.name,
+                    'version': project.version,
+                    'description': project.description,
+                    'created_at': project.created_at.strftime('%Y-%m-%d %H:%M:%S'),
+                    'updated_at': project.updated_at.strftime('%Y-%m-%d %H:%M:%S'),
+                    'test_case_count': project.test_cases.count()
+                })
+            
+            return JsonResponse({
+                'success': True,
+                'projects': project_list
+            })
+        
+        elif request.method == "POST":
+            data = json.loads(request.body)
+            name = data.get('name')
+            version = data.get('version')
+            description = data.get('description', '')
+            
+            logger.info(f"创建项目 - name: {name}, version: {version}, description: {description}")
+            
+            if not name or not version:
+                return JsonResponse({
+                    'success': False,
+                    'message': '项目名称和版本不能为空'
+                }, status=400)
+            
+            # 检查是否已存在同名同版本的项目
+            existing = Project.objects.filter(name=name, version=version).first()
+            logger.info(f"检查是否存在：name={name}, version={version}, existing={existing}")
+            if existing:
+                return JsonResponse({
+                    'success': False,
+                    'message': f'项目名称"{name}"和版本"{version}"的组合已存在。请修改项目名称或版本号。'
+                }, status=400)
+            
+            # 创建新项目
+            project = Project.objects.create(
+                name=name,
+                version=version,
+                description=description
+            )
+            
+            return JsonResponse({
+                'success': True,
+                'message': '项目创建成功',
+                'project': {
+                    'id': project.id,
+                    'name': project.name,
+                    'version': project.version,
+                    'description': project.description
+                }
+            })
+    
+    except Exception as e:
+        logger.error(f"项目管理出错：{str(e)}", exc_info=True)
+        return JsonResponse({
+            'success': False,
+            'message': f'服务器错误：{str(e)}'
+        }, status=500)
+
+
+@require_http_methods(["GET", "PUT", "DELETE"])
+def project_detail(request, project_id):
+    """
+    获取项目详情、更新或删除项目
+    """
+    try:
+        project = Project.objects.filter(id=project_id).first()
+        
+        if not project:
+            return JsonResponse({
+                'success': False,
+                'message': '项目不存在'
+            }, status=404)
+        
+        if request.method == "GET":
+            # 获取项目详情
+            return JsonResponse({
+                'success': True,
+                'project': {
+                    'id': project.id,
+                    'name': project.name,
+                    'version': project.version,
+                    'description': project.description,
+                    'created_at': project.created_at.strftime('%Y-%m-%d %H:%M:%S'),
+                    'updated_at': project.updated_at.strftime('%Y-%m-%d %H:%M:%S'),
+                    'test_case_count': project.test_cases.count()
+                }
+            })
+        
+        elif request.method == "PUT":
+            # 更新项目
+            data = json.loads(request.body)
+            
+            if 'name' in data:
+                project.name = data['name']
+            if 'version' in data:
+                project.version = data['version']
+            if 'description' in data:
+                project.description = data['description']
+            
+            project.save()
+            
+            return JsonResponse({
+                'success': True,
+                'message': '项目更新成功',
+                'project': {
+                    'id': project.id,
+                    'name': project.name,
+                    'version': project.version,
+                    'description': project.description
+                }
+            })
+        
+        elif request.method == "DELETE":
+            # 删除项目
+            project_name = project.name
+            project.delete()
+            
+            return JsonResponse({
+                'success': True,
+                'message': f'项目 "{project_name}" 已删除'
+            })
+    
+    except Exception as e:
+        logger.error(f"项目操作出错：{str(e)}", exc_info=True)
+        return JsonResponse({
+            'success': False,
+            'message': f'服务器错误：{str(e)}'
+        }, status=500)
+
+
+def project_detail_view(request, project_id):
+    """
+    项目详情页面 - 展示项目信息和功能菜单
+    """
+    try:
+        project = Project.objects.get(id=project_id)
+        
+        # 获取该项目下的测试用例统计
+        total_test_cases = TestCase.objects.filter(project=project).count()
+        pending_count = TestCase.objects.filter(project=project, status='pending').count()
+        approved_count = TestCase.objects.filter(project=project, status='approved').count()
+        rejected_count = TestCase.objects.filter(project=project, status='rejected').count()
+        
+        # 获取最近的测试用例（最多 10 条）
+        recent_test_cases = TestCase.objects.filter(project=project).order_by('-created_at')[:10]
+        
+        context = {
+            'project': project,
+            'total_test_cases': total_test_cases,
+            'pending_count': pending_count,
+            'approved_count': approved_count,
+            'rejected_count': rejected_count,
+            'recent_test_cases': recent_test_cases,
+        }
+        
+        return render(request, 'project_detail.html', context)
+    
+    except Project.DoesNotExist:
+        return render(request, 'error.html', {'message': '项目不存在'}, status=404)
+    except Exception as e:
+        logger.error(f"加载项目详情页出错：{str(e)}", exc_info=True)
+        return render(request, 'error.html', {'message': str(e)}, status=500)
 

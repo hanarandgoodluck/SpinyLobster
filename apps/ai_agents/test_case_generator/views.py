@@ -16,21 +16,44 @@ logger = get_logger(__name__)
 
 DEFAULT_PROVIDER, PROVIDERS = get_agent_llm_configs("test_case_generator")
 
-
-knowledge_service = get_knowledgeService_instance()
+# 初始化 knowledge_service，如果 knowledge 应用未启用则设为 None
+try:
+    from apps.knowledge.service import get_knowledgeService_instance
+    knowledge_service = get_knowledgeService_instance()
+except (LookupError, ImportError) as e:
+    logger.warning(f"无法创建 Knowledge 服务：{e}")
+    knowledge_service = None
 
 
 
 # @login_required 先屏蔽登录
-async def generate(request):
+def generate(request):
     """
-    页面-测试用例生成页面视图函数
+    页面 - 测试用例生成页面视图函数
     """
-    logger.info("===== 进入generate视图函数 =====")
-    logger.info(f"请求方法: {request.method}")
+    logger.info("===== 进入 generate 视图函数 =====")
+    logger.info(f"请求方法：{request.method}")
+    
+    # 从数据库获取全局 AI 配置
+    llm_model_name = 'deepseek-chat'  # 默认值
+    try:
+        from apps.ai_config.utils import get_global_ai_config
+        
+        # 同步方式获取配置
+        db_config = get_global_ai_config()
+        if db_config and db_config.get('llm'):
+            llm_model_name = db_config.get('llm', {}).get('model_name', 'deepseek-chat')
+            logger.info(f"从数据库加载 AI 配置成功，模型：{llm_model_name}")
+        else:
+            logger.info("数据库中没有 AI 配置，使用默认值")
+    except Exception as e:
+        logger.warning(f"从数据库加载 AI 配置失败：{e}")
+        llm_model_name = 'deepseek-chat'
+    
     context = {
         'llm_providers': PROVIDERS,
         'llm_provider': DEFAULT_PROVIDER,
+        'llm_model_name': llm_model_name,  # 从 AI 配置读取的模型名称
         'requirement': '',
         # 'api_description': '',
         'test_cases': None  # 初始化为 None
@@ -56,18 +79,19 @@ async def generate(request):
             'success': False,
             'message': '需求描述不能为空'
         })
-        
-    llm_provider = data.get('llm_provider', DEFAULT_PROVIDER)
+            
+    llm_model_name = data.get('llm_model_name', 'deepseek-chat')  # 从 AI 配置读取的模型名称
     case_design_methods = data.get('case_design_methods', [])  # 获取测试方法
     case_categories = data.get('case_categories', [])         # 获取测试类型
     case_count = int(data.get('case_count', 10))            # 获取生成用例条数
-    
-    logger.info(f"接收到的数据: {json.dumps(data, ensure_ascii=False)}")
-    
+        
+    logger.info(f"接收到的数据：{json.dumps(data, ensure_ascii=False)}")
+        
     try:
-        # 使用工厂创建选定的LLM服务
-        logger.info(f"使用 {llm_provider} 生成测试用例")
-        llm_service = LLMServiceFactory.create(llm_provider, **PROVIDERS.get(llm_provider, {}))
+        # 使用工厂创建选定的 LLM 服务
+        logger.info(f"使用模型 {llm_model_name} 生成测试用例")
+        # 注意：LLMServiceFactory.create 会自动从数据库加载 AI 配置
+        llm_service = LLMServiceFactory.create('deepseek')
         
         
         generator_agent = TestCaseGeneratorAgent(llm_service=llm_service, knowledge_service=knowledge_service, case_design_methods=case_design_methods, case_categories=case_categories, case_count=case_count)
@@ -76,18 +100,11 @@ async def generate(request):
         logger.info(f"选择的测试用例类型: {case_categories}")
         logger.info(f"需要生成的用例条数: {case_count}")
         
-        # 生成测试用例
-        #mock数据
-        # test_cases = [{'description': '测试系统对用户输入为纯文本时的处理', 'test_steps': ['1. 打开应用程序', "2. 在输入框中输入纯文本，例如：'肥肥的'", '3. 提交输入'], 'expected_results': ['1. 应用程序成功启动', "2. 输入框正确显示输入的文本：'肥肥的'", '3. 系统正确识别并处理为纯文本输入，不进行代码段处理']}, {'description': '测试系统对用户输入为代码段时的处理', 'test_steps': ['1. 打开应用程序', '2. 在输入框中输入代码段，例如：\'print("Hello, World!")\'', '3. 提交输入'], 'expected_results': ['1. 应用程序成功启动', '2. 输入框正确显示输入的代码段：\'print("Hello, World!")\'', '3. 系统正确识别并处理为代码段输入，进行相应的代码处理']}, {'description': '测试系统对用户输入为空时的处理', 'test_steps': ['1. 打开应用程序', '2. 在输入框中不输入任何内容', '3. 提交输入'], 'expected_results': ['1. 应用程序成功启动', '2. 输入框保持为空', '3. 系统提示输入不能为空，要求重新输入']}, {'description': '测试系统对用户输入为混合内容（文本和代码）时的处理', 'test_steps': ['1. 打开应用程序', '2. 在输入框中输入混合内容，例如：\'肥肥的 print("Hello, World!")\'', '3. 提交输入'], 'expected_results': ['1. 应用程序成功启动', '2. 输入框正确显示输入的混合内容：\'肥肥的 print("Hello, World!")\'', '3. 系统正确识别并处理为混合内容，分别对文本和代码段进行相应处理']}, {'description': '测试系统对用户输入为特殊字符时的处理', 'test_steps': ['1. 打开应用程序', "2. 在输入框中输入特殊字符，例如：'@#$%^&*()'", '3. 提交输入'], 'expected_results': ['1. 应用程序成功启动', "2. 输入框正确显示输入的特殊字符：'@#$%^&*()'", '3. 系统正确识别并处理为特殊字符输入，不进行代码段处理']}]
-        # test_cases = generator_agent.generate(requirements, input_type="requirement")
-        test_cases = await generator_agent.async_generate(requirements, input_type="requirement")
+        # 生成测试用例（同步方式）
+        test_cases = generator_agent.generate(requirements, input_type="requirement")
 
-        logger.info(f"测试用例生成成功 - 生成数量: {len(test_cases)}")
-        
-        context.update({
-            'test_cases': test_cases
-        })
-        
+        logger.info(f"测试用例生成成功 - 生成数量：{len(test_cases)}")
+                
         return JsonResponse({
             'success': True,
             'test_cases': test_cases
@@ -109,9 +126,10 @@ def save_test_case(request):
         data = json.loads(request.body)
         requirement = data.get('requirement')
         test_cases_list = data.get('test_cases', [])
-        llm_provider = data.get('llm_provider')
+        llm_model_name = data.get('llm_model_name', 'deepseek-chat')
+        project_id = data.get('project_id')  # 获取项目 ID
         
-        # logger.info(f"接收到的保存请求数据: {json.dumps(data, ensure_ascii=False, indent=2)}")
+        # logger.info(f"接收到的保存请求数据：{json.dumps(data, ensure_ascii=False, indent=2)}")
         
         if not test_cases_list:
             return JsonResponse({
@@ -122,7 +140,7 @@ def save_test_case(request):
         # 准备批量创建的测试用例列表
         test_cases_to_create = []
         
-        # 遍历测试用例数据，创建TestCase实例
+        # 遍历测试用例数据，创建 TestCase 实例
         for index, test_case in enumerate(test_cases_list, 1):
             test_case_instance = TestCase(
                 title=f"测试用例-{index}",  # 可以根据需求调整标题格式
@@ -130,10 +148,18 @@ def save_test_case(request):
                 test_steps='\n'.join(test_case.get('test_steps', [])),
                 expected_results='\n'.join(test_case.get('expected_results', [])),
                 requirements=requirement,
-                llm_provider=llm_provider,
+                llm_provider=llm_model_name,  # 使用模型名称作为 provider
                 status='pending'  # 默认状态为待评审
                 # created_by=request.user  # 如果需要记录创建用户，取消注释此行
             )
+            
+            # 如果提供了项目 ID，则关联到对应项目
+            if project_id:
+                from apps.core.models import Project
+                project = Project.objects.filter(id=project_id).first()
+                if project:
+                    test_case_instance.project = project
+            
             test_cases_to_create.append(test_case_instance)
         
         # 批量创建测试用例
@@ -148,13 +174,13 @@ def save_test_case(request):
         })
         
     except json.JSONDecodeError:
-        logger.error("JSON解析错误", exc_info=True)
+        logger.error("JSON 解析错误", exc_info=True)
         return JsonResponse({
             'success': False,
-            'message': '无效的JSON数据'
+            'message': '无效的 JSON 数据'
         }, status=400)
     except Exception as e:
-        logger.error(f"保存测试用例时出错: {str(e)}", exc_info=True)
+        logger.error(f"保存测试用例时出错：{str(e)}", exc_info=True)
         return JsonResponse({
             'success': False,
             'message': f'保存失败：{str(e)}'

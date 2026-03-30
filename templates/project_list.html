@@ -1,0 +1,567 @@
+{% extends 'base.html' %}
+
+{% block title %}项目管理 - SpinyLobster{% endblock %}
+
+{% block extra_css %}
+<style>
+    .project-card {
+        transition: transform 0.2s;
+        margin-bottom: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .project-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+
+    .project-version-badge {
+        background-color: #409eff;
+        color: white;
+        padding: 5px 10px;
+        border-radius: 12px;
+        font-size: 0.85em;
+    }
+
+    .test-case-count {
+        background-color: #67c23a;
+        color: white;
+        padding: 5px 10px;
+        border-radius: 12px;
+        font-size: 0.85em;
+    }
+
+    .card {
+        border: 1px solid #ebeef5;
+        background-color: white;
+    }
+
+    .card-body {
+        padding: 20px;
+    }
+
+    .card-title {
+        font-size: 1.25rem;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+    }
+
+    .card-text {
+        color: #606266;
+        font-size: 0.875rem;
+    }
+
+    .text-muted {
+        color: #909399;
+    }
+
+    .small {
+        font-size: 0.875rem;
+    }
+
+    .d-flex {
+        display: flex;
+    }
+
+    .justify-content-between {
+        justify-content: space-between;
+    }
+
+    .align-items-center {
+        align-items: center;
+    }
+
+    .align-items-start {
+        align-items: flex-start;
+    }
+
+    .mb-2 {
+        margin-bottom: 0.5rem;
+    }
+
+    .mb-3 {
+        margin-bottom: 1rem;
+    }
+
+    .mb-4 {
+        margin-bottom: 1.5rem;
+    }
+
+    .mt-3 {
+        margin-top: 0.75rem;
+    }
+
+    .w-100 {
+        width: 100%;
+    }
+
+    .text-center {
+        text-align: center;
+    }
+
+    .py-5 {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+    }
+
+    .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 8px 16px;
+        border: none;
+        border-radius: 4px;
+        font-size: 14px;
+        cursor: pointer;
+        transition: all 0.3s;
+    }
+
+    .btn-primary {
+        background-color: #409eff;
+        color: white;
+    }
+
+    .btn-primary:hover {
+        background-color: #66b1ff;
+    }
+
+    .btn-outline-primary {
+        background-color: white;
+        border: 1px solid #409eff;
+        color: #409eff;
+    }
+
+    .btn-outline-primary:hover {
+        background-color: #ecf5ff;
+    }
+
+    .btn-outline-secondary {
+        background-color: white;
+        border: 1px solid #909399;
+        color: #606266;
+    }
+
+    .btn-outline-secondary:hover {
+        background-color: #f4f4f5;
+    }
+
+    .btn-outline-danger {
+        background-color: white;
+        border: 1px solid #f56c6c;
+        color: #f56c6c;
+    }
+
+    .btn-outline-danger:hover {
+        background-color: #fef0f0;
+    }
+
+    .btn-sm {
+        padding: 5px 10px;
+        font-size: 12px;
+    }
+
+    .btn-group {
+        display: flex;
+        gap: 8px;
+    }
+
+    .btn i {
+        margin-right: 6px;
+    }
+
+    .col-md-6 {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+
+    .col-lg-4 {
+        flex: 0 0 33.333333%;
+        max-width: 33.333333%;
+    }
+
+    .col-12 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    .row {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 -10px;
+    }
+
+    .row > div {
+        padding: 0 10px;
+    }
+
+    .container {
+        width: 100%;
+        padding-right: 15px;
+        padding-left: 15px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    .mt-4 {
+        margin-top: 1.5rem;
+    }
+
+    h2 {
+        font-size: 1.75rem;
+        font-weight: 600;
+        margin: 0;
+    }
+
+    .loading-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 300px;
+    }
+
+    .loading-spinner {
+        width: 50px;
+        height: 50px;
+        border: 4px solid #f3f3f3;
+        border-top: 4px solid #409eff;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
+
+    .empty-state {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 300px;
+        color: #909399;
+    }
+
+    .empty-state i {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div id="project-app">
+    <div class="container mt-4">
+        <!-- 从 Django 模板获取 CSRF token -->
+        <meta name="csrf-token" content="{{ csrf_token }}">
+    
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2><i class="fas fa-folder"></i> 项目管理</h2>
+        <button class="btn btn-primary" @click="createDialogVisible = true">
+            <i class="fas fa-plus"></i> 新建项目
+        </button>
+    </div>
+
+    <!-- 项目列表 -->
+    <div class="row" id="projectList">
+        <!-- 加载指示器 -->
+        <div class="col-12" v-if="loading">
+            <div class="loading-container">
+                <div class="loading-spinner"></div>
+                <p class="mt-3 text-muted">正在加载项目列表...</p>
+            </div>
+        </div>
+        
+        <!-- 空状态 -->
+        <div class="col-12" v-else-if="projects.length === 0">
+            <div class="empty-state">
+                <i class="fas fa-folder-open"></i>
+                <p class="mt-3">暂无项目，点击右上角创建第一个项目吧！</p>
+            </div>
+        </div>
+        
+        <!-- 项目卡片列表 -->
+        <div class="col-md-6 col-lg-4" v-for="project in projects" :key="project.id">
+            <div class="card project-card" @click="viewProject(project.id)">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between align-items-start mb-2">
+                        <h5 class="card-title mb-0">{{ project.name }}</h5>
+                        <span class="project-version-badge">{{ project.version }}</span>
+                    </div>
+                    <p class="card-text text-muted small mb-2">{{ project.description|default:'无描述' }}</p>
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <span class="test-case-count">
+                            <i class="fas fa-tasks"></i> {{ project.test_case_count }} 个测试用例
+                        </span>
+                        <small class="text-muted">
+                            <i class="far fa-clock"></i> {{ project.created_at }}
+                        </small>
+                    </div>
+                    <div class="btn-group w-100" @click.stop>
+                        <button class="btn btn-outline-primary btn-sm" @click="viewProject(project.id)">
+                            <i class="fas fa-eye"></i> 查看
+                        </button>
+                        <button class="btn btn-outline-secondary btn-sm" @click="editProject(project.id, project.name, project.version, project.description)">
+                            <i class="fas fa-edit"></i> 编辑
+                        </button>
+                        <button class="btn btn-outline-danger btn-sm" @click="deleteProject(project.id, project.name)">
+                            <i class="fas fa-trash"></i> 删除
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 创建项目对话框 -->
+<el-dialog v-model="createDialogVisible" title="创建新项目" width="500px">
+    <el-form :model="createForm" :rules="createRules" ref="createFormRef" label-width="100px">
+        <el-form-item label="项目名称" prop="name">
+            <el-input v-model="createForm.name" placeholder="请输入项目名称"></el-input>
+        </el-form-item>
+        <el-form-item label="项目版本" prop="version">
+            <el-input v-model="createForm.version" placeholder="例如：v1.0.0"></el-input>
+        </el-form-item>
+        <el-form-item label="项目描述">
+            <el-input v-model="createForm.description" type="textarea" :rows="3" placeholder="请输入项目描述"></el-input>
+        </el-form-item>
+    </el-form>
+    <template #footer>
+        <span class="dialog-footer">
+            <el-button @click="createDialogVisible = false">取消</el-button>
+            <el-button type="primary" @click="createProject">创建</el-button>
+        </span>
+    </template>
+</el-dialog>
+
+<!-- 编辑项目对话框 -->
+<el-dialog v-model="editDialogVisible" title="编辑项目" width="500px">
+    <el-form :model="editForm" :rules="editRules" ref="editFormRef" label-width="100px">
+        <el-form-item label="项目名称" prop="name">
+            <el-input v-model="editForm.name" placeholder="请输入项目名称"></el-input>
+        </el-form-item>
+        <el-form-item label="项目版本" prop="version">
+            <el-input v-model="editForm.version" placeholder="例如：v1.0.0"></el-input>
+        </el-form-item>
+        <el-form-item label="项目描述">
+            <el-input v-model="editForm.description" type="textarea" :rows="3" placeholder="请输入项目描述"></el-input>
+        </el-form-item>
+    </el-form>
+    <template #footer>
+        <span class="dialog-footer">
+            <el-button @click="editDialogVisible = false">取消</el-button>
+            <el-button type="primary" @click="updateProject">保存</el-button>
+        </span>
+    </template>
+</el-dialog>
+
+{% endblock %}
+
+{% block extra_js %}
+<script>
+const { createApp, ref, reactive } = Vue;
+
+const app = createApp({
+    data() {
+        return {
+            projects: [],
+            loading: true,
+            createDialogVisible: false,
+            editDialogVisible: false,
+            createForm: {
+                name: '',
+                version: '',
+                description: ''
+            },
+            editForm: {
+                id: null,
+                name: '',
+                version: '',
+                description: ''
+            },
+            createRules: {
+                name: [
+                    { required: true, message: '项目名称不能为空', trigger: 'blur' }
+                ],
+                version: [
+                    { required: true, message: '项目版本不能为空', trigger: 'blur' }
+                ]
+            },
+            editRules: {
+                name: [
+                    { required: true, message: '项目名称不能为空', trigger: 'blur' }
+                ],
+                version: [
+                    { required: true, message: '项目版本不能为空', trigger: 'blur' }
+                ]
+            }
+        };
+    },
+    
+    methods: {
+        getCSRFToken() {
+            return document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+        },
+        
+        async loadProjects() {
+            try {
+                const response = await fetch('/api/projects/');
+                const data = await response.json();
+                
+                this.loading = false;
+                
+                if (data.success) {
+                    this.projects = data.projects;
+                } else {
+                    ElementPlus.ElMessage.error('加载项目失败：' + data.message);
+                }
+            } catch (error) {
+                console.error('加载项目出错:', error);
+                this.loading = false;
+                ElementPlus.ElMessage.error('加载项目失败');
+            }
+        },
+        
+        viewProject(projectId) {
+            window.location.href = `/test_case_generator/?project_id=${projectId}`;
+        },
+        
+        editProject(projectId, name, version, description) {
+            this.editForm = {
+                id: projectId,
+                name: name,
+                version: version,
+                description: description
+            };
+            this.editDialogVisible = true;
+        },
+        
+        deleteProject(projectId, projectName) {
+            ElementPlus.ElMessageBox.confirm(
+                `确定要删除项目 "${projectName}" 吗？此操作不可撤销。`,
+                '确认删除',
+                {
+                    confirmButtonText: '确定',
+                    cancelButtonText: '取消',
+                    type: 'warning'
+                }
+            ).then(async () => {
+                try {
+                    const response = await fetch(`/api/projects/${projectId}/`, {
+                        method: 'DELETE',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'X-CSRFToken': this.getCSRFToken()
+                        }
+                    });
+                    
+                    const data = await response.json();
+                    
+                    if (data.success) {
+                        ElementPlus.ElMessage.success('项目删除成功');
+                        await this.loadProjects();
+                    } else {
+                        ElementPlus.ElMessage.error('删除失败：' + data.message);
+                    }
+                } catch (error) {
+                    console.error('删除项目出错:', error);
+                    ElementPlus.ElMessage.error('删除项目失败');
+                }
+            }).catch(() => {
+                // 用户取消删除
+            });
+        },
+        
+        async createProject() {
+            this.$refs.createFormRef.validate(async (valid) => {
+                if (valid) {
+                    try {
+                        const response = await fetch('/api/projects/', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json',
+                                'X-CSRFToken': this.getCSRFToken()
+                            },
+                            body: JSON.stringify({
+                                name: this.createForm.name,
+                                version: this.createForm.version,
+                                description: this.createForm.description
+                            })
+                        });
+                        
+                        const data = await response.json();
+                        
+                        if (data.success) {
+                            ElementPlus.ElMessage.success('项目创建成功');
+                            this.createDialogVisible = false;
+                            this.createForm = {
+                                name: '',
+                                version: '',
+                                description: ''
+                            };
+                            await this.loadProjects();
+                        } else {
+                            ElementPlus.ElMessage.error('创建失败：' + data.message);
+                        }
+                    } catch (error) {
+                        console.error('创建项目出错:', error);
+                        ElementPlus.ElMessage.error('创建项目失败');
+                    }
+                }
+            });
+        },
+        
+        async updateProject() {
+            this.$refs.editFormRef.validate(async (valid) => {
+                if (valid) {
+                    try {
+                        const response = await fetch(`/api/projects/${this.editForm.id}/`, {
+                            method: 'PUT',
+                            headers: {
+                                'Content-Type': 'application/json',
+                                'X-CSRFToken': this.getCSRFToken()
+                            },
+                            body: JSON.stringify({
+                                name: this.editForm.name,
+                                version: this.editForm.version,
+                                description: this.editForm.description
+                            })
+                        });
+                        
+                        const data = await response.json();
+                        
+                        if (data.success) {
+                            ElementPlus.ElMessage.success('项目更新成功');
+                            this.editDialogVisible = false;
+                            await this.loadProjects();
+                        } else {
+                            ElementPlus.ElMessage.error('更新失败：' + data.message);
+                        }
+                    } catch (error) {
+                        console.error('更新项目出错:', error);
+                        ElementPlus.ElMessage.error('更新项目失败');
+                    }
+                }
+            });
+        },
+        
+        escapeHtml(text) {
+            if (!text) return '';
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+    },
+    
+    mounted() {
+        this.loadProjects();
+    }
+});
+
+app.use(ElementPlus);
+app.mount('#project-app');
+</script>
+{% endblock %}

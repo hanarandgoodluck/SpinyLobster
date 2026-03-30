@@ -12,7 +12,9 @@ from apps.llm.utils import get_agent_llm_configs
 
 
 
-# 获取LLM配置
+logger = get_logger(__name__)
+
+# 获取 LLM 配置
 llm_config = getattr(settings, 'LLM_PROVIDERS', {})
 
 DEFAULT_PROVIDER, PROVIDERS = get_agent_llm_configs("prd_analyzer")
@@ -20,13 +22,15 @@ DEFAULT_PROVIDER, PROVIDERS = get_agent_llm_configs("prd_analyzer")
 # 获取默认提供商的配置
 DEFAULT_LLM_CONFIG = PROVIDERS.get(DEFAULT_PROVIDER, {})
 
-# 创建LLM服务实例
-llm_service = LLMServiceFactory.create(
-    provider=DEFAULT_PROVIDER,
-    **DEFAULT_LLM_CONFIG
-)
-
-logger = get_logger(__name__)
+# 创建 LLM 服务实例
+try:
+    llm_service = LLMServiceFactory.create(
+        provider=DEFAULT_PROVIDER,
+        **DEFAULT_LLM_CONFIG
+    )
+except ValueError as e:
+    logger.warning(f"无法创建 LLM 服务：{e}")
+    llm_service = None
 
 
 def prd_analyzer(request):

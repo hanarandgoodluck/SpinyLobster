@@ -1,0 +1,568 @@
+2026-03-20 15:16:55,413 - LLMServiceFactory - INFO - [thread=6110228480 django-main-thread] - åˆ›å»ºLLMæœåŠ¡: provider=deepseek
+2026-03-20 15:16:55,416 - LLMServiceFactory - INFO - [thread=6110228480 django-main-thread] - åˆ›å»ºLLMæœåŠ¡: provider=deepseek
+2026-03-20 15:16:55,418 - LLMServiceFactory - INFO - [thread=8649658176 MainThread] - åˆ›å»ºLLMæœåŠ¡: provider=deepseek
+2026-03-20 15:17:55,607 - LLMServiceFactory - INFO - [thread=6172930048 django-main-thread] - åˆ›å»ºLLMæœåŠ¡: provider=deepseek
+2026-03-20 15:17:56,308 - LLMServiceFactory - INFO - [thread=8649658176 MainThread] - åˆ›å»ºLLMæœåŠ¡: provider=deepseek
+2026-03-20 15:19:06,786 - LLMServiceFactory - INFO - [thread=6175387648 django-main-thread] - åˆ›å»ºLLMæœåŠ¡: provider=deepseek
+2026-03-20 15:19:07,059 - LLMServiceFactory - INFO - [thread=8649658176 MainThread] - åˆ›å»ºLLMæœåŠ¡: provider=deepseek
+2026-03-20 15:19:36,060 - LLMServiceFactory - INFO - [thread=6333935616 django-main-thread] - åˆ›å»ºLLMæœåŠ¡: provider=deepseek
+2026-03-20 15:20:15,756 - LLMServiceFactory - INFO - [thread=8649658176 MainThread] - åˆ›å»ºLLMæœåŠ¡: provider=deepseek
+2026-03-20 15:20:37,477 - LLMServiceFactory - INFO - [thread=6390591488 django-main-thread] - åˆ›å»ºLLMæœåŠ¡: provider=deepseek
+2026-03-20 15:20:38,099 - LLMServiceFactory - INFO - [thread=6390591488 django-main-thread] - åˆ›å»ºLLMæœåŠ¡: provider=deepseek
+2026-03-20 15:20:38,101 - LLMServiceFactory - INFO - [thread=8649658176 MainThread] - åˆ›å»ºLLMæœåŠ¡: provider=deepseek
+2026-03-20 15:21:05,957 - LLMServiceFactory - INFO - [thread=8649658176 MainThread] - åˆ›å»ºLLMæœåŠ¡: provider=deepseek
+2026-03-20 15:21:06,595 - LLMServiceFactory - INFO - [thread=8649658176 MainThread] - åˆ›å»ºLLMæœåŠ¡: provider=deepseek
+2026-03-20 15:21:06,598 - LLMServiceFactory - INFO - [thread=6395113472 django-main-thread] - åˆ›å»ºLLMæœåŠ¡: provider=deepseek
+2026-03-20 15:22:16,633 - LLMServiceFactory - INFO - [thread=8649658176 MainThread] - åˆ›å»ºLLMæœåŠ¡: provider=deepseek
+2026-03-20 15:22:17,378 - LLMServiceFactory - INFO - [thread=8649658176 MainThread] - åˆ›å»ºLLMæœåŠ¡: provider=deepseek
+2026-03-20 15:22:21,203 - LLMServiceFactory - INFO - [thread=6139703296 django-main-thread] - åˆ›å»ºLLMæœåŠ¡: provider=deepseek
+2026-03-20 15:22:21,740 - LLMServiceFactory - INFO - [thread=6139703296 django-main-thread] - åˆ›å»ºLLMæœåŠ¡: provider=deepseek
+2026-03-20 15:23:13,623 - LLMServiceFactory - INFO - [thread=6179565568 django-main-thread] - åˆ›å»ºLLMæœåŠ¡: provider=deepseek
+2026-03-20 15:23:14,746 - LLMServiceFactory - INFO - [thread=6179565568 django-main-thread] - åˆ›å»ºLLMæœåŠ¡: provider=deepseek
+2026-03-20 15:24:09,595 - LLMServiceFactory - INFO - [thread=6360854528 django-main-thread] - åˆ›å»ºLLMæœåŠ¡: provider=deepseek
+2026-03-20 15:24:10,370 - LLMServiceFactory - INFO - [thread=6360854528 django-main-thread] - åˆ›å»ºLLMæœåŠ¡: provider=deepseek
+2026-03-20 15:24:10,381 - LLMServiceFactory - INFO - [thread=6360854528 django-main-thread] - åˆ›å»ºLLMæœåŠ¡: provider=deepseek
+2026-03-20 15:24:10,383 - LLMServiceFactory - INFO - [thread=8649658176 MainThread] - åˆ›å»ºLLMæœåŠ¡: provider=deepseek
+2026-03-20 15:25:26,598 - LLMServiceFactory - INFO - [thread=13035925504 django-main-thread] - åˆ›å»ºLLMæœåŠ¡: provider=deepseek
+2026-03-20 15:25:27,304 - LLMServiceFactory - INFO - [thread=13035925504 django-main-thread] - åˆ›å»ºLLMæœåŠ¡: provider=deepseek
+2026-03-20 15:25:27,322 - LLMServiceFactory - INFO - [thread=13035925504 django-main-thread] - åˆ›å»ºLLMæœåŠ¡: provider=deepseek
+2026-03-20 15:25:32,180 - LLMServiceFactory - INFO - [thread=6391410688 django-main-thread] - åˆ›å»ºLLMæœåŠ¡: provider=deepseek
+2026-03-20 15:25:32,943 - LLMServiceFactory - INFO - [thread=6391410688 django-main-thread] - åˆ›å»ºLLMæœåŠ¡: provider=deepseek
+2026-03-20 15:25:32,955 - LLMServiceFactory - INFO - [thread=6391410688 django-main-thread] - åˆ›å»ºLLMæœåŠ¡: provider=deepseek
+2026-03-20 15:47:33,628 - LLMServiceFactory - INFO - [thread=8649658176 MainThread] - åˆ›å»ºLLMæœåŠ¡: provider=deepseek
+2026-03-20 15:47:34,405 - LLMServiceFactory - INFO - [thread=8649658176 MainThread] - åˆ›å»ºLLMæœåŠ¡: provider=deepseek
+2026-03-20 15:47:34,422 - LLMServiceFactory - INFO - [thread=8649658176 MainThread] - åˆ›å»ºLLMæœåŠ¡: provider=deepseek
+2026-03-23 16:39:19,286 - LLMServiceFactory - INFO - [thread=6151368704 django-main-thread] - åˆ›å»ºLLMæœåŠ¡: provider=deepseek
+2026-03-23 16:39:19,905 - LLMServiceFactory - INFO - [thread=6151368704 django-main-thread] - åˆ›å»ºLLMæœåŠ¡: provider=deepseek
+2026-03-23 16:39:19,919 - LLMServiceFactory - INFO - [thread=6151368704 django-main-thread] - åˆ›å»ºLLMæœåŠ¡: provider=deepseek
+2026-03-23 16:41:47,478 - LLMServiceFactory - INFO - [thread=6139588608 django-main-thread] - åˆ›å»ºLLMæœåŠ¡: provider=deepseek
+2026-03-23 16:41:48,040 - LLMServiceFactory - INFO - [thread=6139588608 django-main-thread] - åˆ›å»ºLLMæœåŠ¡: provider=deepseek
+2026-03-23 16:41:48,054 - LLMServiceFactory - INFO - [thread=6139588608 django-main-thread] - åˆ›å»ºLLMæœåŠ¡: provider=deepseek
+2026-03-23 16:42:03,070 - LLMServiceFactory - INFO - [thread=8238468928 MainThread] - åˆ›å»ºLLMæœåŠ¡: provider=deepseek
+2026-03-23 16:42:03,620 - LLMServiceFactory - INFO - [thread=8238468928 MainThread] - åˆ›å»ºLLMæœåŠ¡: provider=deepseek
+2026-03-23 16:42:03,632 - LLMServiceFactory - INFO - [thread=8238468928 MainThread] - åˆ›å»ºLLMæœåŠ¡: provider=deepseek
+2026-03-23 16:43:58,823 - LLMServiceFactory - INFO - [thread=8238468928 MainThread] - åˆ›å»ºLLMæœåŠ¡: provider=deepseek
+2026-03-23 16:43:59,382 - LLMServiceFactory - INFO - [thread=8238468928 MainThread] - åˆ›å»ºLLMæœåŠ¡: provider=deepseek
+2026-03-23 16:43:59,395 - LLMServiceFactory - INFO - [thread=8238468928 MainThread] - åˆ›å»ºLLMæœåŠ¡: provider=deepseek
+2026-03-23 16:44:13,890 - LLMServiceFactory - INFO - [thread=8238468928 MainThread] - åˆ›å»ºLLMæœåŠ¡: provider=deepseek
+2026-03-23 16:44:14,410 - LLMServiceFactory - INFO - [thread=8238468928 MainThread] - åˆ›å»ºLLMæœåŠ¡: provider=deepseek
+2026-03-23 16:44:14,421 - LLMServiceFactory - INFO - [thread=8238468928 MainThread] - åˆ›å»ºLLMæœåŠ¡: provider=deepseek
+2026-03-23 16:49:02,745 - LLMServiceFactory - INFO - [thread=6357446656 django-main-thread] - åˆ›å»ºLLMæœåŠ¡: provider=deepseek
+2026-03-23 16:49:02,993 - LLMServiceFactory - INFO - [thread=6369095680 django-main-thread] - åˆ›å»ºLLMæœåŠ¡: provider=deepseek
+2026-03-23 16:49:03,616 - LLMServiceFactory - INFO - [thread=6357446656 django-main-thread] - åˆ›å»ºLLMæœåŠ¡: provider=deepseek
+2026-03-23 16:49:03,629 - LLMServiceFactory - INFO - [thread=6357446656 django-main-thread] - åˆ›å»ºLLMæœåŠ¡: provider=deepseek
+2026-03-23 16:49:03,674 - LLMServiceFactory - INFO - [thread=6369095680 django-main-thread] - åˆ›å»ºLLMæœåŠ¡: provider=deepseek
+2026-03-23 16:49:03,682 - LLMServiceFactory - INFO - [thread=6369095680 django-main-thread] - åˆ›å»ºLLMæœåŠ¡: provider=deepseek
+2026-03-23 16:49:14,594 - LLMServiceFactory - INFO - [thread=6148894720 django-main-thread] - åˆ›å»ºLLMæœåŠ¡: provider=deepseek
+2026-03-23 16:49:15,234 - LLMServiceFactory - INFO - [thread=6148894720 django-main-thread] - åˆ›å»ºLLMæœåŠ¡: provider=deepseek
+2026-03-23 16:49:15,246 - LLMServiceFactory - INFO - [thread=6148894720 django-main-thread] - åˆ›å»ºLLMæœåŠ¡: provider=deepseek
+2026-03-23 16:50:01,154 - LLMServiceFactory - INFO - [thread=8238468928 MainThread] - åˆ›å»ºLLMæœåŠ¡: provider=deepseek
+2026-03-23 16:52:20,365 - LLMServiceFactory - INFO - [thread=8238468928 MainThread] - åˆ›å»ºLLMæœåŠ¡: provider=deepseek
+2026-03-23 16:52:21,447 - LLMServiceFactory - INFO - [thread=6186938368 django-main-thread] - åˆ›å»ºLLMæœåŠ¡: provider=deepseek
+2026-03-23 16:52:22,065 - LLMServiceFactory - INFO - [thread=6186938368 django-main-thread] - åˆ›å»ºLLMæœåŠ¡: provider=deepseek
+2026-03-23 16:52:22,077 - LLMServiceFactory - INFO - [thread=6186938368 django-main-thread] - åˆ›å»ºLLMæœåŠ¡: provider=deepseek
+2026-03-23 16:53:02,173 - LLMServiceFactory - INFO - [thread=6109786112 django-main-thread] - åˆ›å»ºLLMæœåŠ¡: provider=deepseek
+2026-03-23 16:53:02,830 - LLMServiceFactory - INFO - [thread=6109786112 django-main-thread] - åˆ›å»ºLLMæœåŠ¡: provider=deepseek
+2026-03-23 16:53:02,843 - LLMServiceFactory - INFO - [thread=6109786112 django-main-thread] - åˆ›å»ºLLMæœåŠ¡: provider=deepseek
+2026-03-23 16:53:57,279 - LLMServiceFactory - INFO - [thread=6325039104 django-main-thread] - åˆ›å»ºLLMæœåŠ¡: provider=deepseek
+2026-03-23 16:53:57,960 - LLMServiceFactory - INFO - [thread=6325039104 django-main-thread] - åˆ›å»ºLLMæœåŠ¡: provider=deepseek
+2026-03-23 16:53:57,973 - LLMServiceFactory - INFO - [thread=6325039104 django-main-thread] - åˆ›å»ºLLMæœåŠ¡: provider=deepseek
+2026-03-23 16:56:01,317 - LLMServiceFactory - INFO - [thread=6425997312 ThreadPoolExecutor-3_0] - åˆ›å»ºLLMæœåŠ¡: provider=deepseek
+2026-03-24 17:40:08,555 - LLMServiceFactory - INFO - [thread=8238468928 MainThread] - åˆ›å»ºLLMæœåŠ¡: provider=deepseek
+2026-03-24 17:40:09,276 - LLMServiceFactory - INFO - [thread=8238468928 MainThread] - åˆ›å»ºLLMæœåŠ¡: provider=deepseek
+2026-03-24 17:40:09,289 - LLMServiceFactory - INFO - [thread=8238468928 MainThread] - åˆ›å»ºLLMæœåŠ¡: provider=deepseek
+2026-03-24 17:40:34,262 - LLMServiceFactory - INFO - [thread=8238468928 MainThread] - åˆ›å»ºLLMæœåŠ¡: provider=deepseek
+2026-03-24 17:40:34,923 - LLMServiceFactory - INFO - [thread=8238468928 MainThread] - åˆ›å»ºLLMæœåŠ¡: provider=deepseek
+2026-03-24 17:40:34,935 - LLMServiceFactory - INFO - [thread=8238468928 MainThread] - åˆ›å»ºLLMæœåŠ¡: provider=deepseek
+2026-03-24 17:43:53,453 - LLMServiceFactory - INFO - [thread=6119043072 django-main-thread] - åˆ›å»ºLLMæœåŠ¡: provider=deepseek
+2026-03-24 17:43:54,164 - LLMServiceFactory - INFO - [thread=6119043072 django-main-thread] - åˆ›å»ºLLMæœåŠ¡: provider=deepseek
+2026-03-24 17:43:54,177 - LLMServiceFactory - INFO - [thread=6119043072 django-main-thread] - åˆ›å»ºLLMæœåŠ¡: provider=deepseek
+2026-03-24 18:00:41,964 - LLMServiceFactory - INFO - [thread=6109982720 django-main-thread] - åˆ›å»ºLLMæœåŠ¡: provider=deepseek
+2026-03-24 18:00:42,652 - LLMServiceFactory - INFO - [thread=6109982720 django-main-thread] - åˆ›å»ºLLMæœåŠ¡: provider=deepseek
+2026-03-24 18:00:42,664 - LLMServiceFactory - INFO - [thread=6109982720 django-main-thread] - åˆ›å»ºLLMæœåŠ¡: provider=deepseek
+2026-03-24 18:07:55,069 - LLMServiceFactory - INFO - [thread=6321008640 django-main-thread] - åˆ›å»ºLLMæœåŠ¡: provider=deepseek
+2026-03-24 18:07:55,745 - LLMServiceFactory - INFO - [thread=6321008640 django-main-thread] - åˆ›å»ºLLMæœåŠ¡: provider=deepseek
+2026-03-24 18:07:55,757 - LLMServiceFactory - INFO - [thread=6321008640 django-main-thread] - åˆ›å»ºLLMæœåŠ¡: provider=deepseek
+2026-03-24 18:08:11,027 - LLMServiceFactory - INFO - [thread=6144405504 django-main-thread] - åˆ›å»ºLLMæœåŠ¡: provider=deepseek
+2026-03-24 18:08:11,983 - LLMServiceFactory - INFO - [thread=6144405504 django-main-thread] - åˆ›å»ºLLMæœåŠ¡: provider=deepseek
+2026-03-24 18:08:11,995 - LLMServiceFactory - INFO - [thread=6144405504 django-main-thread] - åˆ›å»ºLLMæœåŠ¡: provider=deepseek
+2026-03-24 18:08:19,774 - LLMServiceFactory - INFO - [thread=6402994176 django-main-thread] - åˆ›å»ºLLMæœåŠ¡: provider=deepseek
+2026-03-24 18:08:20,564 - LLMServiceFactory - INFO - [thread=6402994176 django-main-thread] - åˆ›å»ºLLMæœåŠ¡: provider=deepseek
+2026-03-24 18:08:20,605 - LLMServiceFactory - INFO - [thread=6402994176 django-main-thread] - åˆ›å»ºLLMæœåŠ¡: provider=deepseek
+2026-03-24 18:10:57,745 - LLMServiceFactory - INFO - [thread=6140817408 django-main-thread] - åˆ›å»ºLLMæœåŠ¡: provider=deepseek
+2026-03-24 18:10:58,466 - LLMServiceFactory - INFO - [thread=6140817408 django-main-thread] - åˆ›å»ºLLMæœåŠ¡: provider=deepseek
+2026-03-24 18:10:58,478 - LLMServiceFactory - INFO - [thread=6140817408 django-main-thread] - åˆ›å»ºLLMæœåŠ¡: provider=deepseek
+2026-03-24 18:11:31,699 - LLMServiceFactory - INFO - [thread=6394261504 django-main-thread] - åˆ›å»ºLLMæœåŠ¡: provider=deepseek
+2026-03-24 18:11:32,391 - LLMServiceFactory - INFO - [thread=6394261504 django-main-thread] - åˆ›å»ºLLMæœåŠ¡: provider=deepseek
+2026-03-24 18:11:32,403 - LLMServiceFactory - INFO - [thread=6394261504 django-main-thread] - åˆ›å»ºLLMæœåŠ¡: provider=deepseek
+2026-03-25 10:53:25,438 - LLMServiceFactory - INFO - [thread=6176387072 django-main-thread] - åˆ›å»ºLLMæœåŠ¡: provider=deepseek
+2026-03-25 10:53:26,155 - LLMServiceFactory - INFO - [thread=6176387072 django-main-thread] - åˆ›å»ºLLMæœåŠ¡: provider=deepseek
+2026-03-25 10:53:26,168 - LLMServiceFactory - INFO - [thread=6176387072 django-main-thread] - åˆ›å»ºLLMæœåŠ¡: provider=deepseek
+2026-03-25 15:19:27,454 - LLMServiceFactory - INFO - [thread=6139932672 django-main-thread] - åˆ›å»ºLLMæœåŠ¡: provider=deepseek
+2026-03-25 15:19:44,462 - LLMServiceFactory - INFO - [thread=6174879744 django-main-thread] - åˆ›å»ºLLMæœåŠ¡: provider=deepseek
+2026-03-25 15:22:39,484 - LLMServiceFactory - INFO - [thread=8238468928 MainThread] - åˆ›å»ºLLMæœåŠ¡: provider=deepseek
+2026-03-25 15:22:53,490 - LLMServiceFactory - INFO - [thread=6110769152 django-main-thread] - åˆ›å»ºLLMæœåŠ¡: provider=deepseek
+2026-03-25 15:22:54,178 - LLMServiceFactory - INFO - [thread=6110769152 django-main-thread] - åˆ›å»ºLLMæœåŠ¡: provider=deepseek
+2026-03-25 15:22:54,191 - LLMServiceFactory - INFO - [thread=6110769152 django-main-thread] - åˆ›å»ºLLMæœåŠ¡: provider=deepseek
+2026-03-25 15:22:56,137 - LLMServiceFactory - INFO - [thread=8238468928 MainThread] - åˆ›å»ºLLMæœåŠ¡: provider=deepseek
+2026-03-25 15:22:56,769 - LLMServiceFactory - INFO - [thread=8238468928 MainThread] - åˆ›å»ºLLMæœåŠ¡: provider=deepseek
+2026-03-25 15:22:56,777 - LLMServiceFactory - INFO - [thread=8238468928 MainThread] - åˆ›å»ºLLMæœåŠ¡: provider=deepseek
+2026-03-25 15:23:10,568 - LLMServiceFactory - INFO - [thread=8238468928 MainThread] - åˆ›å»ºLLMæœåŠ¡: provider=deepseek
+2026-03-25 15:23:11,559 - LLMServiceFactory - INFO - [thread=8238468928 MainThread] - åˆ›å»ºLLMæœåŠ¡: provider=deepseek
+2026-03-25 15:23:11,570 - LLMServiceFactory - INFO - [thread=8238468928 MainThread] - åˆ›å»ºLLMæœåŠ¡: provider=deepseek
+2026-03-25 15:23:26,759 - LLMServiceFactory - INFO - [thread=6153940992 django-main-thread] - åˆ›å»ºLLMæœåŠ¡: provider=deepseek
+2026-03-25 15:23:27,470 - LLMServiceFactory - INFO - [thread=6153940992 django-main-thread] - åˆ›å»ºLLMæœåŠ¡: provider=deepseek
+2026-03-25 15:23:27,481 - LLMServiceFactory - INFO - [thread=6153940992 django-main-thread] - åˆ›å»ºLLMæœåŠ¡: provider=deepseek
+2026-03-25 15:24:05,351 - LLMServiceFactory - INFO - [thread=6107607040 django-main-thread] - åˆ›å»ºLLMæœåŠ¡: provider=deepseek
+2026-03-25 15:24:06,093 - LLMServiceFactory - INFO - [thread=6107607040 django-main-thread] - åˆ›å»ºLLMæœåŠ¡: provider=deepseek
+2026-03-25 15:24:06,105 - LLMServiceFactory - INFO - [thread=6107607040 django-main-thread] - åˆ›å»ºLLMæœåŠ¡: provider=deepseek
+2026-03-25 15:24:06,607 - LLMServiceFactory - INFO - [thread=6120943616 django-main-thread] - åˆ›å»ºLLMæœåŠ¡: provider=deepseek
+2026-03-25 15:24:07,196 - LLMServiceFactory - INFO - [thread=6120943616 django-main-thread] - åˆ›å»ºLLMæœåŠ¡: provider=deepseek
+2026-03-25 15:24:07,203 - LLMServiceFactory - INFO - [thread=6120943616 django-main-thread] - åˆ›å»ºLLMæœåŠ¡: provider=deepseek
+2026-03-25 15:30:03,697 - LLMServiceFactory - INFO - [thread=8238468928 MainThread] - åˆ›å»ºLLMæœåŠ¡: provider=deepseek
+2026-03-25 15:30:03,865 - LLMServiceFactory - INFO - [thread=6360821760 django-main-thread] - åˆ›å»ºLLMæœåŠ¡: provider=deepseek
+2026-03-25 15:30:04,678 - LLMServiceFactory - INFO - [thread=8238468928 MainThread] - åˆ›å»ºLLMæœåŠ¡: provider=deepseek
+2026-03-25 15:30:04,678 - LLMServiceFactory - INFO - [thread=6360821760 django-main-thread] - åˆ›å»ºLLMæœåŠ¡: provider=deepseek
+2026-03-25 15:30:04,691 - LLMServiceFactory - INFO - [thread=8238468928 MainThread] - åˆ›å»ºLLMæœåŠ¡: provider=deepseek
+2026-03-25 15:30:04,691 - LLMServiceFactory - INFO - [thread=6360821760 django-main-thread] - åˆ›å»ºLLMæœåŠ¡: provider=deepseek
+2026-03-25 15:30:17,151 - LLMServiceFactory - INFO - [thread=6113259520 django-main-thread] - åˆ›å»ºLLMæœåŠ¡: provider=deepseek
+2026-03-25 15:30:17,938 - LLMServiceFactory - INFO - [thread=6113259520 django-main-thread] - åˆ›å»ºLLMæœåŠ¡: provider=deepseek
+2026-03-25 15:30:17,950 - LLMServiceFactory - INFO - [thread=6113259520 django-main-thread] - åˆ›å»ºLLMæœåŠ¡: provider=deepseek
+2026-03-25 15:30:18,223 - LLMServiceFactory - INFO - [thread=6146895872 django-main-thread] - åˆ›å»ºLLMæœåŠ¡: provider=deepseek
+2026-03-25 15:30:18,834 - LLMServiceFactory - INFO - [thread=6146895872 django-main-thread] - åˆ›å»ºLLMæœåŠ¡: provider=deepseek
+2026-03-25 15:30:18,841 - LLMServiceFactory - INFO - [thread=6146895872 django-main-thread] - åˆ›å»ºLLMæœåŠ¡: provider=deepseek
+2026-03-25 15:31:35,409 - LLMServiceFactory - INFO - [thread=6120943616 django-main-thread] - åˆ›å»ºLLMæœåŠ¡: provider=deepseek
+2026-03-25 15:31:35,955 - LLMServiceFactory - INFO - [thread=6120943616 django-main-thread] - åˆ›å»ºLLMæœåŠ¡: provider=deepseek
+2026-03-25 15:31:35,966 - LLMServiceFactory - INFO - [thread=6120943616 django-main-thread] - åˆ›å»ºLLMæœåŠ¡: provider=deepseek
+2026-03-25 15:31:36,607 - LLMServiceFactory - INFO - [thread=6154170368 django-main-thread] - åˆ›å»ºLLMæœåŠ¡: provider=deepseek
+2026-03-25 15:31:37,080 - LLMServiceFactory - INFO - [thread=6154170368 django-main-thread] - åˆ›å»ºLLMæœåŠ¡: provider=deepseek
+2026-03-25 15:31:37,088 - LLMServiceFactory - INFO - [thread=6154170368 django-main-thread] - åˆ›å»ºLLMæœåŠ¡: provider=deepseek
+2026-03-25 15:38:15,703 - LLMServiceFactory - INFO - [thread=6325563392 django-main-thread] - åˆ›å»ºLLMæœåŠ¡: provider=deepseek
+2026-03-25 15:38:16,336 - LLMServiceFactory - INFO - [thread=8238468928 MainThread] - åˆ›å»ºLLMæœåŠ¡: provider=deepseek
+2026-03-25 15:38:16,412 - LLMServiceFactory - INFO - [thread=6325563392 django-main-thread] - åˆ›å»ºLLMæœåŠ¡: provider=deepseek
+2026-03-25 15:38:16,425 - LLMServiceFactory - INFO - [thread=6325563392 django-main-thread] - åˆ›å»ºLLMæœåŠ¡: provider=deepseek
+2026-03-25 15:38:16,881 - LLMServiceFactory - INFO - [thread=8238468928 MainThread] - åˆ›å»ºLLMæœåŠ¡: provider=deepseek
+2026-03-25 15:38:16,888 - LLMServiceFactory - INFO - [thread=8238468928 MainThread] - åˆ›å»ºLLMæœåŠ¡: provider=deepseek
+2026-03-25 16:13:19,156 - LLMServiceFactory - INFO - [thread=12901707776 django-main-thread] - åˆ›å»ºLLMæœåŠ¡: provider=deepseek
+2026-03-25 16:13:19,156 - LLMServiceFactory - INFO - [thread=6325039104 django-main-thread] - åˆ›å»ºLLMæœåŠ¡: provider=deepseek
+2026-03-25 16:13:19,830 - LLMServiceFactory - INFO - [thread=6325039104 django-main-thread] - åˆ›å»ºLLMæœåŠ¡: provider=deepseek
+2026-03-25 16:13:19,830 - LLMServiceFactory - INFO - [thread=12901707776 django-main-thread] - åˆ›å»ºLLMæœåŠ¡: provider=deepseek
+2026-03-25 16:13:19,844 - LLMServiceFactory - INFO - [thread=6325039104 django-main-thread] - åˆ›å»ºLLMæœåŠ¡: provider=deepseek
+2026-03-25 16:13:19,846 - LLMServiceFactory - INFO - [thread=12901707776 django-main-thread] - åˆ›å»ºLLMæœåŠ¡: provider=deepseek
+2026-03-25 16:14:35,860 - LLMServiceFactory - INFO - [thread=6143668224 django-main-thread] - åˆ›å»ºLLMæœåŠ¡: provider=deepseek
+2026-03-25 16:14:36,845 - LLMServiceFactory - INFO - [thread=6143668224 django-main-thread] - åˆ›å»ºLLMæœåŠ¡: provider=deepseek
+2026-03-25 16:14:36,882 - LLMServiceFactory - INFO - [thread=6143668224 django-main-thread] - åˆ›å»ºLLMæœåŠ¡: provider=deepseek
+2026-03-25 16:17:04,149 - LLMServiceFactory - INFO - [thread=8238468928 MainThread] - åˆ›å»ºLLMæœåŠ¡: provider=deepseek
+2026-03-25 16:17:04,769 - LLMServiceFactory - INFO - [thread=8238468928 MainThread] - åˆ›å»ºLLMæœåŠ¡: provider=deepseek
+2026-03-25 16:17:04,781 - LLMServiceFactory - INFO - [thread=8238468928 MainThread] - åˆ›å»ºLLMæœåŠ¡: provider=deepseek
+2026-03-25 16:17:46,358 - LLMServiceFactory - INFO - [thread=6174437376 django-main-thread] - åˆ›å»ºLLMæœåŠ¡: provider=deepseek
+2026-03-25 16:17:46,990 - LLMServiceFactory - INFO - [thread=6174437376 django-main-thread] - åˆ›å»ºLLMæœåŠ¡: provider=deepseek
+2026-03-25 16:17:47,002 - LLMServiceFactory - INFO - [thread=6174437376 django-main-thread] - åˆ›å»ºLLMæœåŠ¡: provider=deepseek
+2026-03-25 16:20:59,308 - LLMServiceFactory - INFO - [thread=6113669120 django-main-thread] - åˆ›å»ºLLMæœåŠ¡: provider=deepseek
+2026-03-25 16:20:59,922 - LLMServiceFactory - INFO - [thread=6113669120 django-main-thread] - åˆ›å»ºLLMæœåŠ¡: provider=deepseek
+2026-03-25 16:20:59,933 - LLMServiceFactory - INFO - [thread=6113669120 django-main-thread] - åˆ›å»ºLLMæœåŠ¡: provider=deepseek
+2026-03-25 16:24:33,509 - LLMServiceFactory - INFO - [thread=6180941824 django-main-thread] - åˆ›å»ºLLMæœåŠ¡: provider=deepseek
+2026-03-25 16:24:34,127 - LLMServiceFactory - INFO - [thread=6180941824 django-main-thread] - åˆ›å»ºLLMæœåŠ¡: provider=deepseek
+2026-03-25 16:24:34,141 - LLMServiceFactory - INFO - [thread=6180941824 django-main-thread] - åˆ›å»ºLLMæœåŠ¡: provider=deepseek
+2026-03-25 16:26:50,732 - LLMServiceFactory - INFO - [thread=6231994368 ThreadPoolExecutor-4_0] - åˆ›å»ºLLMæœåŠ¡: provider=deepseek
+2026-03-25 16:29:19,406 - LLMServiceFactory - INFO - [thread=6148304896 django-main-thread] - åˆ›å»ºLLMæœåŠ¡: provider=deepseek
+2026-03-25 16:29:20,342 - LLMServiceFactory - INFO - [thread=6148304896 django-main-thread] - åˆ›å»ºLLMæœåŠ¡: provider=deepseek
+2026-03-25 16:29:20,369 - LLMServiceFactory - INFO - [thread=6148304896 django-main-thread] - åˆ›å»ºLLMæœåŠ¡: provider=deepseek
+2026-03-25 16:29:41,869 - LLMServiceFactory - INFO - [thread=8238468928 MainThread] - åˆ›å»ºLLMæœåŠ¡: provider=deepseek
+2026-03-25 16:29:42,478 - LLMServiceFactory - INFO - [thread=8238468928 MainThread] - åˆ›å»ºLLMæœåŠ¡: provider=deepseek
+2026-03-25 16:29:42,489 - LLMServiceFactory - INFO - [thread=8238468928 MainThread] - åˆ›å»ºLLMæœåŠ¡: provider=deepseek
+2026-03-25 16:32:24,374 - LLMServiceFactory - INFO - [thread=6138884096 django-main-thread] - åˆ›å»º LLM æœåŠ¡ï¼šprovider=deepseek
+2026-03-25 16:32:24,397 - LLMServiceFactory - INFO - [thread=6138884096 django-main-thread] - ä½¿ç”¨æ•°æ®åº“ä¸­çš„ AI é…ç½®
+2026-03-25 16:32:25,083 - LLMServiceFactory - INFO - [thread=6138884096 django-main-thread] - åˆ›å»º LLM æœåŠ¡ï¼šprovider=deepseek
+2026-03-25 16:32:25,085 - LLMServiceFactory - INFO - [thread=6138884096 django-main-thread] - ä½¿ç”¨æ•°æ®åº“ä¸­çš„ AI é…ç½®
+2026-03-25 16:32:25,099 - LLMServiceFactory - INFO - [thread=6138884096 django-main-thread] - åˆ›å»º LLM æœåŠ¡ï¼šprovider=deepseek
+2026-03-25 16:32:25,100 - LLMServiceFactory - INFO - [thread=6138884096 django-main-thread] - ä½¿ç”¨æ•°æ®åº“ä¸­çš„ AI é…ç½®
+2026-03-25 16:33:03,253 - LLMServiceFactory - INFO - [thread=8238468928 MainThread] - åˆ›å»º LLM æœåŠ¡ï¼šprovider=deepseek
+2026-03-25 16:33:03,270 - LLMServiceFactory - INFO - [thread=8238468928 MainThread] - ä½¿ç”¨æ•°æ®åº“ä¸­çš„ AI é…ç½®
+2026-03-25 16:33:03,954 - LLMServiceFactory - INFO - [thread=8238468928 MainThread] - åˆ›å»º LLM æœåŠ¡ï¼šprovider=deepseek
+2026-03-25 16:33:03,955 - LLMServiceFactory - INFO - [thread=8238468928 MainThread] - ä½¿ç”¨æ•°æ®åº“ä¸­çš„ AI é…ç½®
+2026-03-25 16:33:03,967 - LLMServiceFactory - INFO - [thread=8238468928 MainThread] - åˆ›å»º LLM æœåŠ¡ï¼šprovider=deepseek
+2026-03-25 16:33:03,982 - LLMServiceFactory - INFO - [thread=8238468928 MainThread] - ä½¿ç”¨æ•°æ®åº“ä¸­çš„ AI é…ç½®
+2026-03-25 16:36:12,933 - LLMServiceFactory - INFO - [thread=13052751872 ThreadPoolExecutor-3_0] - åˆ›å»º LLM æœåŠ¡ï¼šprovider=deepseek
+2026-03-25 16:36:12,947 - LLMServiceFactory - WARNING - [thread=13052751872 ThreadPoolExecutor-3_0] - ä»æ•°æ®åº“åŠ è½½ AI é…ç½®å¤±è´¥ï¼šYou cannot call this from an async context - use a thread or sync_to_async.ï¼Œä½¿ç”¨ settings.py é…ç½®
+2026-03-25 16:52:39,310 - LLMServiceFactory - INFO - [thread=8238468928 MainThread] - åˆ›å»º LLM æœåŠ¡ï¼šprovider=deepseek
+2026-03-25 16:52:39,394 - LLMServiceFactory - INFO - [thread=8238468928 MainThread] - ä½¿ç”¨æ•°æ®åº“ä¸­çš„ AI é…ç½®
+2026-03-25 16:52:40,074 - LLMServiceFactory - INFO - [thread=8238468928 MainThread] - åˆ›å»º LLM æœåŠ¡ï¼šprovider=deepseek
+2026-03-25 16:52:40,075 - LLMServiceFactory - INFO - [thread=8238468928 MainThread] - ä½¿ç”¨æ•°æ®åº“ä¸­çš„ AI é…ç½®
+2026-03-25 16:52:40,090 - LLMServiceFactory - INFO - [thread=8238468928 MainThread] - åˆ›å»º LLM æœåŠ¡ï¼šprovider=deepseek
+2026-03-25 16:52:40,091 - LLMServiceFactory - INFO - [thread=8238468928 MainThread] - ä½¿ç”¨æ•°æ®åº“ä¸­çš„ AI é…ç½®
+2026-03-25 16:53:01,412 - LLMServiceFactory - INFO - [thread=6148583424 django-main-thread] - åˆ›å»º LLM æœåŠ¡ï¼šprovider=deepseek
+2026-03-25 16:53:01,435 - LLMServiceFactory - INFO - [thread=6148583424 django-main-thread] - ä½¿ç”¨æ•°æ®åº“ä¸­çš„ AI é…ç½®
+2026-03-25 16:53:02,280 - LLMServiceFactory - INFO - [thread=6148583424 django-main-thread] - åˆ›å»º LLM æœåŠ¡ï¼šprovider=deepseek
+2026-03-25 16:53:02,282 - LLMServiceFactory - INFO - [thread=6148583424 django-main-thread] - ä½¿ç”¨æ•°æ®åº“ä¸­çš„ AI é…ç½®
+2026-03-25 16:53:02,296 - LLMServiceFactory - INFO - [thread=6148583424 django-main-thread] - åˆ›å»º LLM æœåŠ¡ï¼šprovider=deepseek
+2026-03-25 16:53:02,297 - LLMServiceFactory - INFO - [thread=6148583424 django-main-thread] - ä½¿ç”¨æ•°æ®åº“ä¸­çš„ AI é…ç½®
+2026-03-25 16:55:02,374 - LLMServiceFactory - INFO - [thread=6181416960 django-main-thread] - åˆ›å»º LLM æœåŠ¡ï¼šprovider=deepseek
+2026-03-25 16:55:02,472 - LLMServiceFactory - INFO - [thread=6181416960 django-main-thread] - ä½¿ç”¨æ•°æ®åº“ä¸­çš„ AI é…ç½®
+2026-03-25 16:55:03,153 - LLMServiceFactory - INFO - [thread=6181416960 django-main-thread] - åˆ›å»º LLM æœåŠ¡ï¼šprovider=deepseek
+2026-03-25 16:55:03,155 - LLMServiceFactory - INFO - [thread=6181416960 django-main-thread] - ä½¿ç”¨æ•°æ®åº“ä¸­çš„ AI é…ç½®
+2026-03-25 16:55:03,170 - LLMServiceFactory - INFO - [thread=6181416960 django-main-thread] - åˆ›å»º LLM æœåŠ¡ï¼šprovider=deepseek
+2026-03-25 16:55:03,171 - LLMServiceFactory - INFO - [thread=6181416960 django-main-thread] - ä½¿ç”¨æ•°æ®åº“ä¸­çš„ AI é…ç½®
+2026-03-25 16:55:35,075 - LLMServiceFactory - INFO - [thread=8238468928 MainThread] - åˆ›å»º LLM æœåŠ¡ï¼šprovider=deepseek
+2026-03-25 16:55:35,182 - LLMServiceFactory - INFO - [thread=8238468928 MainThread] - ä½¿ç”¨æ•°æ®åº“ä¸­çš„ AI é…ç½®
+2026-03-25 16:55:35,984 - LLMServiceFactory - INFO - [thread=8238468928 MainThread] - åˆ›å»º LLM æœåŠ¡ï¼šprovider=deepseek
+2026-03-25 16:55:35,986 - LLMServiceFactory - INFO - [thread=8238468928 MainThread] - ä½¿ç”¨æ•°æ®åº“ä¸­çš„ AI é…ç½®
+2026-03-25 16:55:36,001 - LLMServiceFactory - INFO - [thread=8238468928 MainThread] - åˆ›å»º LLM æœåŠ¡ï¼šprovider=deepseek
+2026-03-25 16:55:36,002 - LLMServiceFactory - INFO - [thread=8238468928 MainThread] - ä½¿ç”¨æ•°æ®åº“ä¸­çš„ AI é…ç½®
+2026-03-25 16:56:01,675 - LLMServiceFactory - INFO - [thread=6144372736 django-main-thread] - åˆ›å»º LLM æœåŠ¡ï¼šprovider=deepseek
+2026-03-25 16:56:01,843 - LLMServiceFactory - INFO - [thread=6144372736 django-main-thread] - ä½¿ç”¨æ•°æ®åº“ä¸­çš„ AI é…ç½®
+2026-03-25 16:56:02,636 - LLMServiceFactory - INFO - [thread=6144372736 django-main-thread] - åˆ›å»º LLM æœåŠ¡ï¼šprovider=deepseek
+2026-03-25 16:56:02,638 - LLMServiceFactory - INFO - [thread=6144372736 django-main-thread] - ä½¿ç”¨æ•°æ®åº“ä¸­çš„ AI é…ç½®
+2026-03-25 16:56:02,651 - LLMServiceFactory - INFO - [thread=6144372736 django-main-thread] - åˆ›å»º LLM æœåŠ¡ï¼šprovider=deepseek
+2026-03-25 16:56:02,652 - LLMServiceFactory - INFO - [thread=6144372736 django-main-thread] - ä½¿ç”¨æ•°æ®åº“ä¸­çš„ AI é…ç½®
+2026-03-25 17:49:51,264 - LLMServiceFactory - INFO - [thread=8238468928 MainThread] - åˆ›å»º LLM æœåŠ¡ï¼šprovider=deepseek
+2026-03-25 17:49:51,354 - LLMServiceFactory - INFO - [thread=8238468928 MainThread] - ä½¿ç”¨æ•°æ®åº“ä¸­çš„ AI é…ç½®
+2026-03-25 17:49:52,092 - LLMServiceFactory - INFO - [thread=8238468928 MainThread] - åˆ›å»º LLM æœåŠ¡ï¼šprovider=deepseek
+2026-03-25 17:49:52,093 - LLMServiceFactory - INFO - [thread=8238468928 MainThread] - ä½¿ç”¨æ•°æ®åº“ä¸­çš„ AI é…ç½®
+2026-03-25 17:49:52,107 - LLMServiceFactory - INFO - [thread=8238468928 MainThread] - åˆ›å»º LLM æœåŠ¡ï¼šprovider=deepseek
+2026-03-25 17:49:52,108 - LLMServiceFactory - INFO - [thread=8238468928 MainThread] - ä½¿ç”¨æ•°æ®åº“ä¸­çš„ AI é…ç½®
+2026-03-25 17:54:49,909 - LLMServiceFactory - INFO - [thread=6181924864 django-main-thread] - åˆ›å»º LLM æœåŠ¡ï¼šprovider=deepseek
+2026-03-25 17:54:49,994 - LLMServiceFactory - INFO - [thread=6181924864 django-main-thread] - ä½¿ç”¨æ•°æ®åº“ä¸­çš„ AI é…ç½®
+2026-03-25 17:54:50,732 - LLMServiceFactory - INFO - [thread=6181924864 django-main-thread] - åˆ›å»º LLM æœåŠ¡ï¼šprovider=deepseek
+2026-03-25 17:54:50,734 - LLMServiceFactory - INFO - [thread=6181924864 django-main-thread] - ä½¿ç”¨æ•°æ®åº“ä¸­çš„ AI é…ç½®
+2026-03-25 17:54:50,749 - LLMServiceFactory - INFO - [thread=6181924864 django-main-thread] - åˆ›å»º LLM æœåŠ¡ï¼šprovider=deepseek
+2026-03-25 17:54:50,750 - LLMServiceFactory - INFO - [thread=6181924864 django-main-thread] - ä½¿ç”¨æ•°æ®åº“ä¸­çš„ AI é…ç½®
+2026-03-25 18:06:36,031 - LLMServiceFactory - INFO - [thread=8238468928 MainThread] - åˆ›å»º LLM æœåŠ¡ï¼šprovider=deepseek
+2026-03-25 18:06:36,061 - LLMServiceFactory - INFO - [thread=8238468928 MainThread] - ä½¿ç”¨æ•°æ®åº“ä¸­çš„ AI é…ç½®
+2026-03-25 18:06:36,798 - LLMServiceFactory - INFO - [thread=8238468928 MainThread] - åˆ›å»º LLM æœåŠ¡ï¼šprovider=deepseek
+2026-03-25 18:06:36,800 - LLMServiceFactory - INFO - [thread=8238468928 MainThread] - ä½¿ç”¨æ•°æ®åº“ä¸­çš„ AI é…ç½®
+2026-03-25 18:06:36,812 - LLMServiceFactory - INFO - [thread=8238468928 MainThread] - åˆ›å»º LLM æœåŠ¡ï¼šprovider=deepseek
+2026-03-25 18:06:36,814 - LLMServiceFactory - INFO - [thread=8238468928 MainThread] - ä½¿ç”¨æ•°æ®åº“ä¸­çš„ AI é…ç½®
+2026-03-25 18:07:26,433 - LLMServiceFactory - INFO - [thread=6229815296 ThreadPoolExecutor-4_0] - åˆ›å»º LLM æœåŠ¡ï¼šprovider=deepseek
+2026-03-25 18:07:26,433 - LLMServiceFactory - WARNING - [thread=6229815296 ThreadPoolExecutor-4_0] - ä»æ•°æ®åº“åŠ è½½ AI é…ç½®å¤±è´¥ï¼šYou cannot call this from an async context - use a thread or sync_to_async.ï¼Œä½¿ç”¨ settings.py é…ç½®
+2026-03-26 15:25:19,411 - LLMServiceFactory - INFO - [thread=6172274688 django-main-thread] - åˆ›å»º LLM æœåŠ¡ï¼šprovider=deepseek
+2026-03-26 15:25:19,530 - LLMServiceFactory - INFO - [thread=6172274688 django-main-thread] - ä½¿ç”¨æ•°æ®åº“ä¸­çš„ AI é…ç½®
+2026-03-26 15:25:20,344 - LLMServiceFactory - INFO - [thread=6172274688 django-main-thread] - åˆ›å»º LLM æœåŠ¡ï¼šprovider=deepseek
+2026-03-26 15:25:20,346 - LLMServiceFactory - INFO - [thread=6172274688 django-main-thread] - ä½¿ç”¨æ•°æ®åº“ä¸­çš„ AI é…ç½®
+2026-03-26 15:25:20,361 - LLMServiceFactory - INFO - [thread=6172274688 django-main-thread] - åˆ›å»º LLM æœåŠ¡ï¼šprovider=deepseek
+2026-03-26 15:25:20,362 - LLMServiceFactory - INFO - [thread=6172274688 django-main-thread] - ä½¿ç”¨æ•°æ®åº“ä¸­çš„ AI é…ç½®
+2026-03-26 15:34:42,023 - LLMServiceFactory - INFO - [thread=8238468928 MainThread] - åˆ›å»º LLM æœåŠ¡ï¼šprovider=deepseek
+2026-03-26 15:34:42,978 - LLMServiceFactory - INFO - [thread=8238468928 MainThread] - ä½¿ç”¨æ•°æ®åº“ä¸­çš„ AI é…ç½®
+2026-03-26 15:34:44,551 - LLMServiceFactory - INFO - [thread=8238468928 MainThread] - åˆ›å»º LLM æœåŠ¡ï¼šprovider=deepseek
+2026-03-26 15:34:44,555 - LLMServiceFactory - INFO - [thread=8238468928 MainThread] - ä½¿ç”¨æ•°æ®åº“ä¸­çš„ AI é…ç½®
+2026-03-26 15:34:44,567 - LLMServiceFactory - INFO - [thread=8238468928 MainThread] - åˆ›å»º LLM æœåŠ¡ï¼šprovider=deepseek
+2026-03-26 15:34:44,568 - LLMServiceFactory - INFO - [thread=8238468928 MainThread] - ä½¿ç”¨æ•°æ®åº“ä¸­çš„ AI é…ç½®
+2026-03-26 15:34:58,019 - LLMServiceFactory - INFO - [thread=8238468928 MainThread] - åˆ›å»º LLM æœåŠ¡ï¼šprovider=deepseek
+2026-03-26 15:34:58,028 - LLMServiceFactory - INFO - [thread=8238468928 MainThread] - ä½¿ç”¨æ•°æ®åº“ä¸­çš„ AI é…ç½®
+2026-03-26 15:34:58,669 - LLMServiceFactory - INFO - [thread=8238468928 MainThread] - åˆ›å»º LLM æœåŠ¡ï¼šprovider=deepseek
+2026-03-26 15:34:58,671 - LLMServiceFactory - INFO - [thread=8238468928 MainThread] - ä½¿ç”¨æ•°æ®åº“ä¸­çš„ AI é…ç½®
+2026-03-26 15:34:58,682 - LLMServiceFactory - INFO - [thread=8238468928 MainThread] - åˆ›å»º LLM æœåŠ¡ï¼šprovider=deepseek
+2026-03-26 15:34:58,683 - LLMServiceFactory - INFO - [thread=8238468928 MainThread] - ä½¿ç”¨æ•°æ®åº“ä¸­çš„ AI é…ç½®
+2026-03-26 15:35:41,429 - LLMServiceFactory - INFO - [thread=6117044224 django-main-thread] - åˆ›å»º LLM æœåŠ¡ï¼šprovider=deepseek
+2026-03-26 15:35:41,457 - LLMServiceFactory - INFO - [thread=6117044224 django-main-thread] - ä½¿ç”¨æ•°æ®åº“ä¸­çš„ AI é…ç½®
+2026-03-26 15:35:42,169 - LLMServiceFactory - INFO - [thread=6117044224 django-main-thread] - åˆ›å»º LLM æœåŠ¡ï¼šprovider=deepseek
+2026-03-26 15:35:42,171 - LLMServiceFactory - INFO - [thread=6117044224 django-main-thread] - ä½¿ç”¨æ•°æ®åº“ä¸­çš„ AI é…ç½®
+2026-03-26 15:35:42,187 - LLMServiceFactory - INFO - [thread=6117044224 django-main-thread] - åˆ›å»º LLM æœåŠ¡ï¼šprovider=deepseek
+2026-03-26 15:35:42,188 - LLMServiceFactory - INFO - [thread=6117044224 django-main-thread] - ä½¿ç”¨æ•°æ®åº“ä¸­çš„ AI é…ç½®
+2026-03-26 15:36:08,245 - LLMServiceFactory - INFO - [thread=8238468928 MainThread] - åˆ›å»º LLM æœåŠ¡ï¼šprovider=deepseek
+2026-03-26 15:36:08,255 - LLMServiceFactory - INFO - [thread=8238468928 MainThread] - ä½¿ç”¨æ•°æ®åº“ä¸­çš„ AI é…ç½®
+2026-03-26 15:36:08,925 - LLMServiceFactory - INFO - [thread=8238468928 MainThread] - åˆ›å»º LLM æœåŠ¡ï¼šprovider=deepseek
+2026-03-26 15:36:08,927 - LLMServiceFactory - INFO - [thread=8238468928 MainThread] - ä½¿ç”¨æ•°æ®åº“ä¸­çš„ AI é…ç½®
+2026-03-26 15:36:08,940 - LLMServiceFactory - INFO - [thread=8238468928 MainThread] - åˆ›å»º LLM æœåŠ¡ï¼šprovider=deepseek
+2026-03-26 15:36:08,941 - LLMServiceFactory - INFO - [thread=8238468928 MainThread] - ä½¿ç”¨æ•°æ®åº“ä¸­çš„ AI é…ç½®
+2026-03-26 15:37:07,937 - LLMServiceFactory - INFO - [thread=8238468928 MainThread] - åˆ›å»º LLM æœåŠ¡ï¼šprovider=deepseek
+2026-03-26 15:37:07,949 - LLMServiceFactory - INFO - [thread=8238468928 MainThread] - ä½¿ç”¨æ•°æ®åº“ä¸­çš„ AI é…ç½®
+2026-03-26 15:37:08,775 - LLMServiceFactory - INFO - [thread=8238468928 MainThread] - åˆ›å»º LLM æœåŠ¡ï¼šprovider=deepseek
+2026-03-26 15:37:08,777 - LLMServiceFactory - INFO - [thread=8238468928 MainThread] - ä½¿ç”¨æ•°æ®åº“ä¸­çš„ AI é…ç½®
+2026-03-26 15:37:08,790 - LLMServiceFactory - INFO - [thread=8238468928 MainThread] - åˆ›å»º LLM æœåŠ¡ï¼šprovider=deepseek
+2026-03-26 15:37:08,792 - LLMServiceFactory - INFO - [thread=8238468928 MainThread] - ä½¿ç”¨æ•°æ®åº“ä¸­çš„ AI é…ç½®
+2026-03-26 15:37:26,045 - LLMServiceFactory - INFO - [thread=8238468928 MainThread] - åˆ›å»º LLM æœåŠ¡ï¼šprovider=deepseek
+2026-03-26 15:37:26,057 - LLMServiceFactory - INFO - [thread=8238468928 MainThread] - ä½¿ç”¨æ•°æ®åº“ä¸­çš„ AI é…ç½®
+2026-03-26 15:37:26,720 - LLMServiceFactory - INFO - [thread=8238468928 MainThread] - åˆ›å»º LLM æœåŠ¡ï¼šprovider=deepseek
+2026-03-26 15:37:26,721 - LLMServiceFactory - INFO - [thread=8238468928 MainThread] - ä½¿ç”¨æ•°æ®åº“ä¸­çš„ AI é…ç½®
+2026-03-26 15:37:26,733 - LLMServiceFactory - INFO - [thread=8238468928 MainThread] - åˆ›å»º LLM æœåŠ¡ï¼šprovider=deepseek
+2026-03-26 15:37:26,734 - LLMServiceFactory - INFO - [thread=8238468928 MainThread] - ä½¿ç”¨æ•°æ®åº“ä¸­çš„ AI é…ç½®
+2026-03-26 15:44:24,080 - LLMServiceFactory - INFO - [thread=6359461888 django-main-thread] - åˆ›å»º LLM æœåŠ¡ï¼šprovider=deepseek
+2026-03-26 15:44:24,122 - LLMServiceFactory - INFO - [thread=6359461888 django-main-thread] - ä½¿ç”¨æ•°æ®åº“ä¸­çš„ AI é…ç½®
+2026-03-26 15:44:25,028 - LLMServiceFactory - INFO - [thread=6359461888 django-main-thread] - åˆ›å»º LLM æœåŠ¡ï¼šprovider=deepseek
+2026-03-26 15:44:25,033 - LLMServiceFactory - INFO - [thread=6359461888 django-main-thread] - ä½¿ç”¨æ•°æ®åº“ä¸­çš„ AI é…ç½®
+2026-03-26 15:44:25,071 - LLMServiceFactory - INFO - [thread=6359461888 django-main-thread] - åˆ›å»º LLM æœåŠ¡ï¼šprovider=deepseek
+2026-03-26 15:44:25,072 - LLMServiceFactory - INFO - [thread=6359461888 django-main-thread] - ä½¿ç”¨æ•°æ®åº“ä¸­çš„ AI é…ç½®
+2026-03-26 15:45:07,274 - LLMServiceFactory - INFO - [thread=6187331584 django-main-thread] - åˆ›å»º LLM æœåŠ¡ï¼šprovider=deepseek
+2026-03-26 15:45:07,344 - LLMServiceFactory - INFO - [thread=6187331584 django-main-thread] - ä½¿ç”¨æ•°æ®åº“ä¸­çš„ AI é…ç½®
+2026-03-26 15:45:08,085 - LLMServiceFactory - INFO - [thread=6187331584 django-main-thread] - åˆ›å»º LLM æœåŠ¡ï¼šprovider=deepseek
+2026-03-26 15:45:08,087 - LLMServiceFactory - INFO - [thread=6187331584 django-main-thread] - ä½¿ç”¨æ•°æ®åº“ä¸­çš„ AI é…ç½®
+2026-03-26 15:45:08,101 - LLMServiceFactory - INFO - [thread=6187331584 django-main-thread] - åˆ›å»º LLM æœåŠ¡ï¼šprovider=deepseek
+2026-03-26 15:45:08,102 - LLMServiceFactory - INFO - [thread=6187331584 django-main-thread] - ä½¿ç”¨æ•°æ®åº“ä¸­çš„ AI é…ç½®
+2026-03-26 15:45:30,663 - LLMServiceFactory - INFO - [thread=6388805632 django-main-thread] - åˆ›å»º LLM æœåŠ¡ï¼šprovider=deepseek
+2026-03-26 15:45:30,696 - LLMServiceFactory - INFO - [thread=6388805632 django-main-thread] - ä½¿ç”¨æ•°æ®åº“ä¸­çš„ AI é…ç½®
+2026-03-26 15:45:31,349 - LLMServiceFactory - INFO - [thread=6388805632 django-main-thread] - åˆ›å»º LLM æœåŠ¡ï¼šprovider=deepseek
+2026-03-26 15:45:31,350 - LLMServiceFactory - INFO - [thread=6388805632 django-main-thread] - ä½¿ç”¨æ•°æ®åº“ä¸­çš„ AI é…ç½®
+2026-03-26 15:45:31,364 - LLMServiceFactory - INFO - [thread=6388805632 django-main-thread] - åˆ›å»º LLM æœåŠ¡ï¼šprovider=deepseek
+2026-03-26 15:45:31,365 - LLMServiceFactory - INFO - [thread=6388805632 django-main-thread] - ä½¿ç”¨æ•°æ®åº“ä¸­çš„ AI é…ç½®
+2026-03-26 16:04:52,511 - LLMServiceFactory - INFO - [thread=6325039104 django-main-thread] - åˆ›å»º LLM æœåŠ¡ï¼šprovider=deepseek
+2026-03-26 16:04:52,605 - LLMServiceFactory - INFO - [thread=6325039104 django-main-thread] - ä½¿ç”¨æ•°æ®åº“ä¸­çš„ AI é…ç½®
+2026-03-26 16:04:53,333 - LLMServiceFactory - INFO - [thread=6325039104 django-main-thread] - åˆ›å»º LLM æœåŠ¡ï¼šprovider=deepseek
+2026-03-26 16:04:53,335 - LLMServiceFactory - INFO - [thread=6325039104 django-main-thread] - ä½¿ç”¨æ•°æ®åº“ä¸­çš„ AI é…ç½®
+2026-03-26 16:04:53,348 - LLMServiceFactory - INFO - [thread=6325039104 django-main-thread] - åˆ›å»º LLM æœåŠ¡ï¼šprovider=deepseek
+2026-03-26 16:04:53,350 - LLMServiceFactory - INFO - [thread=6325039104 django-main-thread] - ä½¿ç”¨æ•°æ®åº“ä¸­çš„ AI é…ç½®
+2026-03-26 16:10:46,750 - LLMServiceFactory - INFO - [thread=12901707776 django-main-thread] - åˆ›å»º LLM æœåŠ¡ï¼šprovider=deepseek
+2026-03-26 16:10:46,767 - LLMServiceFactory - INFO - [thread=12901707776 django-main-thread] - ä½¿ç”¨æ•°æ®åº“ä¸­çš„ AI é…ç½®
+2026-03-26 16:10:48,368 - LLMServiceFactory - INFO - [thread=12901707776 django-main-thread] - åˆ›å»º LLM æœåŠ¡ï¼šprovider=deepseek
+2026-03-26 16:10:48,370 - LLMServiceFactory - INFO - [thread=12901707776 django-main-thread] - ä½¿ç”¨æ•°æ®åº“ä¸­çš„ AI é…ç½®
+2026-03-26 16:10:48,435 - LLMServiceFactory - INFO - [thread=12901707776 django-main-thread] - åˆ›å»º LLM æœåŠ¡ï¼šprovider=deepseek
+2026-03-26 16:10:48,436 - LLMServiceFactory - INFO - [thread=12901707776 django-main-thread] - ä½¿ç”¨æ•°æ®åº“ä¸­çš„ AI é…ç½®
+2026-03-26 16:10:52,231 - LLMServiceFactory - INFO - [thread=8238468928 MainThread] - åˆ›å»º LLM æœåŠ¡ï¼šprovider=deepseek
+2026-03-26 16:10:52,242 - LLMServiceFactory - INFO - [thread=8238468928 MainThread] - ä½¿ç”¨æ•°æ®åº“ä¸­çš„ AI é…ç½®
+2026-03-26 16:10:52,982 - LLMServiceFactory - INFO - [thread=8238468928 MainThread] - åˆ›å»º LLM æœåŠ¡ï¼šprovider=deepseek
+2026-03-26 16:10:52,984 - LLMServiceFactory - INFO - [thread=8238468928 MainThread] - ä½¿ç”¨æ•°æ®åº“ä¸­çš„ AI é…ç½®
+2026-03-26 16:10:52,991 - LLMServiceFactory - INFO - [thread=8238468928 MainThread] - åˆ›å»º LLM æœåŠ¡ï¼šprovider=deepseek
+2026-03-26 16:10:52,992 - LLMServiceFactory - INFO - [thread=8238468928 MainThread] - ä½¿ç”¨æ•°æ®åº“ä¸­çš„ AI é…ç½®
+2026-03-26 16:13:17,364 - LLMServiceFactory - INFO - [thread=8238468928 MainThread] - åˆ›å»º LLM æœåŠ¡ï¼šprovider=deepseek
+2026-03-26 16:13:17,377 - LLMServiceFactory - INFO - [thread=8238468928 MainThread] - ä½¿ç”¨æ•°æ®åº“ä¸­çš„ AI é…ç½®
+2026-03-26 16:13:18,052 - LLMServiceFactory - INFO - [thread=8238468928 MainThread] - åˆ›å»º LLM æœåŠ¡ï¼šprovider=deepseek
+2026-03-26 16:13:18,054 - LLMServiceFactory - INFO - [thread=8238468928 MainThread] - ä½¿ç”¨æ•°æ®åº“ä¸­çš„ AI é…ç½®
+2026-03-26 16:13:18,065 - LLMServiceFactory - INFO - [thread=8238468928 MainThread] - åˆ›å»º LLM æœåŠ¡ï¼šprovider=deepseek
+2026-03-26 16:13:18,066 - LLMServiceFactory - INFO - [thread=8238468928 MainThread] - ä½¿ç”¨æ•°æ®åº“ä¸­çš„ AI é…ç½®
+2026-03-26 16:13:18,616 - LLMServiceFactory - INFO - [thread=8238468928 MainThread] - åˆ›å»º LLM æœåŠ¡ï¼šprovider=deepseek
+2026-03-26 16:13:18,624 - LLMServiceFactory - INFO - [thread=8238468928 MainThread] - ä½¿ç”¨æ•°æ®åº“ä¸­çš„ AI é…ç½®
+2026-03-26 16:13:19,169 - LLMServiceFactory - INFO - [thread=8238468928 MainThread] - åˆ›å»º LLM æœåŠ¡ï¼šprovider=deepseek
+2026-03-26 16:13:19,172 - LLMServiceFactory - INFO - [thread=8238468928 MainThread] - ä½¿ç”¨æ•°æ®åº“ä¸­çš„ AI é…ç½®
+2026-03-26 16:13:19,179 - LLMServiceFactory - INFO - [thread=8238468928 MainThread] - åˆ›å»º LLM æœåŠ¡ï¼šprovider=deepseek
+2026-03-26 16:13:19,181 - LLMServiceFactory - INFO - [thread=8238468928 MainThread] - ä½¿ç”¨æ•°æ®åº“ä¸­çš„ AI é…ç½®
+2026-03-26 16:13:45,676 - LLMServiceFactory - INFO - [thread=6109229056 django-main-thread] - åˆ›å»º LLM æœåŠ¡ï¼šprovider=deepseek
+2026-03-26 16:13:45,676 - LLMServiceFactory - INFO - [thread=6117732352 django-main-thread] - åˆ›å»º LLM æœåŠ¡ï¼šprovider=deepseek
+2026-03-26 16:13:45,684 - LLMServiceFactory - INFO - [thread=6117732352 django-main-thread] - ä½¿ç”¨æ•°æ®åº“ä¸­çš„ AI é…ç½®
+2026-03-26 16:13:45,684 - LLMServiceFactory - INFO - [thread=6109229056 django-main-thread] - ä½¿ç”¨æ•°æ®åº“ä¸­çš„ AI é…ç½®
+2026-03-26 16:13:46,399 - LLMServiceFactory - INFO - [thread=6109229056 django-main-thread] - åˆ›å»º LLM æœåŠ¡ï¼šprovider=deepseek
+2026-03-26 16:13:46,399 - LLMServiceFactory - INFO - [thread=6117732352 django-main-thread] - åˆ›å»º LLM æœåŠ¡ï¼šprovider=deepseek
+2026-03-26 16:13:46,401 - LLMServiceFactory - INFO - [thread=6117732352 django-main-thread] - ä½¿ç”¨æ•°æ®åº“ä¸­çš„ AI é…ç½®
+2026-03-26 16:13:46,401 - LLMServiceFactory - INFO - [thread=6109229056 django-main-thread] - ä½¿ç”¨æ•°æ®åº“ä¸­çš„ AI é…ç½®
+2026-03-26 16:13:46,413 - LLMServiceFactory - INFO - [thread=6117732352 django-main-thread] - åˆ›å»º LLM æœåŠ¡ï¼šprovider=deepseek
+2026-03-26 16:13:46,414 - LLMServiceFactory - INFO - [thread=6117732352 django-main-thread] - ä½¿ç”¨æ•°æ®åº“ä¸­çš„ AI é…ç½®
+2026-03-26 16:13:46,415 - LLMServiceFactory - INFO - [thread=6109229056 django-main-thread] - åˆ›å»º LLM æœåŠ¡ï¼šprovider=deepseek
+2026-03-26 16:13:46,416 - LLMServiceFactory - INFO - [thread=6109229056 django-main-thread] - ä½¿ç”¨æ•°æ®åº“ä¸­çš„ AI é…ç½®
+2026-03-26 16:15:54,896 - LLMServiceFactory - INFO - [thread=6402584576 django-main-thread] - åˆ›å»º LLM æœåŠ¡ï¼šprovider=deepseek
+2026-03-26 16:15:54,896 - LLMServiceFactory - INFO - [thread=8238468928 MainThread] - åˆ›å»º LLM æœåŠ¡ï¼šprovider=deepseek
+2026-03-26 16:15:54,993 - LLMServiceFactory - INFO - [thread=6402584576 django-main-thread] - ä½¿ç”¨æ•°æ®åº“ä¸­çš„ AI é…ç½®
+2026-03-26 16:15:54,993 - LLMServiceFactory - INFO - [thread=8238468928 MainThread] - ä½¿ç”¨æ•°æ®åº“ä¸­çš„ AI é…ç½®
+2026-03-26 16:15:55,734 - LLMServiceFactory - INFO - [thread=6402584576 django-main-thread] - åˆ›å»º LLM æœåŠ¡ï¼šprovider=deepseek
+2026-03-26 16:15:55,734 - LLMServiceFactory - INFO - [thread=8238468928 MainThread] - åˆ›å»º LLM æœåŠ¡ï¼šprovider=deepseek
+2026-03-26 16:15:55,736 - LLMServiceFactory - INFO - [thread=6402584576 django-main-thread] - ä½¿ç”¨æ•°æ®åº“ä¸­çš„ AI é…ç½®
+2026-03-26 16:15:55,736 - LLMServiceFactory - INFO - [thread=8238468928 MainThread] - ä½¿ç”¨æ•°æ®åº“ä¸­çš„ AI é…ç½®
+2026-03-26 16:16:55,413 - LLMServiceFactory - INFO - [thread=6187511808 django-main-thread] - åˆ›å»º LLM æœåŠ¡ï¼šprovider=deepseek
+2026-03-26 16:16:55,483 - LLMServiceFactory - INFO - [thread=6187511808 django-main-thread] - ä½¿ç”¨æ•°æ®åº“ä¸­çš„ AI é…ç½®
+2026-03-26 16:16:56,292 - LLMServiceFactory - INFO - [thread=6187511808 django-main-thread] - åˆ›å»º LLM æœåŠ¡ï¼šprovider=deepseek
+2026-03-26 16:16:56,293 - LLMServiceFactory - INFO - [thread=6187511808 django-main-thread] - ä½¿ç”¨æ•°æ®åº“ä¸­çš„ AI é…ç½®
+2026-03-26 16:16:56,310 - LLMServiceFactory - INFO - [thread=6187511808 django-main-thread] - åˆ›å»º LLM æœåŠ¡ï¼šprovider=deepseek
+2026-03-26 16:16:56,311 - LLMServiceFactory - INFO - [thread=6187511808 django-main-thread] - ä½¿ç”¨æ•°æ®åº“ä¸­çš„ AI é…ç½®
+2026-03-26 16:16:58,588 - LLMServiceFactory - INFO - [thread=6109065216 django-main-thread] - åˆ›å»º LLM æœåŠ¡ï¼šprovider=deepseek
+2026-03-26 16:16:58,598 - LLMServiceFactory - INFO - [thread=6109065216 django-main-thread] - ä½¿ç”¨æ•°æ®åº“ä¸­çš„ AI é…ç½®
+2026-03-26 16:16:59,235 - LLMServiceFactory - INFO - [thread=6109065216 django-main-thread] - åˆ›å»º LLM æœåŠ¡ï¼šprovider=deepseek
+2026-03-26 16:16:59,236 - LLMServiceFactory - INFO - [thread=6109065216 django-main-thread] - ä½¿ç”¨æ•°æ®åº“ä¸­çš„ AI é…ç½®
+2026-03-26 16:16:59,246 - LLMServiceFactory - INFO - [thread=6109065216 django-main-thread] - åˆ›å»º LLM æœåŠ¡ï¼šprovider=deepseek
+2026-03-26 16:16:59,248 - LLMServiceFactory - INFO - [thread=6109065216 django-main-thread] - ä½¿ç”¨æ•°æ®åº“ä¸­çš„ AI é…ç½®
+2026-03-26 16:17:09,339 - LLMServiceFactory - INFO - [thread=8238468928 MainThread] - åˆ›å»º LLM æœåŠ¡ï¼šprovider=deepseek
+2026-03-26 16:17:09,364 - LLMServiceFactory - INFO - [thread=8238468928 MainThread] - ä½¿ç”¨æ•°æ®åº“ä¸­çš„ AI é…ç½®
+2026-03-26 16:17:10,314 - LLMServiceFactory - INFO - [thread=8238468928 MainThread] - åˆ›å»º LLM æœåŠ¡ï¼šprovider=deepseek
+2026-03-26 16:17:10,316 - LLMServiceFactory - INFO - [thread=8238468928 MainThread] - ä½¿ç”¨æ•°æ®åº“ä¸­çš„ AI é…ç½®
+2026-03-26 16:17:10,330 - LLMServiceFactory - INFO - [thread=8238468928 MainThread] - åˆ›å»º LLM æœåŠ¡ï¼šprovider=deepseek
+2026-03-26 16:17:10,331 - LLMServiceFactory - INFO - [thread=8238468928 MainThread] - ä½¿ç”¨æ•°æ®åº“ä¸­çš„ AI é…ç½®
+2026-03-26 16:17:10,834 - LLMServiceFactory - INFO - [thread=6179647488 django-main-thread] - åˆ›å»º LLM æœåŠ¡ï¼šprovider=deepseek
+2026-03-26 16:17:10,842 - LLMServiceFactory - INFO - [thread=6179647488 django-main-thread] - ä½¿ç”¨æ•°æ®åº“ä¸­çš„ AI é…ç½®
+2026-03-26 16:17:11,558 - LLMServiceFactory - INFO - [thread=6179647488 django-main-thread] - åˆ›å»º LLM æœåŠ¡ï¼šprovider=deepseek
+2026-03-26 16:17:11,560 - LLMServiceFactory - INFO - [thread=6179647488 django-main-thread] - ä½¿ç”¨æ•°æ®åº“ä¸­çš„ AI é…ç½®
+2026-03-26 16:17:11,567 - LLMServiceFactory - INFO - [thread=6179647488 django-main-thread] - åˆ›å»º LLM æœåŠ¡ï¼šprovider=deepseek
+2026-03-26 16:17:11,568 - LLMServiceFactory - INFO - [thread=6179647488 django-main-thread] - ä½¿ç”¨æ•°æ®åº“ä¸­çš„ AI é…ç½®
+2026-03-26 16:22:38,975 - LLMServiceFactory - INFO - [thread=6197047296 Thread-1 (process_request_thread)] - åˆ›å»º LLM æœåŠ¡ï¼šprovider=deepseek
+2026-03-26 16:22:38,979 - LLMServiceFactory - INFO - [thread=6197047296 Thread-1 (process_request_thread)] - ä½¿ç”¨æ•°æ®åº“ä¸­çš„ AI é…ç½®
+2026-03-26 16:30:26,763 - LLMServiceFactory - INFO - [thread=6107230208 django-main-thread] - åˆ›å»º LLM æœåŠ¡ï¼šprovider=deepseek
+2026-03-26 16:30:26,789 - LLMServiceFactory - INFO - [thread=6107230208 django-main-thread] - ä½¿ç”¨æ•°æ®åº“ä¸­çš„ AI é…ç½®
+2026-03-26 16:30:27,507 - LLMServiceFactory - INFO - [thread=6107230208 django-main-thread] - åˆ›å»º LLM æœåŠ¡ï¼šprovider=deepseek
+2026-03-26 16:30:27,509 - LLMServiceFactory - INFO - [thread=6107230208 django-main-thread] - ä½¿ç”¨æ•°æ®åº“ä¸­çš„ AI é…ç½®
+2026-03-26 16:30:27,524 - LLMServiceFactory - INFO - [thread=6107230208 django-main-thread] - åˆ›å»º LLM æœåŠ¡ï¼šprovider=deepseek
+2026-03-26 16:30:27,525 - LLMServiceFactory - INFO - [thread=6107230208 django-main-thread] - ä½¿ç”¨æ•°æ®åº“ä¸­çš„ AI é…ç½®
+2026-03-26 16:31:08,883 - LLMServiceFactory - INFO - [thread=6124630016 Thread-1 (process_request_thread)] - åˆ›å»º LLM æœåŠ¡ï¼šprovider=deepseek
+2026-03-26 16:31:08,885 - LLMServiceFactory - INFO - [thread=6124630016 Thread-1 (process_request_thread)] - ä½¿ç”¨æ•°æ®åº“ä¸­çš„ AI é…ç½®
+2026-03-26 18:03:06,933 - LLMServiceFactory - INFO - [thread=8238468928 MainThread] - åˆ›å»º LLM æœåŠ¡ï¼šprovider=deepseek
+2026-03-26 18:03:07,006 - LLMServiceFactory - INFO - [thread=8238468928 MainThread] - ä½¿ç”¨æ•°æ®åº“ä¸­çš„ AI é…ç½®
+2026-03-26 18:03:07,931 - LLMServiceFactory - INFO - [thread=8238468928 MainThread] - åˆ›å»º LLM æœåŠ¡ï¼šprovider=deepseek
+2026-03-26 18:03:07,932 - LLMServiceFactory - INFO - [thread=8238468928 MainThread] - ä½¿ç”¨æ•°æ®åº“ä¸­çš„ AI é…ç½®
+2026-03-26 18:03:07,945 - LLMServiceFactory - INFO - [thread=8238468928 MainThread] - åˆ›å»º LLM æœåŠ¡ï¼šprovider=deepseek
+2026-03-26 18:03:07,947 - LLMServiceFactory - INFO - [thread=8238468928 MainThread] - ä½¿ç”¨æ•°æ®åº“ä¸­çš„ AI é…ç½®
+2026-03-26 18:03:27,302 - LLMServiceFactory - INFO - [thread=6116651008 django-main-thread] - åˆ›å»º LLM æœåŠ¡ï¼šprovider=deepseek
+2026-03-26 18:03:27,312 - LLMServiceFactory - INFO - [thread=6116651008 django-main-thread] - ä½¿ç”¨æ•°æ®åº“ä¸­çš„ AI é…ç½®
+2026-03-26 18:03:28,819 - LLMServiceFactory - INFO - [thread=6116651008 django-main-thread] - åˆ›å»º LLM æœåŠ¡ï¼šprovider=deepseek
+2026-03-26 18:03:28,823 - LLMServiceFactory - INFO - [thread=6116651008 django-main-thread] - ä½¿ç”¨æ•°æ®åº“ä¸­çš„ AI é…ç½®
+2026-03-26 18:03:28,837 - LLMServiceFactory - INFO - [thread=6116651008 django-main-thread] - åˆ›å»º LLM æœåŠ¡ï¼šprovider=deepseek
+2026-03-26 18:03:28,838 - LLMServiceFactory - INFO - [thread=6116651008 django-main-thread] - ä½¿ç”¨æ•°æ®åº“ä¸­çš„ AI é…ç½®
+2026-03-27 09:31:31,670 - LLMServiceFactory - INFO - [thread=6114226176 django-main-thread] - åˆ›å»º LLM æœåŠ¡ï¼šprovider=deepseek
+2026-03-27 09:31:31,784 - LLMServiceFactory - INFO - [thread=6114226176 django-main-thread] - ä½¿ç”¨æ•°æ®åº“ä¸­çš„ AI é…ç½®
+2026-03-27 09:31:32,719 - LLMServiceFactory - INFO - [thread=6114226176 django-main-thread] - åˆ›å»º LLM æœåŠ¡ï¼šprovider=deepseek
+2026-03-27 09:31:32,722 - LLMServiceFactory - INFO - [thread=6114226176 django-main-thread] - ä½¿ç”¨æ•°æ®åº“ä¸­çš„ AI é…ç½®
+2026-03-27 09:31:32,736 - LLMServiceFactory - INFO - [thread=6114226176 django-main-thread] - åˆ›å»º LLM æœåŠ¡ï¼šprovider=deepseek
+2026-03-27 09:31:32,737 - LLMServiceFactory - INFO - [thread=6114226176 django-main-thread] - ä½¿ç”¨æ•°æ®åº“ä¸­çš„ AI é…ç½®
+2026-03-27 09:40:18,415 - LLMServiceFactory - INFO - [thread=8238468928 MainThread] - åˆ›å»º LLM æœåŠ¡ï¼šprovider=deepseek
+2026-03-27 09:40:18,426 - LLMServiceFactory - INFO - [thread=8238468928 MainThread] - ä½¿ç”¨æ•°æ®åº“ä¸­çš„ AI é…ç½®
+2026-03-27 09:40:19,105 - LLMServiceFactory - INFO - [thread=8238468928 MainThread] - åˆ›å»º LLM æœåŠ¡ï¼šprovider=deepseek
+2026-03-27 09:40:19,107 - LLMServiceFactory - INFO - [thread=8238468928 MainThread] - ä½¿ç”¨æ•°æ®åº“ä¸­çš„ AI é…ç½®
+2026-03-27 09:40:19,119 - LLMServiceFactory - INFO - [thread=8238468928 MainThread] - åˆ›å»º LLM æœåŠ¡ï¼šprovider=deepseek
+2026-03-27 09:40:19,120 - LLMServiceFactory - INFO - [thread=8238468928 MainThread] - ä½¿ç”¨æ•°æ®åº“ä¸­çš„ AI é…ç½®
+2026-03-27 09:46:06,365 - LLMServiceFactory - INFO - [thread=6115553280 django-main-thread] - åˆ›å»º LLM æœåŠ¡ï¼šprovider=deepseek
+2026-03-27 09:46:06,387 - LLMServiceFactory - INFO - [thread=6115553280 django-main-thread] - ä½¿ç”¨æ•°æ®åº“ä¸­çš„ AI é…ç½®
+2026-03-27 09:46:07,052 - LLMServiceFactory - INFO - [thread=6115553280 django-main-thread] - åˆ›å»º LLM æœåŠ¡ï¼šprovider=deepseek
+2026-03-27 09:46:07,054 - LLMServiceFactory - INFO - [thread=6115553280 django-main-thread] - ä½¿ç”¨æ•°æ®åº“ä¸­çš„ AI é…ç½®
+2026-03-27 09:46:07,069 - LLMServiceFactory - INFO - [thread=6115553280 django-main-thread] - åˆ›å»º LLM æœåŠ¡ï¼šprovider=deepseek
+2026-03-27 09:46:07,070 - LLMServiceFactory - INFO - [thread=6115553280 django-main-thread] - ä½¿ç”¨æ•°æ®åº“ä¸­çš„ AI é…ç½®
+2026-03-27 11:58:55,247 - LLMServiceFactory - INFO - [thread=6173339648 django-main-thread] - åˆ›å»º LLM æœåŠ¡ï¼šprovider=deepseek
+2026-03-27 11:58:55,353 - LLMServiceFactory - WARNING - [thread=6173339648 django-main-thread] - æ•°æ®åº“ä¸­ AI é…ç½®çš„ API Key ä¸ºç©ºï¼Œä½¿ç”¨ settings.py é…ç½®
+2026-03-27 11:58:55,902 - LLMServiceFactory - INFO - [thread=6173339648 django-main-thread] - åˆ›å»º LLM æœåŠ¡ï¼šprovider=deepseek
+2026-03-27 11:58:55,904 - LLMServiceFactory - WARNING - [thread=6173339648 django-main-thread] - æ•°æ®åº“ä¸­ AI é…ç½®çš„ API Key ä¸ºç©ºï¼Œä½¿ç”¨ settings.py é…ç½®
+2026-03-27 11:58:55,916 - LLMServiceFactory - INFO - [thread=6173339648 django-main-thread] - åˆ›å»º LLM æœåŠ¡ï¼šprovider=deepseek
+2026-03-27 11:58:55,917 - LLMServiceFactory - WARNING - [thread=6173339648 django-main-thread] - æ•°æ®åº“ä¸­ AI é…ç½®çš„ API Key ä¸ºç©ºï¼Œä½¿ç”¨ settings.py é…ç½®
+2026-03-27 11:59:53,859 - LLMServiceFactory - INFO - [thread=6152122368 django-main-thread] - åˆ›å»º LLM æœåŠ¡ï¼šprovider=deepseek
+2026-03-27 11:59:53,940 - LLMServiceFactory - WARNING - [thread=6152122368 django-main-thread] - æ•°æ®åº“ä¸­ AI é…ç½®çš„ API Key ä¸ºç©ºï¼Œä½¿ç”¨ settings.py é…ç½®
+2026-03-27 11:59:54,582 - LLMServiceFactory - INFO - [thread=6152122368 django-main-thread] - åˆ›å»º LLM æœåŠ¡ï¼šprovider=deepseek
+2026-03-27 11:59:54,584 - LLMServiceFactory - WARNING - [thread=6152122368 django-main-thread] - æ•°æ®åº“ä¸­ AI é…ç½®çš„ API Key ä¸ºç©ºï¼Œä½¿ç”¨ settings.py é…ç½®
+2026-03-27 11:59:54,596 - LLMServiceFactory - INFO - [thread=6152122368 django-main-thread] - åˆ›å»º LLM æœåŠ¡ï¼šprovider=deepseek
+2026-03-27 11:59:54,597 - LLMServiceFactory - WARNING - [thread=6152122368 django-main-thread] - æ•°æ®åº“ä¸­ AI é…ç½®çš„ API Key ä¸ºç©ºï¼Œä½¿ç”¨ settings.py é…ç½®
+2026-03-28 17:10:20,976 - LLMServiceFactory - INFO - [thread=31552 MainThread] - ´´½¨ LLM ·şÎñ£ºprovider=deepseek
+2026-03-28 17:10:20,993 - LLMServiceFactory - WARNING - [thread=31552 MainThread] - ´ÓÊı¾İ¿â¼ÓÔØ AI ÅäÖÃÊ§°Ü£º(1045, "Access denied for user 'root'@'localhost' (using password: NO)")£¬Ê¹ÓÃ settings.py ÅäÖÃ
+2026-03-28 17:10:54,687 - LLMServiceFactory - INFO - [thread=23140 MainThread] - ´´½¨ LLM ·şÎñ£ºprovider=deepseek
+2026-03-28 17:10:54,694 - LLMServiceFactory - WARNING - [thread=23140 MainThread] - ´ÓÊı¾İ¿â¼ÓÔØ AI ÅäÖÃÊ§°Ü£º(1045, "Access denied for user 'root'@'localhost' (using password: NO)")£¬Ê¹ÓÃ settings.py ÅäÖÃ
+2026-03-28 17:11:31,345 - LLMServiceFactory - INFO - [thread=23804 MainThread] - ´´½¨ LLM ·şÎñ£ºprovider=deepseek
+2026-03-28 17:11:31,361 - LLMServiceFactory - WARNING - [thread=23804 MainThread] - ´ÓÊı¾İ¿â¼ÓÔØ AI ÅäÖÃÊ§°Ü£º(1045, "Access denied for user 'root'@'localhost' (using password: NO)")£¬Ê¹ÓÃ settings.py ÅäÖÃ
+2026-03-28 17:11:32,172 - LLMServiceFactory - INFO - [thread=23804 MainThread] - ´´½¨ LLM ·şÎñ£ºprovider=deepseek
+2026-03-28 17:11:32,174 - LLMServiceFactory - WARNING - [thread=23804 MainThread] - ´ÓÊı¾İ¿â¼ÓÔØ AI ÅäÖÃÊ§°Ü£º(1045, "Access denied for user 'root'@'localhost' (using password: NO)")£¬Ê¹ÓÃ settings.py ÅäÖÃ
+2026-03-28 17:12:03,751 - LLMServiceFactory - INFO - [thread=25612 MainThread] - ´´½¨ LLM ·şÎñ£ºprovider=deepseek
+2026-03-28 17:12:03,757 - LLMServiceFactory - WARNING - [thread=25612 MainThread] - ´ÓÊı¾İ¿â¼ÓÔØ AI ÅäÖÃÊ§°Ü£º(1045, "Access denied for user 'root'@'localhost' (using password: NO)")£¬Ê¹ÓÃ settings.py ÅäÖÃ
+2026-03-28 17:12:04,449 - LLMServiceFactory - INFO - [thread=25612 MainThread] - ´´½¨ LLM ·şÎñ£ºprovider=deepseek
+2026-03-28 17:12:04,462 - LLMServiceFactory - WARNING - [thread=25612 MainThread] - ´ÓÊı¾İ¿â¼ÓÔØ AI ÅäÖÃÊ§°Ü£º(1045, "Access denied for user 'root'@'localhost' (using password: NO)")£¬Ê¹ÓÃ settings.py ÅäÖÃ
+2026-03-28 17:12:04,474 - LLMServiceFactory - INFO - [thread=25612 MainThread] - ´´½¨ LLM ·şÎñ£ºprovider=deepseek
+2026-03-28 17:12:04,485 - LLMServiceFactory - WARNING - [thread=25612 MainThread] - ´ÓÊı¾İ¿â¼ÓÔØ AI ÅäÖÃÊ§°Ü£º(1045, "Access denied for user 'root'@'localhost' (using password: NO)")£¬Ê¹ÓÃ settings.py ÅäÖÃ
+2026-03-28 17:28:12,080 - LLMServiceFactory - INFO - [thread=32172 MainThread] - ´´½¨ LLM ·şÎñ£ºprovider=deepseek
+2026-03-28 17:28:12,087 - LLMServiceFactory - WARNING - [thread=32172 MainThread] - ´ÓÊı¾İ¿â¼ÓÔØ AI ÅäÖÃÊ§°Ü£º(1045, "Access denied for user 'root'@'localhost' (using password: NO)")£¬Ê¹ÓÃ settings.py ÅäÖÃ
+2026-03-28 17:28:12,772 - LLMServiceFactory - INFO - [thread=32172 MainThread] - ´´½¨ LLM ·şÎñ£ºprovider=deepseek
+2026-03-28 17:28:12,774 - LLMServiceFactory - WARNING - [thread=32172 MainThread] - ´ÓÊı¾İ¿â¼ÓÔØ AI ÅäÖÃÊ§°Ü£º(1045, "Access denied for user 'root'@'localhost' (using password: NO)")£¬Ê¹ÓÃ settings.py ÅäÖÃ
+2026-03-28 17:28:12,786 - LLMServiceFactory - INFO - [thread=32172 MainThread] - ´´½¨ LLM ·şÎñ£ºprovider=deepseek
+2026-03-28 17:28:12,788 - LLMServiceFactory - WARNING - [thread=32172 MainThread] - ´ÓÊı¾İ¿â¼ÓÔØ AI ÅäÖÃÊ§°Ü£º(1045, "Access denied for user 'root'@'localhost' (using password: NO)")£¬Ê¹ÓÃ settings.py ÅäÖÃ
+2026-03-28 17:47:17,458 - LLMServiceFactory - INFO - [thread=27596 MainThread] - ´´½¨ LLM ·şÎñ£ºprovider=deepseek
+2026-03-28 17:47:17,474 - LLMServiceFactory - WARNING - [thread=27596 MainThread] - ´ÓÊı¾İ¿â¼ÓÔØ AI ÅäÖÃÊ§°Ü£º(1146, "Table 'test_brain_db.ai_config_aiconfig' doesn't exist")£¬Ê¹ÓÃ settings.py ÅäÖÃ
+2026-03-28 17:47:18,411 - LLMServiceFactory - INFO - [thread=27596 MainThread] - ´´½¨ LLM ·şÎñ£ºprovider=deepseek
+2026-03-28 17:47:18,413 - LLMServiceFactory - WARNING - [thread=27596 MainThread] - ´ÓÊı¾İ¿â¼ÓÔØ AI ÅäÖÃÊ§°Ü£º(1146, "Table 'test_brain_db.ai_config_aiconfig' doesn't exist")£¬Ê¹ÓÃ settings.py ÅäÖÃ
+2026-03-28 17:47:18,429 - LLMServiceFactory - INFO - [thread=27596 MainThread] - ´´½¨ LLM ·şÎñ£ºprovider=deepseek
+2026-03-28 17:47:18,430 - LLMServiceFactory - WARNING - [thread=27596 MainThread] - ´ÓÊı¾İ¿â¼ÓÔØ AI ÅäÖÃÊ§°Ü£º(1146, "Table 'test_brain_db.ai_config_aiconfig' doesn't exist")£¬Ê¹ÓÃ settings.py ÅäÖÃ
+2026-03-28 17:47:44,310 - LLMServiceFactory - INFO - [thread=30476 MainThread] - ´´½¨ LLM ·şÎñ£ºprovider=deepseek
+2026-03-28 17:47:44,316 - LLMServiceFactory - WARNING - [thread=30476 MainThread] - ´ÓÊı¾İ¿â¼ÓÔØ AI ÅäÖÃÊ§°Ü£º(1146, "Table 'test_brain_db.ai_config_aiconfig' doesn't exist")£¬Ê¹ÓÃ settings.py ÅäÖÃ
+2026-03-28 17:47:45,240 - LLMServiceFactory - INFO - [thread=30476 MainThread] - ´´½¨ LLM ·şÎñ£ºprovider=deepseek
+2026-03-28 17:47:45,241 - LLMServiceFactory - WARNING - [thread=30476 MainThread] - ´ÓÊı¾İ¿â¼ÓÔØ AI ÅäÖÃÊ§°Ü£º(1146, "Table 'test_brain_db.ai_config_aiconfig' doesn't exist")£¬Ê¹ÓÃ settings.py ÅäÖÃ
+2026-03-28 17:47:45,256 - LLMServiceFactory - INFO - [thread=30476 MainThread] - ´´½¨ LLM ·şÎñ£ºprovider=deepseek
+2026-03-28 17:47:45,257 - LLMServiceFactory - WARNING - [thread=30476 MainThread] - ´ÓÊı¾İ¿â¼ÓÔØ AI ÅäÖÃÊ§°Ü£º(1146, "Table 'test_brain_db.ai_config_aiconfig' doesn't exist")£¬Ê¹ÓÃ settings.py ÅäÖÃ
+2026-03-28 17:49:09,560 - LLMServiceFactory - INFO - [thread=9048 MainThread] - ´´½¨ LLM ·şÎñ£ºprovider=deepseek
+2026-03-28 17:49:09,569 - LLMServiceFactory - INFO - [thread=9048 MainThread] - Êı¾İ¿âÖĞÃ»ÓĞ AI ÅäÖÃ£¬Ê¹ÓÃ settings.py ÅäÖÃ
+2026-03-28 17:49:10,246 - LLMServiceFactory - INFO - [thread=9048 MainThread] - ´´½¨ LLM ·şÎñ£ºprovider=deepseek
+2026-03-28 17:49:10,248 - LLMServiceFactory - INFO - [thread=9048 MainThread] - Êı¾İ¿âÖĞÃ»ÓĞ AI ÅäÖÃ£¬Ê¹ÓÃ settings.py ÅäÖÃ
+2026-03-28 17:49:10,259 - LLMServiceFactory - INFO - [thread=9048 MainThread] - ´´½¨ LLM ·şÎñ£ºprovider=deepseek
+2026-03-28 17:49:10,261 - LLMServiceFactory - INFO - [thread=9048 MainThread] - Êı¾İ¿âÖĞÃ»ÓĞ AI ÅäÖÃ£¬Ê¹ÓÃ settings.py ÅäÖÃ
+2026-03-28 17:52:56,748 - LLMServiceFactory - INFO - [thread=9348 MainThread] - ´´½¨ LLM ·şÎñ£ºprovider=deepseek
+2026-03-28 17:52:56,754 - LLMServiceFactory - WARNING - [thread=9348 MainThread] - ´ÓÊı¾İ¿â¼ÓÔØ AI ÅäÖÃÊ§°Ü£º(1045, "Access denied for user 'root'@'localhost' (using password: NO)")£¬Ê¹ÓÃ settings.py ÅäÖÃ
+2026-03-28 17:52:57,434 - LLMServiceFactory - INFO - [thread=9348 MainThread] - ´´½¨ LLM ·şÎñ£ºprovider=deepseek
+2026-03-28 17:52:57,436 - LLMServiceFactory - WARNING - [thread=9348 MainThread] - ´ÓÊı¾İ¿â¼ÓÔØ AI ÅäÖÃÊ§°Ü£º(1045, "Access denied for user 'root'@'localhost' (using password: NO)")£¬Ê¹ÓÃ settings.py ÅäÖÃ
+2026-03-28 17:52:57,448 - LLMServiceFactory - INFO - [thread=9348 MainThread] - ´´½¨ LLM ·şÎñ£ºprovider=deepseek
+2026-03-28 17:52:57,460 - LLMServiceFactory - WARNING - [thread=9348 MainThread] - ´ÓÊı¾İ¿â¼ÓÔØ AI ÅäÖÃÊ§°Ü£º(1045, "Access denied for user 'root'@'localhost' (using password: NO)")£¬Ê¹ÓÃ settings.py ÅäÖÃ
+2026-03-28 17:53:40,921 - LLMServiceFactory - INFO - [thread=12448 MainThread] - ´´½¨ LLM ·şÎñ£ºprovider=deepseek
+2026-03-28 17:53:40,927 - LLMServiceFactory - WARNING - [thread=12448 MainThread] - ´ÓÊı¾İ¿â¼ÓÔØ AI ÅäÖÃÊ§°Ü£º(1045, "Access denied for user 'root'@'localhost' (using password: NO)")£¬Ê¹ÓÃ settings.py ÅäÖÃ
+2026-03-28 17:53:41,634 - LLMServiceFactory - INFO - [thread=12448 MainThread] - ´´½¨ LLM ·şÎñ£ºprovider=deepseek
+2026-03-28 17:53:41,636 - LLMServiceFactory - WARNING - [thread=12448 MainThread] - ´ÓÊı¾İ¿â¼ÓÔØ AI ÅäÖÃÊ§°Ü£º(1045, "Access denied for user 'root'@'localhost' (using password: NO)")£¬Ê¹ÓÃ settings.py ÅäÖÃ
+2026-03-28 17:53:41,649 - LLMServiceFactory - INFO - [thread=12448 MainThread] - ´´½¨ LLM ·şÎñ£ºprovider=deepseek
+2026-03-28 17:53:41,660 - LLMServiceFactory - WARNING - [thread=12448 MainThread] - ´ÓÊı¾İ¿â¼ÓÔØ AI ÅäÖÃÊ§°Ü£º(1045, "Access denied for user 'root'@'localhost' (using password: NO)")£¬Ê¹ÓÃ settings.py ÅäÖÃ
+2026-03-28 17:54:15,999 - LLMServiceFactory - INFO - [thread=15524 MainThread] - ´´½¨ LLM ·şÎñ£ºprovider=deepseek
+2026-03-28 17:54:16,018 - LLMServiceFactory - WARNING - [thread=15524 MainThread] - Êı¾İ¿âÖĞ AI ÅäÖÃµÄ API Key Îª¿Õ£¬Ê¹ÓÃ settings.py ÅäÖÃ
+2026-03-28 17:54:16,695 - LLMServiceFactory - INFO - [thread=15524 MainThread] - ´´½¨ LLM ·şÎñ£ºprovider=deepseek
+2026-03-28 17:54:16,696 - LLMServiceFactory - WARNING - [thread=15524 MainThread] - Êı¾İ¿âÖĞ AI ÅäÖÃµÄ API Key Îª¿Õ£¬Ê¹ÓÃ settings.py ÅäÖÃ
+2026-03-28 17:54:16,708 - LLMServiceFactory - INFO - [thread=15524 MainThread] - ´´½¨ LLM ·şÎñ£ºprovider=deepseek
+2026-03-28 17:54:16,709 - LLMServiceFactory - WARNING - [thread=15524 MainThread] - Êı¾İ¿âÖĞ AI ÅäÖÃµÄ API Key Îª¿Õ£¬Ê¹ÓÃ settings.py ÅäÖÃ
+2026-03-28 17:58:37,333 - LLMServiceFactory - INFO - [thread=21844 MainThread] - ´´½¨ LLM ·şÎñ£ºprovider=deepseek
+2026-03-28 17:58:37,339 - LLMServiceFactory - WARNING - [thread=21844 MainThread] - ´ÓÊı¾İ¿â¼ÓÔØ AI ÅäÖÃÊ§°Ü£º(1045, "Access denied for user 'root'@'localhost' (using password: NO)")£¬Ê¹ÓÃ settings.py ÅäÖÃ
+2026-03-28 17:58:38,047 - LLMServiceFactory - INFO - [thread=21844 MainThread] - ´´½¨ LLM ·şÎñ£ºprovider=deepseek
+2026-03-28 17:58:38,059 - LLMServiceFactory - WARNING - [thread=21844 MainThread] - ´ÓÊı¾İ¿â¼ÓÔØ AI ÅäÖÃÊ§°Ü£º(1045, "Access denied for user 'root'@'localhost' (using password: NO)")£¬Ê¹ÓÃ settings.py ÅäÖÃ
+2026-03-28 17:58:38,070 - LLMServiceFactory - INFO - [thread=21844 MainThread] - ´´½¨ LLM ·şÎñ£ºprovider=deepseek
+2026-03-28 17:58:38,081 - LLMServiceFactory - WARNING - [thread=21844 MainThread] - ´ÓÊı¾İ¿â¼ÓÔØ AI ÅäÖÃÊ§°Ü£º(1045, "Access denied for user 'root'@'localhost' (using password: NO)")£¬Ê¹ÓÃ settings.py ÅäÖÃ
+2026-03-28 18:01:46,629 - LLMServiceFactory - INFO - [thread=33616 MainThread] - ´´½¨ LLM ·şÎñ£ºprovider=deepseek
+2026-03-28 18:01:46,639 - LLMServiceFactory - WARNING - [thread=33616 MainThread] - Êı¾İ¿âÖĞ AI ÅäÖÃµÄ API Key Îª¿Õ£¬Ê¹ÓÃ settings.py ÅäÖÃ
+2026-03-28 18:01:47,562 - LLMServiceFactory - INFO - [thread=33616 MainThread] - ´´½¨ LLM ·şÎñ£ºprovider=deepseek
+2026-03-28 18:01:47,564 - LLMServiceFactory - WARNING - [thread=33616 MainThread] - Êı¾İ¿âÖĞ AI ÅäÖÃµÄ API Key Îª¿Õ£¬Ê¹ÓÃ settings.py ÅäÖÃ
+2026-03-28 18:01:47,579 - LLMServiceFactory - INFO - [thread=33616 MainThread] - ´´½¨ LLM ·şÎñ£ºprovider=deepseek
+2026-03-28 18:01:47,580 - LLMServiceFactory - WARNING - [thread=33616 MainThread] - Êı¾İ¿âÖĞ AI ÅäÖÃµÄ API Key Îª¿Õ£¬Ê¹ÓÃ settings.py ÅäÖÃ
+2026-03-28 18:24:07,332 - LLMServiceFactory - INFO - [thread=7456 MainThread] - ´´½¨ LLM ·şÎñ£ºprovider=deepseek
+2026-03-28 18:24:07,342 - LLMServiceFactory - WARNING - [thread=7456 MainThread] - Êı¾İ¿âÖĞ AI ÅäÖÃµÄ API Key Îª¿Õ£¬Ê¹ÓÃ settings.py ÅäÖÃ
+2026-03-28 18:24:08,259 - LLMServiceFactory - INFO - [thread=7456 MainThread] - ´´½¨ LLM ·şÎñ£ºprovider=deepseek
+2026-03-28 18:24:08,261 - LLMServiceFactory - WARNING - [thread=7456 MainThread] - Êı¾İ¿âÖĞ AI ÅäÖÃµÄ API Key Îª¿Õ£¬Ê¹ÓÃ settings.py ÅäÖÃ
+2026-03-28 18:24:08,276 - LLMServiceFactory - INFO - [thread=7456 MainThread] - ´´½¨ LLM ·şÎñ£ºprovider=deepseek
+2026-03-28 18:24:08,277 - LLMServiceFactory - WARNING - [thread=7456 MainThread] - Êı¾İ¿âÖĞ AI ÅäÖÃµÄ API Key Îª¿Õ£¬Ê¹ÓÃ settings.py ÅäÖÃ
+2026-03-28 18:24:28,908 - LLMServiceFactory - INFO - [thread=31488 MainThread] - ´´½¨ LLM ·şÎñ£ºprovider=deepseek
+2026-03-28 18:24:28,916 - LLMServiceFactory - WARNING - [thread=31488 MainThread] - Êı¾İ¿âÖĞ AI ÅäÖÃµÄ API Key Îª¿Õ£¬Ê¹ÓÃ settings.py ÅäÖÃ
+2026-03-28 18:24:29,815 - LLMServiceFactory - INFO - [thread=31488 MainThread] - ´´½¨ LLM ·şÎñ£ºprovider=deepseek
+2026-03-28 18:24:29,816 - LLMServiceFactory - WARNING - [thread=31488 MainThread] - Êı¾İ¿âÖĞ AI ÅäÖÃµÄ API Key Îª¿Õ£¬Ê¹ÓÃ settings.py ÅäÖÃ
+2026-03-28 18:24:29,830 - LLMServiceFactory - INFO - [thread=31488 MainThread] - ´´½¨ LLM ·şÎñ£ºprovider=deepseek
+2026-03-28 18:24:29,831 - LLMServiceFactory - WARNING - [thread=31488 MainThread] - Êı¾İ¿âÖĞ AI ÅäÖÃµÄ API Key Îª¿Õ£¬Ê¹ÓÃ settings.py ÅäÖÃ
+2026-03-28 18:27:48,728 - LLMServiceFactory - INFO - [thread=26452 MainThread] - ´´½¨ LLM ·şÎñ£ºprovider=deepseek
+2026-03-28 18:27:48,737 - LLMServiceFactory - WARNING - [thread=26452 MainThread] - Êı¾İ¿âÖĞ AI ÅäÖÃµÄ API Key Îª¿Õ£¬Ê¹ÓÃ settings.py ÅäÖÃ
+2026-03-28 18:27:49,677 - LLMServiceFactory - INFO - [thread=26452 MainThread] - ´´½¨ LLM ·şÎñ£ºprovider=deepseek
+2026-03-28 18:27:49,679 - LLMServiceFactory - WARNING - [thread=26452 MainThread] - Êı¾İ¿âÖĞ AI ÅäÖÃµÄ API Key Îª¿Õ£¬Ê¹ÓÃ settings.py ÅäÖÃ
+2026-03-28 18:27:49,693 - LLMServiceFactory - INFO - [thread=26452 MainThread] - ´´½¨ LLM ·şÎñ£ºprovider=deepseek
+2026-03-28 18:27:49,694 - LLMServiceFactory - WARNING - [thread=26452 MainThread] - Êı¾İ¿âÖĞ AI ÅäÖÃµÄ API Key Îª¿Õ£¬Ê¹ÓÃ settings.py ÅäÖÃ
+2026-03-28 18:28:13,467 - LLMServiceFactory - INFO - [thread=28032 MainThread] - ´´½¨ LLM ·şÎñ£ºprovider=deepseek
+2026-03-28 18:28:13,475 - LLMServiceFactory - WARNING - [thread=28032 MainThread] - Êı¾İ¿âÖĞ AI ÅäÖÃµÄ API Key Îª¿Õ£¬Ê¹ÓÃ settings.py ÅäÖÃ
+2026-03-28 18:28:14,389 - LLMServiceFactory - INFO - [thread=28032 MainThread] - ´´½¨ LLM ·şÎñ£ºprovider=deepseek
+2026-03-28 18:28:14,391 - LLMServiceFactory - WARNING - [thread=28032 MainThread] - Êı¾İ¿âÖĞ AI ÅäÖÃµÄ API Key Îª¿Õ£¬Ê¹ÓÃ settings.py ÅäÖÃ
+2026-03-28 18:28:14,405 - LLMServiceFactory - INFO - [thread=28032 MainThread] - ´´½¨ LLM ·şÎñ£ºprovider=deepseek
+2026-03-28 18:28:14,407 - LLMServiceFactory - WARNING - [thread=28032 MainThread] - Êı¾İ¿âÖĞ AI ÅäÖÃµÄ API Key Îª¿Õ£¬Ê¹ÓÃ settings.py ÅäÖÃ
+2026-03-28 18:57:41,358 - LLMServiceFactory - INFO - [thread=33920 MainThread] - ´´½¨ LLM ·şÎñ£ºprovider=deepseek
+2026-03-28 18:57:41,366 - LLMServiceFactory - WARNING - [thread=33920 MainThread] - Êı¾İ¿âÖĞ AI ÅäÖÃµÄ API Key Îª¿Õ£¬Ê¹ÓÃ settings.py ÅäÖÃ
+2026-03-28 18:57:42,063 - LLMServiceFactory - INFO - [thread=33920 MainThread] - ´´½¨ LLM ·şÎñ£ºprovider=deepseek
+2026-03-28 18:57:42,065 - LLMServiceFactory - WARNING - [thread=33920 MainThread] - Êı¾İ¿âÖĞ AI ÅäÖÃµÄ API Key Îª¿Õ£¬Ê¹ÓÃ settings.py ÅäÖÃ
+2026-03-28 18:57:42,076 - LLMServiceFactory - INFO - [thread=33920 MainThread] - ´´½¨ LLM ·şÎñ£ºprovider=deepseek
+2026-03-28 18:57:42,078 - LLMServiceFactory - WARNING - [thread=33920 MainThread] - Êı¾İ¿âÖĞ AI ÅäÖÃµÄ API Key Îª¿Õ£¬Ê¹ÓÃ settings.py ÅäÖÃ
+2026-03-28 19:01:49,334 - LLMServiceFactory - INFO - [thread=34552 MainThread] - ´´½¨ LLM ·şÎñ£ºprovider=deepseek
+2026-03-28 19:01:49,342 - LLMServiceFactory - WARNING - [thread=34552 MainThread] - Êı¾İ¿âÖĞ AI ÅäÖÃµÄ API Key Îª¿Õ£¬Ê¹ÓÃ settings.py ÅäÖÃ
+2026-03-28 19:01:50,050 - LLMServiceFactory - INFO - [thread=34552 MainThread] - ´´½¨ LLM ·şÎñ£ºprovider=deepseek
+2026-03-28 19:01:50,051 - LLMServiceFactory - WARNING - [thread=34552 MainThread] - Êı¾İ¿âÖĞ AI ÅäÖÃµÄ API Key Îª¿Õ£¬Ê¹ÓÃ settings.py ÅäÖÃ
+2026-03-28 19:01:50,061 - LLMServiceFactory - INFO - [thread=34552 MainThread] - ´´½¨ LLM ·şÎñ£ºprovider=deepseek
+2026-03-28 19:01:50,062 - LLMServiceFactory - WARNING - [thread=34552 MainThread] - Êı¾İ¿âÖĞ AI ÅäÖÃµÄ API Key Îª¿Õ£¬Ê¹ÓÃ settings.py ÅäÖÃ
+2026-03-28 19:02:04,575 - LLMServiceFactory - INFO - [thread=32276 MainThread] - ´´½¨ LLM ·şÎñ£ºprovider=deepseek
+2026-03-28 19:02:04,592 - LLMServiceFactory - WARNING - [thread=32276 MainThread] - Êı¾İ¿âÖĞ AI ÅäÖÃµÄ API Key Îª¿Õ£¬Ê¹ÓÃ settings.py ÅäÖÃ
+2026-03-28 19:02:05,290 - LLMServiceFactory - INFO - [thread=32276 MainThread] - ´´½¨ LLM ·şÎñ£ºprovider=deepseek
+2026-03-28 19:02:05,292 - LLMServiceFactory - WARNING - [thread=32276 MainThread] - Êı¾İ¿âÖĞ AI ÅäÖÃµÄ API Key Îª¿Õ£¬Ê¹ÓÃ settings.py ÅäÖÃ
+2026-03-28 19:02:05,303 - LLMServiceFactory - INFO - [thread=32276 MainThread] - ´´½¨ LLM ·şÎñ£ºprovider=deepseek
+2026-03-28 19:02:05,304 - LLMServiceFactory - WARNING - [thread=32276 MainThread] - Êı¾İ¿âÖĞ AI ÅäÖÃµÄ API Key Îª¿Õ£¬Ê¹ÓÃ settings.py ÅäÖÃ
+2026-03-28 19:02:15,378 - LLMServiceFactory - INFO - [thread=29796 MainThread] - ´´½¨ LLM ·şÎñ£ºprovider=deepseek
+2026-03-28 19:02:15,386 - LLMServiceFactory - WARNING - [thread=29796 MainThread] - Êı¾İ¿âÖĞ AI ÅäÖÃµÄ API Key Îª¿Õ£¬Ê¹ÓÃ settings.py ÅäÖÃ
+2026-03-28 19:02:16,087 - LLMServiceFactory - INFO - [thread=29796 MainThread] - ´´½¨ LLM ·şÎñ£ºprovider=deepseek
+2026-03-28 19:02:16,089 - LLMServiceFactory - WARNING - [thread=29796 MainThread] - Êı¾İ¿âÖĞ AI ÅäÖÃµÄ API Key Îª¿Õ£¬Ê¹ÓÃ settings.py ÅäÖÃ
+2026-03-28 19:02:16,099 - LLMServiceFactory - INFO - [thread=29796 MainThread] - ´´½¨ LLM ·şÎñ£ºprovider=deepseek
+2026-03-28 19:02:16,100 - LLMServiceFactory - WARNING - [thread=29796 MainThread] - Êı¾İ¿âÖĞ AI ÅäÖÃµÄ API Key Îª¿Õ£¬Ê¹ÓÃ settings.py ÅäÖÃ
+2026-03-28 19:58:32,707 - LLMServiceFactory - INFO - [thread=37604 MainThread] - ´´½¨ LLM ·şÎñ£ºprovider=deepseek
+2026-03-28 19:58:32,715 - LLMServiceFactory - INFO - [thread=37604 MainThread] - Ê¹ÓÃÊı¾İ¿âÖĞµÄ AI ÅäÖÃ
+2026-03-28 19:58:34,671 - LLMServiceFactory - INFO - [thread=37604 MainThread] - ´´½¨ LLM ·şÎñ£ºprovider=deepseek
+2026-03-28 19:58:34,673 - LLMServiceFactory - INFO - [thread=37604 MainThread] - Ê¹ÓÃÊı¾İ¿âÖĞµÄ AI ÅäÖÃ
+2026-03-28 19:58:34,684 - LLMServiceFactory - INFO - [thread=37604 MainThread] - ´´½¨ LLM ·şÎñ£ºprovider=deepseek
+2026-03-28 19:58:34,685 - LLMServiceFactory - INFO - [thread=37604 MainThread] - Ê¹ÓÃÊı¾İ¿âÖĞµÄ AI ÅäÖÃ
+2026-03-28 23:48:08,085 - LLMServiceFactory - INFO - [thread=37812 MainThread] - ´´½¨ LLM ·şÎñ£ºprovider=deepseek
+2026-03-28 23:48:08,141 - LLMServiceFactory - INFO - [thread=37812 MainThread] - Ê¹ÓÃÊı¾İ¿âÖĞµÄ AI ÅäÖÃ
+2026-03-28 23:48:09,699 - LLMServiceFactory - INFO - [thread=37812 MainThread] - ´´½¨ LLM ·şÎñ£ºprovider=deepseek
+2026-03-28 23:48:09,700 - LLMServiceFactory - INFO - [thread=37812 MainThread] - Ê¹ÓÃÊı¾İ¿âÖĞµÄ AI ÅäÖÃ
+2026-03-28 23:48:09,725 - LLMServiceFactory - INFO - [thread=37812 MainThread] - ´´½¨ LLM ·şÎñ£ºprovider=deepseek
+2026-03-28 23:48:09,726 - LLMServiceFactory - INFO - [thread=37812 MainThread] - Ê¹ÓÃÊı¾İ¿âÖĞµÄ AI ÅäÖÃ
+2026-03-28 23:56:44,331 - LLMServiceFactory - INFO - [thread=31096 MainThread] - ´´½¨ LLM ·şÎñ£ºprovider=deepseek
+2026-03-28 23:56:44,338 - LLMServiceFactory - INFO - [thread=31096 MainThread] - Ê¹ÓÃÊı¾İ¿âÖĞµÄ AI ÅäÖÃ
+2026-03-28 23:56:46,920 - LLMServiceFactory - INFO - [thread=31096 MainThread] - ´´½¨ LLM ·şÎñ£ºprovider=deepseek
+2026-03-28 23:56:46,921 - LLMServiceFactory - INFO - [thread=31096 MainThread] - Ê¹ÓÃÊı¾İ¿âÖĞµÄ AI ÅäÖÃ
+2026-03-28 23:56:46,945 - LLMServiceFactory - INFO - [thread=31096 MainThread] - ´´½¨ LLM ·şÎñ£ºprovider=deepseek
+2026-03-28 23:56:46,946 - LLMServiceFactory - INFO - [thread=31096 MainThread] - Ê¹ÓÃÊı¾İ¿âÖĞµÄ AI ÅäÖÃ
+2026-03-29 00:00:58,156 - LLMServiceFactory - INFO - [thread=24268 MainThread] - ´´½¨ LLM ·şÎñ£ºprovider=deepseek
+2026-03-29 00:00:58,173 - LLMServiceFactory - INFO - [thread=24268 MainThread] - Ê¹ÓÃÊı¾İ¿âÖĞµÄ AI ÅäÖÃ
+2026-03-29 00:00:58,174 - LLMServiceFactory - INFO - [thread=33872 MainThread] - Ê¹ÓÃÊı¾İ¿âÖĞµÄ AI ÅäÖÃ
+2026-03-29 00:00:59,913 - LLMServiceFactory - INFO - [thread=24268 MainThread] - ´´½¨ LLM ·şÎñ£ºprovider=deepseek
+2026-03-29 00:00:59,914 - LLMServiceFactory - INFO - [thread=33872 MainThread] - ´´½¨ LLM ·şÎñ£ºprovider=deepseek
+2026-03-29 00:00:59,914 - LLMServiceFactory - INFO - [thread=24268 MainThread] - Ê¹ÓÃÊı¾İ¿âÖĞµÄ AI ÅäÖÃ
+2026-03-29 00:00:59,915 - LLMServiceFactory - INFO - [thread=33872 MainThread] - Ê¹ÓÃÊı¾İ¿âÖĞµÄ AI ÅäÖÃ
+2026-03-29 00:00:59,936 - LLMServiceFactory - INFO - [thread=24268 MainThread] - ´´½¨ LLM ·şÎñ£ºprovider=deepseek
+2026-03-29 00:00:59,936 - LLMServiceFactory - INFO - [thread=33872 MainThread] - ´´½¨ LLM ·şÎñ£ºprovider=deepseek
+2026-03-29 00:00:59,937 - LLMServiceFactory - INFO - [thread=33872 MainThread] - Ê¹ÓÃÊı¾İ¿âÖĞµÄ AI ÅäÖÃ
+2026-03-29 00:00:59,938 - LLMServiceFactory - INFO - [thread=24268 MainThread] - Ê¹ÓÃÊı¾İ¿âÖĞµÄ AI ÅäÖÃ

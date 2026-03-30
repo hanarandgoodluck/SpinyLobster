@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}AI 模型配置 - SpinyLobster{% endblock %}
+
+{% block content %}
+<div id="ai-config-app" v-cloak>
+    <div class="ai-config-container">
+        <div style="margin-bottom: 20px;">
+            <h2><i class="fas fa-robot"></i> AI 模型配置中心</h2>
+            <p class="text-muted">Vue.js 测试页面 - 如果看到这个内容，说明页面正常加载</p>
+            <div style="margin-top: 15px;">
+                <p><strong>测试信息：</strong></p>
+                <ul style="list-style-type: disc; padding-left: 20px;">
+                    <li>Vue.js 状态：{{ vueStatus }}</li>
+                    <li>当前时间：{{ currentTime }}</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+(document.addEventListener('DOMContentLoaded', function() {
+    if (typeof Vue === 'undefined') {
+        console.error('Vue is not loaded');
+        return;
+    }
+    
+    const { createApp } = Vue;
+    const app = createApp({
+        data() {
+            return {
+                vueStatus: '已加载',
+                currentTime: new Date().toLocaleString()
+            };
+        },
+        mounted() {
+            // 每秒更新时间
+            setInterval(() => {
+                this.currentTime = new Date().toLocaleString();
+            }, 1000);
+        }
+    });
+    
+    app.mount('#ai-config-app');
+}));
+</script>
+{% endblock %}

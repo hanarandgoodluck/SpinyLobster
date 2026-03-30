@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% block title %}TestBrain - 测试用例生成{% endblock %}
+{% block title %}SpinyLobster - 测试用例生成{% endblock %}
 
 {% block content %}
 <div class="card">
@@ -14,13 +14,17 @@
             
             <div class="form-group mb-3">
                 <label for="llm-provider">选择大模型:</label>
-                <select class="form-control" id="llm-provider" name="llm_provider">
-                    {% for provider_key, provider_config in llm_providers.items %}
-                        <option value="{{ provider_key }}" {% if llm_provider == provider_key %}selected{% endif %}>
-                            {{ provider_config.name }}
-                        </option>
-                    {% endfor %}
-                </select>
+                <div class="input-group">
+                    <input type="text" class="form-control" id="llm-model-name" name="llm_model_name" 
+                           value="{{ llm_model_name }}" readonly 
+                           placeholder="从 AI 配置页面自动获取">
+                    <div class="input-group-append">
+                        <span class="input-group-text">
+                            <i class="fas fa-info-circle" title="该值来自 AI 配置页面的 Model Name 字段"></i>
+                        </span>
+                    </div>
+                </div>
+                <small class="form-text text-muted">此字段为只读，值来自 AI 配置页面的 Model Name 设置</small>
             </div>
             
             <div class="form-group">
@@ -30,24 +34,62 @@
             
             <div class="row mb-3">
                 <div class="col-md-4">
-                    <label for="case_design_method">测试用例设计方法:</label>
-                    <select class="form-control selectpicker" id="case_design_methods" name="case_design_methods" multiple data-live-search="true">
-                        <option value="equivalence_partitioning">等价类划分法</option>
-                        <option value="boundary_value">边界值分析法</option>
-                        <option value="decision_table">判定表法</option>
-                        <option value="cause_effect">因果图法</option>
-                        <option value="orthogonal_array">正交分析法</option>
-                        <option value="scenario">场景法</option>
-                    </select>
+                    <label>
+                        测试用例设计方法:
+                        <button type="button" class="btn btn-sm btn-link p-0 ml-2" onclick="toggleAllCheckboxes('.case-design-method', true)">全选</button>
+                        <button type="button" class="btn btn-sm btn-link p-0 ml-1" onclick="toggleAllCheckboxes('.case-design-method', false)">取消全选</button>
+                    </label>
+                    <div class="border rounded p-2" style="max-height: 200px; overflow-y: auto;">
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input case-design-method" id="method-equivalence_partitioning" value="equivalence_partitioning">
+                            <label class="custom-control-label" for="method-equivalence_partitioning">等价类划分法</label>
+                        </div>
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input case-design-method" id="method-boundary_value" value="boundary_value">
+                            <label class="custom-control-label" for="method-boundary_value">边界值分析法</label>
+                        </div>
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input case-design-method" id="method-decision_table" value="decision_table">
+                            <label class="custom-control-label" for="method-decision_table">判定表法</label>
+                        </div>
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input case-design-method" id="method-cause_effect" value="cause_effect">
+                            <label class="custom-control-label" for="method-cause_effect">因果图法</label>
+                        </div>
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input case-design-method" id="method-orthogonal_array" value="orthogonal_array">
+                            <label class="custom-control-label" for="method-orthogonal_array">正交分析法</label>
+                        </div>
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input case-design-method" id="method-scenario" value="scenario">
+                            <label class="custom-control-label" for="method-scenario">场景法</label>
+                        </div>
+                    </div>
                 </div>
                 <div class="col-md-4">
-                    <label for="case_categories">用例类型:</label>
-                    <select class="form-control selectpicker" id="case_categories" name="case_categories" multiple data-live-search="true">
-                        <option value="functional">功能测试</option>
-                        <option value="performance">性能测试</option>
-                        <option value="compatibility">兼容性测试</option>
-                        <option value="security">安全性测试</option>
-                    </select>
+                    <label>
+                        用例类型:
+                        <button type="button" class="btn btn-sm btn-link p-0 ml-2" onclick="toggleAllCheckboxes('.case-category', true)">全选</button>
+                        <button type="button" class="btn btn-sm btn-link p-0 ml-1" onclick="toggleAllCheckboxes('.case-category', false)">取消全选</button>
+                    </label>
+                    <div class="border rounded p-2" style="max-height: 200px; overflow-y: auto;">
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input case-category" id="category-functional" value="functional">
+                            <label class="custom-control-label" for="category-functional">功能测试</label>
+                        </div>
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input case-category" id="category-performance" value="performance">
+                            <label class="custom-control-label" for="category-performance">性能测试</label>
+                        </div>
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input case-category" id="category-compatibility" value="compatibility">
+                            <label class="custom-control-label" for="category-compatibility">兼容性测试</label>
+                        </div>
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input case-category" id="category-security" value="security">
+                            <label class="custom-control-label" for="category-security">安全性测试</label>
+                        </div>
+                    </div>
                 </div>
                 <div class="col-md-4">
                     <label for="case_count">生成用例条数:
@@ -136,59 +178,29 @@
 {% endif %}
 
 <style>
-.bootstrap-select .dropdown-menu li a {
-    position: relative;
-    padding-left: 40px !important;
+/* 自定义复选框样式 */
+.custom-control-label {
+    cursor: pointer;
+    margin-bottom: 0.5rem;
 }
 
-.bootstrap-select .dropdown-menu li a:before {
-    content: '';
-    position: absolute;
-    left: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 16px;
-    height: 16px;
-    border: 1px solid #aaa;
-    background: white;
-}
-
-.bootstrap-select .dropdown-menu li.selected a:before {
-    content: '✓';
-    text-align: center;
-    line-height: 14px;
-    background: #007bff;
-    color: white;
-    border-color: #007bff;
-}
-
-.bootstrap-select .dropdown-toggle {
-    background-color: white;
-    border: 1px solid #ced4da;
-}
-
-.bootstrap-select .dropdown-toggle:focus {
-    outline: none !important;
-    box-shadow: none !important;
-}
-
-.filter-option-inner-inner {
-    color: #495057;
-}
-
-/* 搜索框样式 */
-.bs-searchbox .form-control {
-    border: 1px solid #ced4da;
+.custom-control-label:before {
     border-radius: 4px;
 }
 
-/* 全选/取消全选按钮样式 */
-.bs-actionsbox {
-    padding: 8px;
+/* 滚动条样式 */
+.border {
+    background-color: #fff;
 }
 
-.bs-actionsbox .btn-group button {
-    width: 50%;
+/* 全选按钮样式 */
+.select-all-container {
+    margin-bottom: 0.5rem;
+}
+
+.select-all-container button {
+    font-size: 0.875rem;
+    padding: 0.25rem 0.5rem;
 }
 
 /* 自定义 tooltip 样式 */
@@ -210,61 +222,18 @@
 </style>
 
 {% block extra_js %}
-<!-- 确保这段代码在jQuery加载完成后执行 -->
+<!-- 等待文档和所有资源加载完成 -->
 <script type="text/javascript">
     // 等待文档和所有资源加载完成
     window.addEventListener('load', function() {
-        // 初始化所有的tooltip
+        // 初始化所有的 tooltip
         if (typeof $ !== 'undefined') {
             $('[data-toggle="tooltip"]').tooltip();
-            
-            // 初始化selectpicker
-            initializeSelectPickers();
-        } else {
-            console.error('jQuery is not loaded');
         }
     });
-
-    function initializeSelectPickers() {
-        $('.selectpicker').selectpicker({
-            style: '',
-            styleBase: 'form-control',
-            tickIcon: '',
-            showTick: false,
-            actionsBox: true,
-            deselectAllText: '取消全选',
-            selectAllText: '全选',
-            selectedTextFormat: 'count > 2',
-            countSelectedText: '已选择 {0} 项',
-            noneSelectedText: '请选择'
-        });
-
-        // 自定义下拉选项的渲染
-        $('.selectpicker').on('loaded.bs.select', function () {
-            var $select = $(this);
-            $select.next().find('.dropdown-menu li a').each(function() {
-                var $a = $(this);
-                var isSelected = $a.parent().hasClass('selected');
-                if (isSelected) {
-                    $a.addClass('selected');
-                }
-            });
-        });
-
-        // 处理选择变化
-        $('.selectpicker').on('changed.bs.select', function (e, clickedIndex, isSelected) {
-            var $select = $(this);
-            var $option = $select.next().find('.dropdown-menu li').eq(clickedIndex).find('a');
-            if (isSelected) {
-                $option.addClass('selected');
-            } else {
-                $option.removeClass('selected');
-            }
-        });
-    }
 </script>
 {% endblock %}
 
 <!-- 在这里添加 generate.js 引用 -->
-<script src="{% static 'generate.js' %}"></script>
+<script src="{% static 'js/generate.js' %}?v=20260325"></script>
 {% endblock %} 

@@ -1,47 +1,73 @@
 {% extends "base.html" %}
 
-{% block title %}TestBrain - 首页{% endblock %}
+{% block title %}SpinyLobster - 首页{% endblock %}
+
+{% block extra_css %}
+<style>
+    .stats-card {
+        margin-bottom: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    .stats-header {
+        padding: 16px;
+        border-bottom: 1px solid #ebeef5;
+        font-weight: 600;
+        background-color: #409eff;
+        color: white;
+    }
+    .stats-body {
+        padding: 20px;
+    }
+    .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 16px;
+    }
+    .stat-item {
+        background: white;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        text-align: center;
+    }
+    .stat-value {
+        font-size: 24px;
+        font-weight: 600;
+        color: #409eff;
+        margin-bottom: 8px;
+    }
+    .stat-label {
+        font-size: 14px;
+        color: #606266;
+    }
+</style>
+{% endblock %}
 
 {% block content %}
-<div class="card">
-    <div class="card-header">
-        欢迎使用 TestBrain 测试用例管理平台
+<div class="stats-card">
+    <div class="stats-header">
+        欢迎使用 SpinyLobster 测试用例管理平台
     </div>
-    <div class="card-body">
-        <div class="row">
-            <div class="col-md-3">
-                <div class="card">
-                    <div class="card-body text-center">
-                        <h3>{{ total_test_cases }}</h3>
-                        <p class="mb-0">总测试用例数</p>
-                    </div>
-                </div>
+    <div class="stats-body">
+        <div class="stats-grid">
+            <div class="stat-item">
+                <div class="stat-value">{{ total_test_cases }}</div>
+                <div class="stat-label">总测试用例数</div>
             </div>
-            <div class="col-md-3">
-                <div class="card">
-                    <div class="card-body text-center">
-                        <h3>{{ pending_count }}</h3>
-                        <p class="mb-0">待评审</p>
-                    </div>
-                </div>
+            <div class="stat-item">
+                <div class="stat-value">{{ pending_count }}</div>
+                <div class="stat-label">待评审</div>
             </div>
-            <div class="col-md-3">
-                <div class="card">
-                    <div class="card-body text-center">
-                        <h3>{{ approved_count }}</h3>
-                        <p class="mb-0">评审通过</p>
-                    </div>
-                </div>
+            <div class="stat-item">
+                <div class="stat-value">{{ approved_count }}</div>
+                <div class="stat-label">评审通过</div>
             </div>
-            <div class="col-md-3">
-                <div class="card">
-                    <div class="card-body text-center">
-                        <h3>{{ rejected_count }}</h3>
-                        <p class="mb-0">评审未通过</p>
-                    </div>
-                </div>
+            <div class="stat-item">
+                <div class="stat-value">{{ rejected_count }}</div>
+                <div class="stat-label">评审未通过</div>
             </div>
         </div>
     </div>
 </div>
-{% endblock %} 
+{% endblock %}

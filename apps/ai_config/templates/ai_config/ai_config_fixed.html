@@ -1,0 +1,308 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}AI 模型配置 - SpinyLobster{% endblock %}
+
+{% block extra_css %}
+<style>
+    .ai-config-container { padding: 0; }
+    .config-card { margin-bottom: 20px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+    .config-header { padding: 16px; border-bottom: 1px solid #ebeef5; font-weight: 600; }
+    .config-body { padding: 20px; }
+    .tab-button { padding: 8px 16px; border: none; background: none; cursor: pointer; border-bottom: 2px solid transparent; transition: all 0.3s; }
+    .tab-button:hover { color: #409eff; background-color: #ecf5ff; }
+    .tab-button.active { color: #409eff; border-bottom-color: #409eff; font-weight: 600; }
+    .form-input { width: 100%; padding: 10px; border: 1px solid #dcdfe6; border-radius: 4px; margin-bottom: 12px; font-size: 14px; }
+    .form-input:focus { outline: none; border-color: #409eff; }
+    .input-group { display: flex; align-items: stretch; width: 100%; }
+    .input-group input { flex: 1; border-top-right-radius: 0; border-bottom-right-radius: 0; }
+    .input-group button { border-top-left-radius: 0; border-bottom-left-radius: 0; padding: 0 15px; border: 1px solid #dcdfe6; border-left: none; font-size: 14px; display: flex; align-items: center; justify-content: center; }
+    .input-group input:focus + button { border-color: #409eff; }
+    .button-group { display: flex; gap: 8px; width: 100%; margin-top: 12px; }
+    .btn { padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer; font-size: 14px; display: flex; align-items: center; gap: 6px; }
+    .btn-primary { background-color: #409eff; color: white; }
+    .btn-success { background-color: #67c23a; color: white; }
+    .btn-outline-primary { background-color: white; border: 1px solid #409eff; color: #409eff; }
+    .btn:hover { opacity: 0.8; }
+    .alert { padding: 12px; border-radius: 4px; margin-bottom: 16px; }
+    .alert-info { background-color: #f4f4f5; border: 1px solid #d1e7dd; color: #606266; }
+    .form-label { font-weight: 500; display: block; margin-bottom: 0.5rem; }
+    [v-cloak] { display: none; }
+    .text-muted { color: #909399; }
+</style>
+{% endblock %}
+
+{% block content %}
+{% verbatim %}
+<div id="ai-config-app" v-cloak>
+    <div class="ai-config-container">
+        <div style="margin-bottom: 20px;">
+            <h2><i class="fas fa-robot"></i> AI 模型配置中心</h2>
+            <p class="text-muted">双轨制 AI 模型配置管理 —— 支持 LLM（大语言模型）与 Vision（多模态视觉模型）的独立参数配置</p>
+        </div>
+
+        <!-- 全局配置区域 -->
+        <div class="config-card">
+            <div class="config-header" style="background-color: #409eff; color: white;">
+                <h5 style="margin: 0;"><i class="fas fa-globe"></i> 全局默认配置 (Global Settings)</h5>
+            </div>
+            <div class="config-body">
+                <p class="text-muted">全局配置将作为新项目的默认配置，项目级可选择继承或覆盖</p>
+                
+                <div style="display: flex; gap: 8px; margin-bottom: 20px;">
+                    <button class="tab-button" :class="{ active: globalActiveTab === 'llm' }" 
+                            @click="globalActiveTab = 'llm'" type="button">
+                        <i class="fas fa-comment-dots"></i> 文本模型 (LLM)
+                    </button>
+                    <button class="tab-button" :class="{ active: globalActiveTab === 'vision' }" 
+                            @click="globalActiveTab = 'vision'" type="button">
+                        <i class="fas fa-eye"></i> 视觉模型 (Vision)
+                    </button>
+                </div>
+
+                <!-- 全局 LLM 配置 -->
+                <div v-show="globalActiveTab === 'llm'">
+                    <label class="form-label">API Base URL</label>
+                    <el-input
+                        v-model="globalConfig.llm.baseUrl"
+                        placeholder="例如：https://api.deepseek.com/v1"
+                        style="width: 100%; margin-bottom: 12px;"
+                    ></el-input>
+                    <label class="form-label">API Key</label>
+                    <el-input
+                        v-model="globalConfig.llm.apiKey"
+                        type="password"
+                        placeholder="输入您的 API Key"
+                        show-password
+                        style="width: 100%; margin-bottom: 12px;"
+                    ></el-input>
+                    <label class="form-label">Model Name</label>
+                    <el-input
+                        v-model="globalConfig.llm.modelName"
+                        placeholder="例如：deepseek-chat"
+                        style="width: 100%; margin-bottom: 12px;"
+                    ></el-input>
+                    <div class="button-group">
+                        <button type="button" class="btn btn-success" @click="testConnection('llm')">
+                            <i class="fas fa-plug"></i> 测试连接
+                        </button>
+                        <button type="button" class="btn btn-primary" @click="saveGlobalConfig('llm')">
+                            <i class="fas fa-save"></i> 保存配置
+                        </button>
+                    </div>
+                </div>
+
+                <!-- 全局 Vision 配置 -->
+                <div v-show="globalActiveTab === 'vision'">
+                    <label class="form-label">API Base URL</label>
+                    <el-input
+                        v-model="globalConfig.vision.baseUrl"
+                        placeholder="例如：https://api.openai.com/v1"
+                        style="width: 100%; margin-bottom: 12px;"
+                    ></el-input>
+                    <label class="form-label">API Key</label>
+                    <el-input
+                        v-model="globalConfig.vision.apiKey"
+                        type="password"
+                        placeholder="输入您的 API Key"
+                        show-password
+                        style="width: 100%; margin-bottom: 12px;"
+                    ></el-input>
+                    <label class="form-label">Model Name</label>
+                    <el-input
+                        v-model="globalConfig.vision.modelName"
+                        placeholder="例如：gpt-4-vision-preview"
+                        style="width: 100%; margin-bottom: 12px;"
+                    ></el-input>
+                    <div class="button-group">
+                        <button type="button" class="btn btn-success" @click="testConnection('vision')">
+                            <i class="fas fa-plug"></i> 测试连接
+                        </button>
+                        <button type="button" class="btn btn-primary" @click="saveGlobalConfig('vision')">
+                            <i class="fas fa-save"></i> 保存配置
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+{% endverbatim %}
+{% endblock %}
+
+{% block extra_js %}
+<script>
+(function() {
+    // 立即执行函数，避免等待DOMContentLoaded
+    if (typeof Vue === 'undefined') {
+        console.error('Vue is not loaded');
+        return;
+    }
+    
+    const { createApp } = Vue;
+    const app = createApp({
+        data() {
+            return {
+                globalActiveTab: 'llm',
+                globalConfig: {
+                    llm: {
+                        baseUrl: '',
+                        apiKey: '',
+                        modelName: ''
+                    },
+                    vision: {
+                        baseUrl: '',
+                        apiKey: '',
+                        modelName: ''
+                    }
+                },
+                isLoading: true
+            };
+        },
+        
+        methods: {
+            getCSRFToken() {
+                const metaTag = document.querySelector('meta[name="csrf-token"]');
+                return metaTag ? metaTag.getAttribute('content') : '';
+            },
+            
+
+            
+            async loadGlobalConfig() {
+                try {
+                    const startTime = performance.now();
+                    const response = await fetch('/ai_config/api/global/');
+                    const data = await response.json();
+                    if (data.success && data.config) {
+                        this.globalConfig.llm.baseUrl = data.config.llm.base_url || '';
+                        this.globalConfig.llm.apiKey = data.config.llm.api_key || '';
+                        this.globalConfig.llm.modelName = data.config.llm.model_name || '';
+                        
+                        this.globalConfig.vision.baseUrl = data.config.vision.base_url || '';
+                        this.globalConfig.vision.apiKey = data.config.vision.api_key || '';
+                        this.globalConfig.vision.modelName = data.config.vision.model_name || '';
+                    }
+                    const endTime = performance.now();
+                    console.log('加载配置耗时:', endTime - startTime, 'ms');
+                } catch (error) {
+                    console.error('加载全局配置失败:', error);
+                } finally {
+                    this.isLoading = false;
+                }
+            },
+            
+
+            
+
+            
+            async saveGlobalConfig(modelType) {
+                const config = this.globalConfig[modelType];
+                
+                try {
+                    const configData = {
+                        llm: modelType === 'llm' ? {
+                            base_url: config.baseUrl,
+                            api_key: config.apiKey,
+                            model_name: config.modelName
+                        } : {
+                            base_url: this.globalConfig.llm.baseUrl,
+                            api_key: this.globalConfig.llm.apiKey,
+                            model_name: this.globalConfig.llm.modelName
+                        },
+                        vision: modelType === 'vision' ? {
+                            base_url: config.baseUrl,
+                            api_key: config.apiKey,
+                            model_name: config.modelName
+                        } : {
+                            base_url: this.globalConfig.vision.baseUrl,
+                            api_key: this.globalConfig.vision.apiKey,
+                            model_name: this.globalConfig.vision.modelName
+                        }
+                    };
+                    
+                    const response = await fetch('/ai_config/api/global/save/', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'X-CSRFToken': this.getCSRFToken()
+                        },
+                        body: JSON.stringify(configData)
+                    });
+                    
+                    const data = await response.json();
+                    if (data.success) {
+                        ElementPlus.ElMessage.success(`${modelType.toUpperCase()} 配置已保存`);
+                    } else {
+                        ElementPlus.ElMessage.error('保存失败：' + data.message);
+                    }
+                } catch (error) {
+                    ElementPlus.ElMessage.error('保存失败：' + error.message);
+                }
+            },
+            
+
+            
+            async testConnection(modelType) {
+                try {
+                    const config = this.globalConfig[modelType];
+                    
+                    if (!config.baseUrl && !config.apiKey) {
+                        ElementPlus.ElMessage.warning('请至少填写 API Base URL 或 API Key 中的一个');
+                        return;
+                    }
+                    
+                    const controller = new AbortController();
+                    const timeoutId = setTimeout(() => controller.abort(), 15000);
+                    
+                    const response = await fetch('/ai_config/api/test-connection/', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'X-CSRFToken': this.getCSRFToken()
+                        },
+                        body: JSON.stringify({
+                            base_url: config.baseUrl,
+                            api_key: config.apiKey,
+                            model_type: modelType
+                        }),
+                        signal: controller.signal
+                    });
+                    
+                    clearTimeout(timeoutId);
+                    const data = await response.json();
+                    
+                    if (data.success) {
+                        ElementPlus.ElMessageBox.alert(`${data.details || data.message}`, '连接测试成功', {
+                            confirmButtonText: '确定',
+                            type: 'success'
+                        });
+                    } else {
+                        ElementPlus.ElMessageBox.alert(data.message, '连接测试失败', {
+                            confirmButtonText: '确定',
+                            type: 'error'
+                        });
+                    }
+                } catch (error) {
+                    if (error.name === 'AbortError') {
+                        ElementPlus.ElMessage.error('连接测试超时，请检查网络或 API 地址');
+                    } else {
+                        ElementPlus.ElMessage.error(`连接测试失败：${error.message}`);
+                    }
+                }
+            }
+        },
+        
+
+        
+        mounted() {
+            this.loadGlobalConfig();
+        }
+    });
+    
+    app.use(ElementPlus);
+    app.mount('#ai-config-app');
+})();
+</script>
+{% endblock %}

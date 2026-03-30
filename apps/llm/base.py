@@ -82,11 +82,34 @@ class LLMServiceFactory:
     
     @staticmethod
     def create(provider: str, **config) -> BaseChatModel:
-        """创建LLM服务实例"""
+        """创建 LLM 服务实例"""
         logger = get_logger(__class__.__name__)
-        logger.info(f"创建LLM服务: provider={provider}")
-        
-        # 获取LLM配置
+        logger.info(f"创建 LLM 服务：provider={provider}")
+            
+        # 优先从数据库获取全局 AI 配置
+        try:
+            from apps.ai_config.utils import get_global_ai_config
+            db_config = get_global_ai_config()
+            if db_config and db_config.get('llm'):
+                llm_db_config = db_config['llm']
+                # 如果数据库有配置，使用数据库的配置
+                if llm_db_config.get('api_key'):
+                    logger.info("使用数据库中的 AI 配置")
+                    config['api_key'] = llm_db_config['api_key']
+                    # 如果前端没有传递 base_url，使用数据库的
+                    if not config.get('api_base') and llm_db_config.get('base_url'):
+                        config['api_base'] = llm_db_config['base_url']
+                    # 如果前端没有传递 model，使用数据库的
+                    if not config.get('model') and llm_db_config.get('model_name'):
+                        config['model'] = llm_db_config['model_name']
+                else:
+                    logger.warning("数据库中 AI 配置的 API Key 为空，使用 settings.py 配置")
+            else:
+                logger.info("数据库中没有 AI 配置，使用 settings.py 配置")
+        except Exception as e:
+            logger.warning(f"从数据库加载 AI 配置失败：{e}，使用 settings.py 配置")
+            
+        # 获取 LLM 配置
         llm_config = getattr(settings, 'LLM_PROVIDERS', {})
         default_provider = llm_config.get('default_provider', 'deepseek')
         providers = {k: v for k, v in llm_config.items() if k != 'default_provider'}

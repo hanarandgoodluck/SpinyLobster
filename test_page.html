@@ -1,0 +1,752 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="csrf-token" content="kAQ9in2aTiO9cibFVxgDZXW6BXIMXahqDjSP4aZeVEYKGwoD0d3ErR6V08uZhNuG">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐉</text></svg>">
+    <title>AI 模型配置 - SpinyLobster</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="/static/js/extra/bootstrap.min.css">
+    <link href="/static/js/extra/select2.min.css" rel="stylesheet" />
+    <style>
+        /* 左侧导航栏样式 */
+        .sidebar {
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            z-index: 100;
+            padding: 0;
+            box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
+            background-color: #f8f9fa;
+            width: 200px;
+        }
+
+        /* 品牌标题样式 */
+        .brand-title {
+            padding: 0.8rem 1rem;
+            font-size: 1.25rem;
+            font-weight: 500;
+            color: #333;
+            margin: 0;
+            line-height: 1.5;
+            border-bottom: 1px solid #dee2e6;
+            text-align: left;
+            display: block;
+            width: 100%;
+        }
+
+        .sidebar .nav-link {
+            font-weight: 500;
+            color: #333;
+            padding: 0.8rem 1rem;
+            text-align: left;
+        }
+
+        .sidebar .nav-link:hover {
+            color: #0d6efd;
+            background-color: #e9ecef;
+        }
+
+        .sidebar .nav-link.active {
+            color: #0d6efd;
+        }
+
+        .sidebar .nav-link i {
+            margin-right: 8px;
+            width: 20px;
+            text-align: center;
+        }
+
+        /* 主内容区域样式 */
+        .main-content {
+            margin-left: 200px;
+            padding: 20px 30px;
+        }
+
+        /* 导航菜单样式 */
+        .nav-menu {
+            padding: 0;
+            margin: 0;
+        }
+
+        .nav-menu .nav {
+            padding: 0;
+            margin: 0;
+        }
+
+        .nav-menu .nav-item {
+            width: 100%;
+        }
+    </style>
+    
+<style>
+    .config-section { margin-bottom: 2rem; }
+    .form-label { font-weight: 500; }
+    [v-cloak] { display: none; }
+</style>
+
+</head>
+<body>
+    <!-- 左侧导航栏 -->
+    <nav class="sidebar">
+        <!-- 品牌标题 -->
+        <div class="brand-title">
+            小星龙测试平台
+            
+        </div>
+        
+        <!-- 导航菜单 -->
+        <div class="nav-menu">
+            <ul class="nav flex-column">
+                <li class="nav-item">
+                    <a class="nav-link " href="/">
+                        <i class="fas fa-home"></i>
+                        首页
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " href="/projects/">
+                        <i class="fas fa-folder"></i>
+                        项目管理
+                    </a>
+                </li>
+                
+                <!-- 项目功能菜单 - 当选择具体项目时显示 -->
+                
+                    <!-- 默认菜单 - 未选择项目时显示 -->
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/ai_config/">
+                            <i class="fas fa-robot"></i>
+                            AI 配置
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="/upload/">
+                            <i class="fas fa-upload"></i>
+                            项目文档上传到知识库
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="/java_code_analyzer/">
+                            <i class="fas fa-code-branch"></i>
+                            Java 源码分析
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="/knowledge/">
+                            <i class="fas fa-book"></i>
+                            知识库管理 (暂时不支持)
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+    </nav>
+
+    <!-- 主内容区域 -->
+    <main class="main-content">
+        
+<div id="ai-config-app" class="container-fluid" v-cloak>
+    <div class="row mb-4">
+        <div class="col-12">
+            <h2><i class="fas fa-robot"></i> AI 模型配置中心</h2>
+            <p class="text-muted">双轨制 AI 模型配置管理 —— 支持 LLM（大语言模型）与 Vision（多模态视觉模型）的独立参数配置</p>
+        </div>
+    </div>
+
+    <!-- 全局配置区域 -->
+    <div class="row config-section">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header bg-primary text-white">
+                    <h5 class="mb-0"><i class="fas fa-globe"></i> 全局默认配置 (Global Settings)</h5>
+                </div>
+                <div class="card-body">
+                    <p class="text-muted">全局配置将作为新项目的默认配置，项目级可选择继承或覆盖</p>
+                    
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" :class="{ active: globalActiveTab === 'llm' }" 
+                                    @click="globalActiveTab = 'llm'" type="button">
+                                <i class="fas fa-comment-dots"></i> 文本模型 (LLM)
+                            </button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" :class="{ active: globalActiveTab === 'vision' }" 
+                                    @click="globalActiveTab = 'vision'" type="button">
+                                <i class="fas fa-eye"></i> 视觉模型 (Vision)
+                            </button>
+                        </li>
+                    </ul>
+
+                    <div class="tab-content">
+                        <!-- 全局 LLM 配置 -->
+                        <div v-show="globalActiveTab === 'llm'" class="mt-3">
+                            <div class="mb-3">
+                                <label class="form-label">API Base URL</label>
+                                <input type="text" class="form-control" v-model="globalConfig.llm.baseUrl" 
+                                       placeholder="例如：https://api.deepseek.com/v1">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">API Key</label>
+                                <div class="input-group">
+                                    <input :type="globalConfig.llm.showPassword ? 'text' : 'password'" 
+                                           class="form-control" v-model="globalConfig.llm.apiKey" 
+                                           placeholder="输入您的 API Key">
+                                    <button class="btn btn-outline-primary" type="button" 
+                                            @click="togglePassword('llm', 'global')" title="显示/隐藏密钥">
+                                        <i :class="globalConfig.llm.showPassword ? 'fas fa-eye-slash' : 'fas fa-eye'"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Model Name</label>
+                                <input type="text" class="form-control" v-model="globalConfig.llm.modelName" 
+                                       placeholder="例如：deepseek-chat">
+                            </div>
+                            <div class="d-flex gap-2">
+                                <button type="button" class="btn btn-success" @click="testConnection('global', 'llm')">
+                                    <i class="fas fa-plug"></i> 测试连接
+                                </button>
+                                <button type="button" class="btn btn-primary" @click="saveGlobalConfig('llm')">
+                                    <i class="fas fa-save"></i> 保存配置
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- 全局 Vision 配置 -->
+                        <div v-show="globalActiveTab === 'vision'" class="mt-3">
+                            <div class="mb-3">
+                                <label class="form-label">API Base URL</label>
+                                <input type="text" class="form-control" v-model="globalConfig.vision.baseUrl" 
+                                       placeholder="例如：https://api.openai.com/v1">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">API Key</label>
+                                <div class="input-group">
+                                    <input :type="globalConfig.vision.showPassword ? 'text' : 'password'" 
+                                           class="form-control" v-model="globalConfig.vision.apiKey" 
+                                           placeholder="输入您的 API Key">
+                                    <button class="btn btn-outline-primary" type="button" 
+                                            @click="togglePassword('vision', 'global')" title="显示/隐藏密钥">
+                                        <i :class="globalConfig.vision.showPassword ? 'fas fa-eye-slash' : 'fas fa-eye'"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Model Name</label>
+                                <input type="text" class="form-control" v-model="globalConfig.vision.modelName" 
+                                       placeholder="例如：gpt-4-vision-preview">
+                            </div>
+                            <div class="d-flex gap-2">
+                                <button type="button" class="btn btn-success" @click="testConnection('global', 'vision')">
+                                    <i class="fas fa-plug"></i> 测试连接
+                                </button>
+                                <button type="button" class="btn btn-primary" @click="saveGlobalConfig('vision')">
+                                    <i class="fas fa-save"></i> 保存配置
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 项目级配置区域 -->
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header bg-success text-white">
+                    <h5 class="mb-0"><i class="fas fa-folder"></i> 项目级配置 (Project Config)</h5>
+                </div>
+                <div class="card-body">
+                    <div class="mb-3">
+                        <label class="form-label">选择项目</label>
+                        <div class="dropdown">
+                            <button class="btn btn-outline-secondary dropdown-toggle w-100 text-start" 
+                                    type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <span v-if="selectedProject"> ()</span>
+                                <span v-else>请选择一个项目...</span>
+                            </button>
+                            <ul class="dropdown-menu w-100">
+                                <li v-for="project in projects" :key="project.id">
+                                    <a class="dropdown-item" href="#" @click.prevent="selectProject(project)">
+                                         ()
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div v-show="selectedProject" class="mt-3">
+                        <div class="alert alert-info" role="alert">
+                            <i class="fas fa-info-circle"></i> 
+                            <strong>当前项目：</strong>
+                        </div>
+
+                        <div class="mb-3">
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" v-model="useGlobal" @change="toggleProjectConfig">
+                                <label class="form-check-label">
+                                    <strong>使用全局设置</strong> - 关闭后可针对本项目覆盖配置
+                                </label>
+                            </div>
+                        </div>
+
+                        <div v-show="!useGlobal">
+                            <ul class="nav nav-tabs" role="tablist">
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" :class="{ active: projectActiveTab === 'llm' }" 
+                                            @click="projectActiveTab = 'llm'" type="button">
+                                        <i class="fas fa-comment-dots"></i> 文本模型 (LLM)
+                                    </button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" :class="{ active: projectActiveTab === 'vision' }" 
+                                            @click="projectActiveTab = 'vision'" type="button">
+                                        <i class="fas fa-eye"></i> 视觉模型 (Vision)
+                                    </button>
+                                </li>
+                            </ul>
+
+                            <div class="tab-content">
+                                <!-- 项目 LLM 配置 -->
+                                <div v-show="projectActiveTab === 'llm'" class="mt-3">
+                                    <div class="mb-3">
+                                        <label class="form-label">API Base URL</label>
+                                        <input type="text" class="form-control" v-model="projectConfig.llm.baseUrl">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">API Key</label>
+                                        <div class="input-group">
+                                            <input :type="projectConfig.llm.showPassword ? 'text' : 'password'" 
+                                                   class="form-control" v-model="projectConfig.llm.apiKey">
+                                            <button class="btn btn-outline-primary" type="button" 
+                                                    @click="togglePassword('llm', 'project')" title="显示/隐藏密钥">
+                                                <i :class="projectConfig.llm.showPassword ? 'fas fa-eye-slash' : 'fas fa-eye'"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Model Name</label>
+                                        <input type="text" class="form-control" v-model="projectConfig.llm.modelName">
+                                    </div>
+                                    <div class="d-flex gap-2">
+                                        <button type="button" class="btn btn-success" @click="testConnection('project', 'llm')">
+                                            <i class="fas fa-plug"></i> 测试连接
+                                        </button>
+                                        <button type="button" class="btn btn-primary" @click="saveProjectConfig('llm')">
+                                            <i class="fas fa-save"></i> 保存配置
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <!-- 项目 Vision 配置 -->
+                                <div v-show="projectActiveTab === 'vision'" class="mt-3">
+                                    <div class="mb-3">
+                                        <label class="form-label">API Base URL</label>
+                                        <input type="text" class="form-control" v-model="projectConfig.vision.baseUrl">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">API Key</label>
+                                        <div class="input-group">
+                                            <input :type="projectConfig.vision.showPassword ? 'text' : 'password'" 
+                                                   class="form-control" v-model="projectConfig.vision.apiKey">
+                                            <button class="btn btn-outline-primary" type="button" 
+                                                    @click="togglePassword('vision', 'project')" title="显示/隐藏密钥">
+                                                <i :class="projectConfig.vision.showPassword ? 'fas fa-eye-slash' : 'fas fa-eye'"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Model Name</label>
+                                        <input type="text" class="form-control" v-model="projectConfig.vision.modelName">
+                                    </div>
+                                    <div class="d-flex gap-2">
+                                        <button type="button" class="btn btn-success" @click="testConnection('project', 'vision')">
+                                            <i class="fas fa-plug"></i> 测试连接
+                                        </button>
+                                        <button type="button" class="btn btn-primary" @click="saveProjectConfig('vision')">
+                                            <i class="fas fa-save"></i> 保存配置
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 消息提示模态框 - 使用 Bootstrap 原生实现 -->
+    <div class="modal fade" id="messageModal" tabindex="-1" aria-labelledby="messageModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="messageModalLabel">提示</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="messageContent" class="alert alert-info" role="alert"></div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">确定</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    </main>
+
+    <script src="/static/js/extra/jquery.min.js"></script>
+    <script src="/static/js/extra/bootstrap.bundle.min.js"></script>
+    <script src="/static/js/extra/select2.min.js"></script>
+    
+<script src="https://unpkg.com/vue@3.4.21/dist/vue.global.js"></script>
+<script>
+(function() {
+    'use strict';
+    console.log('Vue script loaded');
+    
+    // 等待 DOM 完全加载
+    document.addEventListener('DOMContentLoaded', function() {
+        console.log('DOM fully loaded');
+        
+        if (typeof Vue === 'undefined') {
+            console.error('Vue is not loaded');
+            return;
+        }
+        
+        const { createApp } = Vue;
+        console.log('Vue is available:', typeof Vue);
+        
+        const appDiv = document.getElementById('ai-config-app');
+        console.log('App div found:', !!appDiv);
+        
+        if (!appDiv) {
+            console.error('Element #ai-config-app not found');
+            return;
+        }
+        
+        console.log('Creating Vue app...');
+        
+        const app = createApp({
+            data() {
+                return {
+                    // 全局配置状态 - 独立的 LLM 和 Vision 状态
+                    globalActiveTab: 'llm',
+                    globalConfig: {
+                        llm: {
+                            baseUrl: '',
+                            apiKey: '',
+                            modelName: '',
+                            showPassword: false
+                        },
+                        vision: {
+                            baseUrl: '',
+                            apiKey: '',
+                            modelName: '',
+                            showPassword: false
+                        }
+                    },
+                    
+                    // 项目配置状态 - 独立的 LLM 和 Vision 状态
+                    projects: [],
+                    selectedProject: null,
+                    projectActiveTab: 'llm',
+                    useGlobal: true,
+                    projectConfig: {
+                        llm: {
+                            baseUrl: '',
+                            apiKey: '',
+                            modelName: '',
+                            showPassword: false
+                        },
+                        vision: {
+                            baseUrl: '',
+                            apiKey: '',
+                            modelName: '',
+                            showPassword: false
+                        }
+                    },
+                    
+                    // Bootstrap Modal 实例缓存
+                    $messageModal: null
+                };
+            },
+            
+            methods: {
+                // CSRF Token
+                getCSRFToken() {
+                    return document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+                },
+                
+                // 切换密码显示
+                togglePassword(type, scope) {
+                    if (scope === 'global') {
+                        this.globalConfig[type].showPassword = !this.globalConfig[type].showPassword;
+                    } else {
+                        this.projectConfig[type].showPassword = !this.projectConfig[type].showPassword;
+                    }
+                },
+                
+                // 加载项目列表
+                async loadProjects() {
+                    try {
+                        const response = await fetch('/api/projects/');
+                        const data = await response.json();
+                        
+                        if (data.success) {
+                            this.projects = data.projects;
+                        }
+                    } catch (error) {
+                        console.error('加载项目失败:', error);
+                    }
+                },
+                
+                // 选择项目
+                selectProject(project) {
+                    this.selectedProject = project;
+                    this.loadProjectConfig(project.id);
+                },
+                
+                // 加载全局配置
+                async loadGlobalConfig() {
+                    try {
+                        const response = await fetch('/ai_config/api/global/');
+                        const data = await response.json();
+                        
+                        if (data.success && data.config) {
+                            // 分别填充 LLM 和 Vision 配置
+                            this.globalConfig.llm.baseUrl = data.config.llm.base_url || '';
+                            this.globalConfig.llm.apiKey = data.config.llm.api_key || '';
+                            this.globalConfig.llm.modelName = data.config.llm.model_name || '';
+                            
+                            this.globalConfig.vision.baseUrl = data.config.vision.base_url || '';
+                            this.globalConfig.vision.apiKey = data.config.vision.api_key || '';
+                            this.globalConfig.vision.modelName = data.config.vision.model_name || '';
+                        }
+                    } catch (error) {
+                        console.error('加载全局配置失败:', error);
+                    }
+                },
+                
+                // 加载项目配置
+                async loadProjectConfig(projectId) {
+                    try {
+                        const response = await fetch(`/ai_config/api/project/${projectId}/`);
+                        const data = await response.json();
+                        
+                        if (data.success && data.config) {
+                            this.useGlobal = data.config.use_global;
+                            
+                            // 分别填充 LLM 和 Vision 配置
+                            this.projectConfig.llm.baseUrl = data.config.llm.base_url || '';
+                            this.projectConfig.llm.apiKey = data.config.llm.api_key || '';
+                            this.projectConfig.llm.modelName = data.config.llm.model_name || '';
+                            
+                            this.projectConfig.vision.baseUrl = data.config.vision.base_url || '';
+                            this.projectConfig.vision.apiKey = data.config.vision.api_key || '';
+                            this.projectConfig.vision.modelName = data.config.vision.model_name || '';
+                        }
+                    } catch (error) {
+                        console.error('加载项目配置失败:', error);
+                    }
+                },
+                
+                // 切换项目配置显示
+                toggleProjectConfig() {
+                    // Vue 会自动处理 v-show
+                },
+                
+                // 保存全局配置
+                async saveGlobalConfig(modelType) {
+                    const config = this.globalConfig[modelType];
+                    
+                    // 获取当前全局配置
+                    const currentResponse = await fetch('/ai_config/api/global/');
+                    const currentData = await currentResponse.json();
+                    
+                    const configData = currentData.success ? currentData.config : { llm: {}, vision: {} };
+                    
+                    // 更新指定类型的配置
+                    if (modelType === 'llm') {
+                        configData.llm = {
+                            base_url: config.baseUrl,
+                            api_key: config.apiKey,
+                            model_name: config.modelName
+                        };
+                    } else {
+                        configData.vision = {
+                            base_url: config.baseUrl,
+                            api_key: config.apiKey,
+                            model_name: config.modelName
+                        };
+                    }
+                    
+                    try {
+                        const response = await fetch('/ai_config/api/global/save/', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json',
+                                'X-CSRFToken': this.getCSRFToken()
+                            },
+                            body: JSON.stringify(configData)
+                        });
+                        
+                        const data = await response.json();
+                        
+                        if (data.success) {
+                            this.showMessage(`${modelType.toUpperCase()} 配置已保存`, '成功', 'success');
+                        } else {
+                            this.showMessage('保存失败：' + data.message, '错误', 'danger');
+                        }
+                    } catch (error) {
+                        this.showMessage('保存失败：' + error.message, '错误', 'danger');
+                    }
+                },
+                
+                // 保存项目配置
+                async saveProjectConfig(modelType) {
+                    if (!this.selectedProject) {
+                        this.showMessage('请先选择一个项目', '提示', 'warning');
+                        return;
+                    }
+                    
+                    const config = this.projectConfig[modelType];
+                    
+                    const configData = {
+                        use_global: this.useGlobal,
+                        llm: {},
+                        vision: {}
+                    };
+                    
+                    if (!this.useGlobal) {
+                        if (modelType === 'llm') {
+                            configData.llm = {
+                                base_url: config.baseUrl,
+                                api_key: config.apiKey,
+                                model_name: config.modelName
+                            };
+                        } else {
+                            configData.vision = {
+                                base_url: config.baseUrl,
+                                api_key: config.apiKey,
+                                model_name: config.modelName
+                            };
+                        }
+                    }
+                    
+                    try {
+                        const response = await fetch(`/ai_config/api/project/${this.selectedProject.id}/save/`, {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json',
+                                'X-CSRFToken': this.getCSRFToken()
+                            },
+                            body: JSON.stringify(configData)
+                        });
+                        
+                        const data = await response.json();
+                        
+                        if (data.success) {
+                            this.showMessage(`${modelType.toUpperCase()} 配置已保存`, '成功', 'success');
+                        } else {
+                            this.showMessage('保存失败：' + data.message, '错误', 'danger');
+                        }
+                    } catch (error) {
+                        this.showMessage('保存失败：' + error.message, '错误', 'danger');
+                    }
+                },
+                
+                // 测试连接
+                async testConnection(scope, modelType) {
+                    const config = scope === 'global' ? this.globalConfig[modelType] : this.projectConfig[modelType];
+                    
+                    if (!config.baseUrl && !config.apiKey) {
+                        this.showMessage('请至少填写 API Base URL 或 API Key 中的一个', '提示', 'warning');
+                        return;
+                    }
+                    
+                    try {
+                        const response = await fetch('/ai_config/api/test-connection/', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json',
+                                'X-CSRFToken': this.getCSRFToken()
+                            },
+                            body: JSON.stringify({
+                                base_url: config.baseUrl,
+                                api_key: config.apiKey,
+                                model_type: modelType
+                            })
+                        });
+                        
+                        const data = await response.json();
+                        
+                        if (data.success) {
+                            this.showMessage(`连接测试成功！\n\n${data.details || data.message}`, '成功', 'success');
+                        } else {
+                            this.showMessage(data.message, '错误', 'danger');
+                        }
+                    } catch (error) {
+                        this.showMessage(`连接测试失败：${error.message}`, '错误', 'danger');
+                    }
+                },
+                
+                // 关闭弹窗
+                closeModal() {
+                    const modalEl = document.getElementById('messageModal');
+                    if (modalEl && this.$messageModal) {
+                        this.$messageModal.hide();
+                    }
+                },
+                
+                // 显示消息提示 - 使用 Bootstrap 原生模态框（复用实例）
+                showMessage(message, title = '提示', type = 'info') {
+                    if (!message) {
+                        console.warn('showMessage called with empty message');
+                        return;
+                    }
+                    
+                    // 设置标题和内容
+                    document.getElementById('messageModalLabel').textContent = title;
+                    const contentEl = document.getElementById('messageContent');
+                    contentEl.innerHTML = message.replace(/\n/g, '<br>');
+                    contentEl.className = `alert alert-${type}`;
+                    
+                    // 获取或创建模态框实例（复用）
+                    const modalEl = document.getElementById('messageModal');
+                    if (!this.$messageModal) {
+                        this.$messageModal = new bootstrap.Modal(modalEl, {
+                            backdrop: true,
+                            keyboard: true
+                        });
+                    }
+                    this.$messageModal.show();
+                },
+            },
+            
+            mounted() {
+                // 加载数据
+                console.log('Vue app mounted!');
+                this.loadProjects();
+                this.loadGlobalConfig();
+            }
+        });
+        
+        app.mount('#ai-config-app');
+        
+        console.log('Vue app initialization complete');
+    });
+})();
+
+</body>
+</html> 

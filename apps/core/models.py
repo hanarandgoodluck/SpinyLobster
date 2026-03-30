@@ -1,6 +1,22 @@
 from django.db import models
 from django.contrib.auth.models import User
 
+class Project(models.Model):
+    """项目模型"""
+    name = models.CharField(max_length=200, verbose_name="项目名称")
+    version = models.CharField(max_length=50, verbose_name="项目版本")
+    description = models.TextField(blank=True, verbose_name="项目描述")
+    created_at = models.DateTimeField(auto_now_add=True, verbose_name="创建时间")
+    updated_at = models.DateTimeField(auto_now=True, verbose_name="更新时间")
+    
+    def __str__(self):
+        return f"{self.name} (v{self.version})"
+    
+    class Meta:
+        verbose_name = "项目"
+        verbose_name_plural = "项目"
+        ordering = ['-created_at']
+
 class TestCase(models.Model):
     """测试用例模型"""
     STATUS_CHOICES = [
@@ -29,6 +45,14 @@ class TestCase(models.Model):
     ]
     
     title = models.CharField(max_length=200, verbose_name="测试用例标题")
+    project = models.ForeignKey(
+        Project,
+        on_delete=models.CASCADE,
+        related_name='test_cases',
+        verbose_name="所属项目",
+        null=True,
+        blank=True
+    )
     description = models.TextField(verbose_name="测试用例描述")
     requirements = models.TextField(verbose_name="需求描述", blank=True)
     code_snippet = models.TextField(verbose_name="代码片段", blank=True)

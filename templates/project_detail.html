@@ -1,0 +1,161 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}{{ project.name }} (v{{ project.version }}) - 项目详情{% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+    <!-- 项目信息卡片 -->
+    <div class="row mb-4">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
+                    <h5 class="mb-0">
+                        <i class="fas fa-folder"></i> 
+                        {{ project.name }} 
+                        <small class="text-light">(v{{ project.version }})</small>
+                    </h5>
+                    <a href="{% url 'project_list' %}" class="btn btn-light btn-sm">
+                        <i class="fas fa-arrow-left"></i> 返回项目列表
+                    </a>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <p><strong>项目描述：</strong>{{ project.description|default:"暂无描述" }}</p>
+                        </div>
+                        <div class="col-md-4">
+                            <p><strong>创建时间：</strong>{{ project.created_at|date:"Y-m-d H:i:s" }}</p>
+                            <p><strong>更新时间：</strong>{{ project.updated_at|date:"Y-m-d H:i:s" }}</p>
+                        </div>
+                    </div>
+                    
+                    <!-- 测试用例统计 -->
+                    <div class="row mt-3">
+                        <div class="col-md-3">
+                            <div class="card bg-info text-white">
+                                <div class="card-body text-center">
+                                    <h3>{{ total_test_cases }}</h3>
+                                    <p class="mb-0">总测试用例</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="card bg-warning text-white">
+                                <div class="card-body text-center">
+                                    <h3>{{ pending_count }}</h3>
+                                    <p class="mb-0">待评审</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="card bg-success text-white">
+                                <div class="card-body text-center">
+                                    <h3>{{ approved_count }}</h3>
+                                    <p class="mb-0">评审通过</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="card bg-danger text-white">
+                                <div class="card-body text-center">
+                                    <h3>{{ rejected_count }}</h3>
+                                    <p class="mb-0">评审未通过</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 功能入口提示 -->
+    <div class="row">
+        <div class="col-12">
+            <div class="alert alert-info">
+                <h5><i class="fas fa-info-circle"></i> 使用提示</h5>
+                <p>您已选择项目：<strong>{{ project.name }}</strong></p>
+                <p>请点击左侧菜单中的功能模块开始使用：</p>
+                <ul>
+                    <li><i class="fas fa-plus-circle"></i> 测试用例生成 - 基于需求文档生成测试用例</li>
+                    <li><i class="fas fa-check-circle"></i> 测试用例评审 - AI 辅助评审测试用例质量</li>
+                    <li><i class="fas fa-project-diagram"></i> 测试点&场景分析 - 从 PRD 中提取测试点和场景</li>
+                    <li><i class="fas fa-code"></i> 接口 case 生成 - 读取 Java 接口生成测试用例</li>
+                </ul>
+                <p class="mb-0">所有功能都会自动关联到当前项目，实现数据隔离。</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 最近测试用例 -->
+    <div class="row mt-4">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header bg-secondary text-white">
+                    <h5 class="mb-0"><i class="fas fa-list"></i> 最近测试用例</h5>
+                </div>
+                <div class="card-body">
+                    {% if recent_test_cases %}
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-hover">
+                            <thead class="thead-light">
+                                <tr>
+                                    <th>ID</th>
+                                    <th>标题</th>
+                                    <th>描述</th>
+                                    <th>状态</th>
+                                    <th>创建时间</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for test_case in recent_test_cases %}
+                                <tr>
+                                    <td>{{ test_case.id }}</td>
+                                    <td>{{ test_case.title|default:"无标题" }}</td>
+                                    <td>{{ test_case.description|truncatechars:50 }}</td>
+                                    <td>
+                                        {% if test_case.status == 'pending' %}
+                                            <span class="badge badge-warning">待评审</span>
+                                        {% elif test_case.status == 'approved' %}
+                                            <span class="badge badge-success">评审通过</span>
+                                        {% else %}
+                                            <span class="badge badge-danger">评审未通过</span>
+                                        {% endif %}
+                                    </td>
+                                    <td>{{ test_case.created_at|date:"Y-m-d H:i:s" }}</td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                    {% else %}
+                    <p class="text-muted text-center">该项目下暂无测试用例</p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+.card-purple {
+    background-color: #6f42c1;
+    color: white;
+}
+
+.bg-purple {
+    background-color: #6f42c1 !important;
+}
+
+.btn-purple {
+    background-color: #6f42c1;
+    color: white;
+}
+
+.btn-purple:hover {
+    background-color: #5a32a3;
+    color: white;
+}
+</style>
+{% endblock %}

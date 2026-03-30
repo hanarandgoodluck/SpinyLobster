@@ -53,8 +53,9 @@ INSTALLED_APPS = [
     # 自定义应用
     'apps.core',
     'apps.llm',
-    # 'apps.knowledge',
-    'apps.knowledge.apps.KnowledgeConfig',
+    'apps.ai_config',
+    # 'apps.knowledge',  # 暂时禁用，需要安装 torch
+    # 'apps.knowledge.apps.KnowledgeConfig',
     'apps.ai_agents.iface_case_generator.apps.IfaceCaseGeneratorConfig',
     'apps.ai_agents.java_code_analyzer.apps.JavaCodeAnalyzerConfig',
     'apps.ai_agents.prd_analyzer.apps.PrdAnalyzerConfig',
@@ -86,6 +87,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'apps.core.context_processors.current_project',  # 自定义上下文处理器
             ],
         },
     },
@@ -99,7 +101,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'test_brain_db',
         'USER': 'root',
-        'PASSWORD': 'test123456',
+        'PASSWORD': '1234',
         'HOST': 'localhost',
         'PORT': '3306',
     }
@@ -134,17 +136,27 @@ STATICFILES_DIRS = [
 # Default primary key field type
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# LLM提供商配置
+# ============================================
+# AI 模型配置（优先使用数据库配置，settings.py 作为备用）
+# ============================================
+# 说明：
+# 1. 系统会优先从数据库的 AIConfig 模型中加载全局配置
+# 2. 如果数据库中没有配置，则使用以下默认配置
+# 3. 建议在 AI 配置管理页面进行可视化配置
+# ============================================
+
+# LLM 提供商默认配置（仅在数据库无配置时使用）
 LLM_PROVIDERS = {
     'default_provider': 'deepseek',
     'deepseek': {
         'name': 'DeepSeek',
-        'model': 'deepseek-chat', #可以切换, deepseek-reasoner即【深度思考】模式, 可能会稍微慢一些
+        'model': 'deepseek-chat',  # 可以切换，deepseek-reasoner 即【深度思考】模式，可能会稍微慢一些
         # 'model': 'deepseek-reasoner',
         'api_base': 'https://api.deepseek.com/v1',
+        'api_key': '',  # 建议通过 AI 配置页面设置
         'temperature': 1.0,
-        'max_tokens': 8192,  #deepseek-chat的max_tokens为8192
-        # 'max_tokens': 64000, #deepseek-reasoner的max_tokens为64000
+        'max_tokens': 8192,  # deepseek-chat 的 max_tokens 为 8192
+        # 'max_tokens': 64000, # deepseek-reasoner 的 max_tokens 为 64000
     },
     'qwen': {
         'name': '通义千问',
@@ -154,13 +166,28 @@ LLM_PROVIDERS = {
         'max_tokens': 8192,
     },
 }
-# AI Agent LLM提供商配置, 每个AI Agent可定制LLM提供商
+
+# AI Agent LLM 提供商配置，每个 AI Agent 可定制 LLM 提供商
 AGENT_LLM_DEFAULTS = {
-    "test_case_generator":  {"provider": "deepseek"},
-    "test_case_reviewer":   {"provider": "deepseek"},
-    "prd_analyzer":         {"provider": "deepseek"},
-    "java_code_analyzer":   {"provider": "deepseek"},
+    "test_case_generator": {"provider": "deepseek"},
+    "test_case_reviewer": {"provider": "deepseek"},
+    "prd_analyzer": {"provider": "deepseek"},
+    "java_code_analyzer": {"provider": "deepseek"},
     "iface_case_generator": {"provider": "deepseek"},
+}
+
+# Vision 模型默认配置（仅作为参考，实际配置请通过 AI 配置页面设置）
+VISION_MODELS = {
+    'openai_gpt4v': {
+        'name': 'GPT-4 Vision',
+        'api_base': 'https://api.openai.com/v1',
+        'model': 'gpt-4-vision-preview',
+    },
+    'qwen_vl': {
+        'name': '通义千问 VL',
+        'api_base': 'https://dashscope.aliyuncs.com/compatible-mode/v1',
+        'model': 'qwen-vl-max',
+    },
 }
 
 # 向量数据库配置
@@ -173,7 +200,7 @@ VECTOR_DB_CONFIG = {
 # 嵌入模型配置
 EMBEDDING_CONFIG = {
     'model': 'bge-m3',
-    'api_key': 'your_huggingface_api_key',
+    'api_key': '',  # 建议通过 AI 配置页面设置
     'api_url': 'https://api-inference.huggingface.co/models/BAAI/bge-m3',
 }
 

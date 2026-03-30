@@ -4,12 +4,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}TestBrain - 测试用例管理平台{% endblock %}</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
-    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
-    <link href="https://cdn.jsdelivr.net/npm/select2-bootstrap-theme@0.1.0-beta.10/dist/select2-bootstrap.min.css" rel="stylesheet" />
+    <meta name="csrf-token" content="{{ csrf_token }}">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐉</text></svg>">
+    <title>{% block title %}SpinyLobster - 测试用例管理平台{% endblock %}</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Element Plus -->
+    <link rel="stylesheet" href="https://unpkg.com/element-plus@2.5.6/dist/index.css">
     <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            overflow-x: hidden;
+        }
+
         /* 左侧导航栏样式 */
         .sidebar {
             position: fixed;
@@ -18,43 +31,52 @@
             left: 0;
             z-index: 100;
             padding: 0;
-            box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
-            background-color: #f8f9fa;
+            box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
+            background-color: #ffffff;
             width: 200px;
+            border-right: 1px solid #e4e7ed;
+            box-sizing: border-box;
         }
 
         /* 品牌标题样式 */
         .brand-title {
-            padding: 0.8rem 1rem;
+            padding: 1rem;
             font-size: 1.25rem;
-            font-weight: 500;
-            color: #333;
+            font-weight: 600;
+            color: #303133;
             margin: 0;
             line-height: 1.5;
-            border-bottom: 1px solid #dee2e6;
+            border-bottom: 1px solid #e4e7ed;
             text-align: left;
             display: block;
             width: 100%;
+            box-sizing: border-box;
         }
 
         .sidebar .nav-link {
             font-weight: 500;
-            color: #333;
+            color: #606266;
             padding: 0.8rem 1rem;
             text-align: left;
+            text-decoration: none;
+            display: block;
+            transition: all 0.3s;
+            box-sizing: border-box;
         }
 
         .sidebar .nav-link:hover {
-            color: #007bff;
-            background-color: #e9ecef;
+            color: #409eff;
+            background-color: #ecf5ff;
         }
 
         .sidebar .nav-link.active {
-            color: #007bff;
+            color: #409eff;
+            background-color: #ecf5ff;
+            box-shadow: inset 3px 0 0 #409eff;
         }
 
         .sidebar .nav-link i {
-            margin-right: 8px;
+            margin-right: 12px;
             width: 20px;
             text-align: center;
         }
@@ -63,113 +85,149 @@
         .main-content {
             margin-left: 200px;
             padding: 20px 30px;
+            min-height: 100dvh;
+            background-color: #f5f7fa;
+            box-sizing: border-box;
         }
 
         /* 导航菜单样式 */
         .nav-menu {
             padding: 0;
             margin: 0;
+            width: 100%;
+            box-sizing: border-box;
         }
 
         .nav-menu .nav {
             padding: 0;
             margin: 0;
+            list-style: none;
+            width: 100%;
+            box-sizing: border-box;
         }
 
         .nav-menu .nav-item {
             width: 100%;
+            box-sizing: border-box;
+        }
+
+        .nav-menu .nav-item a {
+            display: block;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .text-muted {
+            color: #909399;
+        }
+
+        .text-danger {
+            color: #f56c6c;
         }
     </style>
     {% block extra_css %}{% endblock %}
 </head>
 <body>
-    <!-- 左侧导航栏 -->
-    <nav class="sidebar">
-        <!-- 品牌标题 -->
-        <div class="brand-title">
-            TestBrain
-        </div>
-        
-        <!-- 导航菜单 -->
-        <div class="nav-menu">
-            <ul class="nav flex-column">
-                <li class="nav-item">
-                    <a class="nav-link {% if request.path == '/' %}active{% endif %}" href="/">
-                        <i class="fas fa-home"></i>
-                        首页
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link {% if '/generate/' in request.path %}active{% endif %}" href="/test_case_generator/">
-                        <i class="fas fa-plus-circle"></i>
-                        测试用例生成
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link {% if '/test_case_reviewer/' in request.path %}active{% endif %}" href="/test_case_reviewer/">
-                        <i class="fas fa-check-circle"></i>
-                        测试用例评审
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link {% if '/upload/' in request.path %}active{% endif %}" href="/upload/">
-                        <i class="fas fa-upload"></i>
-                        项目文档上传到知识库
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link {% if '/prd_analyzer/' in request.path %}active{% endif %}" href="/prd_analyzer/">
-                        <i class="fas fa-upload"></i>
-                        测试点&测试场景分析
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link {% if '/iface_case_generator/' in request.path %}active{% endif %}" href="/iface_case_generator/">
-                        <i class="fas fa-code"></i>
-                        接口case生成
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link {% if '/java_code_analyzer/' in request.path %}active{% endif %}" href="/java_code_analyzer/">
-                        <i class="fas fa-code-branch"></i>
-                        Java源码分析
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link {% if '/knowledge/' in request.path %}active{% endif %}" href="/knowledge/">
-                        <i class="fas fa-book"></i>
-                        知识库管理(暂时不支持)
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </nav>
+    <div id="app">
+        <!-- 左侧导航栏 -->
+        <nav class="sidebar">
+            <!-- 品牌标题 -->
+            <div class="brand-title">
+                小星龙测试平台
+                {% if current_project %}
+                    <small class="text-muted" style="font-size: 0.8em;">| {{ current_project.name }}</small>
+                {% endif %}
+            </div>
+            
+            <!-- 导航菜单 -->
+            <div class="nav-menu">
+                <ul class="nav">
+                    <li class="nav-item">
+                        <a class="nav-link {% if request.path == '/' %}active{% endif %}" href="/">
+                            <i class="fas fa-home"></i>
+                            首页
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {% if '/projects/' in request.path and not current_project %}active{% endif %}" href="/projects/">
+                            <i class="fas fa-folder"></i>
+                            项目管理
+                        </a>
+                    </li>
+                    
+                    <!-- 项目功能菜单 - 当选择具体项目时显示 -->
+                    {% if current_project %}
+                        <li class="nav-item">
+                            <a class="nav-link {% if '/test_case_generator/' in request.path %}active{% endif %}" href="/test_case_generator/?project_id={{ current_project.id }}">
+                                <i class="fas fa-plus-circle"></i>
+                                测试用例生成
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {% if '/test_case_reviewer/' in request.path %}active{% endif %}" href="/test_case_reviewer/?project_id={{ current_project.id }}">
+                                <i class="fas fa-check-circle"></i>
+                                测试用例评审
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {% if '/prd_analyzer/' in request.path %}active{% endif %}" href="/prd_analyzer/?project_id={{ current_project.id }}">
+                                <i class="fas fa-project-diagram"></i>
+                                测试点&场景分析
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {% if '/iface_case_generator/' in request.path %}active{% endif %}" href="/iface_case_generator/?project_id={{ current_project.id }}">
+                                <i class="fas fa-code"></i>
+                                接口 case 生成
+                            </a>
+                        </li>
+                        <li class="nav-item" style="margin-top: 1rem;">
+                            <a class="nav-link text-danger" href="/projects/">
+                                <i class="fas fa-arrow-left"></i>
+                                返回项目列表
+                            </a>
+                        </li>
+                    {% else %}
+                        <!-- 默认菜单 - 未选择项目时显示 -->
+                        <li class="nav-item">
+                            <a class="nav-link {% if '/ai_config/' in request.path %}active{% endif %}" href="/ai_config/">
+                                <i class="fas fa-robot"></i>
+                                AI 配置
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {% if '/upload/' in request.path %}active{% endif %}" href="/upload/">
+                                <i class="fas fa-upload"></i>
+                                项目文档上传到知识库
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {% if '/java_code_analyzer/' in request.path %}active{% endif %}" href="/java_code_analyzer/">
+                                <i class="fas fa-code-branch"></i>
+                                Java 源码分析
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {% if '/knowledge/' in request.path %}active{% endif %}" href="/knowledge/">
+                                <i class="fas fa-book"></i>
+                                知识库管理 (暂时不支持)
+                            </a>
+                        </li>
+                    {% endif %}
+                </ul>
+            </div>
+        </nav>
 
-    <!-- 主内容区域 -->
-    <main class="main-content">
-        {% block content %}{% endblock %}
-    </main>
+        <!-- 主内容区域 -->
+        <main class="main-content">
+            {% block content %}{% endblock %}
+        </main>
+    </div>
 
-    <script src="{% static 'js/extra/jquery.min.js' %}"></script>
-    <!-- <script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.bundle.min.js"></script> -->
-    <!-- <script src="https://cdn.bootcdn.net/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script> -->
-     <!-- 修改为使用本地文件 -->
-    <script src="{% static 'js/extra/all.min.js' %}"></script>
-    <script src="{% static 'js/extra/bootstrap.bundle.min.js' %}" data-no-maps></script>
-    <!-- <script src="https://cdn.bootcdn.net/ajax/libs/bootstrap-select/1.13.14/js/bootstrap-select.min.js"></script> -->
-    <script src="{% static 'js/extra/bootstrap-select.min.js' %}" data-no-maps></script>
-    <script src="{% static 'js/extra/select2.min.js' %}" data-no-maps></script>
-    <script>
-        $(document).ready(function() {
-            $('.selectpicker').selectpicker({
-                style: 'btn-default',
-                noneSelectedText: '请选择',
-                liveSearch: true,
-                showTick: true,
-                actionsBox: true
-            });
-        });
-    </script>
+    <!-- Vue 3 -->
+    <script src="https://unpkg.com/vue@3.4.21/dist/vue.global.js"></script>
+    <!-- Element Plus -->
+    <script src="https://unpkg.com/element-plus@2.5.6/dist/index.full.js"></script>
     {% block extra_js %}{% endblock %}
 </body>
-</html> 
+</html>

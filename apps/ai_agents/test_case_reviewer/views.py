@@ -23,25 +23,51 @@ DEFAULT_PROVIDER, PROVIDERS = get_agent_llm_configs("test_case_reviewer")
 # 获取默认提供商的配置
 DEFAULT_LLM_CONFIG = PROVIDERS.get(DEFAULT_PROVIDER, {})
 
-# 创建LLM服务实例
-llm_service = LLMServiceFactory.create(
-    provider=DEFAULT_PROVIDER,
-    **DEFAULT_LLM_CONFIG
-)
+# 创建 LLM 服务实例和 knowledge_service，如果未启用则设为 None
+try:
+    llm_service = LLMServiceFactory.create(
+        provider=DEFAULT_PROVIDER,
+        **DEFAULT_LLM_CONFIG
+    )
+except ValueError as e:
+    logger.warning(f"无法创建 LLM 服务：{e}")
+    llm_service = None
 
-knowledge_service = get_knowledgeService_instance()
+try:
+    knowledge_service = get_knowledgeService_instance()
+except (LookupError, ImportError) as e:
+    logger.warning(f"无法创建 Knowledge 服务：{e}")
+    knowledge_service = None
 
 
 
 # @login_required 先屏蔽登录
 def review_view(request):
-    """页面-测试用例评审页面视图"""
-    # 获取所有测试用例
-    pending_cases = TestCase.objects.filter(status='pending').order_by('-created_at')
-    approved_cases = TestCase.objects.filter(status='approved').order_by('-created_at')
-    rejected_cases = TestCase.objects.filter(status='rejected').order_by('-created_at')
+    """页面 - 测试用例评审页面视图"""
+    # 获取项目 ID（从查询参数）
+    project_id = request.GET.get('project_id')
     
-    # 每页显示15条数据
+    # 根据是否有项目 ID，过滤测试用例
+    if project_id:
+        from apps.core.models import Project
+        project = Project.objects.filter(id=project_id).first()
+        if project:
+            # 按项目过滤
+            pending_cases = TestCase.objects.filter(status='pending', project=project).order_by('-created_at')
+            approved_cases = TestCase.objects.filter(status='approved', project=project).order_by('-created_at')
+            rejected_cases = TestCase.objects.filter(status='rejected', project=project).order_by('-created_at')
+        else:
+            # 项目不存在，返回所有
+            pending_cases = TestCase.objects.filter(status='pending').order_by('-created_at')
+            approved_cases = TestCase.objects.filter(status='approved').order_by('-created_at')
+            rejected_cases = TestCase.objects.filter(status='rejected').order_by('-created_at')
+    else:
+        # 没有项目 ID，返回所有
+        pending_cases = TestCase.objects.filter(status='pending').order_by('-created_at')
+        approved_cases = TestCase.objects.filter(status='approved').order_by('-created_at')
+        rejected_cases = TestCase.objects.filter(status='rejected').order_by('-created_at')
+    
+    # 每页显示 15 条数据
     page_size = 15
     
     # 处理待评审用例分页
@@ -78,6 +104,7 @@ def review_view(request):
         'pending_test_cases': pending_test_cases,
         'approved_test_cases': approved_test_cases,
         'rejected_test_cases': rejected_test_cases,
+        'project_id': project_id,  # 传递项目 ID 到模板
     }
     
     return render(request, 'review.html', context)
