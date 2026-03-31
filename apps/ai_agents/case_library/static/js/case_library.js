@@ -50,7 +50,7 @@ const ModuleTreeItem = {
                     @select="$emit('select', $event)"
                     @create-sub="$emit('create-sub', $event)"
                     @edit="$emit('edit', $event)"
-                    @delete="$emit('delete', $event)">
+                    @delete="$emit('delete', $event)"
                 </module-tree-item>
             </div>
         </div>
@@ -137,6 +137,7 @@ document.addEventListener('DOMContentLoaded', function() {
             methods: {
                 // 加载用例列表
                 async loadCases() {
+                    console.log('开始加载用例列表...');
                     try {
                         const params = new URLSearchParams({
                             page: this.currentPage,
@@ -152,23 +153,37 @@ document.addEventListener('DOMContentLoaded', function() {
                         const projectId = urlParams.get('project_id');
                         if (projectId) {
                             params.append('project_id', projectId);
+                            console.log('添加 project_id 参数:', projectId);
                         }
                         
+                        console.log('请求参数:', params.toString());
                         const response = await fetch(`/case_library/api/list/?${params}`);
+                        console.log('API 响应状态:', response.status);
+                        
                         const data = await response.json();
+                        console.log('API 响应数据:', data);
                         
                         if (data.success) {
+                            // 首先更新用例列表，确保数据能够显示
                             this.cases = data.data.cases;
                             this.total = data.data.total;
                             this.currentPage = data.data.page;
                             this.pageSize = data.data.page_size;
                             
-                            // 先加载模块列表
-                            await this.loadModules();
+                            console.log('用例列表加载成功:', this.cases);
+                            console.log('用例数量:', this.cases.length);
                             
-                            // 然后更新模块统计数量
-                            this.updateModuleCounts();
+                            // 然后尝试加载模块列表，即使失败也不影响用例显示
+                            try {
+                                await this.loadModules();
+                                // 更新模块统计数量
+                                this.updateModuleCounts();
+                            } catch (moduleError) {
+                                console.error('加载模块列表失败:', moduleError);
+                                // 模块加载失败不影响用例显示
+                            }
                         } else {
+                            console.error('API 返回失败:', data.message);
                             this.$message.error('加载失败：' + data.message);
                         }
                     } catch (error) {
@@ -592,6 +607,8 @@ document.addEventListener('DOMContentLoaded', function() {
                                     remark: '',
                                     continue_create: true
                                 };
+                                // 重新加载用例列表，确保新创建的用例能够显示
+                                this.loadCases();
                             } else {
                                 this.dialogVisible = false;
                                 this.loadCases();
@@ -643,9 +660,9 @@ document.addEventListener('DOMContentLoaded', function() {
         app.component('module-tree-item', ModuleTreeItem);
         
         // 挂载应用
-        app.use(ElementPlus).mount('#app');
+        const vm = app.use(ElementPlus).mount('#app');
         
         // 暴露 Vue 应用实例给全局使用
-        window.caseLibraryApp = app._data;
+        window.caseLibraryApp = vm;
     }
 });

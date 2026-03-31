@@ -807,3 +807,56 @@ ValueError: DeepSeek API key is required. Set it via DEEPSEEK_API_KEY environmen
 2026-03-31 17:01:58,577 - apps.ai_agents.test_case_generator.views - INFO - [thread=6150778880 Thread-11 (process_request_thread)] - ===== 杩涘叆 generate 瑙嗗浘鍑芥暟 =====
 2026-03-31 17:01:58,578 - apps.ai_agents.test_case_generator.views - INFO - [thread=6150778880 Thread-11 (process_request_thread)] - 璇锋眰鏂规硶锛欸ET
 2026-03-31 17:01:58,585 - apps.ai_agents.test_case_generator.views - INFO - [thread=6150778880 Thread-11 (process_request_thread)] - 浠庢暟鎹簱鍔犺浇 AI 閰嶇疆鎴愬姛锛屾ā鍨嬶細
+2026-03-31 21:54:14,423 - apps.ai_agents.test_case_generator.views - WARNING - [thread=13052 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-31 21:54:46,763 - apps.ai_agents.test_case_generator.views - WARNING - [thread=18072 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-31 21:54:54,260 - apps.ai_agents.test_case_generator.views - WARNING - [thread=9808 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-31 21:55:25,258 - apps.ai_agents.test_case_generator.views - WARNING - [thread=3868 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-31 21:55:49,147 - apps.ai_agents.test_case_generator.views - INFO - [thread=20912 Thread-5 (process_request_thread)] - ===== 进入 generate 视图函数 =====
+2026-03-31 21:55:49,148 - apps.ai_agents.test_case_generator.views - INFO - [thread=20912 Thread-5 (process_request_thread)] - 请求方法：GET
+2026-03-31 21:55:49,160 - apps.ai_agents.test_case_generator.views - INFO - [thread=20912 Thread-5 (process_request_thread)] - 从数据库加载 AI 配置成功，模型：deepseek-chat
+2026-03-31 22:01:08,839 - apps.ai_agents.test_case_generator.views - WARNING - [thread=24184 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-31 22:05:58,839 - apps.ai_agents.test_case_generator.views - WARNING - [thread=28372 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-31 22:09:57,506 - apps.ai_agents.test_case_generator.views - WARNING - [thread=26128 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-31 22:12:43,485 - apps.ai_agents.test_case_generator.views - WARNING - [thread=30320 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-31 22:16:04,078 - apps.ai_agents.test_case_generator.views - WARNING - [thread=24532 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-31 22:17:28,667 - apps.ai_agents.test_case_generator.views - INFO - [thread=7356 Thread-7 (process_request_thread)] - ===== 进入 generate 视图函数 =====
+2026-03-31 22:17:28,668 - apps.ai_agents.test_case_generator.views - INFO - [thread=7356 Thread-7 (process_request_thread)] - 请求方法：GET
+2026-03-31 22:17:28,671 - apps.ai_agents.test_case_generator.views - INFO - [thread=7356 Thread-7 (process_request_thread)] - 从数据库加载 AI 配置成功，模型：deepseek-chat
+2026-03-31 22:18:50,550 - apps.ai_agents.test_case_generator.views - WARNING - [thread=29160 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-31 22:20:37,551 - apps.ai_agents.test_case_generator.views - INFO - [thread=7356 Thread-7 (process_request_thread)] - ===== 进入 generate 视图函数 =====
+2026-03-31 22:20:37,551 - apps.ai_agents.test_case_generator.views - INFO - [thread=7356 Thread-7 (process_request_thread)] - 请求方法：GET
+2026-03-31 22:20:37,564 - apps.ai_agents.test_case_generator.views - INFO - [thread=7356 Thread-7 (process_request_thread)] - 从数据库加载 AI 配置成功，模型：deepseek-chat
+2026-03-31 22:24:53,547 - apps.ai_agents.test_case_generator.views - WARNING - [thread=22888 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-31 22:26:47,340 - apps.ai_agents.test_case_generator.views - WARNING - [thread=7832 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-31 22:29:19,424 - apps.ai_agents.test_case_generator.views - WARNING - [thread=2984 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-31 22:34:37,194 - apps.ai_agents.test_case_generator.views - WARNING - [thread=22052 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-31 22:37:55,409 - apps.ai_agents.test_case_generator.views - WARNING - [thread=30708 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-31 22:41:20,251 - apps.ai_agents.test_case_generator.views - WARNING - [thread=13960 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-31 22:45:29,058 - apps.ai_agents.test_case_generator.views - WARNING - [thread=30364 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-31 22:52:23,997 - apps.ai_agents.test_case_generator.views - WARNING - [thread=30160 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-31 22:53:39,212 - apps.ai_agents.test_case_generator.views - WARNING - [thread=23744 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-31 22:55:59,072 - apps.ai_agents.test_case_generator.views - WARNING - [thread=22960 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-31 22:57:21,738 - apps.ai_agents.test_case_generator.views - WARNING - [thread=30392 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-31 23:01:31,569 - apps.ai_agents.test_case_generator.views - WARNING - [thread=16800 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-31 23:02:25,597 - apps.ai_agents.test_case_generator.views - WARNING - [thread=25968 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-31 23:04:58,695 - apps.ai_agents.test_case_generator.views - WARNING - [thread=4636 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-31 23:06:29,991 - apps.ai_agents.test_case_generator.views - WARNING - [thread=30144 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-31 23:07:48,615 - apps.ai_agents.test_case_generator.views - WARNING - [thread=24780 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-31 23:07:48,615 - apps.ai_agents.test_case_generator.views - WARNING - [thread=16248 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-31 23:07:49,344 - apps.ai_agents.test_case_generator.views - WARNING - [thread=15712 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-31 23:07:49,351 - apps.ai_agents.test_case_generator.views - WARNING - [thread=7972 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-31 23:07:52,680 - apps.ai_agents.test_case_generator.views - WARNING - [thread=5228 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-31 23:10:15,894 - apps.ai_agents.test_case_generator.views - WARNING - [thread=24152 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-31 23:12:08,581 - apps.ai_agents.test_case_generator.views - WARNING - [thread=17836 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-31 23:12:47,060 - apps.ai_agents.test_case_generator.views - WARNING - [thread=2080 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-31 23:13:39,473 - apps.ai_agents.test_case_generator.views - WARNING - [thread=29568 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-31 23:13:39,475 - apps.ai_agents.test_case_generator.views - WARNING - [thread=26528 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-31 23:13:40,479 - apps.ai_agents.test_case_generator.views - WARNING - [thread=25968 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-31 23:13:46,893 - apps.ai_agents.test_case_generator.views - WARNING - [thread=30104 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-31 23:15:03,087 - apps.ai_agents.test_case_generator.views - WARNING - [thread=15160 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-31 23:15:03,662 - apps.ai_agents.test_case_generator.views - WARNING - [thread=5968 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-31 23:15:04,443 - apps.ai_agents.test_case_generator.views - WARNING - [thread=16112 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-31 23:15:05,030 - apps.ai_agents.test_case_generator.views - WARNING - [thread=24108 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-31 23:24:15,611 - apps.ai_agents.test_case_generator.views - WARNING - [thread=27572 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-31 23:24:15,611 - apps.ai_agents.test_case_generator.views - WARNING - [thread=30252 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-31 23:24:22,154 - apps.ai_agents.test_case_generator.views - WARNING - [thread=6168 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.

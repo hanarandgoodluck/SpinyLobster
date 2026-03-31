@@ -4924,3 +4924,658 @@ django.template.exceptions.TemplateSyntaxError: Template: /Users/gb/Desktop/mypy
 2026-03-31 17:02:03,368 - django.request - WARNING - [thread=6168752128 Thread-12 (process_request_thread)] - Not Found: /.well-known/appspecific/com.chrome.devtools.json
 2026-03-31 17:02:05,409 - django.request - WARNING - [thread=6150778880 Thread-11 (process_request_thread)] - Not Found: /.well-known/appspecific/com.chrome.devtools.json
 2026-03-31 17:03:10,944 - django.request - WARNING - [thread=6168752128 Thread-12 (process_request_thread)] - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2026-03-31 21:54:07,939 - django.utils.autoreload - INFO - [thread=13052 MainThread] - Watching for file changes with StatReloader
+2026-03-31 21:54:13,671 - LLMServiceFactory - INFO - [thread=13052 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-03-31 21:54:13,686 - LLMServiceFactory - WARNING - [thread=13052 MainThread] - 从数据库加载 AI 配置失败：(1045, "Access denied for user 'root'@'localhost' (using password: NO)")，使用 settings.py 配置
+2026-03-31 21:54:14,231 - apps.core.views - WARNING - [thread=13052 MainThread] - 无法创建 LLM 服务：DeepSeek API key is required. Set it via DEEPSEEK_API_KEY environment variable or pass it directly.
+2026-03-31 21:54:14,232 - apps.core.views - WARNING - [thread=13052 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-31 21:54:14,405 - LLMServiceFactory - INFO - [thread=13052 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-03-31 21:54:14,417 - LLMServiceFactory - WARNING - [thread=13052 MainThread] - 从数据库加载 AI 配置失败：(1045, "Access denied for user 'root'@'localhost' (using password: NO)")，使用 settings.py 配置
+2026-03-31 21:54:14,417 - apps.ai_agents.prd_analyzer.views - WARNING - [thread=13052 MainThread] - 无法创建 LLM 服务：DeepSeek API key is required. Set it via DEEPSEEK_API_KEY environment variable or pass it directly.
+2026-03-31 21:54:14,423 - apps.ai_agents.test_case_generator.views - WARNING - [thread=13052 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-31 21:54:14,437 - LLMServiceFactory - INFO - [thread=13052 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-03-31 21:54:14,449 - LLMServiceFactory - WARNING - [thread=13052 MainThread] - 从数据库加载 AI 配置失败：(1045, "Access denied for user 'root'@'localhost' (using password: NO)")，使用 settings.py 配置
+2026-03-31 21:54:14,449 - apps.ai_agents.test_case_reviewer.views - WARNING - [thread=13052 MainThread] - 无法创建 LLM 服务：DeepSeek API key is required. Set it via DEEPSEEK_API_KEY environment variable or pass it directly.
+2026-03-31 21:54:14,449 - apps.ai_agents.test_case_reviewer.views - WARNING - [thread=13052 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-31 21:54:34,788 - django.utils.autoreload - INFO - [thread=13052 MainThread] - F:\test\TestBranin\config\settings.py changed, reloading.
+2026-03-31 21:54:39,480 - django.utils.autoreload - INFO - [thread=18072 MainThread] - Watching for file changes with StatReloader
+2026-03-31 21:54:44,773 - LLMServiceFactory - INFO - [thread=18072 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-03-31 21:54:44,794 - LLMServiceFactory - INFO - [thread=18072 MainThread] - 使用数据库中的 AI 配置
+2026-03-31 21:54:46,580 - apps.core.views - WARNING - [thread=18072 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-31 21:54:46,759 - LLMServiceFactory - INFO - [thread=18072 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-03-31 21:54:46,761 - LLMServiceFactory - INFO - [thread=18072 MainThread] - 使用数据库中的 AI 配置
+2026-03-31 21:54:46,763 - apps.ai_agents.test_case_generator.views - WARNING - [thread=18072 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-31 21:54:46,777 - LLMServiceFactory - INFO - [thread=18072 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-03-31 21:54:46,778 - LLMServiceFactory - INFO - [thread=18072 MainThread] - 使用数据库中的 AI 配置
+2026-03-31 21:54:46,779 - apps.ai_agents.test_case_reviewer.views - WARNING - [thread=18072 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-31 21:54:48,211 - django.utils.autoreload - INFO - [thread=9808 MainThread] - Watching for file changes with StatReloader
+2026-03-31 21:54:52,288 - LLMServiceFactory - INFO - [thread=9808 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-03-31 21:54:52,307 - LLMServiceFactory - INFO - [thread=9808 MainThread] - 使用数据库中的 AI 配置
+2026-03-31 21:54:54,088 - apps.core.views - WARNING - [thread=9808 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-31 21:54:54,256 - LLMServiceFactory - INFO - [thread=9808 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-03-31 21:54:54,258 - LLMServiceFactory - INFO - [thread=9808 MainThread] - 使用数据库中的 AI 配置
+2026-03-31 21:54:54,260 - apps.ai_agents.test_case_generator.views - WARNING - [thread=9808 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-31 21:54:54,274 - LLMServiceFactory - INFO - [thread=9808 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-03-31 21:54:54,276 - LLMServiceFactory - INFO - [thread=9808 MainThread] - 使用数据库中的 AI 配置
+2026-03-31 21:54:54,276 - apps.ai_agents.test_case_reviewer.views - WARNING - [thread=9808 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-31 21:55:23,229 - LLMServiceFactory - INFO - [thread=3868 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-03-31 21:55:23,245 - LLMServiceFactory - INFO - [thread=3868 MainThread] - 使用数据库中的 AI 配置
+2026-03-31 21:55:25,079 - apps.core.views - WARNING - [thread=3868 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-31 21:55:25,255 - LLMServiceFactory - INFO - [thread=3868 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-03-31 21:55:25,256 - LLMServiceFactory - INFO - [thread=3868 MainThread] - 使用数据库中的 AI 配置
+2026-03-31 21:55:25,258 - apps.ai_agents.test_case_generator.views - WARNING - [thread=3868 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-31 21:55:25,271 - LLMServiceFactory - INFO - [thread=3868 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-03-31 21:55:25,272 - LLMServiceFactory - INFO - [thread=3868 MainThread] - 使用数据库中的 AI 配置
+2026-03-31 21:55:25,273 - apps.ai_agents.test_case_reviewer.views - WARNING - [thread=3868 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-31 21:55:44,197 - django.request - WARNING - [thread=20912 Thread-5 (process_request_thread)] - Not Found: /@vite/client
+2026-03-31 21:55:47,733 - django.request - WARNING - [thread=18096 Thread-6 (process_request_thread)] - Not Found: /@vite/client
+2026-03-31 21:55:49,147 - apps.ai_agents.test_case_generator.views - INFO - [thread=20912 Thread-5 (process_request_thread)] - ===== 进入 generate 视图函数 =====
+2026-03-31 21:55:49,148 - apps.ai_agents.test_case_generator.views - INFO - [thread=20912 Thread-5 (process_request_thread)] - 请求方法：GET
+2026-03-31 21:55:49,160 - apps.ai_agents.test_case_generator.views - INFO - [thread=20912 Thread-5 (process_request_thread)] - 从数据库加载 AI 配置成功，模型：deepseek-chat
+2026-03-31 21:55:49,543 - django.request - WARNING - [thread=20912 Thread-5 (process_request_thread)] - Not Found: /@vite/client
+2026-03-31 21:56:38,404 - django.request - WARNING - [thread=18096 Thread-6 (process_request_thread)] - Not Found: /@vite/client
+2026-03-31 21:56:44,654 - django.request - WARNING - [thread=18096 Thread-6 (process_request_thread)] - Not Found: /@vite/client
+2026-03-31 22:01:00,438 - django.utils.autoreload - INFO - [thread=24184 MainThread] - Watching for file changes with StatReloader
+2026-03-31 22:01:07,021 - LLMServiceFactory - INFO - [thread=24184 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-03-31 22:01:07,039 - LLMServiceFactory - INFO - [thread=24184 MainThread] - 使用数据库中的 AI 配置
+2026-03-31 22:01:08,678 - apps.core.views - WARNING - [thread=24184 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-31 22:01:08,836 - LLMServiceFactory - INFO - [thread=24184 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-03-31 22:01:08,837 - LLMServiceFactory - INFO - [thread=24184 MainThread] - 使用数据库中的 AI 配置
+2026-03-31 22:01:08,839 - apps.ai_agents.test_case_generator.views - WARNING - [thread=24184 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-31 22:01:08,850 - LLMServiceFactory - INFO - [thread=24184 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-03-31 22:01:08,851 - LLMServiceFactory - INFO - [thread=24184 MainThread] - 使用数据库中的 AI 配置
+2026-03-31 22:01:08,852 - apps.ai_agents.test_case_reviewer.views - WARNING - [thread=24184 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-31 22:01:26,909 - django.request - WARNING - [thread=18096 Thread-6 (process_request_thread)] - Not Found: /@vite/client
+2026-03-31 22:05:52,814 - django.utils.autoreload - INFO - [thread=28372 MainThread] - Watching for file changes with StatReloader
+2026-03-31 22:05:56,978 - LLMServiceFactory - INFO - [thread=28372 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-03-31 22:05:56,995 - LLMServiceFactory - INFO - [thread=28372 MainThread] - 使用数据库中的 AI 配置
+2026-03-31 22:05:58,661 - apps.core.views - WARNING - [thread=28372 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-31 22:05:58,835 - LLMServiceFactory - INFO - [thread=28372 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-03-31 22:05:58,837 - LLMServiceFactory - INFO - [thread=28372 MainThread] - 使用数据库中的 AI 配置
+2026-03-31 22:05:58,839 - apps.ai_agents.test_case_generator.views - WARNING - [thread=28372 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-31 22:05:58,851 - LLMServiceFactory - INFO - [thread=28372 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-03-31 22:05:58,852 - LLMServiceFactory - INFO - [thread=28372 MainThread] - 使用数据库中的 AI 配置
+2026-03-31 22:05:58,852 - apps.ai_agents.test_case_reviewer.views - WARNING - [thread=28372 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-31 22:06:16,624 - django.request - WARNING - [thread=18096 Thread-6 (process_request_thread)] - Not Found: /@vite/client
+2026-03-31 22:06:22,331 - django.request - WARNING - [thread=20912 Thread-5 (process_request_thread)] - Not Found: /@vite/client
+2026-03-31 22:06:28,895 - django.request - WARNING - [thread=18096 Thread-6 (process_request_thread)] - Not Found: /@vite/client
+2026-03-31 22:07:29,358 - django.request - WARNING - [thread=20912 Thread-5 (process_request_thread)] - Not Found: /@vite/client
+2026-03-31 22:09:49,604 - django.utils.autoreload - INFO - [thread=26128 MainThread] - Watching for file changes with StatReloader
+2026-03-31 22:09:55,645 - LLMServiceFactory - INFO - [thread=26128 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-03-31 22:09:55,663 - LLMServiceFactory - INFO - [thread=26128 MainThread] - 使用数据库中的 AI 配置
+2026-03-31 22:09:57,341 - apps.core.views - WARNING - [thread=26128 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-31 22:09:57,503 - LLMServiceFactory - INFO - [thread=26128 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-03-31 22:09:57,504 - LLMServiceFactory - INFO - [thread=26128 MainThread] - 使用数据库中的 AI 配置
+2026-03-31 22:09:57,506 - apps.ai_agents.test_case_generator.views - WARNING - [thread=26128 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-31 22:09:57,518 - LLMServiceFactory - INFO - [thread=26128 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-03-31 22:09:57,520 - LLMServiceFactory - INFO - [thread=26128 MainThread] - 使用数据库中的 AI 配置
+2026-03-31 22:09:57,520 - apps.ai_agents.test_case_reviewer.views - WARNING - [thread=26128 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-31 22:10:29,975 - django.request - WARNING - [thread=18096 Thread-6 (process_request_thread)] - Not Found: /@vite/client
+2026-03-31 22:10:46,534 - django.request - WARNING - [thread=20912 Thread-5 (process_request_thread)] - Not Found: /@vite/client
+2026-03-31 22:12:36,334 - django.utils.autoreload - INFO - [thread=30320 MainThread] - Watching for file changes with StatReloader
+2026-03-31 22:12:41,630 - LLMServiceFactory - INFO - [thread=30320 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-03-31 22:12:41,648 - LLMServiceFactory - INFO - [thread=30320 MainThread] - 使用数据库中的 AI 配置
+2026-03-31 22:12:43,311 - apps.core.views - WARNING - [thread=30320 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-31 22:12:43,481 - LLMServiceFactory - INFO - [thread=30320 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-03-31 22:12:43,483 - LLMServiceFactory - INFO - [thread=30320 MainThread] - 使用数据库中的 AI 配置
+2026-03-31 22:12:43,485 - apps.ai_agents.test_case_generator.views - WARNING - [thread=30320 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-31 22:12:43,497 - LLMServiceFactory - INFO - [thread=30320 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-03-31 22:12:43,498 - LLMServiceFactory - INFO - [thread=30320 MainThread] - 使用数据库中的 AI 配置
+2026-03-31 22:12:43,499 - apps.ai_agents.test_case_reviewer.views - WARNING - [thread=30320 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-31 22:13:15,070 - django.request - WARNING - [thread=7356 Thread-7 (process_request_thread)] - Not Found: /@vite/client
+2026-03-31 22:14:14,682 - django.request - WARNING - [thread=25056 Thread-8 (process_request_thread)] - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2026-03-31 22:14:33,434 - django.request - WARNING - [thread=7356 Thread-7 (process_request_thread)] - Not Found: /@vite/client
+2026-03-31 22:15:56,927 - django.utils.autoreload - INFO - [thread=24532 MainThread] - Watching for file changes with StatReloader
+2026-03-31 22:16:02,267 - LLMServiceFactory - INFO - [thread=24532 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-03-31 22:16:02,285 - LLMServiceFactory - INFO - [thread=24532 MainThread] - 使用数据库中的 AI 配置
+2026-03-31 22:16:03,913 - apps.core.views - WARNING - [thread=24532 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-31 22:16:04,075 - LLMServiceFactory - INFO - [thread=24532 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-03-31 22:16:04,076 - LLMServiceFactory - INFO - [thread=24532 MainThread] - 使用数据库中的 AI 配置
+2026-03-31 22:16:04,078 - apps.ai_agents.test_case_generator.views - WARNING - [thread=24532 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-31 22:16:04,090 - LLMServiceFactory - INFO - [thread=24532 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-03-31 22:16:04,091 - LLMServiceFactory - INFO - [thread=24532 MainThread] - 使用数据库中的 AI 配置
+2026-03-31 22:16:04,091 - apps.ai_agents.test_case_reviewer.views - WARNING - [thread=24532 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-31 22:16:24,570 - django.request - WARNING - [thread=7356 Thread-7 (process_request_thread)] - Not Found: /@vite/client
+2026-03-31 22:17:19,417 - django.request - WARNING - [thread=7356 Thread-7 (process_request_thread)] - Not Found: /@vite/client
+2026-03-31 22:17:28,667 - apps.ai_agents.test_case_generator.views - INFO - [thread=7356 Thread-7 (process_request_thread)] - ===== 进入 generate 视图函数 =====
+2026-03-31 22:17:28,668 - apps.ai_agents.test_case_generator.views - INFO - [thread=7356 Thread-7 (process_request_thread)] - 请求方法：GET
+2026-03-31 22:17:28,671 - apps.ai_agents.test_case_generator.views - INFO - [thread=7356 Thread-7 (process_request_thread)] - 从数据库加载 AI 配置成功，模型：deepseek-chat
+2026-03-31 22:17:28,768 - django.request - WARNING - [thread=7356 Thread-7 (process_request_thread)] - Not Found: /@vite/client
+2026-03-31 22:17:29,884 - django.request - WARNING - [thread=26712 Thread-6 (process_request_thread)] - Not Found: /@vite/client
+2026-03-31 22:18:42,892 - django.utils.autoreload - INFO - [thread=29160 MainThread] - Watching for file changes with StatReloader
+2026-03-31 22:18:48,721 - LLMServiceFactory - INFO - [thread=29160 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-03-31 22:18:48,739 - LLMServiceFactory - INFO - [thread=29160 MainThread] - 使用数据库中的 AI 配置
+2026-03-31 22:18:50,359 - apps.core.views - WARNING - [thread=29160 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-31 22:18:50,547 - LLMServiceFactory - INFO - [thread=29160 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-03-31 22:18:50,549 - LLMServiceFactory - INFO - [thread=29160 MainThread] - 使用数据库中的 AI 配置
+2026-03-31 22:18:50,550 - apps.ai_agents.test_case_generator.views - WARNING - [thread=29160 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-31 22:18:50,562 - LLMServiceFactory - INFO - [thread=29160 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-03-31 22:18:50,564 - LLMServiceFactory - INFO - [thread=29160 MainThread] - 使用数据库中的 AI 配置
+2026-03-31 22:18:50,564 - apps.ai_agents.test_case_reviewer.views - WARNING - [thread=29160 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-31 22:19:01,918 - django.request - WARNING - [thread=7356 Thread-7 (process_request_thread)] - Not Found: /@vite/client
+2026-03-31 22:20:33,495 - django.request - WARNING - [thread=7356 Thread-7 (process_request_thread)] - Not Found: /@vite/client
+2026-03-31 22:20:37,161 - django.request - WARNING - [thread=7356 Thread-7 (process_request_thread)] - Not Found: /@vite/client
+2026-03-31 22:20:37,551 - apps.ai_agents.test_case_generator.views - INFO - [thread=7356 Thread-7 (process_request_thread)] - ===== 进入 generate 视图函数 =====
+2026-03-31 22:20:37,551 - apps.ai_agents.test_case_generator.views - INFO - [thread=7356 Thread-7 (process_request_thread)] - 请求方法：GET
+2026-03-31 22:20:37,564 - apps.ai_agents.test_case_generator.views - INFO - [thread=7356 Thread-7 (process_request_thread)] - 从数据库加载 AI 配置成功，模型：deepseek-chat
+2026-03-31 22:20:37,620 - django.request - WARNING - [thread=7356 Thread-7 (process_request_thread)] - Not Found: /@vite/client
+2026-03-31 22:20:38,769 - django.request - WARNING - [thread=26712 Thread-6 (process_request_thread)] - Not Found: /@vite/client
+2026-03-31 22:22:26,637 - django.request - WARNING - [thread=7248 Thread-10 (process_request_thread)] - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2026-03-31 22:24:46,152 - django.utils.autoreload - INFO - [thread=22888 MainThread] - Watching for file changes with StatReloader
+2026-03-31 22:24:51,754 - LLMServiceFactory - INFO - [thread=22888 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-03-31 22:24:51,762 - LLMServiceFactory - INFO - [thread=22888 MainThread] - 使用数据库中的 AI 配置
+2026-03-31 22:24:53,381 - apps.core.views - WARNING - [thread=22888 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-31 22:24:53,544 - LLMServiceFactory - INFO - [thread=22888 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-03-31 22:24:53,545 - LLMServiceFactory - INFO - [thread=22888 MainThread] - 使用数据库中的 AI 配置
+2026-03-31 22:24:53,547 - apps.ai_agents.test_case_generator.views - WARNING - [thread=22888 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-31 22:24:53,559 - LLMServiceFactory - INFO - [thread=22888 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-03-31 22:24:53,560 - LLMServiceFactory - INFO - [thread=22888 MainThread] - 使用数据库中的 AI 配置
+2026-03-31 22:24:53,561 - apps.ai_agents.test_case_reviewer.views - WARNING - [thread=22888 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-31 22:25:03,966 - django.request - WARNING - [thread=26712 Thread-6 (process_request_thread)] - Not Found: /@vite/client
+2026-03-31 22:26:40,596 - django.utils.autoreload - INFO - [thread=7832 MainThread] - Watching for file changes with StatReloader
+2026-03-31 22:26:45,521 - LLMServiceFactory - INFO - [thread=7832 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-03-31 22:26:45,529 - LLMServiceFactory - INFO - [thread=7832 MainThread] - 使用数据库中的 AI 配置
+2026-03-31 22:26:47,176 - apps.core.views - WARNING - [thread=7832 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-31 22:26:47,336 - LLMServiceFactory - INFO - [thread=7832 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-03-31 22:26:47,338 - LLMServiceFactory - INFO - [thread=7832 MainThread] - 使用数据库中的 AI 配置
+2026-03-31 22:26:47,340 - apps.ai_agents.test_case_generator.views - WARNING - [thread=7832 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-31 22:26:47,351 - LLMServiceFactory - INFO - [thread=7832 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-03-31 22:26:47,352 - LLMServiceFactory - INFO - [thread=7832 MainThread] - 使用数据库中的 AI 配置
+2026-03-31 22:26:47,352 - apps.ai_agents.test_case_reviewer.views - WARNING - [thread=7832 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-31 22:27:00,981 - django.request - WARNING - [thread=26544 Thread-6 (process_request_thread)] - Not Found: /@vite/client
+2026-03-31 22:27:07,113 - django.request - WARNING - [thread=26544 Thread-6 (process_request_thread)] - Not Found: /@vite/client
+2026-03-31 22:27:13,338 - django.request - WARNING - [thread=26544 Thread-6 (process_request_thread)] - Not Found: /@vite/client
+2026-03-31 22:29:12,187 - django.utils.autoreload - INFO - [thread=2984 MainThread] - Watching for file changes with StatReloader
+2026-03-31 22:29:17,603 - LLMServiceFactory - INFO - [thread=2984 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-03-31 22:29:17,610 - LLMServiceFactory - INFO - [thread=2984 MainThread] - 使用数据库中的 AI 配置
+2026-03-31 22:29:19,248 - apps.core.views - WARNING - [thread=2984 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-31 22:29:19,420 - LLMServiceFactory - INFO - [thread=2984 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-03-31 22:29:19,422 - LLMServiceFactory - INFO - [thread=2984 MainThread] - 使用数据库中的 AI 配置
+2026-03-31 22:29:19,424 - apps.ai_agents.test_case_generator.views - WARNING - [thread=2984 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-31 22:29:19,435 - LLMServiceFactory - INFO - [thread=2984 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-03-31 22:29:19,436 - LLMServiceFactory - INFO - [thread=2984 MainThread] - 使用数据库中的 AI 配置
+2026-03-31 22:29:19,436 - apps.ai_agents.test_case_reviewer.views - WARNING - [thread=2984 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-31 22:29:32,618 - django.request - WARNING - [thread=30696 Thread-6 (process_request_thread)] - Not Found: /@vite/client
+2026-03-31 22:32:44,186 - django.request - WARNING - [thread=23812 Thread-7 (process_request_thread)] - Not Found: /@vite/client
+2026-03-31 22:34:28,307 - django.utils.autoreload - INFO - [thread=22052 MainThread] - Watching for file changes with StatReloader
+2026-03-31 22:34:35,356 - LLMServiceFactory - INFO - [thread=22052 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-03-31 22:34:35,364 - LLMServiceFactory - INFO - [thread=22052 MainThread] - 使用数据库中的 AI 配置
+2026-03-31 22:34:37,004 - apps.core.views - WARNING - [thread=22052 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-31 22:34:37,191 - LLMServiceFactory - INFO - [thread=22052 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-03-31 22:34:37,192 - LLMServiceFactory - INFO - [thread=22052 MainThread] - 使用数据库中的 AI 配置
+2026-03-31 22:34:37,194 - apps.ai_agents.test_case_generator.views - WARNING - [thread=22052 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-31 22:34:37,205 - LLMServiceFactory - INFO - [thread=22052 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-03-31 22:34:37,206 - LLMServiceFactory - INFO - [thread=22052 MainThread] - 使用数据库中的 AI 配置
+2026-03-31 22:34:37,207 - apps.ai_agents.test_case_reviewer.views - WARNING - [thread=22052 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-31 22:34:51,208 - django.request - WARNING - [thread=23812 Thread-7 (process_request_thread)] - Not Found: /@vite/client
+2026-03-31 22:37:49,533 - django.utils.autoreload - INFO - [thread=30708 MainThread] - Watching for file changes with StatReloader
+2026-03-31 22:37:53,622 - LLMServiceFactory - INFO - [thread=30708 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-03-31 22:37:53,639 - LLMServiceFactory - INFO - [thread=30708 MainThread] - 使用数据库中的 AI 配置
+2026-03-31 22:37:55,252 - apps.core.views - WARNING - [thread=30708 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-31 22:37:55,406 - LLMServiceFactory - INFO - [thread=30708 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-03-31 22:37:55,408 - LLMServiceFactory - INFO - [thread=30708 MainThread] - 使用数据库中的 AI 配置
+2026-03-31 22:37:55,409 - apps.ai_agents.test_case_generator.views - WARNING - [thread=30708 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-31 22:37:55,421 - LLMServiceFactory - INFO - [thread=30708 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-03-31 22:37:55,422 - LLMServiceFactory - INFO - [thread=30708 MainThread] - 使用数据库中的 AI 配置
+2026-03-31 22:37:55,423 - apps.ai_agents.test_case_reviewer.views - WARNING - [thread=30708 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-31 22:38:03,323 - django.request - WARNING - [thread=3152 Thread-6 (process_request_thread)] - Not Found: /@vite/client
+2026-03-31 22:41:11,294 - django.utils.autoreload - INFO - [thread=13960 MainThread] - Watching for file changes with StatReloader
+2026-03-31 22:41:18,496 - LLMServiceFactory - INFO - [thread=13960 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-03-31 22:41:18,513 - LLMServiceFactory - INFO - [thread=13960 MainThread] - 使用数据库中的 AI 配置
+2026-03-31 22:41:20,097 - apps.core.views - WARNING - [thread=13960 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-31 22:41:20,248 - LLMServiceFactory - INFO - [thread=13960 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-03-31 22:41:20,249 - LLMServiceFactory - INFO - [thread=13960 MainThread] - 使用数据库中的 AI 配置
+2026-03-31 22:41:20,251 - apps.ai_agents.test_case_generator.views - WARNING - [thread=13960 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-31 22:41:20,262 - LLMServiceFactory - INFO - [thread=13960 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-03-31 22:41:20,263 - LLMServiceFactory - INFO - [thread=13960 MainThread] - 使用数据库中的 AI 配置
+2026-03-31 22:41:20,264 - apps.ai_agents.test_case_reviewer.views - WARNING - [thread=13960 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-31 22:41:32,848 - django.request - WARNING - [thread=22612 Thread-7 (process_request_thread)] - Not Found: /@vite/client
+2026-03-31 22:45:21,784 - django.utils.autoreload - INFO - [thread=30364 MainThread] - Watching for file changes with StatReloader
+2026-03-31 22:45:27,325 - LLMServiceFactory - INFO - [thread=30364 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-03-31 22:45:27,332 - LLMServiceFactory - INFO - [thread=30364 MainThread] - 使用数据库中的 AI 配置
+2026-03-31 22:45:28,904 - apps.core.views - WARNING - [thread=30364 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-31 22:45:29,054 - LLMServiceFactory - INFO - [thread=30364 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-03-31 22:45:29,056 - LLMServiceFactory - INFO - [thread=30364 MainThread] - 使用数据库中的 AI 配置
+2026-03-31 22:45:29,058 - apps.ai_agents.test_case_generator.views - WARNING - [thread=30364 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-31 22:45:29,069 - LLMServiceFactory - INFO - [thread=30364 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-03-31 22:45:29,070 - LLMServiceFactory - INFO - [thread=30364 MainThread] - 使用数据库中的 AI 配置
+2026-03-31 22:45:29,071 - apps.ai_agents.test_case_reviewer.views - WARNING - [thread=30364 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-31 22:45:43,079 - django.request - WARNING - [thread=20872 Thread-7 (process_request_thread)] - Not Found: /@vite/client
+2026-03-31 22:47:49,444 - django.request - WARNING - [thread=27708 Thread-6 (process_request_thread)] - Not Found: /@vite/client
+2026-03-31 22:52:18,314 - django.utils.autoreload - INFO - [thread=30160 MainThread] - Watching for file changes with StatReloader
+2026-03-31 22:52:22,237 - LLMServiceFactory - INFO - [thread=30160 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-03-31 22:52:22,245 - LLMServiceFactory - INFO - [thread=30160 MainThread] - 使用数据库中的 AI 配置
+2026-03-31 22:52:23,843 - apps.core.views - WARNING - [thread=30160 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-31 22:52:23,993 - LLMServiceFactory - INFO - [thread=30160 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-03-31 22:52:23,995 - LLMServiceFactory - INFO - [thread=30160 MainThread] - 使用数据库中的 AI 配置
+2026-03-31 22:52:23,997 - apps.ai_agents.test_case_generator.views - WARNING - [thread=30160 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-31 22:52:24,007 - LLMServiceFactory - INFO - [thread=30160 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-03-31 22:52:24,008 - LLMServiceFactory - INFO - [thread=30160 MainThread] - 使用数据库中的 AI 配置
+2026-03-31 22:52:24,009 - apps.ai_agents.test_case_reviewer.views - WARNING - [thread=30160 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-31 22:52:29,829 - django.request - WARNING - [thread=6176 Thread-8 (process_request_thread)] - Not Found: /@vite/client
+2026-03-31 22:53:32,786 - django.utils.autoreload - INFO - [thread=23744 MainThread] - Watching for file changes with StatReloader
+2026-03-31 22:53:37,480 - LLMServiceFactory - INFO - [thread=23744 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-03-31 22:53:37,496 - LLMServiceFactory - INFO - [thread=23744 MainThread] - 使用数据库中的 AI 配置
+2026-03-31 22:53:39,056 - apps.core.views - WARNING - [thread=23744 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-31 22:53:39,209 - LLMServiceFactory - INFO - [thread=23744 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-03-31 22:53:39,210 - LLMServiceFactory - INFO - [thread=23744 MainThread] - 使用数据库中的 AI 配置
+2026-03-31 22:53:39,212 - apps.ai_agents.test_case_generator.views - WARNING - [thread=23744 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-31 22:53:39,223 - LLMServiceFactory - INFO - [thread=23744 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-03-31 22:53:39,224 - LLMServiceFactory - INFO - [thread=23744 MainThread] - 使用数据库中的 AI 配置
+2026-03-31 22:53:39,224 - apps.ai_agents.test_case_reviewer.views - WARNING - [thread=23744 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-31 22:53:52,072 - django.request - WARNING - [thread=1636 Thread-6 (process_request_thread)] - Not Found: /@vite/client
+2026-03-31 22:55:51,810 - django.utils.autoreload - INFO - [thread=22960 MainThread] - Watching for file changes with StatReloader
+2026-03-31 22:55:57,349 - LLMServiceFactory - INFO - [thread=22960 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-03-31 22:55:57,356 - LLMServiceFactory - INFO - [thread=22960 MainThread] - 使用数据库中的 AI 配置
+2026-03-31 22:55:58,919 - apps.core.views - WARNING - [thread=22960 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-31 22:55:59,069 - LLMServiceFactory - INFO - [thread=22960 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-03-31 22:55:59,070 - LLMServiceFactory - INFO - [thread=22960 MainThread] - 使用数据库中的 AI 配置
+2026-03-31 22:55:59,072 - apps.ai_agents.test_case_generator.views - WARNING - [thread=22960 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-31 22:55:59,083 - LLMServiceFactory - INFO - [thread=22960 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-03-31 22:55:59,084 - LLMServiceFactory - INFO - [thread=22960 MainThread] - 使用数据库中的 AI 配置
+2026-03-31 22:55:59,084 - apps.ai_agents.test_case_reviewer.views - WARNING - [thread=22960 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-31 22:56:13,061 - django.request - WARNING - [thread=17808 Thread-7 (process_request_thread)] - Not Found: /@vite/client
+2026-03-31 22:57:14,669 - django.utils.autoreload - INFO - [thread=30392 MainThread] - Watching for file changes with StatReloader
+2026-03-31 22:57:19,941 - LLMServiceFactory - INFO - [thread=30392 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-03-31 22:57:19,948 - LLMServiceFactory - INFO - [thread=30392 MainThread] - 使用数据库中的 AI 配置
+2026-03-31 22:57:21,573 - apps.core.views - WARNING - [thread=30392 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-31 22:57:21,735 - LLMServiceFactory - INFO - [thread=30392 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-03-31 22:57:21,736 - LLMServiceFactory - INFO - [thread=30392 MainThread] - 使用数据库中的 AI 配置
+2026-03-31 22:57:21,738 - apps.ai_agents.test_case_generator.views - WARNING - [thread=30392 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-31 22:57:21,749 - LLMServiceFactory - INFO - [thread=30392 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-03-31 22:57:21,751 - LLMServiceFactory - INFO - [thread=30392 MainThread] - 使用数据库中的 AI 配置
+2026-03-31 22:57:21,751 - apps.ai_agents.test_case_reviewer.views - WARNING - [thread=30392 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-31 22:57:31,574 - django.request - WARNING - [thread=1636 Thread-6 (process_request_thread)] - Not Found: /@vite/client
+2026-03-31 23:01:24,614 - django.utils.autoreload - INFO - [thread=16800 MainThread] - Watching for file changes with StatReloader
+2026-03-31 23:01:29,814 - LLMServiceFactory - INFO - [thread=16800 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-03-31 23:01:29,830 - LLMServiceFactory - INFO - [thread=16800 MainThread] - 使用数据库中的 AI 配置
+2026-03-31 23:01:31,416 - apps.core.views - WARNING - [thread=16800 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-31 23:01:31,566 - LLMServiceFactory - INFO - [thread=16800 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-03-31 23:01:31,567 - LLMServiceFactory - INFO - [thread=16800 MainThread] - 使用数据库中的 AI 配置
+2026-03-31 23:01:31,569 - apps.ai_agents.test_case_generator.views - WARNING - [thread=16800 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-31 23:01:31,580 - LLMServiceFactory - INFO - [thread=16800 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-03-31 23:01:31,582 - LLMServiceFactory - INFO - [thread=16800 MainThread] - 使用数据库中的 AI 配置
+2026-03-31 23:01:31,582 - apps.ai_agents.test_case_reviewer.views - WARNING - [thread=16800 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-31 23:01:42,962 - django.request - WARNING - [thread=1636 Thread-6 (process_request_thread)] - Not Found: /@vite/client
+2026-03-31 23:02:19,487 - django.utils.autoreload - INFO - [thread=25968 MainThread] - Watching for file changes with StatReloader
+2026-03-31 23:02:23,817 - LLMServiceFactory - INFO - [thread=25968 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-03-31 23:02:23,834 - LLMServiceFactory - INFO - [thread=25968 MainThread] - 使用数据库中的 AI 配置
+2026-03-31 23:02:25,438 - apps.core.views - WARNING - [thread=25968 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-31 23:02:25,594 - LLMServiceFactory - INFO - [thread=25968 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-03-31 23:02:25,595 - LLMServiceFactory - INFO - [thread=25968 MainThread] - 使用数据库中的 AI 配置
+2026-03-31 23:02:25,597 - apps.ai_agents.test_case_generator.views - WARNING - [thread=25968 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-31 23:02:25,608 - LLMServiceFactory - INFO - [thread=25968 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-03-31 23:02:25,609 - LLMServiceFactory - INFO - [thread=25968 MainThread] - 使用数据库中的 AI 配置
+2026-03-31 23:02:25,610 - apps.ai_agents.test_case_reviewer.views - WARNING - [thread=25968 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-31 23:04:52,618 - django.utils.autoreload - INFO - [thread=4636 MainThread] - Watching for file changes with StatReloader
+2026-03-31 23:04:56,927 - LLMServiceFactory - INFO - [thread=4636 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-03-31 23:04:56,934 - LLMServiceFactory - INFO - [thread=4636 MainThread] - 使用数据库中的 AI 配置
+2026-03-31 23:04:58,542 - apps.core.views - WARNING - [thread=4636 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-31 23:04:58,692 - LLMServiceFactory - INFO - [thread=4636 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-03-31 23:04:58,693 - LLMServiceFactory - INFO - [thread=4636 MainThread] - 使用数据库中的 AI 配置
+2026-03-31 23:04:58,695 - apps.ai_agents.test_case_generator.views - WARNING - [thread=4636 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-31 23:04:58,706 - LLMServiceFactory - INFO - [thread=4636 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-03-31 23:04:58,707 - LLMServiceFactory - INFO - [thread=4636 MainThread] - 使用数据库中的 AI 配置
+2026-03-31 23:04:58,707 - apps.ai_agents.test_case_reviewer.views - WARNING - [thread=4636 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-31 23:05:06,272 - django.request - WARNING - [thread=16872 Thread-6 (process_request_thread)] - Not Found: /@vite/client
+2026-03-31 23:06:22,943 - django.utils.autoreload - INFO - [thread=30144 MainThread] - Watching for file changes with StatReloader
+2026-03-31 23:06:28,250 - LLMServiceFactory - INFO - [thread=30144 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-03-31 23:06:28,258 - LLMServiceFactory - INFO - [thread=30144 MainThread] - 使用数据库中的 AI 配置
+2026-03-31 23:06:29,836 - apps.core.views - WARNING - [thread=30144 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-31 23:06:29,988 - LLMServiceFactory - INFO - [thread=30144 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-03-31 23:06:29,989 - LLMServiceFactory - INFO - [thread=30144 MainThread] - 使用数据库中的 AI 配置
+2026-03-31 23:06:29,991 - apps.ai_agents.test_case_generator.views - WARNING - [thread=30144 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-31 23:06:30,002 - LLMServiceFactory - INFO - [thread=30144 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-03-31 23:06:30,003 - LLMServiceFactory - INFO - [thread=30144 MainThread] - 使用数据库中的 AI 配置
+2026-03-31 23:06:30,003 - apps.ai_agents.test_case_reviewer.views - WARNING - [thread=30144 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-31 23:06:40,447 - django.request - WARNING - [thread=16872 Thread-6 (process_request_thread)] - Not Found: /@vite/client
+2026-03-31 23:07:33,487 - django.utils.autoreload - INFO - [thread=30392 MainThread] - F:\test\TestBranin\apps\ai_agents\case_library\views.py changed, reloading.
+2026-03-31 23:07:33,493 - django.utils.autoreload - INFO - [thread=25968 MainThread] - F:\test\TestBranin\apps\ai_agents\case_library\views.py changed, reloading.
+2026-03-31 23:07:33,550 - django.utils.autoreload - INFO - [thread=4636 MainThread] - F:\test\TestBranin\apps\ai_agents\case_library\views.py changed, reloading.
+2026-03-31 23:07:33,991 - django.utils.autoreload - INFO - [thread=30144 MainThread] - F:\test\TestBranin\apps\ai_agents\case_library\views.py changed, reloading.
+2026-03-31 23:07:33,995 - django.utils.autoreload - INFO - [thread=22960 MainThread] - F:\test\TestBranin\apps\ai_agents\case_library\views.py changed, reloading.
+2026-03-31 23:07:39,438 - django.utils.autoreload - INFO - [thread=24780 MainThread] - Watching for file changes with StatReloader
+2026-03-31 23:07:39,438 - django.utils.autoreload - INFO - [thread=7972 MainThread] - Watching for file changes with StatReloader
+2026-03-31 23:07:39,438 - django.utils.autoreload - INFO - [thread=16248 MainThread] - Watching for file changes with StatReloader
+2026-03-31 23:07:39,438 - django.utils.autoreload - INFO - [thread=15712 MainThread] - Watching for file changes with StatReloader
+2026-03-31 23:07:45,282 - django.utils.autoreload - INFO - [thread=5228 MainThread] - Watching for file changes with StatReloader
+2026-03-31 23:07:46,428 - LLMServiceFactory - INFO - [thread=24780 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-03-31 23:07:46,437 - LLMServiceFactory - INFO - [thread=16248 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-03-31 23:07:46,445 - LLMServiceFactory - INFO - [thread=16248 MainThread] - 使用数据库中的 AI 配置
+2026-03-31 23:07:46,446 - LLMServiceFactory - INFO - [thread=24780 MainThread] - 使用数据库中的 AI 配置
+2026-03-31 23:07:47,240 - LLMServiceFactory - INFO - [thread=15712 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-03-31 23:07:47,247 - LLMServiceFactory - INFO - [thread=15712 MainThread] - 使用数据库中的 AI 配置
+2026-03-31 23:07:47,261 - LLMServiceFactory - INFO - [thread=7972 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-03-31 23:07:47,277 - LLMServiceFactory - INFO - [thread=7972 MainThread] - 使用数据库中的 AI 配置
+2026-03-31 23:07:48,439 - apps.core.views - WARNING - [thread=16248 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-31 23:07:48,441 - apps.core.views - WARNING - [thread=24780 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-31 23:07:48,611 - LLMServiceFactory - INFO - [thread=16248 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-03-31 23:07:48,611 - LLMServiceFactory - INFO - [thread=24780 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-03-31 23:07:48,612 - LLMServiceFactory - INFO - [thread=16248 MainThread] - 使用数据库中的 AI 配置
+2026-03-31 23:07:48,612 - LLMServiceFactory - INFO - [thread=24780 MainThread] - 使用数据库中的 AI 配置
+2026-03-31 23:07:48,615 - apps.ai_agents.test_case_generator.views - WARNING - [thread=24780 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-31 23:07:48,615 - apps.ai_agents.test_case_generator.views - WARNING - [thread=16248 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-31 23:07:48,627 - LLMServiceFactory - INFO - [thread=16248 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-03-31 23:07:48,627 - LLMServiceFactory - INFO - [thread=24780 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-03-31 23:07:48,628 - LLMServiceFactory - INFO - [thread=24780 MainThread] - 使用数据库中的 AI 配置
+2026-03-31 23:07:48,628 - LLMServiceFactory - INFO - [thread=16248 MainThread] - 使用数据库中的 AI 配置
+2026-03-31 23:07:48,629 - apps.ai_agents.test_case_reviewer.views - WARNING - [thread=24780 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-31 23:07:48,629 - apps.ai_agents.test_case_reviewer.views - WARNING - [thread=16248 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-31 23:07:49,173 - apps.core.views - WARNING - [thread=15712 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-31 23:07:49,184 - apps.core.views - WARNING - [thread=7972 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-31 23:07:49,341 - LLMServiceFactory - INFO - [thread=15712 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-03-31 23:07:49,342 - LLMServiceFactory - INFO - [thread=15712 MainThread] - 使用数据库中的 AI 配置
+2026-03-31 23:07:49,344 - apps.ai_agents.test_case_generator.views - WARNING - [thread=15712 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-31 23:07:49,348 - LLMServiceFactory - INFO - [thread=7972 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-03-31 23:07:49,350 - LLMServiceFactory - INFO - [thread=7972 MainThread] - 使用数据库中的 AI 配置
+2026-03-31 23:07:49,351 - apps.ai_agents.test_case_generator.views - WARNING - [thread=7972 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-31 23:07:49,355 - LLMServiceFactory - INFO - [thread=15712 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-03-31 23:07:49,356 - LLMServiceFactory - INFO - [thread=15712 MainThread] - 使用数据库中的 AI 配置
+2026-03-31 23:07:49,357 - apps.ai_agents.test_case_reviewer.views - WARNING - [thread=15712 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-31 23:07:49,363 - LLMServiceFactory - INFO - [thread=7972 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-03-31 23:07:49,365 - LLMServiceFactory - INFO - [thread=7972 MainThread] - 使用数据库中的 AI 配置
+2026-03-31 23:07:49,365 - apps.ai_agents.test_case_reviewer.views - WARNING - [thread=7972 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-31 23:07:50,852 - LLMServiceFactory - INFO - [thread=5228 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-03-31 23:07:50,870 - LLMServiceFactory - INFO - [thread=5228 MainThread] - 使用数据库中的 AI 配置
+2026-03-31 23:07:52,524 - apps.core.views - WARNING - [thread=5228 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-31 23:07:52,677 - LLMServiceFactory - INFO - [thread=5228 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-03-31 23:07:52,678 - LLMServiceFactory - INFO - [thread=5228 MainThread] - 使用数据库中的 AI 配置
+2026-03-31 23:07:52,680 - apps.ai_agents.test_case_generator.views - WARNING - [thread=5228 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-31 23:07:52,691 - LLMServiceFactory - INFO - [thread=5228 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-03-31 23:07:52,692 - LLMServiceFactory - INFO - [thread=5228 MainThread] - 使用数据库中的 AI 配置
+2026-03-31 23:07:52,692 - apps.ai_agents.test_case_reviewer.views - WARNING - [thread=5228 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-31 23:08:01,980 - django.request - WARNING - [thread=12256 Thread-6 (process_request_thread)] - Not Found: /@vite/client
+2026-03-31 23:10:07,321 - django.utils.autoreload - INFO - [thread=24152 MainThread] - Watching for file changes with StatReloader
+2026-03-31 23:10:14,158 - LLMServiceFactory - INFO - [thread=24152 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-03-31 23:10:14,165 - LLMServiceFactory - INFO - [thread=24152 MainThread] - 使用数据库中的 AI 配置
+2026-03-31 23:10:15,736 - apps.core.views - WARNING - [thread=24152 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-31 23:10:15,891 - LLMServiceFactory - INFO - [thread=24152 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-03-31 23:10:15,893 - LLMServiceFactory - INFO - [thread=24152 MainThread] - 使用数据库中的 AI 配置
+2026-03-31 23:10:15,894 - apps.ai_agents.test_case_generator.views - WARNING - [thread=24152 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-31 23:10:15,905 - LLMServiceFactory - INFO - [thread=24152 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-03-31 23:10:15,907 - LLMServiceFactory - INFO - [thread=24152 MainThread] - 使用数据库中的 AI 配置
+2026-03-31 23:10:15,907 - apps.ai_agents.test_case_reviewer.views - WARNING - [thread=24152 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-31 23:10:25,934 - django.request - WARNING - [thread=28372 Thread-5 (process_request_thread)] - Not Found: /@vite/client
+2026-03-31 23:12:01,148 - django.utils.autoreload - INFO - [thread=17836 MainThread] - Watching for file changes with StatReloader
+2026-03-31 23:12:06,836 - LLMServiceFactory - INFO - [thread=17836 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-03-31 23:12:06,853 - LLMServiceFactory - INFO - [thread=17836 MainThread] - 使用数据库中的 AI 配置
+2026-03-31 23:12:08,425 - apps.core.views - WARNING - [thread=17836 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-31 23:12:08,578 - LLMServiceFactory - INFO - [thread=17836 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-03-31 23:12:08,579 - LLMServiceFactory - INFO - [thread=17836 MainThread] - 使用数据库中的 AI 配置
+2026-03-31 23:12:08,581 - apps.ai_agents.test_case_generator.views - WARNING - [thread=17836 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-31 23:12:08,591 - LLMServiceFactory - INFO - [thread=17836 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-03-31 23:12:08,592 - LLMServiceFactory - INFO - [thread=17836 MainThread] - 使用数据库中的 AI 配置
+2026-03-31 23:12:08,593 - apps.ai_agents.test_case_reviewer.views - WARNING - [thread=17836 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-31 23:12:21,113 - django.request - ERROR - [thread=13632 Thread-5 (process_request_thread)] - Internal Server Error: /case_library/
+Traceback (most recent call last):
+  File "C:\Users\ke\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\ke\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "F:\test\TestBranin\apps\ai_agents\case_library\views.py", line 281, in case_library_page
+    return render(request, 'case_library.html', context)
+  File "C:\Users\ke\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\ke\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\ke\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: case_library.html
+2026-03-31 23:12:21,164 - django.request - WARNING - [thread=13632 Thread-5 (process_request_thread)] - Not Found: /@vite/client
+2026-03-31 23:12:40,135 - django.utils.autoreload - INFO - [thread=2080 MainThread] - Watching for file changes with StatReloader
+2026-03-31 23:12:45,298 - LLMServiceFactory - INFO - [thread=2080 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-03-31 23:12:45,305 - LLMServiceFactory - INFO - [thread=2080 MainThread] - 使用数据库中的 AI 配置
+2026-03-31 23:12:46,902 - apps.core.views - WARNING - [thread=2080 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-31 23:12:47,057 - LLMServiceFactory - INFO - [thread=2080 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-03-31 23:12:47,058 - LLMServiceFactory - INFO - [thread=2080 MainThread] - 使用数据库中的 AI 配置
+2026-03-31 23:12:47,060 - apps.ai_agents.test_case_generator.views - WARNING - [thread=2080 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-31 23:12:47,071 - LLMServiceFactory - INFO - [thread=2080 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-03-31 23:12:47,072 - LLMServiceFactory - INFO - [thread=2080 MainThread] - 使用数据库中的 AI 配置
+2026-03-31 23:12:47,073 - apps.ai_agents.test_case_reviewer.views - WARNING - [thread=2080 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-31 23:13:06,740 - django.request - ERROR - [thread=2584 Thread-5 (process_request_thread)] - Internal Server Error: /case_library/
+Traceback (most recent call last):
+  File "C:\Users\ke\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\ke\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "F:\test\TestBranin\apps\ai_agents\case_library\views.py", line 281, in case_library_page
+    return render(request, 'case_library.html', context)
+  File "C:\Users\ke\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\ke\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\ke\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: case_library.html
+2026-03-31 23:13:26,849 - django.utils.autoreload - INFO - [thread=17836 MainThread] - F:\test\TestBranin\apps\ai_agents\case_library\views.py changed, reloading.
+2026-03-31 23:13:27,201 - django.utils.autoreload - INFO - [thread=2080 MainThread] - F:\test\TestBranin\apps\ai_agents\case_library\views.py changed, reloading.
+2026-03-31 23:13:27,645 - django.utils.autoreload - INFO - [thread=24152 MainThread] - F:\test\TestBranin\apps\ai_agents\case_library\views.py changed, reloading.
+2026-03-31 23:13:31,879 - django.utils.autoreload - INFO - [thread=26528 MainThread] - Watching for file changes with StatReloader
+2026-03-31 23:13:31,919 - django.utils.autoreload - INFO - [thread=29568 MainThread] - Watching for file changes with StatReloader
+2026-03-31 23:13:32,379 - django.utils.autoreload - INFO - [thread=25968 MainThread] - Watching for file changes with StatReloader
+2026-03-31 23:13:37,413 - LLMServiceFactory - INFO - [thread=26528 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-03-31 23:13:37,413 - LLMServiceFactory - INFO - [thread=29568 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-03-31 23:13:37,421 - LLMServiceFactory - INFO - [thread=29568 MainThread] - 使用数据库中的 AI 配置
+2026-03-31 23:13:37,430 - LLMServiceFactory - INFO - [thread=26528 MainThread] - 使用数据库中的 AI 配置
+2026-03-31 23:13:38,471 - LLMServiceFactory - INFO - [thread=25968 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-03-31 23:13:38,488 - LLMServiceFactory - INFO - [thread=25968 MainThread] - 使用数据库中的 AI 配置
+2026-03-31 23:13:39,303 - apps.core.views - WARNING - [thread=29568 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-31 23:13:39,310 - apps.core.views - WARNING - [thread=26528 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-31 23:13:39,470 - LLMServiceFactory - INFO - [thread=29568 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-03-31 23:13:39,471 - LLMServiceFactory - INFO - [thread=29568 MainThread] - 使用数据库中的 AI 配置
+2026-03-31 23:13:39,472 - LLMServiceFactory - INFO - [thread=26528 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-03-31 23:13:39,473 - LLMServiceFactory - INFO - [thread=26528 MainThread] - 使用数据库中的 AI 配置
+2026-03-31 23:13:39,473 - apps.ai_agents.test_case_generator.views - WARNING - [thread=29568 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-31 23:13:39,475 - apps.ai_agents.test_case_generator.views - WARNING - [thread=26528 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-31 23:13:39,487 - LLMServiceFactory - INFO - [thread=29568 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-03-31 23:13:39,487 - LLMServiceFactory - INFO - [thread=26528 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-03-31 23:13:39,488 - LLMServiceFactory - INFO - [thread=29568 MainThread] - 使用数据库中的 AI 配置
+2026-03-31 23:13:39,488 - LLMServiceFactory - INFO - [thread=26528 MainThread] - 使用数据库中的 AI 配置
+2026-03-31 23:13:39,489 - apps.ai_agents.test_case_reviewer.views - WARNING - [thread=29568 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-31 23:13:39,489 - apps.ai_agents.test_case_reviewer.views - WARNING - [thread=26528 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-31 23:13:40,302 - apps.core.views - WARNING - [thread=25968 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-31 23:13:40,475 - LLMServiceFactory - INFO - [thread=25968 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-03-31 23:13:40,477 - LLMServiceFactory - INFO - [thread=25968 MainThread] - 使用数据库中的 AI 配置
+2026-03-31 23:13:40,479 - apps.ai_agents.test_case_generator.views - WARNING - [thread=25968 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-31 23:13:40,490 - LLMServiceFactory - INFO - [thread=25968 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-03-31 23:13:40,491 - LLMServiceFactory - INFO - [thread=25968 MainThread] - 使用数据库中的 AI 配置
+2026-03-31 23:13:40,492 - apps.ai_agents.test_case_reviewer.views - WARNING - [thread=25968 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-31 23:13:40,753 - django.utils.autoreload - INFO - [thread=30104 MainThread] - Watching for file changes with StatReloader
+2026-03-31 23:13:45,136 - LLMServiceFactory - INFO - [thread=30104 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-03-31 23:13:45,144 - LLMServiceFactory - INFO - [thread=30104 MainThread] - 使用数据库中的 AI 配置
+2026-03-31 23:13:46,740 - apps.core.views - WARNING - [thread=30104 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-31 23:13:46,889 - LLMServiceFactory - INFO - [thread=30104 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-03-31 23:13:46,891 - LLMServiceFactory - INFO - [thread=30104 MainThread] - 使用数据库中的 AI 配置
+2026-03-31 23:13:46,893 - apps.ai_agents.test_case_generator.views - WARNING - [thread=30104 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-31 23:13:46,904 - LLMServiceFactory - INFO - [thread=30104 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-03-31 23:13:46,905 - LLMServiceFactory - INFO - [thread=30104 MainThread] - 使用数据库中的 AI 配置
+2026-03-31 23:13:46,905 - apps.ai_agents.test_case_reviewer.views - WARNING - [thread=30104 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-31 23:13:58,620 - django.request - ERROR - [thread=22204 Thread-5 (process_request_thread)] - Internal Server Error: /case_library/
+Traceback (most recent call last):
+  File "C:\Users\ke\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\ke\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "F:\test\TestBranin\apps\ai_agents\case_library\views.py", line 281, in case_library_page
+    return render(request, 'case_library.html', context)
+  File "C:\Users\ke\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\ke\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\ke\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: case_library.html
+2026-03-31 23:13:58,664 - django.request - WARNING - [thread=22204 Thread-5 (process_request_thread)] - Not Found: /@vite/client
+2026-03-31 23:14:10,550 - django.request - ERROR - [thread=7400 Thread-6 (process_request_thread)] - Internal Server Error: /case_library/
+Traceback (most recent call last):
+  File "C:\Users\ke\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\ke\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "F:\test\TestBranin\apps\ai_agents\case_library\views.py", line 281, in case_library_page
+    return render(request, 'case_library.html', context)
+  File "C:\Users\ke\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\ke\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\ke\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: case_library.html
+2026-03-31 23:14:47,234 - django.utils.autoreload - INFO - [thread=30104 MainThread] - F:\test\TestBranin\apps\ai_agents\case_library\views.py changed, reloading.
+2026-03-31 23:14:47,317 - django.utils.autoreload - INFO - [thread=29568 MainThread] - F:\test\TestBranin\apps\ai_agents\case_library\views.py changed, reloading.
+2026-03-31 23:14:48,062 - django.utils.autoreload - INFO - [thread=26528 MainThread] - F:\test\TestBranin\apps\ai_agents\case_library\views.py changed, reloading.
+2026-03-31 23:14:52,408 - django.utils.autoreload - INFO - [thread=15160 MainThread] - Watching for file changes with StatReloader
+2026-03-31 23:14:52,408 - django.utils.autoreload - INFO - [thread=5968 MainThread] - Watching for file changes with StatReloader
+2026-03-31 23:14:52,830 - django.utils.autoreload - INFO - [thread=16112 MainThread] - Watching for file changes with StatReloader
+2026-03-31 23:14:58,488 - django.utils.autoreload - INFO - [thread=24108 MainThread] - Watching for file changes with StatReloader
+2026-03-31 23:15:01,214 - LLMServiceFactory - INFO - [thread=15160 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-03-31 23:15:01,230 - LLMServiceFactory - INFO - [thread=15160 MainThread] - 使用数据库中的 AI 配置
+2026-03-31 23:15:01,719 - LLMServiceFactory - INFO - [thread=5968 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-03-31 23:15:01,727 - LLMServiceFactory - INFO - [thread=5968 MainThread] - 使用数据库中的 AI 配置
+2026-03-31 23:15:02,452 - LLMServiceFactory - INFO - [thread=16112 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-03-31 23:15:02,459 - LLMServiceFactory - INFO - [thread=16112 MainThread] - 使用数据库中的 AI 配置
+2026-03-31 23:15:02,918 - apps.core.views - WARNING - [thread=15160 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-31 23:15:03,083 - LLMServiceFactory - INFO - [thread=15160 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-03-31 23:15:03,085 - LLMServiceFactory - INFO - [thread=15160 MainThread] - 使用数据库中的 AI 配置
+2026-03-31 23:15:03,085 - LLMServiceFactory - INFO - [thread=24108 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-03-31 23:15:03,087 - apps.ai_agents.test_case_generator.views - WARNING - [thread=15160 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-31 23:15:03,099 - LLMServiceFactory - INFO - [thread=15160 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-03-31 23:15:03,100 - LLMServiceFactory - INFO - [thread=15160 MainThread] - 使用数据库中的 AI 配置
+2026-03-31 23:15:03,101 - apps.ai_agents.test_case_reviewer.views - WARNING - [thread=15160 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-31 23:15:03,101 - LLMServiceFactory - INFO - [thread=24108 MainThread] - 使用数据库中的 AI 配置
+2026-03-31 23:15:03,495 - apps.core.views - WARNING - [thread=5968 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-31 23:15:03,658 - LLMServiceFactory - INFO - [thread=5968 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-03-31 23:15:03,660 - LLMServiceFactory - INFO - [thread=5968 MainThread] - 使用数据库中的 AI 配置
+2026-03-31 23:15:03,662 - apps.ai_agents.test_case_generator.views - WARNING - [thread=5968 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-31 23:15:03,674 - LLMServiceFactory - INFO - [thread=5968 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-03-31 23:15:03,675 - LLMServiceFactory - INFO - [thread=5968 MainThread] - 使用数据库中的 AI 配置
+2026-03-31 23:15:03,676 - apps.ai_agents.test_case_reviewer.views - WARNING - [thread=5968 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-31 23:15:04,266 - apps.core.views - WARNING - [thread=16112 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-31 23:15:04,439 - LLMServiceFactory - INFO - [thread=16112 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-03-31 23:15:04,441 - LLMServiceFactory - INFO - [thread=16112 MainThread] - 使用数据库中的 AI 配置
+2026-03-31 23:15:04,443 - apps.ai_agents.test_case_generator.views - WARNING - [thread=16112 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-31 23:15:04,455 - LLMServiceFactory - INFO - [thread=16112 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-03-31 23:15:04,456 - LLMServiceFactory - INFO - [thread=16112 MainThread] - 使用数据库中的 AI 配置
+2026-03-31 23:15:04,456 - apps.ai_agents.test_case_reviewer.views - WARNING - [thread=16112 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-31 23:15:04,861 - apps.core.views - WARNING - [thread=24108 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-31 23:15:05,026 - LLMServiceFactory - INFO - [thread=24108 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-03-31 23:15:05,028 - LLMServiceFactory - INFO - [thread=24108 MainThread] - 使用数据库中的 AI 配置
+2026-03-31 23:15:05,030 - apps.ai_agents.test_case_generator.views - WARNING - [thread=24108 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-31 23:15:05,043 - LLMServiceFactory - INFO - [thread=24108 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-03-31 23:15:05,044 - LLMServiceFactory - INFO - [thread=24108 MainThread] - 使用数据库中的 AI 配置
+2026-03-31 23:15:05,045 - apps.ai_agents.test_case_reviewer.views - WARNING - [thread=24108 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-31 23:15:19,485 - django.request - ERROR - [thread=16624 Thread-5 (process_request_thread)] - Internal Server Error: /case_library/
+Traceback (most recent call last):
+  File "C:\Users\ke\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\ke\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "F:\test\TestBranin\apps\ai_agents\case_library\views.py", line 281, in case_library_page
+    return render(request, 'case_library.html', context)
+  File "C:\Users\ke\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\ke\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\ke\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: case_library.html
+2026-03-31 23:15:19,517 - django.request - WARNING - [thread=16624 Thread-5 (process_request_thread)] - Not Found: /@vite/client
+2026-03-31 23:15:31,600 - django.request - ERROR - [thread=23300 Thread-6 (process_request_thread)] - Internal Server Error: /case_library/
+Traceback (most recent call last):
+  File "C:\Users\ke\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\ke\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "F:\test\TestBranin\apps\ai_agents\case_library\views.py", line 281, in case_library_page
+    return render(request, 'case_library.html', context)
+  File "C:\Users\ke\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\ke\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\ke\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: case_library.html
+2026-03-31 23:22:21,790 - django.request - ERROR - [thread=848 Thread-7 (process_request_thread)] - Internal Server Error: /case_library/
+Traceback (most recent call last):
+  File "C:\Users\ke\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\ke\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "F:\test\TestBranin\apps\ai_agents\case_library\views.py", line 281, in case_library_page
+    return render(request, 'case_library.html', context)
+  File "C:\Users\ke\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\ke\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\ke\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: case_library.html
+2026-03-31 23:22:21,833 - django.request - WARNING - [thread=848 Thread-7 (process_request_thread)] - Not Found: /@vite/client
+2026-03-31 23:22:23,165 - django.request - ERROR - [thread=848 Thread-7 (process_request_thread)] - Internal Server Error: /case_library/
+Traceback (most recent call last):
+  File "C:\Users\ke\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\ke\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "F:\test\TestBranin\apps\ai_agents\case_library\views.py", line 281, in case_library_page
+    return render(request, 'case_library.html', context)
+  File "C:\Users\ke\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\ke\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\ke\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: case_library.html
+2026-03-31 23:22:23,197 - django.request - WARNING - [thread=848 Thread-7 (process_request_thread)] - Not Found: /@vite/client
+2026-03-31 23:22:35,941 - django.request - ERROR - [thread=848 Thread-7 (process_request_thread)] - Internal Server Error: /case_library/
+Traceback (most recent call last):
+  File "C:\Users\ke\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\ke\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "F:\test\TestBranin\apps\ai_agents\case_library\views.py", line 281, in case_library_page
+    return render(request, 'case_library.html', context)
+  File "C:\Users\ke\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\ke\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\ke\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: case_library.html
+2026-03-31 23:22:35,972 - django.request - WARNING - [thread=848 Thread-7 (process_request_thread)] - Not Found: /@vite/client
+2026-03-31 23:24:02,547 - django.utils.autoreload - INFO - [thread=5968 MainThread] - F:\test\TestBranin\apps\ai_agents\case_library\views.py changed, reloading.
+2026-03-31 23:24:02,558 - django.utils.autoreload - INFO - [thread=15160 MainThread] - F:\test\TestBranin\apps\ai_agents\case_library\views.py changed, reloading.
+2026-03-31 23:24:02,572 - django.utils.autoreload - INFO - [thread=24108 MainThread] - F:\test\TestBranin\apps\ai_agents\case_library\views.py changed, reloading.
+2026-03-31 23:24:08,318 - django.utils.autoreload - INFO - [thread=27572 MainThread] - Watching for file changes with StatReloader
+2026-03-31 23:24:08,318 - django.utils.autoreload - INFO - [thread=30252 MainThread] - Watching for file changes with StatReloader
+2026-03-31 23:24:08,318 - django.utils.autoreload - INFO - [thread=10644 MainThread] - Watching for file changes with StatReloader
+2026-03-31 23:24:13,590 - LLMServiceFactory - INFO - [thread=30252 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-03-31 23:24:13,594 - LLMServiceFactory - INFO - [thread=27572 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-03-31 23:24:13,609 - LLMServiceFactory - INFO - [thread=30252 MainThread] - 使用数据库中的 AI 配置
+2026-03-31 23:24:13,613 - LLMServiceFactory - INFO - [thread=27572 MainThread] - 使用数据库中的 AI 配置
+2026-03-31 23:24:15,440 - apps.core.views - WARNING - [thread=27572 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-31 23:24:15,443 - apps.core.views - WARNING - [thread=30252 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-31 23:24:15,608 - LLMServiceFactory - INFO - [thread=27572 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-03-31 23:24:15,609 - LLMServiceFactory - INFO - [thread=30252 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-03-31 23:24:15,610 - LLMServiceFactory - INFO - [thread=27572 MainThread] - 使用数据库中的 AI 配置
+2026-03-31 23:24:15,610 - LLMServiceFactory - INFO - [thread=30252 MainThread] - 使用数据库中的 AI 配置
+2026-03-31 23:24:15,611 - apps.ai_agents.test_case_generator.views - WARNING - [thread=27572 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-31 23:24:15,611 - apps.ai_agents.test_case_generator.views - WARNING - [thread=30252 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-31 23:24:15,623 - LLMServiceFactory - INFO - [thread=30252 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-03-31 23:24:15,623 - LLMServiceFactory - INFO - [thread=27572 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-03-31 23:24:15,624 - LLMServiceFactory - INFO - [thread=27572 MainThread] - 使用数据库中的 AI 配置
+2026-03-31 23:24:15,624 - LLMServiceFactory - INFO - [thread=30252 MainThread] - 使用数据库中的 AI 配置
+2026-03-31 23:24:15,625 - apps.ai_agents.test_case_reviewer.views - WARNING - [thread=27572 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-31 23:24:15,625 - apps.ai_agents.test_case_reviewer.views - WARNING - [thread=30252 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-31 23:24:16,330 - django.utils.autoreload - INFO - [thread=6168 MainThread] - Watching for file changes with StatReloader
+2026-03-31 23:24:20,402 - LLMServiceFactory - INFO - [thread=6168 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-03-31 23:24:20,419 - LLMServiceFactory - INFO - [thread=6168 MainThread] - 使用数据库中的 AI 配置
+2026-03-31 23:24:22,003 - apps.core.views - WARNING - [thread=6168 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-31 23:24:22,151 - LLMServiceFactory - INFO - [thread=6168 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-03-31 23:24:22,153 - LLMServiceFactory - INFO - [thread=6168 MainThread] - 使用数据库中的 AI 配置
+2026-03-31 23:24:22,154 - apps.ai_agents.test_case_generator.views - WARNING - [thread=6168 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-31 23:24:22,165 - LLMServiceFactory - INFO - [thread=6168 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-03-31 23:24:22,166 - LLMServiceFactory - INFO - [thread=6168 MainThread] - 使用数据库中的 AI 配置
+2026-03-31 23:24:22,166 - apps.ai_agents.test_case_reviewer.views - WARNING - [thread=6168 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-03-31 23:24:32,633 - django.request - WARNING - [thread=13988 Thread-5 (process_request_thread)] - Not Found: /@vite/client
+2026-03-31 23:26:10,116 - django.request - WARNING - [thread=18460 Thread-6 (process_request_thread)] - Not Found: /@vite/client

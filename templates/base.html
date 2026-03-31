@@ -8,12 +8,12 @@
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐉</text></svg>">
     <title>{% block title %}SpinyLobster - 测试用例管理平台{% endblock %}</title>
     <!-- 预加载关键资源 -->
-    <link rel="preconnect" href="https://lib.baomitu.com">
-    <link rel="dns-prefetch" href="https://lib.baomitu.com">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <!-- Element Plus CSS (使用 75CDN) -->
-    <link rel="stylesheet" href="https://cdn.staticfile.org/element-plus/2.5.6/index.css">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+    <!-- Font Awesome (使用 jsdelivr) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css">
+    <!-- Element Plus CSS (使用 jsdelivr) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/element-plus@2.5.6/dist/index.css">
     <style>
         * {
             box-sizing: border-box;
@@ -232,10 +232,10 @@
         </main>
     </div>
 
-    <!-- Vue 3 (使用 75CDN 生产版本) -->
-    <script src="https://cdn.staticfile.org/vue/3.4.21/vue.global.prod.js"></script>
-    <!-- Element Plus (使用 75CDN) -->
-    <script src="https://cdn.staticfile.org/element-plus/2.5.6/index.full.min.js"></script>
+    <!-- Vue 3 (使用 jsdelivr 生产版本) -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@3.4.21/dist/vue.global.prod.js"></script>
+    <!-- Element Plus (使用 jsdelivr) -->
+    <script src="https://cdn.jsdelivr.net/npm/element-plus@2.5.6/dist/index.full.min.js"></script>
     {% block extra_js %}{% endblock %}
 </body>
 </html>

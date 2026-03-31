@@ -1460,3 +1460,138 @@ Traceback (most recent call last):
     ...<2 lines>...
     )
 django.template.exceptions.TemplateSyntaxError: Template: /Users/gb/Desktop/mypy/SpinyLobster/apps/ai_agents/case_library/templates/case_library.html, Could not parse the remainder: '(index)' from 'getStepNumber(index)'
+2026-03-31 23:12:21,113 - django.request - ERROR - [thread=13632 Thread-5 (process_request_thread)] - Internal Server Error: /case_library/
+Traceback (most recent call last):
+  File "C:\Users\ke\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\ke\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "F:\test\TestBranin\apps\ai_agents\case_library\views.py", line 281, in case_library_page
+    return render(request, 'case_library.html', context)
+  File "C:\Users\ke\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\ke\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\ke\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: case_library.html
+2026-03-31 23:13:06,740 - django.request - ERROR - [thread=2584 Thread-5 (process_request_thread)] - Internal Server Error: /case_library/
+Traceback (most recent call last):
+  File "C:\Users\ke\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\ke\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "F:\test\TestBranin\apps\ai_agents\case_library\views.py", line 281, in case_library_page
+    return render(request, 'case_library.html', context)
+  File "C:\Users\ke\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\ke\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\ke\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: case_library.html
+2026-03-31 23:13:58,620 - django.request - ERROR - [thread=22204 Thread-5 (process_request_thread)] - Internal Server Error: /case_library/
+Traceback (most recent call last):
+  File "C:\Users\ke\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\ke\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "F:\test\TestBranin\apps\ai_agents\case_library\views.py", line 281, in case_library_page
+    return render(request, 'case_library.html', context)
+  File "C:\Users\ke\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\ke\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\ke\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: case_library.html
+2026-03-31 23:14:10,550 - django.request - ERROR - [thread=7400 Thread-6 (process_request_thread)] - Internal Server Error: /case_library/
+Traceback (most recent call last):
+  File "C:\Users\ke\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\ke\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "F:\test\TestBranin\apps\ai_agents\case_library\views.py", line 281, in case_library_page
+    return render(request, 'case_library.html', context)
+  File "C:\Users\ke\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\ke\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\ke\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: case_library.html
+2026-03-31 23:15:19,485 - django.request - ERROR - [thread=16624 Thread-5 (process_request_thread)] - Internal Server Error: /case_library/
+Traceback (most recent call last):
+  File "C:\Users\ke\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\ke\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "F:\test\TestBranin\apps\ai_agents\case_library\views.py", line 281, in case_library_page
+    return render(request, 'case_library.html', context)
+  File "C:\Users\ke\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\ke\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\ke\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: case_library.html
+2026-03-31 23:15:31,600 - django.request - ERROR - [thread=23300 Thread-6 (process_request_thread)] - Internal Server Error: /case_library/
+Traceback (most recent call last):
+  File "C:\Users\ke\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\ke\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "F:\test\TestBranin\apps\ai_agents\case_library\views.py", line 281, in case_library_page
+    return render(request, 'case_library.html', context)
+  File "C:\Users\ke\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\ke\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\ke\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: case_library.html
+2026-03-31 23:22:21,790 - django.request - ERROR - [thread=848 Thread-7 (process_request_thread)] - Internal Server Error: /case_library/
+Traceback (most recent call last):
+  File "C:\Users\ke\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\ke\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "F:\test\TestBranin\apps\ai_agents\case_library\views.py", line 281, in case_library_page
+    return render(request, 'case_library.html', context)
+  File "C:\Users\ke\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\ke\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\ke\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: case_library.html
+2026-03-31 23:22:23,165 - django.request - ERROR - [thread=848 Thread-7 (process_request_thread)] - Internal Server Error: /case_library/
+Traceback (most recent call last):
+  File "C:\Users\ke\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\ke\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "F:\test\TestBranin\apps\ai_agents\case_library\views.py", line 281, in case_library_page
+    return render(request, 'case_library.html', context)
+  File "C:\Users\ke\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\ke\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\ke\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: case_library.html
+2026-03-31 23:22:35,941 - django.request - ERROR - [thread=848 Thread-7 (process_request_thread)] - Internal Server Error: /case_library/
+Traceback (most recent call last):
+  File "C:\Users\ke\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\ke\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "F:\test\TestBranin\apps\ai_agents\case_library\views.py", line 281, in case_library_page
+    return render(request, 'case_library.html', context)
+  File "C:\Users\ke\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\ke\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\ke\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: case_library.html

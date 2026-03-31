@@ -7,6 +7,11 @@ from apps.core.models import TestCaseLibrary, Project, TestCaseModule
 import json
 
 
+def case_library_page(request):
+    """用例库页面"""
+    return render(request, 'case_library/test.html')
+
+
 @require_http_methods(["GET"])
 def case_library_list(request):
     """获取用例库列表"""
@@ -273,7 +278,7 @@ def case_library_page(request):
         'types': types,
     }
     
-    return render(request, 'case_library.html', context)
+    return render(request, 'case_library/case_library.html', context)
 
 
 @require_http_methods(["GET"])

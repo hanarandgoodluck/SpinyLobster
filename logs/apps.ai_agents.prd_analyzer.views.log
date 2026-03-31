@@ -78,3 +78,4 @@
 2026-03-31 15:51:33,091 - apps.ai_agents.prd_analyzer.views - WARNING - [thread=8569212736 MainThread] - 鏃犳硶鍒涘缓 LLM 鏈嶅姟锛欴eepSeek API key is required. Set it via DEEPSEEK_API_KEY environment variable or pass it directly.
 2026-03-31 15:51:56,694 - apps.ai_agents.prd_analyzer.views - WARNING - [thread=6106411008 django-main-thread] - 鏃犳硶鍒涘缓 LLM 鏈嶅姟锛欴eepSeek API key is required. Set it via DEEPSEEK_API_KEY environment variable or pass it directly.
 2026-03-31 15:52:07,374 - apps.ai_agents.prd_analyzer.views - WARNING - [thread=6117126144 django-main-thread] - 鏃犳硶鍒涘缓 LLM 鏈嶅姟锛欴eepSeek API key is required. Set it via DEEPSEEK_API_KEY environment variable or pass it directly.
+2026-03-31 21:54:14,417 - apps.ai_agents.prd_analyzer.views - WARNING - [thread=13052 MainThread] - 无法创建 LLM 服务：DeepSeek API key is required. Set it via DEEPSEEK_API_KEY environment variable or pass it directly.

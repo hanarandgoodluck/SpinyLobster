@@ -604,26 +604,23 @@
     border-radius: 4px;
     font-size: 12px;
     font-weight: 500;
+    color: red !important;
 }
 
 .priority-tag.p0 {
     background: #fef0f0;
-    color: #f56c6c;
 }
 
 .priority-tag.p1 {
-    background: #fdf6ec;
-    color: #e6a23c;
+    background: #fef0f0;
 }
 
 .priority-tag.p2 {
-    background: #f4f4f5;
-    color: #909399;
+    background: #fef0f0;
 }
 
 .priority-tag.p3 {
-    background: #ecf5ff;
-    color: #409eff;
+    background: #fef0f0;
 }
 
 /* 分页 */
@@ -755,42 +752,37 @@
 
             <!-- 表格 -->
             <div class="case-table-container">
-                <table class="case-table" v-if="cases.length > 0">
-                    <thead>
-                        <tr>
-                            <th width="50">
-                                <input type="checkbox" @change="toggleSelectAll">
-                            </th>
-                            <th width="120">编号</th>
-                            <th>标题</th>
-                            <th width="100">维护人</th>
-                            <th width="80">优先级</th>
-                            <th width="100">类型</th>
-                            <th width="100">状态</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr v-for="caseItem in cases" :key="caseItem.id" @click="selectCase(caseItem)">
-                            <td>
-                                <input type="checkbox" :value="caseItem.id" v-model="selectedCases">
-                            </td>
-                            <td>{{ caseItem.case_number }}</td>
-                            <td>{{ caseItem.title }}</td>
-                            <td>{{ caseItem.maintainer }}</td>
-                            <td>
-                                <span class="priority-tag" :class="caseItem.priority">
-                                    {{ caseItem.priority_display }}
-                                </span>
-                            </td>
-                            <td>{{ caseItem.case_type_display }}</td>
-                            <td>
-                                <span class="status-tag" :class="caseItem.status">
-                                    {{ caseItem.status_display }}
-                                </span>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
+                <el-table
+                    v-if="cases.length > 0"
+                    :data="cases"
+                    style="width: 100%"
+                    @row-click="selectCase"
+                >
+                    <el-table-column width="50">
+                        <template #header>
+                            <input type="checkbox" @change="toggleSelectAll">
+                        </template>
+                        <template #default="{row}">
+                            <input type="checkbox" :value="row.id" v-model="selectedCases">
+                        </template>
+                    </el-table-column>
+                    <el-table-column prop="case_number" label="编号" width="120"></el-table-column>
+                    <el-table-column prop="title" label="标题"></el-table-column>
+
+                    <el-table-column label="优先级" width="100">
+                        <template #default="{row}">
+                            <span style="color: red; font-weight: bold;">{{ row.priority_display }}</span>
+                        </template>
+                    </el-table-column>
+                    <el-table-column prop="case_type_display" label="类型" width="100"></el-table-column>
+                    <el-table-column prop="status_display" label="状态" width="100">
+                        <template #default="{row}">
+                            <span class="status-tag" :class="row.status">
+                                {{ row.status_display }}
+                            </span>
+                        </template>
+                    </el-table-column>
+                </el-table>
                 <div class="empty-state" v-else>
                     <i class="fas fa-inbox"></i>
                     <div class="empty-state-title">暂无用例</div>
@@ -921,11 +913,11 @@
             
             <!-- 右列 -->
             <el-col :span="10">
-                <el-form-item label="所属用例库" required style="margin-bottom: 32px;">
+                <el-form-item label="所属用例库" required style="margin-bottom: 48px;">
                     <el-input v-model="newCase.project_name" disabled placeholder="所属用例库"></el-input>
                 </el-form-item>
                 
-                <el-form-item label="所属模块" required style="margin-bottom: 32px;">
+                <el-form-item label="所属模块" required style="margin-bottom: 48px;">
                     <el-cascader
                         v-model="newCase.module_value"
                         :options="moduleCascaderOptions"
@@ -937,7 +929,7 @@
                     </el-cascader>
                 </el-form-item>
                 
-                <el-form-item label="用例类型" style="margin-bottom: 32px;">
+                <el-form-item label="用例类型" style="margin-bottom: 48px;">
                     <el-select v-model="newCase.case_type" class="w-full" placeholder="选择用例类型">
                         <el-option label="功能测试" value="functional"></el-option>
                         <el-option label="性能测试" value="performance"></el-option>
@@ -948,7 +940,7 @@
                     </el-select>
                 </el-form-item>
                 
-                <el-form-item label="优先级" style="margin-bottom: 32px;">
+                <el-form-item label="优先级" style="margin-bottom: 48px;">
                     <el-select v-model="newCase.priority" class="w-full" placeholder="选择优先级">
                         <el-option label="P0" value="p0"></el-option>
                         <el-option label="P1" value="p1"></el-option>
@@ -971,8 +963,14 @@
         </div>
     </template>
 </el-dialog>
+</div>
+</div>
 {% endblock %}
 
 {% block extra_js %}
+<!-- Vue 3 (使用 jsdelivr 生产版本) -->
+<script src="https://cdn.jsdelivr.net/npm/vue@3.4.21/dist/vue.global.prod.js"></script>
+<!-- Element Plus (使用 jsdelivr) -->
+<script src="https://cdn.jsdelivr.net/npm/element-plus@2.5.6/dist/index.full.min.js"></script>
 <script src="{% static 'js/case_library.js' %}"></script>
 {% endblock %}
