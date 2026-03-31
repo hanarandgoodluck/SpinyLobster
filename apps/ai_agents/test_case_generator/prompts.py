@@ -45,14 +45,14 @@ class TestCaseGeneratorPrompt:
     """测试用例生成提示词"""
     
     def __init__(self):
-        # 获取当前文件所在目录的configs子目录下的配置文件
+        # 获取当前文件所在目录的 configs 子目录下的配置文件
         config_path = Path(__file__).parent / "configs" / "prompt_config.yaml"
         # 初始化具体的提示词模板管理器
         self.prompt_manager = TestCaseGeneratorPromptManager(str(config_path))
         self.prompt_template = self.prompt_manager.get_test_case_generator_prompt()
     
     def format_messages(self, requirements: str, case_design_methods: str = "", 
-                       case_categories: str = "", knowledge_context: str = "", case_count: int = 10) -> list:
+                       case_categories: str = "", knowledge_context: str = "", case_count: str = "auto") -> list:
         """格式化消息
         
         Args:
@@ -60,7 +60,7 @@ class TestCaseGeneratorPrompt:
             case_design_methods: 测试用例设计方法
             case_categories: 测试用例类型
             knowledge_context: 知识库上下文
-            case_count: 生成用例条数
+            case_count: 生成用例条数，'auto' 表示由 AI 自动判断
         Returns:
             格式化后的消息列表
         """
@@ -71,17 +71,28 @@ class TestCaseGeneratorPrompt:
         if not case_categories:
             case_categories = "所有适用的测试类型"
             
-        # 格式化知识上下文提示
+        # 处理知识上下文提示
         knowledge_prompt = (
             f"参考以下知识库内容：\n{knowledge_context}"
             if knowledge_context
             else "根据你的专业知识"
         )
         
+        # 处理用例数量指令
+        if case_count == 'auto':
+            case_count_instruction = "请根据需求描述的复杂程度和覆盖范围，自动判断并生成合适数量的测试用例。确保测试用例既能充分覆盖功能点，又不会过于冗余。"
+        else:
+            try:
+                count = int(case_count)
+                case_count_instruction = f"请生成{count}条测试用例，确保覆盖主要功能点和边界场景。"
+            except (ValueError, TypeError):
+                case_count_instruction = "请生成适量的测试用例，确保覆盖主要功能点和边界场景。"
+        
         return self.prompt_template.format_messages(
             requirements=requirements,
             case_design_methods=case_design_methods,
             case_categories=case_categories,
             case_count=case_count,
+            case_count_instruction=case_count_instruction,
             knowledge_context=knowledge_prompt
         )

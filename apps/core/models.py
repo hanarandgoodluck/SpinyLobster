@@ -120,7 +120,7 @@ class KnowledgeBase(models.Model):
     """知识库条目"""
     title = models.CharField(max_length=200, verbose_name="知识条目标题")
     content = models.TextField(verbose_name="知识内容")
-    vector_id = models.CharField(max_length=100, blank=True, verbose_name="向量ID")
+    vector_id = models.CharField(max_length=100, blank=True, verbose_name="向量 ID")
     created_at = models.DateTimeField(auto_now_add=True, verbose_name="创建时间")
     updated_at = models.DateTimeField(auto_now=True, verbose_name="更新时间")
     
@@ -129,4 +129,105 @@ class KnowledgeBase(models.Model):
     
     class Meta:
         verbose_name = "知识库"
-        verbose_name_plural = "知识库" 
+        verbose_name_plural = "知识库"
+
+
+class TestCaseLibrary(models.Model):
+    """用例库模型"""
+    STATUS_CHOICES = [
+        ('active', '启用'),
+        ('inactive', '停用'),
+    ]
+    
+    PRIORITY_CHOICES = [
+        ('p0', 'P0'),
+        ('p1', 'P1'),
+        ('p2', 'P2'),
+        ('p3', 'P3'),
+    ]
+    
+    TYPE_CHOICES = [
+        ('functional', '功能测试'),
+        ('performance', '性能测试'),
+        ('compatibility', '兼容性测试'),
+        ('security', '安全性测试'),
+        ('ui', 'UI 测试'),
+        ('api', '接口测试'),
+    ]
+    
+    MODULE_CHOICES = [
+        ('user_center', '用户中心'),
+        ('education', '教育'),
+        ('collaboration', '协同'),
+        ('im', 'IM'),
+        ('workspace', '工作台'),
+        ('recruitment', '招聘'),
+        ('work_management', '工作管理'),
+        ('ai_application', 'AI 应用'),
+        ('operation_platform', '运营平台'),
+        ('other', '其他'),
+    ]
+    
+    case_number = models.CharField(max_length=50, unique=True, verbose_name="用例编号")
+    title = models.CharField(max_length=500, verbose_name="标题")
+    module = models.CharField(max_length=50, choices=MODULE_CHOICES, default='other', verbose_name='模块')
+    priority = models.CharField(max_length=2, choices=PRIORITY_CHOICES, default='p2', verbose_name='优先级')
+    case_type = models.CharField(max_length=20, choices=TYPE_CHOICES, default='functional', verbose_name='用例类型')
+    preconditions = models.TextField(blank=True, verbose_name='前置条件')
+    test_steps = models.TextField(verbose_name='测试步骤')
+    expected_results = models.TextField(verbose_name='预期结果')
+    status = models.CharField(max_length=20, choices=STATUS_CHOICES, default='active', verbose_name='状态')
+    maintainer = models.CharField(max_length=100, blank=True, verbose_name='维护人')
+    project = models.ForeignKey(
+        Project,
+        on_delete=models.SET_NULL,
+        related_name='case_library',
+        verbose_name="所属项目",
+        null=True,
+        blank=True
+    )
+    tags = models.CharField(max_length=500, blank=True, verbose_name='标签，多个标签用逗号分隔')
+    remark = models.TextField(blank=True, verbose_name='备注')
+    created_at = models.DateTimeField(auto_now_add=True, verbose_name="创建时间")
+    updated_at = models.DateTimeField(auto_now=True, verbose_name="更新时间")
+    
+    def __str__(self):
+        return f"{self.case_number} - {self.title}"
+    
+    class Meta:
+        verbose_name = "用例库"
+        verbose_name_plural = "用例库"
+        ordering = ['-case_number']
+
+
+class TestCaseModule(models.Model):
+    """用例模块模型"""
+    name = models.CharField(max_length=100, verbose_name="模块名称")
+    value = models.CharField(max_length=100, unique=True, verbose_name="模块标识")
+    parent = models.ForeignKey(
+        'self',
+        on_delete=models.CASCADE,
+        related_name='children',
+        verbose_name="父模块",
+        null=True,
+        blank=True
+    )
+    project = models.ForeignKey(
+        Project,
+        on_delete=models.CASCADE,
+        related_name='case_modules',
+        verbose_name="所属项目",
+        null=True,
+        blank=True
+    )
+    order = models.IntegerField(default=0, verbose_name="排序")
+    created_at = models.DateTimeField(auto_now_add=True, verbose_name="创建时间")
+    updated_at = models.DateTimeField(auto_now=True, verbose_name="更新时间")
+    
+    def __str__(self):
+        return self.name
+    
+    class Meta:
+        verbose_name = "用例模块"
+        verbose_name_plural = "用例模块"
+        ordering = ['order', 'name']

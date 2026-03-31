@@ -61,6 +61,7 @@ INSTALLED_APPS = [
     'apps.ai_agents.prd_analyzer.apps.PrdAnalyzerConfig',
     'apps.ai_agents.test_case_generator.apps.TestCaseGeneratorConfig',
     'apps.ai_agents.test_case_reviewer.apps.TestCaseReviewerConfig',
+    'apps.ai_agents.case_library.apps.CaseLibraryConfig',
 
 ]
 
@@ -101,7 +102,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'test_brain_db',
         'USER': 'root',
-        'PASSWORD': '1234',
+        'PASSWORD': '',
         'HOST': 'localhost',
         'PORT': '3306',
     }

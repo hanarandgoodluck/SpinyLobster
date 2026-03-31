@@ -83,7 +83,7 @@ def generate(request):
     llm_model_name = data.get('llm_model_name', 'deepseek-chat')  # 从 AI 配置读取的模型名称
     case_design_methods = data.get('case_design_methods', [])  # 获取测试方法
     case_categories = data.get('case_categories', [])         # 获取测试类型
-    case_count = int(data.get('case_count', 10))            # 获取生成用例条数
+    case_count = data.get('case_count', 'auto')  # 获取生成用例条数，默认为 auto
         
     logger.info(f"接收到的数据：{json.dumps(data, ensure_ascii=False)}")
         

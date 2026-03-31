@@ -16,5 +16,6 @@ urlpatterns = [
     path('prd_analyzer/', include('apps.ai_agents.prd_analyzer.urls')),
     path('test_case_generator/', include('apps.ai_agents.test_case_generator.urls')),
     path('test_case_reviewer/', include('apps.ai_agents.test_case_reviewer.urls')),
+    path('case_library/', include('apps.ai_agents.case_library.urls')),
 
 ]

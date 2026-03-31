@@ -7,10 +7,13 @@
     <meta name="csrf-token" content="{{ csrf_token }}">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐉</text></svg>">
     <title>{% block title %}SpinyLobster - 测试用例管理平台{% endblock %}</title>
+    <!-- 预加载关键资源 -->
+    <link rel="preconnect" href="https://lib.baomitu.com">
+    <link rel="dns-prefetch" href="https://lib.baomitu.com">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <!-- Element Plus -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/element-plus@2.5.6/dist/index.css">
+    <!-- Element Plus CSS (使用 75CDN) -->
+    <link rel="stylesheet" href="https://cdn.staticfile.org/element-plus/2.5.6/index.css">
     <style>
         * {
             box-sizing: border-box;
@@ -157,6 +160,12 @@
                             </a>
                         </li>
                         <li class="nav-item">
+                            <a class="nav-link {% if '/case_library/' in request.path %}active{% endif %}" href="/case_library/?project_id={{ current_project.id }}">
+                                <i class="fas fa-database"></i>
+                                用例库
+                            </a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link {% if '/prd_analyzer/' in request.path %}active{% endif %}" href="/prd_analyzer/?project_id={{ current_project.id }}">
                                 <i class="fas fa-project-diagram"></i>
                                 测试点&场景分析
@@ -223,10 +232,10 @@
         </main>
     </div>
 
-    <!-- Vue 3 -->
-    <script src="https://unpkg.com/vue@3.4.21/dist/vue.global.js"></script>
-    <!-- Element Plus -->
-    <script src="https://cdn.jsdelivr.net/npm/element-plus@2.5.6/dist/index.full.js"></script>
+    <!-- Vue 3 (使用 75CDN 生产版本) -->
+    <script src="https://cdn.staticfile.org/vue/3.4.21/vue.global.prod.js"></script>
+    <!-- Element Plus (使用 75CDN) -->
+    <script src="https://cdn.staticfile.org/element-plus/2.5.6/index.full.min.js"></script>
     {% block extra_js %}{% endblock %}
 </body>
 </html>

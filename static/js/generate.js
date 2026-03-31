@@ -97,25 +97,25 @@ document.addEventListener('DOMContentLoaded', function() {
             inputTextValue = document.getElementById('input-text').value?.trim() || '';
         }
         
-        // 尝试从Vue实例获取选中的测试用例设计方法和用例类型
+        // 尝试从 Vue 实例获取选中的测试用例设计方法和用例类型
         let selectedDesignMethods = [];
         let selectedCaseCategories = [];
-        let caseCountValue = '10';
+        let caseCountValue = 'auto';
         const vueApp = document.querySelector('#app')?._vnode?.component?.proxy;
-        
+                
         if (vueApp) {
             selectedDesignMethods = vueApp.caseDesignMethods || [];
             selectedCaseCategories = vueApp.caseCategories || [];
-            caseCountValue = vueApp.caseCount || '10';
+            caseCountValue = vueApp.caseCount || 'auto';
         } else {
-            // 回退方案：尝试从DOM元素获取
+            // 回退方案：尝试从 DOM 元素获取
             const designMethodsCheckboxes = document.querySelectorAll('.case-design-method:checked');
             selectedDesignMethods = Array.from(designMethodsCheckboxes).map(cb => cb.value);
-            
+                    
             const caseCategoriesCheckboxes = document.querySelectorAll('.case-category:checked');
             selectedCaseCategories = Array.from(caseCategoriesCheckboxes).map(cb => cb.value);
-            
-            caseCountValue = document.getElementById('case_count')?.value || '10';
+                    
+            caseCountValue = document.getElementById('case_count')?.value || 'auto';
         }
         
         if (!inputTextValue) {
@@ -138,6 +138,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 if (generateButton) generateButton.disabled = false;
                 return;
             }
+        }
+        
+        // 如果选择了 AUTO，给出提示
+        if (caseCountValue === 'auto') {
+            console.log('已选择 AUTO 模式，AI 将根据需求复杂度自动决定生成用例数量');
         }
         
         // 显示加载指示器和清空结果容器
@@ -305,7 +310,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 </div>
             </div>
             <div class="text-right mt-3">
-                <button id="save-button" class="btn btn-success">保存测试用例</button>
+                <button id="save-button" class="btn btn-success">
+                    <i class="fas fa-save" style="margin-right: 8px;"></i>
+                    保存测试用例
+                </button>
             </div>
         `;
 

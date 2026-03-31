@@ -3,18 +3,291 @@
 
 {% block title %}SpinyLobster - 测试用例生成{% endblock %}
 
+{% block extra_css %}
+<style>
+/* 页面整体样式 */
+.generate-page {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/* 移除 card 的默认边距 */
+.card {
+    border-radius: 0;
+    margin: 0;
+    border: none;
+    box-shadow: none;
+}
+
+/* 卡片头部样式 */
+.card-header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 600;
+    padding: 20px 30px;
+    border-radius: 0;
+    box-shadow: 0 2px 12px rgba(102, 126, 234, 0.3);
+}
+
+.card-header i {
+    margin-right: 12px;
+    font-size: 1.6rem;
+}
+
+/* 卡片主体样式 */
+.card-body {
+    padding: 30px 30px;
+    background-color: #ffffff;
+}
+
+/* 表单组样式 */
+.form-group {
+    margin-bottom: 28px;
+}
+
+/* 标签样式 */
+.form-label {
+    display: block;
+    font-size: 15px;
+    font-weight: 600;
+    color: #303133;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.form-label i {
+    font-size: 16px;
+    color: #409eff;
+}
+
+/* 输入框样式增强 */
+.el-textarea__inner {
+    border: 2px solid #e4e7ed;
+    border-radius: 8px;
+    padding: 14px 16px;
+    font-size: 14px;
+    line-height: 1.6;
+    transition: all 0.3s ease;
+}
+
+.el-textarea__inner:hover {
+    border-color: #c0c4cc;
+}
+
+.el-textarea__inner:focus {
+    border-color: #409eff;
+    box-shadow: 0 0 0 2px rgba(64, 158, 255, 0.1);
+}
+
+/* Element Plus 选择器样式优化 */
+.el-select {
+    width: 100%;
+}
+
+.el-input__wrapper {
+    border-radius: 8px;
+    padding: 10px 14px;
+    box-shadow: 0 0 0 1px #e4e7ed inset;
+    transition: all 0.3s ease;
+}
+
+.el-input__wrapper:hover {
+    box-shadow: 0 0 0 1px #c0c4cc inset;
+}
+
+.el-input__wrapper.is-focus {
+    box-shadow: 0 0 0 1px #409eff inset;
+}
+
+/* 选项标签样式 */
+.el-select-dropdown__item.selected {
+    color: #409eff;
+    font-weight: 600;
+}
+
+/* 按钮样式 */
+.el-button--primary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border: none;
+    padding: 12px 36px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+    transition: all 0.3s ease;
+}
+
+.el-button--primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.5);
+}
+
+.el-button--primary:active {
+    transform: translateY(0);
+}
+
+/* 加载指示器样式 */
+#loading-indicator {
+    padding: 40px 20px;
+}
+
+.spinner {
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #667eea;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 20px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+#loading-indicator p {
+    font-size: 16px;
+    color: #606266;
+    font-weight: 500;
+}
+
+/* 结果容器样式 */
+#result-container {
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#result-container .card {
+    border: none;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+#result-container .card-header {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    padding: 18px 24px;
+    font-size: 1.3rem;
+}
+
+/* 表格样式优化 */
+.table {
+    margin-bottom: 0;
+}
+
+.table thead th {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    font-weight: 600;
+    font-size: 15px;
+    padding: 16px 12px;
+    border: none;
+    text-align: left;
+}
+
+.table tbody tr {
+    transition: all 0.2s ease;
+}
+
+.table tbody tr:hover {
+    background-color: #f5f7fa;
+    transform: scale(1.01);
+}
+
+.table tbody td {
+    padding: 16px 12px;
+    vertical-align: top;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #606266;
+    border-color: #ebeef5;
+}
+
+/* 保存按钮样式 */
+#save-button {
+    background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+    border: none;
+    padding: 12px 40px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 8px;
+    color: white;
+    box-shadow: 0 4px 15px rgba(17, 153, 142, 0.4);
+    transition: all 0.3s ease;
+}
+
+#save-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(17, 153, 142, 0.5);
+}
+
+/* 提示工具样式 */
+.el-tooltip__trigger {
+    cursor: pointer;
+    margin-left: 6px;
+}
+
+.form-text {
+    font-size: 13px;
+    color: #909399;
+    margin-top: 6px;
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+    .card-header {
+        font-size: 1.3rem;
+        padding: 16px 18px;
+    }
+    
+    .card-body {
+        padding: 20px 18px;
+    }
+    
+    .form-label {
+        font-size: 14px;
+    }
+    
+    .el-button--primary {
+        width: 100%;
+        padding: 12px 20px;
+    }
+}
+</style>
+{% endblock %}
+
 {% block content %}
+<div class="generate-page">
 <div class="card">
-    <div class="card-header" style="font-size: 1.25rem; font-weight: 600; color: #303133; background-color: #f5f7fa; border-bottom: 1px solid #e4e7ed;">
-        <i class="fas fa-plus-circle mr-2 text-primary"></i>
+    <div class="card-header">
+        <i class="fas fa-plus-circle"></i>
         测试用例生成
     </div>
     <div class="card-body">
         <form id="generate-form" method="post">
             {% csrf_token %}
             
-            <div class="form-group mb-3">
-                <label for="llm-provider">选择大模型:</label>
+            <div class="form-group">
+                <label class="form-label">
+                    <i class="fas fa-robot"></i>
+                    选择大模型:
+                </label>
                 <el-select 
                     id="llm-model-name" 
                     v-model="llmModelName" 
@@ -28,224 +301,133 @@
                     ></el-option>
                 </el-select>
                 <el-tooltip content="该值来自 AI 配置页面的 Model Name 字段" placement="right">
-                    <i class="fas fa-info-circle text-info mt-1"></i>
+                    <i class="fas fa-info-circle" style="color: #409eff; cursor: pointer;"></i>
                 </el-tooltip>
-                <small class="form-text text-muted">此字段为只读，值来自 AI 配置页面的 Model Name 设置</small>
+                <div class="form-text">此字段为只读，值来自 AI 配置页面的 Model Name 设置</div>
             </div>
             
-            <div class="form-group mb-3">
-                <label id="input-text-label" for="input-text">需求描述:</label>
+            <div class="form-group">
+                <label class="form-label" for="input-text">
+                    <i class="fas fa-file-alt"></i>
+                    需求描述:
+                </label>
                 <el-input
                     id="input-text"
                     v-model="requirements"
                     type="textarea"
-                    :rows="10"
-                    placeholder="请输入需求描述"
+                    :rows="12"
+                    placeholder="请详细描述您的需求，包括功能点、业务场景、用户角色等信息，以便 AI 生成更精准的测试用例..."
                     required
                     class="w-full"
                 ></el-input>
             </div>
             
-            <div class="row mb-3" style="display: flex; align-items: flex-end;">
+            <div class="row" style="margin-bottom: 24px;">
                 <div class="col-md-4">
-                    <label>测试用例设计方法:</label>
-                    <el-select
-                        v-model="caseDesignMethods"
-                        multiple
-                        collapse-tags
-                        collapse-tags-tooltip
-                        placeholder="请选择测试用例设计方法"
-                        class="w-full"
-                    >
-                        <el-option value="equivalence_partitioning" label="等价类划分法"></el-option>
-                        <el-option value="boundary_value" label="边界值分析法"></el-option>
-                        <el-option value="decision_table" label="判定表法"></el-option>
-                        <el-option value="cause_effect" label="因果图法"></el-option>
-                        <el-option value="orthogonal_array" label="正交分析法"></el-option>
-                        <el-option value="scenario" label="场景法"></el-option>
-                    </el-select>
-                </div>
-                <div class="col-md-4">
-                    <label>用例类型:</label>
-                    <el-select
-                        v-model="caseCategories"
-                        multiple
-                        collapse-tags
-                        collapse-tags-tooltip
-                        placeholder="请选择用例类型"
-                        class="w-full"
-                    >
-                        <el-option value="functional" label="功能测试"></el-option>
-                        <el-option value="performance" label="性能测试"></el-option>
-                        <el-option value="compatibility" label="兼容性测试"></el-option>
-                        <el-option value="security" label="安全性测试"></el-option>
-                    </el-select>
+                    <div class="form-group" style="margin-bottom: 0;">
+                        <label class="form-label">
+                            <i class="fas fa-th-large"></i>
+                            测试用例设计方法:
+                        </label>
+                        <el-select
+                            v-model="caseDesignMethods"
+                            multiple
+                            collapse-tags
+                            collapse-tags-tooltip
+                            placeholder="请选择测试用例设计方法"
+                            class="w-full"
+                        >
+                            <el-option value="equivalence_partitioning" label="等价类划分法"></el-option>
+                            <el-option value="boundary_value" label="边界值分析法"></el-option>
+                            <el-option value="decision_table" label="判定表法"></el-option>
+                            <el-option value="cause_effect" label="因果图法"></el-option>
+                            <el-option value="orthogonal_array" label="正交分析法"></el-option>
+                            <el-option value="scenario" label="场景法"></el-option>
+                        </el-select>
+                    </div>
                 </div>
                 <div class="col-md-4">
-                    <label for="case_count">生成用例条数:
-                        <el-tooltip content="1. 由于大模型机制所限，大模型不一定返回足够数量的用例，比如你指定了100条，但大模型可能仅返回20条。2. 大模型所需生成用例数量越多，耗时越久。" placement="right">
-                            <i class="fas fa-info-circle text-primary ml-2"></i>
-                        </el-tooltip>
-                    </label>
-                    <el-select
-                        id="case_count"
-                        v-model="caseCount"
-                        placeholder="请选择生成用例条数"
-                        class="w-full"
-                    >
-                        <el-option value="1">1条</el-option>
-                        <el-option value="10">10条</el-option>
-                        <el-option value="20">20条</el-option>
-                        <el-option value="30">30条</el-option>
-                        <el-option value="40">40条</el-option>
-                        <el-option value="50">50条</el-option>
-                        <el-option value="60">60条</el-option>
-                        <el-option value="70">70条</el-option>
-                        <el-option value="80">80条</el-option>
-                        <el-option value="90">90条</el-option>
-                        <el-option value="100">100条</el-option>
-                    </el-select>
+                    <div class="form-group" style="margin-bottom: 0;">
+                        <label class="form-label">
+                            <i class="fas fa-tags"></i>
+                            用例类型:
+                        </label>
+                        <el-select
+                            v-model="caseCategories"
+                            multiple
+                            collapse-tags
+                            collapse-tags-tooltip
+                            placeholder="请选择用例类型"
+                            class="w-full"
+                        >
+                            <el-option value="functional" label="功能测试"></el-option>
+                            <el-option value="performance" label="性能测试"></el-option>
+                            <el-option value="compatibility" label="兼容性测试"></el-option>
+                            <el-option value="security" label="安全性测试"></el-option>
+                        </el-select>
+                    </div>
                 </div>
-                <div class="col-md-12 mt-3 text-right">
-                    <el-button type="primary" id="generate-button" native-type="submit">生成测试用例</el-button>
+                <div class="col-md-4">
+                    <div class="form-group" style="margin-bottom: 0;">
+                        <label class="form-label">
+                            <i class="fas fa-list-ol"></i>
+                            生成用例条数:
+                            <el-tooltip content="1. 选择 AUTO 时，AI 会根据需求描述的复杂程度自动决定生成的用例数量。2. 由于大模型机制所限，实际返回数量可能与预期有差异。3. 生成用例数量越多，耗时越久。" placement="right">
+                                <i class="fas fa-info-circle" style="color: #409eff; cursor: pointer;"></i>
+                            </el-tooltip>
+                        </label>
+                        <el-select
+                            id="case_count"
+                            v-model="caseCount"
+                            placeholder="请选择生成用例条数"
+                            class="w-full"
+                        >
+                            <el-option value="auto">AUTO - 由 AI 自动判断</el-option>
+                            <el-option value="1">1 条</el-option>
+                            <el-option value="10">10 条</el-option>
+                            <el-option value="20">20 条</el-option>
+                            <el-option value="30">30 条</el-option>
+                            <el-option value="40">40 条</el-option>
+                            <el-option value="50">50 条</el-option>
+                            <el-option value="60">60 条</el-option>
+                            <el-option value="70">70 条</el-option>
+                            <el-option value="80">80 条</el-option>
+                            <el-option value="90">90 条</el-option>
+                            <el-option value="100">100 条</el-option>
+                        </el-select>
+                    </div>
                 </div>
+            </div>
+            
+            <div style="text-align: right; margin-top: 20px;">
+                <el-button type="primary" id="generate-button" native-type="submit">
+                    <i class="fas fa-magic" style="margin-right: 8px;"></i>
+                    生成测试用例
+                </el-button>
             </div>
         </form>
         
-        <div id="loading-indicator" style="display: none;" class="text-center mt-3">
+        <div id="loading-indicator" style="display: none;" class="text-center mt-4">
             <div class="spinner"></div>
             <p>正在生成测试用例，请稍候...</p>
         </div>
     </div>
 </div>
-
-{% if test_cases %}
-<div id="result-container" class="mt-4">
-    <div class="card">
-        <div class="card-header">
-            <h5 class="mb-0">生成的测试用例</h5>
-        </div>
-        <div class="card-body">
-            <div class="table-responsive">
-                <table class="table table-bordered table-hover">
-                    <thead class="thead-light">
-                        <tr>
-                            <th width="5%">编号</th>
-                            <th width="25%">测试用例描述</th>
-                            <th width="35%">测试步骤</th>
-                            <th width="35%">预期结果</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {% for test_case in test_cases %}
-                            <tr>
-                                <td>{{ forloop.counter }}</td>
-                                <td>{{ test_case.description }}</td>
-                                <td>
-                                    {% for step in test_case.test_steps %}
-                                        <div class="mb-2">{{ step }}</div>
-                                    {% endfor %}
-                                </td>
-                                <td>
-                                    {% for result in test_case.expected_results %}
-                                        <div class="mb-2">{{ result }}</div>
-                                    {% endfor %}
-                                </td>
-                            </tr>
-                        {% endfor %}
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </div>
 </div>
 
-{# 修改 JSON 数据的存储方式 #}
-{{ test_cases|json_script:"test-cases-data" }}
 
-<div class="text-right mt-3" id="save-container">
-    <button id="save-button" class="btn btn-success">保存测试用例</button>
-</div>
-{% endif %}
 
-<style>
-/* 自定义复选框样式 */
-.custom-control-label {
-    cursor: pointer;
-    margin-bottom: 0.5rem;
-}
+<!-- 结果展示区域将由 JS 动态生成 -->
 
-.custom-control-label:before {
-    border-radius: 4px;
-}
-
-/* 滚动条样式 */
-.border {
-    background-color: #fff;
-}
-
-/* 全选按钮样式 */
-.select-all-container {
-    margin-bottom: 0.5rem;
-}
-
-.select-all-container button {
-    font-size: 0.875rem;
-    padding: 0.25rem 0.5rem;
-}
-
-/* 自定义 tooltip 样式 */
-.tooltip-inner {
-    max-width: 300px;
-    padding: 10px;
-    color: #fff;
-    text-align: left;
-    background-color: #333;
-    border-radius: 4px;
-    font-size: 14px;
-    line-height: 1.5;
-}
-
-/* 自定义 tooltip 箭头颜色 */
-.tooltip.bs-tooltip-right .arrow::before {
-    border-right-color: #333;
-}
-
-/* 自定义多选框样式，实现每行最多3个标签自动换行 */
-.custom-select .el-select__tags {
-    flex-wrap: wrap !important;
-    align-content: flex-start !important;
-    min-height: 32px !important;
-    width: 100% !important;
-}
-
-.custom-select .el-select__tags .el-tag {
-    margin-right: 8px !important;
-    margin-bottom: 4px !important;
-    max-width: 30% !important;
-    box-sizing: border-box !important;
-    flex: 0 0 auto !important;
-}
-
-.custom-select .el-select__input {
-    flex: 0 0 100% !important;
-    min-width: 100px !important;
-    margin-top: 4px !important;
-}
-</style>
 
 {% block extra_js %}
-<!-- 等待文档和所有资源加载完成 -->
 <script type="text/javascript">
-    // 等待文档和所有资源加载完成
     window.addEventListener('load', function() {
-        // 初始化所有的 tooltip
         if (typeof $ !== 'undefined') {
             $('[data-toggle="tooltip"]').tooltip();
         }
     });
     
-    // 初始化 Vue 应用
     if (typeof Vue !== 'undefined' && typeof ElementPlus !== 'undefined') {
         const { createApp } = Vue;
         
@@ -256,7 +438,7 @@
                     requirements: '{{ requirements }}',
                     caseDesignMethods: [],
                     caseCategories: [],
-                    caseCount: '10'
+                    caseCount: 'auto'  // 默认值为 auto
                 };
             }
         }).use(ElementPlus).mount('#app');

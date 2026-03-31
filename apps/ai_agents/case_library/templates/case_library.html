@@ -1,0 +1,978 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}SpinyLobster - 用例库管理{% endblock %}
+
+{% block extra_css %}
+<style>
+.case-library-page {
+    width: 100%;
+    height: calc(100vh - 60px);
+    display: flex;
+    flex-direction: column;
+}
+
+.case-library-container {
+    flex: 1;
+    display: flex;
+    overflow: hidden;
+    background: white;
+    margin: 0;
+    border-radius: 0;
+}
+
+/* 左侧模块树 */
+.module-tree-panel {
+    width: 280px;
+    border-right: 1px solid #e4e7ed;
+    background: #fafafa;
+    display: flex;
+    flex-direction: column;
+}
+
+.module-tree-header {
+    padding: 16px;
+    border-bottom: 1px solid #e4e7ed;
+    background: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.module-tree-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: #303133;
+}
+
+/* 自定义添加按钮样式 */
+.module-add-btn {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: #409eff;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s;
+    padding: 0;
+    font-size: 16px;
+    color: white;
+}
+
+.module-add-btn:hover {
+    background: #66b1ff;
+    transform: scale(1.1);
+}
+
+.module-add-btn i {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.module-tree-content {
+    flex: 1;
+    overflow-y: auto;
+    padding: 8px 0;
+}
+
+.module-item {
+    padding: 10px 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: all 0.2s;
+    color: #606266;
+}
+
+.module-item:hover {
+    background: #f5f7fa;
+}
+
+.module-item.active {
+    background: #ecf5ff;
+    color: #409eff;
+    font-weight: 500;
+}
+
+.module-item-info {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex: 1;
+}
+
+.module-item-actions {
+    display: flex;
+    gap: 4px;
+    opacity: 0;
+    transition: opacity 0.2s;
+    margin-right: 8px;
+}
+
+.module-item:hover .module-item-actions {
+    opacity: 1;
+}
+
+.module-item-actions .el-button {
+    padding: 4px;
+    color: #909399;
+}
+
+.module-item-actions .el-button:hover {
+    color: #409eff;
+}
+
+.module-tree-node {
+    width: 100%;
+}
+
+.module-children {
+    padding-left: 20px;
+}
+
+/* 编辑器容器样式 */
+.case-library-page .editor-container {
+    width: 100%;
+    border: 1px solid #dcdfe6;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+/* wangEditor 包装器样式 */
+.case-library-page .editor-wrapper {
+    width: 100%;
+    border: 1px solid #dcdfe6 !important;
+    border-radius: 4px;
+    overflow: visible !important;
+    background: #fff;
+}
+
+.editor-wrapper .editor-toolbar {
+    border: none !important;
+    background: #fafafa;
+    padding: 4px 6px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    border-radius: 4px 4px 0 0;
+    border-bottom: 1px solid #e4e7ed !important;
+}
+
+/* 自定义 wangEditor 工具栏样式 */
+.editor-wrapper .w-e-toolbar {
+    padding: 0 !important;
+    background: transparent !important;
+    border: none !important;
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    align-items: center !important;
+    gap: 2px !important;
+    min-height: 36px !important;
+}
+
+.editor-wrapper .w-e-toolbar button {
+    margin-right: 2px !important;
+    padding: 3px 5px !important;
+    border-radius: 3px !important;
+    min-width: auto !important;
+    height: 28px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    transition: all 0.2s !important;
+    background: transparent !important;
+    border: 1px solid transparent !important;
+    cursor: pointer !important;
+}
+
+.editor-wrapper .w-e-toolbar button:hover {
+    background: #ecf5ff !important;
+    border-color: #b3d8ff !important;
+}
+
+.editor-wrapper .w-e-toolbar button.active {
+    background: #409eff !important;
+    border-color: #409eff !important;
+    color: white !important;
+}
+
+.editor-wrapper .w-e-toolbar button.active svg {
+    fill: white !important;
+}
+
+/* 分隔线样式 */
+.editor-wrapper .w-e-toolbar .w-e-toolbar-separator {
+    width: 1px !important;
+    height: 18px !important;
+    background: #dcdfe6 !important;
+    margin: 0 3px !important;
+    display: inline-block !important;
+}
+
+.editor-wrapper .w-e-toolbar .w-e-button-group {
+    display: inline-flex !important;
+    flex-wrap: nowrap !important;
+    gap: 2px !important;
+}
+
+/* 工具栏图标样式 */
+.editor-wrapper .w-e-toolbar svg {
+    width: 14px !important;
+    height: 14px !important;
+    fill: #606266 !important;
+}
+
+.editor-wrapper .w-e-toolbar button:hover svg {
+    fill: #409eff !important;
+}
+
+/* 下拉菜单按钮样式 */
+.editor-wrapper .w-e-bar-item button {
+    min-width: 28px !important;
+}
+
+/* 下拉菜单按钮（更多）特殊样式 */
+.editor-wrapper .w-e-bar-item button[title="更多"],
+.editor-wrapper .w-e-bar-item button[data-menu-key="more-menus"],
+.editor-wrapper .w-e-bar-item button[title="more-menus"] {
+    background: #f5f7fa !important;
+    border-color: #dcdfe6 !important;
+    padding: 3px 8px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+}
+
+.editor-wrapper .w-e-bar-item button[title="more-menus"]:hover,
+.editor-wrapper .w-e-bar-item button[title="更多"]:hover {
+    background: #ecf5ff !important;
+    border-color: #b3d8ff !important;
+}
+
+/* 确保更多按钮的图标显示 */
+.editor-wrapper .w-e-bar-item button[title="more-menus"] svg,
+.editor-wrapper .w-e-bar-item button[title="更多"] svg {
+    fill: #606266 !important;
+}
+
+.editor-wrapper .w-e-bar-item button[title="more-menus"]:hover svg,
+.editor-wrapper .w-e-bar-item button[title="更多"]:hover svg {
+    fill: #409eff !important;
+}
+
+/* 强制显示更多按钮 */
+.editor-wrapper .w-e-bar-item {
+    display: inline-block !important;
+}
+
+.editor-wrapper .w-e-bar-item:last-child {
+    margin-left: auto !important;
+}
+
+/* 下拉菜单样式优化 */
+.editor-wrapper .w-e-bar-item {
+    display: inline-block !important;
+    margin-right: 2px !important;
+}
+
+/* 下拉面板样式 */
+.editor-wrapper .w-e-drop-panel,
+.editor-wrapper .w-e-bar-tooltip {
+    position: absolute !important;
+    top: 100% !important;
+    left: 0 !important;
+    z-index: 100000 !important;
+    background: white !important;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15) !important;
+    border-radius: 4px !important;
+    padding: 8px !important;
+    min-width: 200px !important;
+    border: 1px solid #e4e7ed !important;
+    overflow: visible !important;
+}
+
+/* 确保下拉面板在所有元素之上 */
+.case-library-page .el-dialog {
+    overflow: visible !important;
+}
+
+.case-library-page .el-dialog__body {
+    overflow: visible !important;
+    padding: 20px !important;
+}
+
+/* 编辑器容器也需要 overflow: visible */
+.case-library-page .editor-wrapper {
+    overflow: visible !important;
+}
+
+.case-library-page .editor-toolbar {
+    overflow: visible !important;
+}
+
+/* 必须加 !important，覆盖 Element UI 自带样式 */
+.case-library-page .el-dialog__body {
+  overflow: visible !important; /* 关键：防止裁剪编辑器下半部分 */
+  padding: 20px !important;
+}
+
+/* 强制编辑器整个区域可点击 */
+.case-library-page .w-e-text-container {
+  height: auto !important; /* 取消固定高度 */
+  min-height: 300px !important; /* 确保最小高度 */
+  overflow: visible !important; /* 不让内容被裁剪 */
+  position: relative !important;
+  z-index: 10 !important; /* 提升层级，防止被其他元素挡 */
+}
+
+/* 确保可编辑层铺满容器 */
+.case-library-page .w-e-text {
+  height: 100% !important;
+  min-height: 300px !important;
+  overflow: visible !important;
+}
+
+/* 下拉菜单项样式 */
+.editor-wrapper .w-e-drop-panel .w-e-menu-item {
+    padding: 8px 12px !important;
+    cursor: pointer !important;
+    border-radius: 3px !important;
+    transition: all 0.2s !important;
+}
+
+.editor-wrapper .w-e-drop-panel .w-e-menu-item:hover {
+    background: #f5f7fa !important;
+}
+
+/* 下拉菜单中的图标 */
+.editor-wrapper .w-e-drop-panel .w-e-menu-item svg {
+    margin-right: 8px !important;
+}
+
+/* 隐藏溢出内容的下拉框 */
+.toolbar-overflow-menu {
+    display: inline-block;
+    margin-left: auto;
+}
+
+/* 滚动条样式 */
+.editor-wrapper .editor-toolbar::-webkit-scrollbar {
+    height: 6px;
+}
+
+.editor-wrapper .editor-toolbar::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 3px;
+}
+
+.editor-wrapper .editor-toolbar::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 3px;
+}
+
+.editor-wrapper .editor-toolbar::-webkit-scrollbar-thumb:hover {
+    background: #a8a8a8;
+}
+
+.editor-wrapper .editor-content {
+    background: #fff;
+    border: none !important;
+    cursor: text !important;
+}
+
+/* 编辑器工具栏样式 */
+.case-library-page .editor-toolbar {
+    padding: 8px;
+    background: #f5f7fa;
+    border-bottom: 1px solid #e4e7ed;
+    display: flex;
+    gap: 4px;
+}
+
+.case-library-page .editor-toolbar .el-button {
+    width: 28px;
+    height: 28px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.case-library-page .editor-toolbar .el-button i {
+    font-size: 14px;
+    color: #606266;
+}
+
+.case-library-page .editor-toolbar .el-button:hover {
+    background: #ecf5ff;
+    border-color: #b3d8ff;
+}
+
+.case-library-page .editor-toolbar .el-button:hover i {
+    color: #409eff;
+}
+
+/* 步骤输入样式 */
+.steps-container {
+    width: 100%;
+}
+
+.step-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 12px;
+    padding: 12px;
+    background: #fafafa;
+    border-radius: 4px;
+    transition: all 0.3s;
+}
+
+.step-item:hover {
+    background: #f5f7fa;
+}
+
+.step-number {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #409eff 0%, #66b1ff 100%);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: bold;
+    flex-shrink: 0;
+    box-shadow: 0 2px 4px rgba(64, 158, 255, 0.3);
+}
+
+.step-inputs {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.case-library-page .step-input {
+    width: 100%;
+}
+
+.case-library-page .add-step-btn {
+    margin-top: 8px;
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-size: 13px;
+}
+
+/* 删除步骤按钮 */
+.case-library-page .remove-step-btn {
+    margin-left: 12px;
+    flex-shrink: 0;
+    align-self: center;
+}
+
+/* 对话框底部样式 */
+.case-library-page .dialog-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.case-library-page .dialog-footer-left {
+    display: flex;
+    align-items: center;
+}
+
+.case-library-page .dialog-footer-right {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.module-item-count {
+    font-size: 12px;
+    color: #909399;
+}
+
+.module-item.active .module-item-count {
+    color: #409eff;
+}
+
+/* 右侧内容区 */
+.case-content-panel {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+/* 工具栏 */
+.case-toolbar {
+    padding: 16px 20px;
+    border-bottom: 1px solid #e4e7ed;
+    background: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+}
+
+.case-toolbar-left {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    flex: 1;
+}
+
+.case-toolbar-right {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.search-input {
+    width: 250px;
+}
+
+/* 表格区域 */
+.case-table-container {
+    flex: 1;
+    overflow: auto;
+    padding: 0;
+}
+
+.case-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.case-table thead {
+    position: sticky;
+    top: 0;
+    background: #fafafa;
+    z-index: 10;
+}
+
+.case-table th {
+    padding: 12px 16px;
+    text-align: left;
+    font-size: 14px;
+    font-weight: 500;
+    color: #606266;
+    border-bottom: 1px solid #ebeef5;
+    background: #fafafa;
+}
+
+.case-table td {
+    padding: 14px 16px;
+    border-bottom: 1px solid #ebeef5;
+    font-size: 14px;
+    color: #606266;
+}
+
+.case-table tbody tr:hover {
+    background: #f5f7fa;
+}
+
+/* 状态标签 */
+.status-tag {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.status-tag.active {
+    background: #f0f9eb;
+    color: #67c23a;
+}
+
+.status-tag.inactive {
+    background: #f4f4f5;
+    color: #909399;
+}
+
+.priority-tag {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.priority-tag.p0 {
+    background: #fef0f0;
+    color: #f56c6c;
+}
+
+.priority-tag.p1 {
+    background: #fdf6ec;
+    color: #e6a23c;
+}
+
+.priority-tag.p2 {
+    background: #f4f4f5;
+    color: #909399;
+}
+
+.priority-tag.p3 {
+    background: #ecf5ff;
+    color: #409eff;
+}
+
+/* 分页 */
+.case-pagination {
+    padding: 16px 20px;
+    border-top: 1px solid #e4e7ed;
+    background: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.pagination-info {
+    font-size: 14px;
+    color: #606266;
+}
+
+/* 空状态 */
+.empty-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 20px;
+    color: #909399;
+}
+
+.empty-state i {
+    font-size: 64px;
+    margin-bottom: 16px;
+    color: #c0c4cc;
+}
+
+.empty-state-title {
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+.empty-state-desc {
+    font-size: 14px;
+}
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="case-library-page" id="app">
+    <div class="case-library-container">
+        <!-- 左侧模块树 -->
+        <div class="module-tree-panel">
+            <div class="module-tree-header">
+                <span class="module-tree-title">模块</span>
+                <button class="module-add-btn" @click="showCreateModuleDialog" title="新建模块">
+                    <i class="fas fa-plus"></i>
+                </button>
+            </div>
+            <div class="module-tree-content">
+                <div class="module-item" :class="{ active: selectedModule === 'all' }" @click="selectModule('all')">
+                    <div class="module-item-info">
+                        <i class="fas fa-folder"></i>
+                        <span>所有用例</span>
+                    </div>
+                    <span class="module-item-count">({{ totalCases }})</span>
+                </div>
+                <div class="module-item" :class="{ active: selectedModule === 'no_module' }" @click="selectModule('no_module')">
+                    <div class="module-item-info">
+                        <i class="fas fa-folder-open"></i>
+                        <span>无所属模块</span>
+                    </div>
+                    <span class="module-item-count">({{ noModuleCount }})</span>
+                </div>
+                <!-- 递归渲染模块树 -->
+                <module-tree-item 
+                    v-for="module in moduleStats" 
+                    :key="module.id" 
+                    :module="module"
+                    :selected-module="selectedModule"
+                    @select="selectModule"
+                    @create-sub="showCreateSubModule"
+                    @edit="showEditModuleDialog"
+                    @delete="deleteModule">
+                </module-tree-item>
+            </div>
+        </div>
+
+        <!-- 右侧内容区 -->
+        <div class="case-content-panel">
+            <!-- 工具栏 -->
+            <div class="case-toolbar">
+                <div class="case-toolbar-left">
+                    <el-input 
+                        v-model="searchText"
+                        placeholder="搜索用例标题或编号"
+                        class="search-input"
+                        clearable
+                        @keyup.enter="loadCases"
+                    >
+                        <template #prefix>
+                            <i class="fas fa-search"></i>
+                        </template>
+                    </el-input>
+                    <el-button @click="loadCases">查询</el-button>
+                    <el-button @click="exportCases">导出</el-button>
+                </div>
+                <div class="case-toolbar-right">
+                    <el-select v-model="filterMaintainer" placeholder="维护人" clearable @change="loadCases">
+                        <el-option label="维护人" value=""></el-option>
+                    </el-select>
+                    <el-select v-model="filterPriority" placeholder="优先级" clearable @change="loadCases">
+                        <el-option label="优先级" value=""></el-option>
+                        <el-option label="P0" value="p0"></el-option>
+                        <el-option label="P1" value="p1"></el-option>
+                        <el-option label="P2" value="p2"></el-option>
+                        <el-option label="P3" value="p3"></el-option>
+                    </el-select>
+                    <el-select v-model="filterType" placeholder="类型" clearable @change="loadCases">
+                        <el-option label="类型" value=""></el-option>
+                        <el-option label="功能测试" value="functional"></el-option>
+                        <el-option label="性能测试" value="performance"></el-option>
+                        <el-option label="兼容性测试" value="compatibility"></el-option>
+                        <el-option label="安全性测试" value="security"></el-option>
+                        <el-option label="UI 测试" value="ui"></el-option>
+                        <el-option label="接口测试" value="api"></el-option>
+                    </el-select>
+                    <el-button type="primary" @click="showCreateDialog">
+                        <i class="fas fa-plus"></i> 新建用例
+                    </el-button>
+                </div>
+            </div>
+
+            <!-- 表格 -->
+            <div class="case-table-container">
+                <table class="case-table" v-if="cases.length > 0">
+                    <thead>
+                        <tr>
+                            <th width="50">
+                                <input type="checkbox" @change="toggleSelectAll">
+                            </th>
+                            <th width="120">编号</th>
+                            <th>标题</th>
+                            <th width="100">维护人</th>
+                            <th width="80">优先级</th>
+                            <th width="100">类型</th>
+                            <th width="100">状态</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr v-for="caseItem in cases" :key="caseItem.id" @click="selectCase(caseItem)">
+                            <td>
+                                <input type="checkbox" :value="caseItem.id" v-model="selectedCases">
+                            </td>
+                            <td>{{ caseItem.case_number }}</td>
+                            <td>{{ caseItem.title }}</td>
+                            <td>{{ caseItem.maintainer }}</td>
+                            <td>
+                                <span class="priority-tag" :class="caseItem.priority">
+                                    {{ caseItem.priority_display }}
+                                </span>
+                            </td>
+                            <td>{{ caseItem.case_type_display }}</td>
+                            <td>
+                                <span class="status-tag" :class="caseItem.status">
+                                    {{ caseItem.status_display }}
+                                </span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="empty-state" v-else>
+                    <i class="fas fa-inbox"></i>
+                    <div class="empty-state-title">暂无用例</div>
+                    <div class="empty-state-desc">点击右上角创建第一个用例</div>
+                </div>
+            </div>
+
+            <!-- 分页 -->
+            <div class="case-pagination" v-if="cases.length > 0">
+                <div class="pagination-info">
+                    第 {{ currentPage }} 页  共计 {{ total }} 条
+                </div>
+                <div>
+                    <el-pagination
+                        layout="prev, pager, next"
+                        :total="total"
+                        :page-size="pageSize"
+                        :current-page="currentPage"
+                        @current-change="handlePageChange"
+                    />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 新建模块对话框 -->
+<el-dialog v-model="createModuleDialogVisible" title="新建模块" width="400px">
+    <el-form :model="newModule" label-width="80px">
+        <el-form-item label="模块名称" required>
+            <el-input 
+                v-model="newModule.name" 
+                placeholder="请输入模块名称"
+                @keyup.enter="createModule"
+            ></el-input>
+        </el-form-item>
+    </el-form>
+    <template #footer>
+        <el-button @click="createModuleDialogVisible = false">取消</el-button>
+        <el-button type="primary" @click="createModule">确定</el-button>
+    </template>
+</el-dialog>
+
+<!-- 编辑模块对话框 -->
+<el-dialog v-model="editModuleDialogVisible" title="编辑模块" width="400px">
+    <el-form :model="editModule" label-width="80px">
+        <el-form-item label="模块名称" required>
+            <el-input 
+                v-model="editModule.name" 
+                placeholder="请输入模块名称"
+                @keyup.enter="updateModule"
+            ></el-input>
+        </el-form-item>
+    </el-form>
+    <template #footer>
+        <el-button @click="editModuleDialogVisible = false">取消</el-button>
+        <el-button type="primary" @click="updateModule">保存</el-button>
+    </template>
+</el-dialog>
+
+<!-- 创建用例对话框 -->
+<el-dialog v-model="dialogVisible" title="新增用例" width="1000px" top="5vh">
+    <el-form :model="newCase" label-width="110px" :rules="caseRules" ref="caseFormRef">
+        <el-row :gutter="24">
+            <!-- 左列 -->
+            <el-col :span="14">
+                <el-form-item label="用例名称" required>
+                    <el-input 
+                        v-model="newCase.title" 
+                        placeholder="输入用例名称"
+                        type="textarea"
+                        :rows="2"
+                        maxlength="500"
+                        show-word-limit>
+                    </el-input>
+                </el-form-item>
+                
+                <el-form-item label="前置条件">
+                    <el-input 
+                        v-model="newCase.preconditions" 
+                        type="textarea"
+                        :rows="8"
+                        placeholder="请输入前置条件（支持简单的文本格式，如换行、缩进等）">
+                    </el-input>
+                </el-form-item>
+                
+                <el-form-item label="操作步骤">
+                    <div class="steps-container">
+                        <div v-for="(step, index) in newCase.test_steps_list" :key="index" class="step-item">
+                            <div class="step-number" v-text="index + 1"></div>
+                            <div class="step-inputs">
+                                <el-input 
+                                    v-model="step.step_desc" 
+                                    placeholder="输入步骤描述"
+                                    class="step-input">
+                                </el-input>
+                                <el-input 
+                                    v-model="step.expected_result" 
+                                    placeholder="输入预期结果"
+                                    class="step-input">
+                                </el-input>
+                            </div>
+                            <!-- 删除按钮 -->
+                            <el-button 
+                                type="danger" 
+                                size="small" 
+                                @click="removeStep(index)"
+                                class="remove-step-btn"
+                                :disabled="newCase.test_steps_list.length <= 1">
+                                <i class="fas fa-trash"></i>
+                            </el-button>
+                        </div>
+                    </div>
+                    <el-button type="primary" size="small" @click="addStep" class="add-step-btn">
+                        <i class="fas fa-plus"></i> 添加步骤
+                    </el-button>
+                </el-form-item>
+                
+                <el-form-item label="备注">
+                    <el-input 
+                        v-model="newCase.remark" 
+                        type="textarea"
+                        :rows="8"
+                        placeholder="请输入备注（支持简单的文本格式，如换行、缩进等）">
+                    </el-input>
+                </el-form-item>
+            </el-col>
+            
+            <!-- 右列 -->
+            <el-col :span="10">
+                <el-form-item label="所属用例库" required style="margin-bottom: 32px;">
+                    <el-input v-model="newCase.project_name" disabled placeholder="所属用例库"></el-input>
+                </el-form-item>
+                
+                <el-form-item label="所属模块" required style="margin-bottom: 32px;">
+                    <el-cascader
+                        v-model="newCase.module_value"
+                        :options="moduleCascaderOptions"
+                        :props="{ value: 'value', label: 'name', children: 'children', checkStrictly: true, emitPath: false }"
+                        placeholder="请选择所属模块"
+                        style="width: 100%;"
+                        filterable
+                        clearable>
+                    </el-cascader>
+                </el-form-item>
+                
+                <el-form-item label="用例类型" style="margin-bottom: 32px;">
+                    <el-select v-model="newCase.case_type" class="w-full" placeholder="选择用例类型">
+                        <el-option label="功能测试" value="functional"></el-option>
+                        <el-option label="性能测试" value="performance"></el-option>
+                        <el-option label="兼容性测试" value="compatibility"></el-option>
+                        <el-option label="安全性测试" value="security"></el-option>
+                        <el-option label="UI 测试" value="ui"></el-option>
+                        <el-option label="接口测试" value="api"></el-option>
+                    </el-select>
+                </el-form-item>
+                
+                <el-form-item label="优先级" style="margin-bottom: 32px;">
+                    <el-select v-model="newCase.priority" class="w-full" placeholder="选择优先级">
+                        <el-option label="P0" value="p0"></el-option>
+                        <el-option label="P1" value="p1"></el-option>
+                        <el-option label="P2" value="p2"></el-option>
+                        <el-option label="P3" value="p3"></el-option>
+                    </el-select>
+                </el-form-item>
+            </el-col>
+        </el-row>
+    </el-form>
+    <template #footer>
+        <div class="dialog-footer">
+            <div class="dialog-footer-left">
+                <el-checkbox v-model="newCase.continue_create" border>继续新建下一个</el-checkbox>
+            </div>
+            <div class="dialog-footer-right">
+                <el-button @click="handleCloseDialog">取消</el-button>
+                <el-button type="primary" @click="createCase">确定</el-button>
+            </div>
+        </div>
+    </template>
+</el-dialog>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'js/case_library.js' %}"></script>
+{% endblock %}

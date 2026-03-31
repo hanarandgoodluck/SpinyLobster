@@ -9,14 +9,14 @@ import re
 class TestCaseGeneratorAgent:
     """测试用例生成Agent"""
     
-    def __init__(self, llm_service: BaseLLMService, knowledge_service: KnowledgeService, case_design_methods: List[str], case_categories: List[str], case_count: int = 10):
+    def __init__(self, llm_service: BaseLLMService, knowledge_service: KnowledgeService, case_design_methods: List[str], case_categories: List[str], case_count: str = "10"):
         self.llm_service = llm_service
         self.case_design_methods = case_design_methods
         self.case_categories = case_categories
-        self.case_count = case_count
+        self.case_count = case_count  # 现在是字符串类型，可以是 'auto' 或数字字符串
         self.knowledge_service = knowledge_service
         self.prompt = TestCaseGeneratorPrompt()
-        self.logger = get_logger(self.__class__.__name__)  # 添加logger
+        self.logger = get_logger(self.__class__.__name__)  # 添加 logger
     
 
     async def async_generate(self, input_text: str, input_type: str = "requirement") -> List[Dict[str, Any]]:
