@@ -5579,3 +5579,800 @@ django.template.exceptions.TemplateDoesNotExist: case_library.html
 2026-03-31 23:24:22,166 - apps.ai_agents.test_case_reviewer.views - WARNING - [thread=6168 MainThread] - �޷����� Knowledge ����No installed app with label 'knowledge'.
 2026-03-31 23:24:32,633 - django.request - WARNING - [thread=13988 Thread-5 (process_request_thread)] - Not Found: /@vite/client
 2026-03-31 23:26:10,116 - django.request - WARNING - [thread=18460 Thread-6 (process_request_thread)] - Not Found: /@vite/client
+2026-04-01 10:15:35,942 - django.utils.autoreload - INFO - [thread=8569212736 MainThread] - Watching for file changes with StatReloader
+2026-04-01 10:15:41,831 - LLMServiceFactory - INFO - [thread=6172471296 django-main-thread] - 创建 LLM 服务：provider=deepseek
+2026-04-01 10:15:41,910 - LLMServiceFactory - WARNING - [thread=6172471296 django-main-thread] - 从数据库加载 AI 配置失败：(1045, "Access denied for user 'root'@'localhost' (using password: YES)")，使用 settings.py 配置
+2026-04-01 10:15:42,189 - apps.core.views - WARNING - [thread=6172471296 django-main-thread] - 无法创建 LLM 服务：DeepSeek API key is required. Set it via DEEPSEEK_API_KEY environment variable or pass it directly.
+2026-04-01 10:15:42,189 - apps.core.views - WARNING - [thread=6172471296 django-main-thread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-04-01 10:15:42,477 - LLMServiceFactory - INFO - [thread=6172471296 django-main-thread] - 创建 LLM 服务：provider=deepseek
+2026-04-01 10:15:42,484 - LLMServiceFactory - WARNING - [thread=6172471296 django-main-thread] - 从数据库加载 AI 配置失败：(1045, "Access denied for user 'root'@'localhost' (using password: YES)")，使用 settings.py 配置
+2026-04-01 10:15:42,485 - apps.ai_agents.prd_analyzer.views - WARNING - [thread=6172471296 django-main-thread] - 无法创建 LLM 服务：DeepSeek API key is required. Set it via DEEPSEEK_API_KEY environment variable or pass it directly.
+2026-04-01 10:15:42,486 - apps.ai_agents.test_case_generator.views - WARNING - [thread=6172471296 django-main-thread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-04-01 10:15:42,498 - LLMServiceFactory - INFO - [thread=6172471296 django-main-thread] - 创建 LLM 服务：provider=deepseek
+2026-04-01 10:15:42,505 - LLMServiceFactory - WARNING - [thread=6172471296 django-main-thread] - 从数据库加载 AI 配置失败：(1045, "Access denied for user 'root'@'localhost' (using password: YES)")，使用 settings.py 配置
+2026-04-01 10:15:42,505 - apps.ai_agents.test_case_reviewer.views - WARNING - [thread=6172471296 django-main-thread] - 无法创建 LLM 服务：DeepSeek API key is required. Set it via DEEPSEEK_API_KEY environment variable or pass it directly.
+2026-04-01 10:15:42,506 - apps.ai_agents.test_case_reviewer.views - WARNING - [thread=6172471296 django-main-thread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-04-01 10:17:07,203 - django.utils.autoreload - INFO - [thread=8569212736 MainThread] - /Users/gb/Desktop/mypy/SpinyLobster/config/settings.py changed, reloading.
+2026-04-01 10:17:11,874 - django.utils.autoreload - INFO - [thread=8569212736 MainThread] - Watching for file changes with StatReloader
+2026-04-01 10:17:13,907 - django.utils.autoreload - INFO - [thread=8569212736 MainThread] - Watching for file changes with StatReloader
+2026-04-01 10:17:15,219 - LLMServiceFactory - INFO - [thread=8569212736 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-04-01 10:17:15,321 - LLMServiceFactory - WARNING - [thread=8569212736 MainThread] - 数据库中 AI 配置的 API Key 为空，使用 settings.py 配置
+2026-04-01 10:17:15,585 - apps.core.views - WARNING - [thread=8569212736 MainThread] - 无法创建 LLM 服务：DeepSeek API key is required. Set it via DEEPSEEK_API_KEY environment variable or pass it directly.
+2026-04-01 10:17:15,585 - apps.core.views - WARNING - [thread=8569212736 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-04-01 10:17:15,869 - LLMServiceFactory - INFO - [thread=8569212736 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-04-01 10:17:15,871 - LLMServiceFactory - WARNING - [thread=8569212736 MainThread] - 数据库中 AI 配置的 API Key 为空，使用 settings.py 配置
+2026-04-01 10:17:15,871 - apps.ai_agents.prd_analyzer.views - WARNING - [thread=8569212736 MainThread] - 无法创建 LLM 服务：DeepSeek API key is required. Set it via DEEPSEEK_API_KEY environment variable or pass it directly.
+2026-04-01 10:17:15,872 - apps.ai_agents.test_case_generator.views - WARNING - [thread=8569212736 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-04-01 10:17:15,883 - LLMServiceFactory - INFO - [thread=8569212736 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-04-01 10:17:15,885 - LLMServiceFactory - WARNING - [thread=8569212736 MainThread] - 数据库中 AI 配置的 API Key 为空，使用 settings.py 配置
+2026-04-01 10:17:15,885 - apps.ai_agents.test_case_reviewer.views - WARNING - [thread=8569212736 MainThread] - 无法创建 LLM 服务：DeepSeek API key is required. Set it via DEEPSEEK_API_KEY environment variable or pass it directly.
+2026-04-01 10:17:15,885 - apps.ai_agents.test_case_reviewer.views - WARNING - [thread=8569212736 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-04-01 10:17:16,744 - LLMServiceFactory - INFO - [thread=6142341120 django-main-thread] - 创建 LLM 服务：provider=deepseek
+2026-04-01 10:17:16,757 - LLMServiceFactory - WARNING - [thread=6142341120 django-main-thread] - 数据库中 AI 配置的 API Key 为空，使用 settings.py 配置
+2026-04-01 10:17:16,944 - apps.core.views - WARNING - [thread=6142341120 django-main-thread] - 无法创建 LLM 服务：DeepSeek API key is required. Set it via DEEPSEEK_API_KEY environment variable or pass it directly.
+2026-04-01 10:17:16,944 - apps.core.views - WARNING - [thread=6142341120 django-main-thread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-04-01 10:17:17,223 - LLMServiceFactory - INFO - [thread=6142341120 django-main-thread] - 创建 LLM 服务：provider=deepseek
+2026-04-01 10:17:17,226 - LLMServiceFactory - WARNING - [thread=6142341120 django-main-thread] - 数据库中 AI 配置的 API Key 为空，使用 settings.py 配置
+2026-04-01 10:17:17,226 - apps.ai_agents.prd_analyzer.views - WARNING - [thread=6142341120 django-main-thread] - 无法创建 LLM 服务：DeepSeek API key is required. Set it via DEEPSEEK_API_KEY environment variable or pass it directly.
+2026-04-01 10:17:17,226 - apps.ai_agents.test_case_generator.views - WARNING - [thread=6142341120 django-main-thread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-04-01 10:17:17,233 - LLMServiceFactory - INFO - [thread=6142341120 django-main-thread] - 创建 LLM 服务：provider=deepseek
+2026-04-01 10:17:17,234 - LLMServiceFactory - WARNING - [thread=6142341120 django-main-thread] - 数据库中 AI 配置的 API Key 为空，使用 settings.py 配置
+2026-04-01 10:17:17,234 - apps.ai_agents.test_case_reviewer.views - WARNING - [thread=6142341120 django-main-thread] - 无法创建 LLM 服务：DeepSeek API key is required. Set it via DEEPSEEK_API_KEY environment variable or pass it directly.
+2026-04-01 10:17:17,234 - apps.ai_agents.test_case_reviewer.views - WARNING - [thread=6142341120 django-main-thread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-04-01 10:17:47,783 - django.utils.autoreload - INFO - [thread=8569212736 MainThread] - Watching for file changes with StatReloader
+2026-04-01 10:17:51,163 - LLMServiceFactory - INFO - [thread=6109425664 django-main-thread] - 创建 LLM 服务：provider=deepseek
+2026-04-01 10:17:51,177 - LLMServiceFactory - WARNING - [thread=6109425664 django-main-thread] - 数据库中 AI 配置的 API Key 为空，使用 settings.py 配置
+2026-04-01 10:17:51,458 - apps.core.views - WARNING - [thread=6109425664 django-main-thread] - 无法创建 LLM 服务：DeepSeek API key is required. Set it via DEEPSEEK_API_KEY environment variable or pass it directly.
+2026-04-01 10:17:51,459 - apps.core.views - WARNING - [thread=6109425664 django-main-thread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-04-01 10:17:51,863 - LLMServiceFactory - INFO - [thread=6109425664 django-main-thread] - 创建 LLM 服务：provider=deepseek
+2026-04-01 10:17:51,866 - LLMServiceFactory - WARNING - [thread=6109425664 django-main-thread] - 数据库中 AI 配置的 API Key 为空，使用 settings.py 配置
+2026-04-01 10:17:51,866 - apps.ai_agents.prd_analyzer.views - WARNING - [thread=6109425664 django-main-thread] - 无法创建 LLM 服务：DeepSeek API key is required. Set it via DEEPSEEK_API_KEY environment variable or pass it directly.
+2026-04-01 10:17:51,870 - apps.ai_agents.test_case_generator.views - WARNING - [thread=6109425664 django-main-thread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-04-01 10:17:51,891 - LLMServiceFactory - INFO - [thread=6109425664 django-main-thread] - 创建 LLM 服务：provider=deepseek
+2026-04-01 10:17:51,894 - LLMServiceFactory - WARNING - [thread=6109425664 django-main-thread] - 数据库中 AI 配置的 API Key 为空，使用 settings.py 配置
+2026-04-01 10:17:51,894 - apps.ai_agents.test_case_reviewer.views - WARNING - [thread=6109425664 django-main-thread] - 无法创建 LLM 服务：DeepSeek API key is required. Set it via DEEPSEEK_API_KEY environment variable or pass it directly.
+2026-04-01 10:17:51,894 - apps.ai_agents.test_case_reviewer.views - WARNING - [thread=6109425664 django-main-thread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-04-01 10:19:17,395 - django.request - WARNING - [thread=6127972352 Thread-1 (process_request_thread)] - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2026-04-01 10:19:20,806 - django.request - WARNING - [thread=6127972352 Thread-1 (process_request_thread)] - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2026-04-01 10:20:34,923 - django.utils.autoreload - INFO - [thread=8569212736 MainThread] - /Users/gb/Desktop/mypy/SpinyLobster/apps/core/views.py changed, reloading.
+2026-04-01 10:20:41,010 - django.utils.autoreload - INFO - [thread=8569212736 MainThread] - Watching for file changes with StatReloader
+2026-04-01 10:20:44,846 - LLMServiceFactory - INFO - [thread=6117715968 django-main-thread] - 创建 LLM 服务：provider=deepseek
+2026-04-01 10:20:44,882 - LLMServiceFactory - WARNING - [thread=6117715968 django-main-thread] - 数据库中 AI 配置的 API Key 为空，使用 settings.py 配置
+2026-04-01 10:20:45,186 - apps.core.views - WARNING - [thread=6117715968 django-main-thread] - 无法创建 LLM 服务：DeepSeek API key is required. Set it via DEEPSEEK_API_KEY environment variable or pass it directly.
+2026-04-01 10:20:45,187 - apps.core.views - WARNING - [thread=6117715968 django-main-thread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-04-01 10:20:45,595 - LLMServiceFactory - INFO - [thread=6117715968 django-main-thread] - 创建 LLM 服务：provider=deepseek
+2026-04-01 10:20:45,597 - LLMServiceFactory - WARNING - [thread=6117715968 django-main-thread] - 数据库中 AI 配置的 API Key 为空，使用 settings.py 配置
+2026-04-01 10:20:45,597 - apps.ai_agents.prd_analyzer.views - WARNING - [thread=6117715968 django-main-thread] - 无法创建 LLM 服务：DeepSeek API key is required. Set it via DEEPSEEK_API_KEY environment variable or pass it directly.
+2026-04-01 10:20:45,599 - apps.ai_agents.test_case_generator.views - WARNING - [thread=6117715968 django-main-thread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-04-01 10:20:45,612 - LLMServiceFactory - INFO - [thread=6117715968 django-main-thread] - 创建 LLM 服务：provider=deepseek
+2026-04-01 10:20:45,614 - LLMServiceFactory - WARNING - [thread=6117715968 django-main-thread] - 数据库中 AI 配置的 API Key 为空，使用 settings.py 配置
+2026-04-01 10:20:45,614 - apps.ai_agents.test_case_reviewer.views - WARNING - [thread=6117715968 django-main-thread] - 无法创建 LLM 服务：DeepSeek API key is required. Set it via DEEPSEEK_API_KEY environment variable or pass it directly.
+2026-04-01 10:20:45,614 - apps.ai_agents.test_case_reviewer.views - WARNING - [thread=6117715968 django-main-thread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-04-01 10:21:56,258 - django.utils.autoreload - INFO - [thread=8569212736 MainThread] - /Users/gb/Desktop/mypy/SpinyLobster/apps/core/views.py changed, reloading.
+2026-04-01 10:22:00,717 - django.utils.autoreload - INFO - [thread=8569212736 MainThread] - Watching for file changes with StatReloader
+2026-04-01 10:22:04,622 - LLMServiceFactory - INFO - [thread=6143963136 django-main-thread] - 创建 LLM 服务：provider=deepseek
+2026-04-01 10:22:04,644 - LLMServiceFactory - WARNING - [thread=6143963136 django-main-thread] - 数据库中 AI 配置的 API Key 为空，使用 settings.py 配置
+2026-04-01 10:22:04,936 - apps.core.views - WARNING - [thread=6143963136 django-main-thread] - 无法创建 LLM 服务：DeepSeek API key is required. Set it via DEEPSEEK_API_KEY environment variable or pass it directly.
+2026-04-01 10:22:04,937 - apps.core.views - WARNING - [thread=6143963136 django-main-thread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-04-01 10:22:05,301 - LLMServiceFactory - INFO - [thread=6143963136 django-main-thread] - 创建 LLM 服务：provider=deepseek
+2026-04-01 10:22:05,327 - LLMServiceFactory - WARNING - [thread=6143963136 django-main-thread] - 数据库中 AI 配置的 API Key 为空，使用 settings.py 配置
+2026-04-01 10:22:05,328 - apps.ai_agents.prd_analyzer.views - WARNING - [thread=6143963136 django-main-thread] - 无法创建 LLM 服务：DeepSeek API key is required. Set it via DEEPSEEK_API_KEY environment variable or pass it directly.
+2026-04-01 10:22:05,330 - apps.ai_agents.test_case_generator.views - WARNING - [thread=6143963136 django-main-thread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-04-01 10:22:05,346 - LLMServiceFactory - INFO - [thread=6143963136 django-main-thread] - 创建 LLM 服务：provider=deepseek
+2026-04-01 10:22:05,348 - LLMServiceFactory - WARNING - [thread=6143963136 django-main-thread] - 数据库中 AI 配置的 API Key 为空，使用 settings.py 配置
+2026-04-01 10:22:05,349 - apps.ai_agents.test_case_reviewer.views - WARNING - [thread=6143963136 django-main-thread] - 无法创建 LLM 服务：DeepSeek API key is required. Set it via DEEPSEEK_API_KEY environment variable or pass it directly.
+2026-04-01 10:22:05,349 - apps.ai_agents.test_case_reviewer.views - WARNING - [thread=6143963136 django-main-thread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-04-01 10:22:13,879 - django.request - WARNING - [thread=6341865472 Thread-3 (process_request_thread)] - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2026-04-01 10:22:17,083 - django.request - WARNING - [thread=6161936384 Thread-1 (process_request_thread)] - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2026-04-01 10:24:03,506 - django.request - WARNING - [thread=6375518208 Thread-13 (process_request_thread)] - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2026-04-01 10:24:05,610 - django.request - WARNING - [thread=6325039104 Thread-14 (process_request_thread)] - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2026-04-01 10:24:06,778 - django.request - WARNING - [thread=6375518208 Thread-13 (process_request_thread)] - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2026-04-01 10:24:07,493 - django.request - WARNING - [thread=6341865472 Thread-6 (process_request_thread)] - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2026-04-01 10:24:09,824 - apps.ai_agents.test_case_generator.views - INFO - [thread=6375518208 Thread-13 (process_request_thread)] - ===== 进入 generate 视图函数 =====
+2026-04-01 10:24:09,825 - apps.ai_agents.test_case_generator.views - INFO - [thread=6375518208 Thread-13 (process_request_thread)] - 请求方法：GET
+2026-04-01 10:24:09,835 - apps.ai_agents.test_case_generator.views - INFO - [thread=6375518208 Thread-13 (process_request_thread)] - 从数据库加载 AI 配置成功，模型：
+2026-04-01 10:24:09,883 - django.request - WARNING - [thread=6375518208 Thread-13 (process_request_thread)] - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2026-04-01 10:24:12,044 - django.request - WARNING - [thread=6358691840 Thread-12 (process_request_thread)] - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2026-04-01 10:27:13,500 - django.request - WARNING - [thread=6392344576 Thread-18 (process_request_thread)] - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2026-04-01 10:27:17,316 - django.request - WARNING - [thread=6325039104 Thread-14 (process_request_thread)] - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2026-04-01 10:27:31,724 - apps.ai_agents.test_case_generator.views - INFO - [thread=6358691840 Thread-22 (process_request_thread)] - ===== 进入 generate 视图函数 =====
+2026-04-01 10:27:31,725 - apps.ai_agents.test_case_generator.views - INFO - [thread=6358691840 Thread-22 (process_request_thread)] - 请求方法：GET
+2026-04-01 10:27:31,729 - apps.ai_agents.test_case_generator.views - INFO - [thread=6358691840 Thread-22 (process_request_thread)] - 从数据库加载 AI 配置成功，模型：
+2026-04-01 10:30:28,948 - django.utils.autoreload - INFO - [thread=8569212736 MainThread] - /Users/gb/Desktop/mypy/SpinyLobster/apps/ai_agents/case_library/views.py changed, reloading.
+2026-04-01 10:30:32,890 - django.utils.autoreload - INFO - [thread=8569212736 MainThread] - Watching for file changes with StatReloader
+2026-04-01 10:30:36,679 - LLMServiceFactory - INFO - [thread=6120894464 django-main-thread] - 创建 LLM 服务：provider=deepseek
+2026-04-01 10:30:36,689 - LLMServiceFactory - WARNING - [thread=6120894464 django-main-thread] - 数据库中 AI 配置的 API Key 为空，使用 settings.py 配置
+2026-04-01 10:30:36,950 - apps.core.views - WARNING - [thread=6120894464 django-main-thread] - 无法创建 LLM 服务：DeepSeek API key is required. Set it via DEEPSEEK_API_KEY environment variable or pass it directly.
+2026-04-01 10:30:36,950 - apps.core.views - WARNING - [thread=6120894464 django-main-thread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-04-01 10:30:37,230 - LLMServiceFactory - INFO - [thread=6120894464 django-main-thread] - 创建 LLM 服务：provider=deepseek
+2026-04-01 10:30:37,232 - LLMServiceFactory - WARNING - [thread=6120894464 django-main-thread] - 数据库中 AI 配置的 API Key 为空，使用 settings.py 配置
+2026-04-01 10:30:37,233 - apps.ai_agents.prd_analyzer.views - WARNING - [thread=6120894464 django-main-thread] - 无法创建 LLM 服务：DeepSeek API key is required. Set it via DEEPSEEK_API_KEY environment variable or pass it directly.
+2026-04-01 10:30:37,234 - apps.ai_agents.test_case_generator.views - WARNING - [thread=6120894464 django-main-thread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-04-01 10:30:37,243 - LLMServiceFactory - INFO - [thread=6120894464 django-main-thread] - 创建 LLM 服务：provider=deepseek
+2026-04-01 10:30:37,244 - LLMServiceFactory - WARNING - [thread=6120894464 django-main-thread] - 数据库中 AI 配置的 API Key 为空，使用 settings.py 配置
+2026-04-01 10:30:37,245 - apps.ai_agents.test_case_reviewer.views - WARNING - [thread=6120894464 django-main-thread] - 无法创建 LLM 服务：DeepSeek API key is required. Set it via DEEPSEEK_API_KEY environment variable or pass it directly.
+2026-04-01 10:30:37,245 - apps.ai_agents.test_case_reviewer.views - WARNING - [thread=6120894464 django-main-thread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-04-01 10:31:19,790 - django.utils.autoreload - INFO - [thread=8569212736 MainThread] - /Users/gb/Desktop/mypy/SpinyLobster/apps/ai_agents/case_library/views.py changed, reloading.
+2026-04-01 10:31:23,608 - django.utils.autoreload - INFO - [thread=8569212736 MainThread] - Watching for file changes with StatReloader
+2026-04-01 10:31:27,204 - LLMServiceFactory - INFO - [thread=6112505856 django-main-thread] - 创建 LLM 服务：provider=deepseek
+2026-04-01 10:31:27,231 - LLMServiceFactory - WARNING - [thread=6112505856 django-main-thread] - 数据库中 AI 配置的 API Key 为空，使用 settings.py 配置
+2026-04-01 10:31:27,491 - apps.core.views - WARNING - [thread=6112505856 django-main-thread] - 无法创建 LLM 服务：DeepSeek API key is required. Set it via DEEPSEEK_API_KEY environment variable or pass it directly.
+2026-04-01 10:31:27,491 - apps.core.views - WARNING - [thread=6112505856 django-main-thread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-04-01 10:31:27,817 - LLMServiceFactory - INFO - [thread=6112505856 django-main-thread] - 创建 LLM 服务：provider=deepseek
+2026-04-01 10:31:27,819 - LLMServiceFactory - WARNING - [thread=6112505856 django-main-thread] - 数据库中 AI 配置的 API Key 为空，使用 settings.py 配置
+2026-04-01 10:31:27,820 - apps.ai_agents.prd_analyzer.views - WARNING - [thread=6112505856 django-main-thread] - 无法创建 LLM 服务：DeepSeek API key is required. Set it via DEEPSEEK_API_KEY environment variable or pass it directly.
+2026-04-01 10:31:27,822 - apps.ai_agents.test_case_generator.views - WARNING - [thread=6112505856 django-main-thread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-04-01 10:31:27,834 - LLMServiceFactory - INFO - [thread=6112505856 django-main-thread] - 创建 LLM 服务：provider=deepseek
+2026-04-01 10:31:27,835 - LLMServiceFactory - WARNING - [thread=6112505856 django-main-thread] - 数据库中 AI 配置的 API Key 为空，使用 settings.py 配置
+2026-04-01 10:31:27,835 - apps.ai_agents.test_case_reviewer.views - WARNING - [thread=6112505856 django-main-thread] - 无法创建 LLM 服务：DeepSeek API key is required. Set it via DEEPSEEK_API_KEY environment variable or pass it directly.
+2026-04-01 10:31:27,835 - apps.ai_agents.test_case_reviewer.views - WARNING - [thread=6112505856 django-main-thread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-04-01 10:31:31,185 - django.request - ERROR - [thread=12901707776 Thread-1 (process_request_thread)] - Internal Server Error: /case_library/
+Traceback (most recent call last):
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/gb/Desktop/mypy/SpinyLobster/apps/ai_agents/case_library/views.py", line 294, in case_library_page
+    return render(request, 'case_library/case_library.html', context)
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/backends/django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/engine.py", line 186, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/base.py", line 157, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/base.py", line 199, in compile_nodelist
+    nodelist = parser.parse()
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/base.py", line 585, in parse
+    raise self.error(token, e)
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/base.py", line 583, in parse
+    compiled_result = compile_func(self, token)
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/loader_tags.py", line 307, in do_extends
+    nodelist = parser.parse()
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/base.py", line 585, in parse
+    raise self.error(token, e)
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/base.py", line 583, in parse
+    compiled_result = compile_func(self, token)
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/loader_tags.py", line 235, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/base.py", line 556, in parse
+    raise self.error(token, e)
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/base.py", line 554, in parse
+    filter_expression = self.compile_filter(token.contents)
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/base.py", line 676, in compile_filter
+    return FilterExpression(token, self)
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/base.py", line 748, in __init__
+    raise TemplateSyntaxError(
+    ...<2 lines>...
+    )
+django.template.exceptions.TemplateSyntaxError: Template: /Users/gb/Desktop/mypy/SpinyLobster/apps/ai_agents/case_library/templates/case_library/case_library.html, Could not parse some characters: row.priority_display| ||| row.priority || 'P2'
+2026-04-01 10:31:31,311 - django.request - WARNING - [thread=12901707776 Thread-1 (process_request_thread)] - Not Found: /favicon.ico
+2026-04-01 10:31:34,358 - django.request - ERROR - [thread=12901707776 Thread-1 (process_request_thread)] - Internal Server Error: /case_library/
+Traceback (most recent call last):
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/gb/Desktop/mypy/SpinyLobster/apps/ai_agents/case_library/views.py", line 294, in case_library_page
+    return render(request, 'case_library/case_library.html', context)
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/backends/django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/engine.py", line 186, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/base.py", line 157, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/base.py", line 199, in compile_nodelist
+    nodelist = parser.parse()
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/base.py", line 585, in parse
+    raise self.error(token, e)
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/base.py", line 583, in parse
+    compiled_result = compile_func(self, token)
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/loader_tags.py", line 307, in do_extends
+    nodelist = parser.parse()
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/base.py", line 585, in parse
+    raise self.error(token, e)
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/base.py", line 583, in parse
+    compiled_result = compile_func(self, token)
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/loader_tags.py", line 235, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/base.py", line 556, in parse
+    raise self.error(token, e)
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/base.py", line 554, in parse
+    filter_expression = self.compile_filter(token.contents)
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/base.py", line 676, in compile_filter
+    return FilterExpression(token, self)
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/base.py", line 748, in __init__
+    raise TemplateSyntaxError(
+    ...<2 lines>...
+    )
+django.template.exceptions.TemplateSyntaxError: Template: /Users/gb/Desktop/mypy/SpinyLobster/apps/ai_agents/case_library/templates/case_library/case_library.html, Could not parse some characters: row.priority_display| ||| row.priority || 'P2'
+2026-04-01 10:41:33,984 - django.request - ERROR - [thread=12901707776 Thread-7 (process_request_thread)] - Internal Server Error: /case_library/
+Traceback (most recent call last):
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/gb/Desktop/mypy/SpinyLobster/apps/ai_agents/case_library/views.py", line 294, in case_library_page
+    return render(request, 'case_library/case_library.html', context)
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/backends/django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/engine.py", line 186, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/base.py", line 157, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/base.py", line 199, in compile_nodelist
+    nodelist = parser.parse()
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/base.py", line 585, in parse
+    raise self.error(token, e)
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/base.py", line 583, in parse
+    compiled_result = compile_func(self, token)
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/loader_tags.py", line 307, in do_extends
+    nodelist = parser.parse()
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/base.py", line 585, in parse
+    raise self.error(token, e)
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/base.py", line 583, in parse
+    compiled_result = compile_func(self, token)
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/loader_tags.py", line 235, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/base.py", line 556, in parse
+    raise self.error(token, e)
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/base.py", line 554, in parse
+    filter_expression = self.compile_filter(token.contents)
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/base.py", line 676, in compile_filter
+    return FilterExpression(token, self)
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/base.py", line 776, in __init__
+    raise TemplateSyntaxError(
+    ...<2 lines>...
+    )
+django.template.exceptions.TemplateSyntaxError: Template: /Users/gb/Desktop/mypy/SpinyLobster/apps/ai_agents/case_library/templates/case_library/case_library.html, Could not parse the remainder: '(row)' from 'JSON.stringify(row)'
+2026-04-01 10:42:35,137 - django.request - ERROR - [thread=12901707776 Thread-7 (process_request_thread)] - Internal Server Error: /case_library/
+Traceback (most recent call last):
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/gb/Desktop/mypy/SpinyLobster/apps/ai_agents/case_library/views.py", line 294, in case_library_page
+    return render(request, 'case_library/case_library.html', context)
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/backends/django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/engine.py", line 186, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/base.py", line 157, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/base.py", line 199, in compile_nodelist
+    nodelist = parser.parse()
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/base.py", line 585, in parse
+    raise self.error(token, e)
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/base.py", line 583, in parse
+    compiled_result = compile_func(self, token)
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/loader_tags.py", line 307, in do_extends
+    nodelist = parser.parse()
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/base.py", line 585, in parse
+    raise self.error(token, e)
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/base.py", line 583, in parse
+    compiled_result = compile_func(self, token)
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/loader_tags.py", line 235, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/base.py", line 556, in parse
+    raise self.error(token, e)
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/base.py", line 554, in parse
+    filter_expression = self.compile_filter(token.contents)
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/base.py", line 676, in compile_filter
+    return FilterExpression(token, self)
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/base.py", line 776, in __init__
+    raise TemplateSyntaxError(
+    ...<2 lines>...
+    )
+django.template.exceptions.TemplateSyntaxError: Template: /Users/gb/Desktop/mypy/SpinyLobster/apps/ai_agents/case_library/templates/case_library/case_library.html, Could not parse the remainder: '()' from 'row.priority.toUpperCase()'
+2026-04-01 10:42:36,557 - django.request - ERROR - [thread=12901707776 Thread-7 (process_request_thread)] - Internal Server Error: /case_library/
+Traceback (most recent call last):
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/gb/Desktop/mypy/SpinyLobster/apps/ai_agents/case_library/views.py", line 294, in case_library_page
+    return render(request, 'case_library/case_library.html', context)
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/backends/django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/engine.py", line 186, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/base.py", line 157, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/base.py", line 199, in compile_nodelist
+    nodelist = parser.parse()
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/base.py", line 585, in parse
+    raise self.error(token, e)
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/base.py", line 583, in parse
+    compiled_result = compile_func(self, token)
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/loader_tags.py", line 307, in do_extends
+    nodelist = parser.parse()
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/base.py", line 585, in parse
+    raise self.error(token, e)
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/base.py", line 583, in parse
+    compiled_result = compile_func(self, token)
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/loader_tags.py", line 235, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/base.py", line 556, in parse
+    raise self.error(token, e)
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/base.py", line 554, in parse
+    filter_expression = self.compile_filter(token.contents)
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/base.py", line 676, in compile_filter
+    return FilterExpression(token, self)
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/base.py", line 776, in __init__
+    raise TemplateSyntaxError(
+    ...<2 lines>...
+    )
+django.template.exceptions.TemplateSyntaxError: Template: /Users/gb/Desktop/mypy/SpinyLobster/apps/ai_agents/case_library/templates/case_library/case_library.html, Could not parse the remainder: '()' from 'row.priority.toUpperCase()'
+2026-04-01 10:42:37,124 - django.request - ERROR - [thread=12901707776 Thread-7 (process_request_thread)] - Internal Server Error: /case_library/
+Traceback (most recent call last):
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/gb/Desktop/mypy/SpinyLobster/apps/ai_agents/case_library/views.py", line 294, in case_library_page
+    return render(request, 'case_library/case_library.html', context)
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/backends/django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/engine.py", line 186, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/base.py", line 157, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/base.py", line 199, in compile_nodelist
+    nodelist = parser.parse()
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/base.py", line 585, in parse
+    raise self.error(token, e)
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/base.py", line 583, in parse
+    compiled_result = compile_func(self, token)
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/loader_tags.py", line 307, in do_extends
+    nodelist = parser.parse()
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/base.py", line 585, in parse
+    raise self.error(token, e)
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/base.py", line 583, in parse
+    compiled_result = compile_func(self, token)
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/loader_tags.py", line 235, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/base.py", line 556, in parse
+    raise self.error(token, e)
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/base.py", line 554, in parse
+    filter_expression = self.compile_filter(token.contents)
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/base.py", line 676, in compile_filter
+    return FilterExpression(token, self)
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/base.py", line 776, in __init__
+    raise TemplateSyntaxError(
+    ...<2 lines>...
+    )
+django.template.exceptions.TemplateSyntaxError: Template: /Users/gb/Desktop/mypy/SpinyLobster/apps/ai_agents/case_library/templates/case_library/case_library.html, Could not parse the remainder: '()' from 'row.priority.toUpperCase()'
+2026-04-01 10:42:37,258 - django.request - ERROR - [thread=12901707776 Thread-7 (process_request_thread)] - Internal Server Error: /case_library/
+Traceback (most recent call last):
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/gb/Desktop/mypy/SpinyLobster/apps/ai_agents/case_library/views.py", line 294, in case_library_page
+    return render(request, 'case_library/case_library.html', context)
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/backends/django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/engine.py", line 186, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/base.py", line 157, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/base.py", line 199, in compile_nodelist
+    nodelist = parser.parse()
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/base.py", line 585, in parse
+    raise self.error(token, e)
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/base.py", line 583, in parse
+    compiled_result = compile_func(self, token)
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/loader_tags.py", line 307, in do_extends
+    nodelist = parser.parse()
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/base.py", line 585, in parse
+    raise self.error(token, e)
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/base.py", line 583, in parse
+    compiled_result = compile_func(self, token)
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/loader_tags.py", line 235, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/base.py", line 556, in parse
+    raise self.error(token, e)
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/base.py", line 554, in parse
+    filter_expression = self.compile_filter(token.contents)
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/base.py", line 676, in compile_filter
+    return FilterExpression(token, self)
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/base.py", line 776, in __init__
+    raise TemplateSyntaxError(
+    ...<2 lines>...
+    )
+django.template.exceptions.TemplateSyntaxError: Template: /Users/gb/Desktop/mypy/SpinyLobster/apps/ai_agents/case_library/templates/case_library/case_library.html, Could not parse the remainder: '()' from 'row.priority.toUpperCase()'
+2026-04-01 10:42:37,408 - django.request - ERROR - [thread=12901707776 Thread-7 (process_request_thread)] - Internal Server Error: /case_library/
+Traceback (most recent call last):
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/gb/Desktop/mypy/SpinyLobster/apps/ai_agents/case_library/views.py", line 294, in case_library_page
+    return render(request, 'case_library/case_library.html', context)
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/backends/django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/engine.py", line 186, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/base.py", line 157, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/base.py", line 199, in compile_nodelist
+    nodelist = parser.parse()
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/base.py", line 585, in parse
+    raise self.error(token, e)
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/base.py", line 583, in parse
+    compiled_result = compile_func(self, token)
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/loader_tags.py", line 307, in do_extends
+    nodelist = parser.parse()
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/base.py", line 585, in parse
+    raise self.error(token, e)
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/base.py", line 583, in parse
+    compiled_result = compile_func(self, token)
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/loader_tags.py", line 235, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/base.py", line 556, in parse
+    raise self.error(token, e)
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/base.py", line 554, in parse
+    filter_expression = self.compile_filter(token.contents)
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/base.py", line 676, in compile_filter
+    return FilterExpression(token, self)
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/base.py", line 776, in __init__
+    raise TemplateSyntaxError(
+    ...<2 lines>...
+    )
+django.template.exceptions.TemplateSyntaxError: Template: /Users/gb/Desktop/mypy/SpinyLobster/apps/ai_agents/case_library/templates/case_library/case_library.html, Could not parse the remainder: '()' from 'row.priority.toUpperCase()'
+2026-04-01 10:42:37,544 - django.request - ERROR - [thread=12901707776 Thread-7 (process_request_thread)] - Internal Server Error: /case_library/
+Traceback (most recent call last):
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/gb/Desktop/mypy/SpinyLobster/apps/ai_agents/case_library/views.py", line 294, in case_library_page
+    return render(request, 'case_library/case_library.html', context)
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/backends/django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/engine.py", line 186, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/base.py", line 157, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/base.py", line 199, in compile_nodelist
+    nodelist = parser.parse()
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/base.py", line 585, in parse
+    raise self.error(token, e)
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/base.py", line 583, in parse
+    compiled_result = compile_func(self, token)
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/loader_tags.py", line 307, in do_extends
+    nodelist = parser.parse()
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/base.py", line 585, in parse
+    raise self.error(token, e)
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/base.py", line 583, in parse
+    compiled_result = compile_func(self, token)
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/loader_tags.py", line 235, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/base.py", line 556, in parse
+    raise self.error(token, e)
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/base.py", line 554, in parse
+    filter_expression = self.compile_filter(token.contents)
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/base.py", line 676, in compile_filter
+    return FilterExpression(token, self)
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/base.py", line 776, in __init__
+    raise TemplateSyntaxError(
+    ...<2 lines>...
+    )
+django.template.exceptions.TemplateSyntaxError: Template: /Users/gb/Desktop/mypy/SpinyLobster/apps/ai_agents/case_library/templates/case_library/case_library.html, Could not parse the remainder: '()' from 'row.priority.toUpperCase()'
+2026-04-01 10:42:37,698 - django.request - ERROR - [thread=12901707776 Thread-7 (process_request_thread)] - Internal Server Error: /case_library/
+Traceback (most recent call last):
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/gb/Desktop/mypy/SpinyLobster/apps/ai_agents/case_library/views.py", line 294, in case_library_page
+    return render(request, 'case_library/case_library.html', context)
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/backends/django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/engine.py", line 186, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/base.py", line 157, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/base.py", line 199, in compile_nodelist
+    nodelist = parser.parse()
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/base.py", line 585, in parse
+    raise self.error(token, e)
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/base.py", line 583, in parse
+    compiled_result = compile_func(self, token)
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/loader_tags.py", line 307, in do_extends
+    nodelist = parser.parse()
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/base.py", line 585, in parse
+    raise self.error(token, e)
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/base.py", line 583, in parse
+    compiled_result = compile_func(self, token)
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/loader_tags.py", line 235, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/base.py", line 556, in parse
+    raise self.error(token, e)
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/base.py", line 554, in parse
+    filter_expression = self.compile_filter(token.contents)
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/base.py", line 676, in compile_filter
+    return FilterExpression(token, self)
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/base.py", line 776, in __init__
+    raise TemplateSyntaxError(
+    ...<2 lines>...
+    )
+django.template.exceptions.TemplateSyntaxError: Template: /Users/gb/Desktop/mypy/SpinyLobster/apps/ai_agents/case_library/templates/case_library/case_library.html, Could not parse the remainder: '()' from 'row.priority.toUpperCase()'
+2026-04-01 10:45:53,464 - django.request - WARNING - [thread=6252883968 Thread-14 (process_request_thread)] - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2026-04-01 10:51:10,353 - django.request - WARNING - [thread=6269710336 Thread-20 (process_request_thread)] - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2026-04-01 10:51:48,689 - django.request - WARNING - [thread=6219231232 Thread-21 (process_request_thread)] - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2026-04-01 10:53:36,467 - django.request - WARNING - [thread=6236057600 Thread-18 (process_request_thread)] - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2026-04-01 10:53:51,111 - django.request - WARNING - [thread=6236057600 Thread-18 (process_request_thread)] - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2026-04-01 10:56:08,398 - django.request - WARNING - [thread=6202404864 Thread-15 (process_request_thread)] - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2026-04-01 10:59:23,133 - django.request - WARNING - [thread=6202404864 Thread-15 (process_request_thread)] - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2026-04-01 11:01:41,073 - django.request - WARNING - [thread=6252883968 Thread-19 (process_request_thread)] - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2026-04-01 11:03:15,095 - django.request - WARNING - [thread=6202404864 Thread-15 (process_request_thread)] - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2026-04-01 11:05:40,219 - django.request - WARNING - [thread=6252883968 Thread-19 (process_request_thread)] - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2026-04-01 11:07:10,241 - django.request - ERROR - [thread=6252883968 Thread-19 (process_request_thread)] - Internal Server Error: /case_library/
+Traceback (most recent call last):
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/gb/Desktop/mypy/SpinyLobster/apps/ai_agents/case_library/views.py", line 294, in case_library_page
+    return render(request, 'case_library/case_library.html', context)
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/backends/django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/engine.py", line 186, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/base.py", line 157, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/base.py", line 199, in compile_nodelist
+    nodelist = parser.parse()
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/base.py", line 585, in parse
+    raise self.error(token, e)
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/base.py", line 583, in parse
+    compiled_result = compile_func(self, token)
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/loader_tags.py", line 307, in do_extends
+    nodelist = parser.parse()
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/base.py", line 585, in parse
+    raise self.error(token, e)
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/base.py", line 583, in parse
+    compiled_result = compile_func(self, token)
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/loader_tags.py", line 235, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/base.py", line 556, in parse
+    raise self.error(token, e)
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/base.py", line 554, in parse
+    filter_expression = self.compile_filter(token.contents)
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/base.py", line 676, in compile_filter
+    return FilterExpression(token, self)
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/base.py", line 776, in __init__
+    raise TemplateSyntaxError(
+    ...<2 lines>...
+    )
+django.template.exceptions.TemplateSyntaxError: Template: /Users/gb/Desktop/mypy/SpinyLobster/apps/ai_agents/case_library/templates/case_library/case_library.html, Could not parse the remainder: ' || 'P2'' from 'row.priority_display || 'P2''
+2026-04-01 11:07:10,285 - django.request - WARNING - [thread=6252883968 Thread-19 (process_request_thread)] - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2026-04-01 11:08:48,248 - django.request - WARNING - [thread=6202404864 Thread-15 (process_request_thread)] - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2026-04-01 11:10:25,291 - django.request - WARNING - [thread=6202404864 Thread-15 (process_request_thread)] - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2026-04-01 11:14:28,679 - django.request - WARNING - [thread=6202404864 Thread-15 (process_request_thread)] - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2026-04-01 11:15:29,730 - django.request - WARNING - [thread=6202404864 Thread-15 (process_request_thread)] - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2026-04-01 11:18:27,064 - django.request - WARNING - [thread=6252883968 Thread-19 (process_request_thread)] - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2026-04-01 11:21:14,001 - django.request - WARNING - [thread=6202404864 Thread-15 (process_request_thread)] - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2026-04-01 11:25:17,574 - django.request - WARNING - [thread=6202404864 Thread-15 (process_request_thread)] - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2026-04-01 11:33:25,292 - django.request - WARNING - [thread=6185578496 Thread-22 (process_request_thread)] - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2026-04-01 11:38:39,756 - django.request - WARNING - [thread=6185578496 Thread-24 (process_request_thread)] - Not Found: /.well-known/appspecific/com.chrome.devtools.json

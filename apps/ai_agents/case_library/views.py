@@ -59,6 +59,19 @@ def case_library_list(request):
         # 序列化数据
         cases_data = []
         for case in page_obj:
+            # 处理优先级显示，容错处理
+            try:
+                priority_display = case.get_priority_display()
+            except (ValueError, AttributeError):
+                # 如果获取失败，根据 priority 值手动映射
+                priority_map = {
+                    'p0': 'P0',
+                    'p1': 'P1',
+                    'p2': 'P2',
+                    'p3': 'P3'
+                }
+                priority_display = priority_map.get(case.priority, 'P2')
+            
             cases_data.append({
                 'id': case.id,
                 'case_number': case.case_number,
@@ -66,7 +79,7 @@ def case_library_list(request):
                 'module': case.module,
                 'module_display': case.get_module_display(),
                 'priority': case.priority,
-                'priority_display': case.get_priority_display(),
+                'priority_display': priority_display,
                 'case_type': case.case_type,
                 'case_type_display': case.get_case_type_display(),
                 'status': case.status,

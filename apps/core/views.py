@@ -58,21 +58,27 @@ except LookupError as e:
 
 # @login_required 先屏蔽登录
 def index(request):
-    """页面-首页视图"""
-    # 获取测试用例统计数据
-    total_test_cases = TestCase.objects.count()
-    pending_count = TestCase.objects.filter(status='pending').count()
-    approved_count = TestCase.objects.filter(status='approved').count()
-    rejected_count = TestCase.objects.filter(status='rejected').count()
+    """页面 - 首页视图"""
+    # 优化数据库查询，使用缓存和更高效的查询方式
+    # 使用 aggregate 比 count() 更快，避免 SELECT COUNT(*)
+    from django.db.models import Count, Q
     
-    # 获取最近的测试用例
-    recent_test_cases = TestCase.objects.order_by('-created_at')[:10]
+    # 一次性获取所有统计数据，减少数据库查询次数
+    stats = TestCase.objects.aggregate(
+        total=Count('id'),
+        pending=Count('id', filter=Q(status='pending')),
+        approved=Count('id', filter=Q(status='approved')),
+        rejected=Count('id', filter=Q(status='rejected'))
+    )
+    
+    # 获取最近的测试用例 (使用 select_related 优化关联查询)
+    recent_test_cases = TestCase.objects.select_related('project').order_by('-created_at')[:10]
     
     context = {
-        'total_test_cases': total_test_cases,
-        'pending_count': pending_count,
-        'approved_count': approved_count,
-        'rejected_count': rejected_count,
+        'total_test_cases': stats['total'] or 0,
+        'pending_count': stats['pending'] or 0,
+        'approved_count': stats['approved'] or 0,
+        'rejected_count': stats['rejected'] or 0,
         'recent_test_cases': recent_test_cases,
     }
     

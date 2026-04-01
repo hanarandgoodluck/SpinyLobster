@@ -164,23 +164,39 @@ document.addEventListener('DOMContentLoaded', function() {
                         console.log('API 响应数据:', data);
                         
                         if (data.success) {
-                            // 首先更新用例列表，确保数据能够显示
-                            this.cases = data.data.cases;
+                            // 更新用例列表
+                            const cases = data.data.cases || [];
+                            
+                            // 确保每个用例都有 priority_display 字段
+                            cases.forEach(caseItem => {
+                                if (!caseItem.priority_display && caseItem.priority) {
+                                    // 根据 priority 值生成 priority_display
+                                    const priorityMap = {
+                                        'p0': 'P0',
+                                        'p1': 'P1',
+                                        'p2': 'P2',
+                                        'p3': 'P3'
+                                    };
+                                    caseItem.priority_display = priorityMap[caseItem.priority] || 'P2';
+                                } else if (!caseItem.priority_display) {
+                                    // 如果 priority 也没有，设置为默认值
+                                    caseItem.priority_display = 'P2';
+                                }
+                            });
+                            
+                            // 更新 Vue 响应式数据
+                            this.cases = cases;
                             this.total = data.data.total;
                             this.currentPage = data.data.page;
                             this.pageSize = data.data.page_size;
                             
-                            console.log('用例列表加载成功:', this.cases);
-                            console.log('用例数量:', this.cases.length);
-                            
-                            // 然后尝试加载模块列表，即使失败也不影响用例显示
+                            // 加载模块列表
                             try {
                                 await this.loadModules();
                                 // 更新模块统计数量
                                 this.updateModuleCounts();
                             } catch (moduleError) {
                                 console.error('加载模块列表失败:', moduleError);
-                                // 模块加载失败不影响用例显示
                             }
                         } else {
                             console.error('API 返回失败:', data.message);

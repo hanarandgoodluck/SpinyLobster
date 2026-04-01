@@ -860,3 +860,17 @@ ValueError: DeepSeek API key is required. Set it via DEEPSEEK_API_KEY environmen
 2026-03-31 23:24:15,611 - apps.ai_agents.test_case_generator.views - WARNING - [thread=27572 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
 2026-03-31 23:24:15,611 - apps.ai_agents.test_case_generator.views - WARNING - [thread=30252 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
 2026-03-31 23:24:22,154 - apps.ai_agents.test_case_generator.views - WARNING - [thread=6168 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-04-01 10:15:42,486 - apps.ai_agents.test_case_generator.views - WARNING - [thread=6172471296 django-main-thread] - 鏃犳硶鍒涘缓 Knowledge 鏈嶅姟锛歂o installed app with label 'knowledge'.
+2026-04-01 10:17:15,872 - apps.ai_agents.test_case_generator.views - WARNING - [thread=8569212736 MainThread] - 鏃犳硶鍒涘缓 Knowledge 鏈嶅姟锛歂o installed app with label 'knowledge'.
+2026-04-01 10:17:17,226 - apps.ai_agents.test_case_generator.views - WARNING - [thread=6142341120 django-main-thread] - 鏃犳硶鍒涘缓 Knowledge 鏈嶅姟锛歂o installed app with label 'knowledge'.
+2026-04-01 10:17:51,870 - apps.ai_agents.test_case_generator.views - WARNING - [thread=6109425664 django-main-thread] - 鏃犳硶鍒涘缓 Knowledge 鏈嶅姟锛歂o installed app with label 'knowledge'.
+2026-04-01 10:20:45,599 - apps.ai_agents.test_case_generator.views - WARNING - [thread=6117715968 django-main-thread] - 鏃犳硶鍒涘缓 Knowledge 鏈嶅姟锛歂o installed app with label 'knowledge'.
+2026-04-01 10:22:05,330 - apps.ai_agents.test_case_generator.views - WARNING - [thread=6143963136 django-main-thread] - 鏃犳硶鍒涘缓 Knowledge 鏈嶅姟锛歂o installed app with label 'knowledge'.
+2026-04-01 10:24:09,824 - apps.ai_agents.test_case_generator.views - INFO - [thread=6375518208 Thread-13 (process_request_thread)] - ===== 杩涘叆 generate 瑙嗗浘鍑芥暟 =====
+2026-04-01 10:24:09,825 - apps.ai_agents.test_case_generator.views - INFO - [thread=6375518208 Thread-13 (process_request_thread)] - 璇锋眰鏂规硶锛欸ET
+2026-04-01 10:24:09,835 - apps.ai_agents.test_case_generator.views - INFO - [thread=6375518208 Thread-13 (process_request_thread)] - 浠庢暟鎹簱鍔犺浇 AI 閰嶇疆鎴愬姛锛屾ā鍨嬶細
+2026-04-01 10:27:31,724 - apps.ai_agents.test_case_generator.views - INFO - [thread=6358691840 Thread-22 (process_request_thread)] - ===== 杩涘叆 generate 瑙嗗浘鍑芥暟 =====
+2026-04-01 10:27:31,725 - apps.ai_agents.test_case_generator.views - INFO - [thread=6358691840 Thread-22 (process_request_thread)] - 璇锋眰鏂规硶锛欸ET
+2026-04-01 10:27:31,729 - apps.ai_agents.test_case_generator.views - INFO - [thread=6358691840 Thread-22 (process_request_thread)] - 浠庢暟鎹簱鍔犺浇 AI 閰嶇疆鎴愬姛锛屾ā鍨嬶細
+2026-04-01 10:30:37,234 - apps.ai_agents.test_case_generator.views - WARNING - [thread=6120894464 django-main-thread] - 鏃犳硶鍒涘缓 Knowledge 鏈嶅姟锛歂o installed app with label 'knowledge'.
+2026-04-01 10:31:27,822 - apps.ai_agents.test_case_generator.views - WARNING - [thread=6112505856 django-main-thread] - 鏃犳硶鍒涘缓 Knowledge 鏈嶅姟锛歂o installed app with label 'knowledge'.

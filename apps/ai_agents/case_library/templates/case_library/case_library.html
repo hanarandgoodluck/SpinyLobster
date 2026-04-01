@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+     {% extends "base.html" %}
 {% load static %}
 
 {% block title %}SpinyLobster - 用例库管理{% endblock %}
@@ -771,7 +771,7 @@
 
                     <el-table-column label="优先级" width="100">
                         <template #default="{row}">
-                            <span style="color: red; font-weight: bold;">{{ row.priority_display }}</span>
+                            <span style="color: red; font-weight: bold;" v-text="row.priority_display || 'P2'"></span>
                         </template>
                     </el-table-column>
                     <el-table-column prop="case_type_display" label="类型" width="100"></el-table-column>
@@ -963,8 +963,6 @@
         </div>
     </template>
 </el-dialog>
-</div>
-</div>
 {% endblock %}
 
 {% block extra_js %}
