@@ -1138,3 +1138,105 @@
 2026-04-01 10:31:27,819 - LLMServiceFactory - WARNING - [thread=6112505856 django-main-thread] - 数据库中 AI 配置的 API Key 为空，使用 settings.py 配置
 2026-04-01 10:31:27,834 - LLMServiceFactory - INFO - [thread=6112505856 django-main-thread] - 创建 LLM 服务：provider=deepseek
 2026-04-01 10:31:27,835 - LLMServiceFactory - WARNING - [thread=6112505856 django-main-thread] - 数据库中 AI 配置的 API Key 为空，使用 settings.py 配置
+2026-04-02 09:14:52,649 - LLMServiceFactory - INFO - [thread=8569212736 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-04-02 09:14:52,780 - LLMServiceFactory - WARNING - [thread=8569212736 MainThread] - 数据库中 AI 配置的 API Key 为空，使用 settings.py 配置
+2026-04-02 09:14:53,541 - LLMServiceFactory - INFO - [thread=8569212736 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-04-02 09:14:53,542 - LLMServiceFactory - WARNING - [thread=8569212736 MainThread] - 数据库中 AI 配置的 API Key 为空，使用 settings.py 配置
+2026-04-02 09:14:53,564 - LLMServiceFactory - INFO - [thread=8569212736 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-04-02 09:14:53,565 - LLMServiceFactory - WARNING - [thread=8569212736 MainThread] - 数据库中 AI 配置的 API Key 为空，使用 settings.py 配置
+2026-04-02 14:06:41,408 - LLMServiceFactory - INFO - [thread=6146404352 django-main-thread] - 创建 LLM 服务：provider=deepseek
+2026-04-02 14:06:41,606 - LLMServiceFactory - WARNING - [thread=6146404352 django-main-thread] - 数据库中 AI 配置的 API Key 为空，使用 settings.py 配置
+2026-04-02 14:06:42,303 - LLMServiceFactory - INFO - [thread=6146404352 django-main-thread] - 创建 LLM 服务：provider=deepseek
+2026-04-02 14:06:42,305 - LLMServiceFactory - WARNING - [thread=6146404352 django-main-thread] - 数据库中 AI 配置的 API Key 为空，使用 settings.py 配置
+2026-04-02 14:06:42,318 - LLMServiceFactory - INFO - [thread=6146404352 django-main-thread] - 创建 LLM 服务：provider=deepseek
+2026-04-02 14:06:42,319 - LLMServiceFactory - WARNING - [thread=6146404352 django-main-thread] - 数据库中 AI 配置的 API Key 为空，使用 settings.py 配置
+2026-04-02 14:08:39,301 - LLMServiceFactory - INFO - [thread=8569212736 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-04-02 14:08:39,376 - LLMServiceFactory - WARNING - [thread=8569212736 MainThread] - 数据库中 AI 配置的 API Key 为空，使用 settings.py 配置
+2026-04-02 14:08:39,996 - LLMServiceFactory - INFO - [thread=8569212736 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-04-02 14:08:39,998 - LLMServiceFactory - WARNING - [thread=8569212736 MainThread] - 数据库中 AI 配置的 API Key 为空，使用 settings.py 配置
+2026-04-02 14:08:40,010 - LLMServiceFactory - INFO - [thread=8569212736 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-04-02 14:08:40,013 - LLMServiceFactory - WARNING - [thread=8569212736 MainThread] - 数据库中 AI 配置的 API Key 为空，使用 settings.py 配置
+2026-04-02 14:10:42,899 - LLMServiceFactory - INFO - [thread=6152679424 django-main-thread] - 创建 LLM 服务：provider=deepseek
+2026-04-02 14:10:42,912 - LLMServiceFactory - WARNING - [thread=6152679424 django-main-thread] - 数据库中 AI 配置的 API Key 为空，使用 settings.py 配置
+2026-04-02 14:10:43,458 - LLMServiceFactory - INFO - [thread=6152679424 django-main-thread] - 创建 LLM 服务：provider=deepseek
+2026-04-02 14:10:43,460 - LLMServiceFactory - WARNING - [thread=6152679424 django-main-thread] - 数据库中 AI 配置的 API Key 为空，使用 settings.py 配置
+2026-04-02 14:10:43,472 - LLMServiceFactory - INFO - [thread=6152679424 django-main-thread] - 创建 LLM 服务：provider=deepseek
+2026-04-02 14:10:43,473 - LLMServiceFactory - WARNING - [thread=6152679424 django-main-thread] - 数据库中 AI 配置的 API Key 为空，使用 settings.py 配置
+2026-04-02 14:11:01,783 - LLMServiceFactory - INFO - [thread=8569212736 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-04-02 14:11:01,794 - LLMServiceFactory - WARNING - [thread=8569212736 MainThread] - 数据库中 AI 配置的 API Key 为空，使用 settings.py 配置
+2026-04-02 14:11:02,333 - LLMServiceFactory - INFO - [thread=8569212736 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-04-02 14:11:02,335 - LLMServiceFactory - WARNING - [thread=8569212736 MainThread] - 数据库中 AI 配置的 API Key 为空，使用 settings.py 配置
+2026-04-02 14:11:02,346 - LLMServiceFactory - INFO - [thread=8569212736 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-04-02 14:11:02,349 - LLMServiceFactory - WARNING - [thread=8569212736 MainThread] - 数据库中 AI 配置的 API Key 为空，使用 settings.py 配置
+2026-04-02 14:11:12,956 - LLMServiceFactory - INFO - [thread=8569212736 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-04-02 14:11:12,969 - LLMServiceFactory - WARNING - [thread=8569212736 MainThread] - 数据库中 AI 配置的 API Key 为空，使用 settings.py 配置
+2026-04-02 14:11:13,498 - LLMServiceFactory - INFO - [thread=8569212736 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-04-02 14:11:13,499 - LLMServiceFactory - WARNING - [thread=8569212736 MainThread] - 数据库中 AI 配置的 API Key 为空，使用 settings.py 配置
+2026-04-02 14:11:13,510 - LLMServiceFactory - INFO - [thread=8569212736 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-04-02 14:11:13,511 - LLMServiceFactory - WARNING - [thread=8569212736 MainThread] - 数据库中 AI 配置的 API Key 为空，使用 settings.py 配置
+2026-04-02 14:18:37,442 - LLMServiceFactory - INFO - [thread=6153121792 django-main-thread] - 创建 LLM 服务：provider=deepseek
+2026-04-02 14:18:37,515 - LLMServiceFactory - WARNING - [thread=6153121792 django-main-thread] - 数据库中 AI 配置的 API Key 为空，使用 settings.py 配置
+2026-04-02 14:18:38,088 - LLMServiceFactory - INFO - [thread=6153121792 django-main-thread] - 创建 LLM 服务：provider=deepseek
+2026-04-02 14:18:38,090 - LLMServiceFactory - WARNING - [thread=6153121792 django-main-thread] - 数据库中 AI 配置的 API Key 为空，使用 settings.py 配置
+2026-04-02 14:18:38,101 - LLMServiceFactory - INFO - [thread=6153121792 django-main-thread] - 创建 LLM 服务：provider=deepseek
+2026-04-02 14:18:38,102 - LLMServiceFactory - WARNING - [thread=6153121792 django-main-thread] - 数据库中 AI 配置的 API Key 为空，使用 settings.py 配置
+2026-04-02 14:19:20,363 - LLMServiceFactory - INFO - [thread=6186332160 django-main-thread] - 创建 LLM 服务：provider=deepseek
+2026-04-02 14:19:20,440 - LLMServiceFactory - WARNING - [thread=6186332160 django-main-thread] - 数据库中 AI 配置的 API Key 为空，使用 settings.py 配置
+2026-04-02 14:19:21,127 - LLMServiceFactory - INFO - [thread=6186332160 django-main-thread] - 创建 LLM 服务：provider=deepseek
+2026-04-02 14:19:21,130 - LLMServiceFactory - WARNING - [thread=6186332160 django-main-thread] - 数据库中 AI 配置的 API Key 为空，使用 settings.py 配置
+2026-04-02 14:19:21,154 - LLMServiceFactory - INFO - [thread=6186332160 django-main-thread] - 创建 LLM 服务：provider=deepseek
+2026-04-02 14:19:21,155 - LLMServiceFactory - WARNING - [thread=6186332160 django-main-thread] - 数据库中 AI 配置的 API Key 为空，使用 settings.py 配置
+2026-04-02 14:23:17,973 - LLMServiceFactory - INFO - [thread=6173274112 django-main-thread] - 创建 LLM 服务：provider=deepseek
+2026-04-02 14:23:17,984 - LLMServiceFactory - WARNING - [thread=6173274112 django-main-thread] - 数据库中 AI 配置的 API Key 为空，使用 settings.py 配置
+2026-04-02 14:23:18,533 - LLMServiceFactory - INFO - [thread=6173274112 django-main-thread] - 创建 LLM 服务：provider=deepseek
+2026-04-02 14:23:18,535 - LLMServiceFactory - WARNING - [thread=6173274112 django-main-thread] - 数据库中 AI 配置的 API Key 为空，使用 settings.py 配置
+2026-04-02 14:23:18,546 - LLMServiceFactory - INFO - [thread=6173274112 django-main-thread] - 创建 LLM 服务：provider=deepseek
+2026-04-02 14:23:18,547 - LLMServiceFactory - WARNING - [thread=6173274112 django-main-thread] - 数据库中 AI 配置的 API Key 为空，使用 settings.py 配置
+2026-04-02 14:23:35,603 - LLMServiceFactory - INFO - [thread=8569212736 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-04-02 14:23:35,647 - LLMServiceFactory - WARNING - [thread=8569212736 MainThread] - 数据库中 AI 配置的 API Key 为空，使用 settings.py 配置
+2026-04-02 14:23:36,289 - LLMServiceFactory - INFO - [thread=8569212736 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-04-02 14:23:36,291 - LLMServiceFactory - WARNING - [thread=8569212736 MainThread] - 数据库中 AI 配置的 API Key 为空，使用 settings.py 配置
+2026-04-02 14:23:36,303 - LLMServiceFactory - INFO - [thread=8569212736 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-04-02 14:23:36,305 - LLMServiceFactory - WARNING - [thread=8569212736 MainThread] - 数据库中 AI 配置的 API Key 为空，使用 settings.py 配置
+2026-04-02 14:23:46,682 - LLMServiceFactory - INFO - [thread=6183317504 django-main-thread] - 创建 LLM 服务：provider=deepseek
+2026-04-02 14:23:46,691 - LLMServiceFactory - WARNING - [thread=6183317504 django-main-thread] - 数据库中 AI 配置的 API Key 为空，使用 settings.py 配置
+2026-04-02 14:23:47,344 - LLMServiceFactory - INFO - [thread=6183317504 django-main-thread] - 创建 LLM 服务：provider=deepseek
+2026-04-02 14:23:47,346 - LLMServiceFactory - WARNING - [thread=6183317504 django-main-thread] - 数据库中 AI 配置的 API Key 为空，使用 settings.py 配置
+2026-04-02 14:23:47,359 - LLMServiceFactory - INFO - [thread=6183317504 django-main-thread] - 创建 LLM 服务：provider=deepseek
+2026-04-02 14:23:47,361 - LLMServiceFactory - WARNING - [thread=6183317504 django-main-thread] - 数据库中 AI 配置的 API Key 为空，使用 settings.py 配置
+2026-04-02 14:45:32,325 - LLMServiceFactory - INFO - [thread=8569212736 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-04-02 14:45:32,348 - LLMServiceFactory - WARNING - [thread=8569212736 MainThread] - 数据库中 AI 配置的 API Key 为空，使用 settings.py 配置
+2026-04-02 14:45:32,936 - LLMServiceFactory - INFO - [thread=8569212736 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-04-02 14:45:32,938 - LLMServiceFactory - WARNING - [thread=8569212736 MainThread] - 数据库中 AI 配置的 API Key 为空，使用 settings.py 配置
+2026-04-02 14:45:32,950 - LLMServiceFactory - INFO - [thread=8569212736 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-04-02 14:45:32,951 - LLMServiceFactory - WARNING - [thread=8569212736 MainThread] - 数据库中 AI 配置的 API Key 为空，使用 settings.py 配置
+2026-04-02 14:47:03,748 - LLMServiceFactory - INFO - [thread=6107967488 django-main-thread] - 创建 LLM 服务：provider=deepseek
+2026-04-02 14:47:03,810 - LLMServiceFactory - WARNING - [thread=6107967488 django-main-thread] - 数据库中 AI 配置的 API Key 为空，使用 settings.py 配置
+2026-04-02 14:47:04,466 - LLMServiceFactory - INFO - [thread=6107967488 django-main-thread] - 创建 LLM 服务：provider=deepseek
+2026-04-02 14:47:04,468 - LLMServiceFactory - WARNING - [thread=6107967488 django-main-thread] - 数据库中 AI 配置的 API Key 为空，使用 settings.py 配置
+2026-04-02 14:47:04,481 - LLMServiceFactory - INFO - [thread=6107967488 django-main-thread] - 创建 LLM 服务：provider=deepseek
+2026-04-02 14:47:04,482 - LLMServiceFactory - WARNING - [thread=6107967488 django-main-thread] - 数据库中 AI 配置的 API Key 为空，使用 settings.py 配置
+2026-04-02 14:50:21,360 - LLMServiceFactory - INFO - [thread=8569212736 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-04-02 14:50:21,387 - LLMServiceFactory - WARNING - [thread=8569212736 MainThread] - 数据库中 AI 配置的 API Key 为空，使用 settings.py 配置
+2026-04-02 14:50:22,007 - LLMServiceFactory - INFO - [thread=8569212736 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-04-02 14:50:22,009 - LLMServiceFactory - WARNING - [thread=8569212736 MainThread] - 数据库中 AI 配置的 API Key 为空，使用 settings.py 配置
+2026-04-02 14:50:22,020 - LLMServiceFactory - INFO - [thread=8569212736 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-04-02 14:50:22,021 - LLMServiceFactory - WARNING - [thread=8569212736 MainThread] - 数据库中 AI 配置的 API Key 为空，使用 settings.py 配置
+2026-04-02 14:53:03,060 - LLMServiceFactory - INFO - [thread=6184546304 django-main-thread] - 创建 LLM 服务：provider=deepseek
+2026-04-02 14:53:03,076 - LLMServiceFactory - WARNING - [thread=6184546304 django-main-thread] - 数据库中 AI 配置的 API Key 为空，使用 settings.py 配置
+2026-04-02 14:53:03,621 - LLMServiceFactory - INFO - [thread=6184546304 django-main-thread] - 创建 LLM 服务：provider=deepseek
+2026-04-02 14:53:03,623 - LLMServiceFactory - WARNING - [thread=6184546304 django-main-thread] - 数据库中 AI 配置的 API Key 为空，使用 settings.py 配置
+2026-04-02 14:53:03,635 - LLMServiceFactory - INFO - [thread=6184546304 django-main-thread] - 创建 LLM 服务：provider=deepseek
+2026-04-02 14:53:03,636 - LLMServiceFactory - WARNING - [thread=6184546304 django-main-thread] - 数据库中 AI 配置的 API Key 为空，使用 settings.py 配置
+2026-04-02 14:53:55,901 - LLMServiceFactory - INFO - [thread=6115504128 django-main-thread] - 创建 LLM 服务：provider=deepseek
+2026-04-02 14:53:55,921 - LLMServiceFactory - WARNING - [thread=6115504128 django-main-thread] - 数据库中 AI 配置的 API Key 为空，使用 settings.py 配置
+2026-04-02 14:53:56,460 - LLMServiceFactory - INFO - [thread=6115504128 django-main-thread] - 创建 LLM 服务：provider=deepseek
+2026-04-02 14:53:56,462 - LLMServiceFactory - WARNING - [thread=6115504128 django-main-thread] - 数据库中 AI 配置的 API Key 为空，使用 settings.py 配置
+2026-04-02 14:53:56,473 - LLMServiceFactory - INFO - [thread=6115504128 django-main-thread] - 创建 LLM 服务：provider=deepseek
+2026-04-02 14:53:56,475 - LLMServiceFactory - WARNING - [thread=6115504128 django-main-thread] - 数据库中 AI 配置的 API Key 为空，使用 settings.py 配置
+2026-04-02 14:55:00,920 - LLMServiceFactory - INFO - [thread=6179024896 django-main-thread] - 创建 LLM 服务：provider=deepseek
+2026-04-02 14:55:00,946 - LLMServiceFactory - WARNING - [thread=6179024896 django-main-thread] - 数据库中 AI 配置的 API Key 为空，使用 settings.py 配置
+2026-04-02 14:55:01,502 - LLMServiceFactory - INFO - [thread=6179024896 django-main-thread] - 创建 LLM 服务：provider=deepseek
+2026-04-02 14:55:01,504 - LLMServiceFactory - WARNING - [thread=6179024896 django-main-thread] - 数据库中 AI 配置的 API Key 为空，使用 settings.py 配置
+2026-04-02 14:55:01,515 - LLMServiceFactory - INFO - [thread=6179024896 django-main-thread] - 创建 LLM 服务：provider=deepseek
+2026-04-02 14:55:01,516 - LLMServiceFactory - WARNING - [thread=6179024896 django-main-thread] - 数据库中 AI 配置的 API Key 为空，使用 settings.py 配置

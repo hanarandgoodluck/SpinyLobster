@@ -82,8 +82,6 @@ def case_library_list(request):
                 'priority_display': priority_display,
                 'case_type': case.case_type,
                 'case_type_display': case.get_case_type_display(),
-                'status': case.status,
-                'status_display': case.get_status_display(),
                 'maintainer': case.maintainer,
                 'project_id': case.project.id if case.project else None,
                 'project_name': case.project.name if case.project else None,
@@ -139,9 +137,9 @@ def create_case(request):
                 import json as json_lib
                 steps_list = json_lib.loads(test_steps)
                 if isinstance(steps_list, list):
-                    # 将步骤列表格式化为文本
+                    # 将步骤列表格式化为文本（只保留步骤描述，不要预期结果）
                     test_steps = '\n'.join([
-                        f"{i+1}. {step.get('step_desc', '')} -> {step.get('expected_result', '')}"
+                        f"{i+1}. {step.get('step_desc', '')}"
                         for i, step in enumerate(steps_list)
                     ])
             except:
@@ -185,50 +183,72 @@ def create_case(request):
         }, status=500)
 
 
-@require_http_methods(["PUT"])
-def update_case(request):
-    """更新用例"""
+@require_http_methods(["GET"])
+def get_case_detail(request, case_id):
+    """获取用例详情"""
     try:
-        data = json.loads(request.body)
-        case_id = data.get('id')
-        
-        if not case_id:
-            return JsonResponse({
-                'success': False,
-                'message': '用例 ID 不能为空'
-            }, status=400)
-        
         case = TestCaseLibrary.objects.get(id=case_id)
         
-        # 更新字段
-        if 'title' in data:
-            case.title = data['title']
-        if 'module' in data:
-            case.module = data['module']
-        if 'priority' in data:
-            case.priority = data['priority']
-        if 'case_type' in data:
-            case.case_type = data['case_type']
-        if 'preconditions' in data:
-            case.preconditions = data['preconditions']
-        if 'test_steps' in data:
-            case.test_steps = data['test_steps']
-        if 'expected_results' in data:
-            case.expected_results = data['expected_results']
-        if 'status' in data:
-            case.status = data['status']
-        if 'maintainer' in data:
-            case.maintainer = data['maintainer']
-        if 'tags' in data:
-            case.tags = data['tags']
-        if 'project_id' in data:
-            case.project_id = data['project_id'] if data['project_id'] else None
+        # 处理优先级显示
+        try:
+            priority_display = case.get_priority_display()
+        except (ValueError, AttributeError):
+            priority_map = {
+                'p0': 'P0',
+                'p1': 'P1',
+                'p2': 'P2',
+                'p3': 'P3'
+            }
+            priority_display = priority_map.get(case.priority, 'P2')
         
-        case.save()
+        # 处理测试步骤（如果是 JSON 格式则解析）
+        test_steps_list = []
+        if case.test_steps:
+            try:
+                import json as json_lib
+                test_steps_list = json_lib.loads(case.test_steps)
+            except:
+                # 如果不是 JSON，则按行分割
+                steps = case.test_steps.split('\n')
+                test_steps_list = [
+                    {'step_desc': step.strip(), 'expected_result': ''}
+                    for step in steps if step.strip()
+                ]
+        
+        # 如果 test_steps_list 中的步骤没有 expected_result，但有 expected_results 字段，则尝试填充
+        if test_steps_list and case.expected_results:
+            expected_results_lines = case.expected_results.split('\n')
+            for i, step in enumerate(test_steps_list):
+                # 如果当前步骤没有 expected_result，则从 expected_results 中取
+                if not step.get('expected_result') and i < len(expected_results_lines):
+                    step['expected_result'] = expected_results_lines[i]
+        
+        case_data = {
+            'id': case.id,
+            'case_number': case.case_number,
+            'title': case.title,
+            'module': case.module,
+            'module_display': case.get_module_display(),
+            'priority': case.priority,
+            'priority_display': priority_display,
+            'case_type': case.case_type,
+            'case_type_display': case.get_case_type_display(),
+            'preconditions': case.preconditions,
+            'test_steps': case.test_steps,
+            'test_steps_list': test_steps_list,
+            'expected_results': case.expected_results,
+            'remark': getattr(case, 'remark', ''),
+            'maintainer': case.maintainer,
+            'tags': case.tags,
+            'project_id': case.project.id if case.project else None,
+            'project_name': case.project.name if case.project else None,
+            'created_at': case.created_at.strftime('%Y-%m-%d %H:%M:%S'),
+            'updated_at': case.updated_at.strftime('%Y-%m-%d %H:%M:%S'),
+        }
         
         return JsonResponse({
             'success': True,
-            'message': '用例更新成功'
+            'data': case_data
         })
         
     except TestCaseLibrary.DoesNotExist:
@@ -236,6 +256,73 @@ def update_case(request):
             'success': False,
             'message': '用例不存在'
         }, status=404)
+    except Exception as e:
+        return JsonResponse({
+            'success': False,
+            'message': str(e)
+        }, status=500)
+
+
+@require_http_methods(["PUT"])
+def update_case(request, case_id):
+    """更新用例"""
+    try:
+        data = json.loads(request.body)
+        case = TestCaseLibrary.objects.get(id=case_id)
+        
+        # 更新字段
+        case.title = data.get('title', case.title)
+        case.module = data.get('module', case.module)
+        case.priority = data.get('priority', case.priority)
+        case.case_type = data.get('case_type', case.case_type)
+        case.preconditions = data.get('preconditions', case.preconditions)
+        case.remark = data.get('remark', case.remark)
+        
+        # 处理测试步骤
+        test_steps = data.get('test_steps', '')
+        if test_steps and isinstance(test_steps, str):
+            try:
+                import json as json_lib
+                steps_list = json_lib.loads(test_steps)
+                if isinstance(steps_list, list):
+                    # 将步骤列表格式化为文本（只保留步骤描述，不要预期结果）
+                    test_steps = '\n'.join([
+                        f"{i+1}. {step.get('step_desc', '')}"
+                        for i, step in enumerate(steps_list)
+                    ])
+            except:
+                pass
+        case.test_steps = test_steps
+        
+        case.expected_results = data.get('expected_results', case.expected_results)
+        case.maintainer = data.get('maintainer', case.maintainer)
+        case.tags = data.get('tags', case.tags)
+        
+        # 如果有项目 ID，则更新项目关联
+        if 'project_id' in data:
+            case.project_id = data['project_id'] if data['project_id'] else None
+        
+        case.save()
+        
+        return JsonResponse({
+            'success': True,
+            'message': '用例更新成功',
+            'data': {
+                'id': case.id,
+                'case_number': case.case_number,
+            }
+        })
+        
+    except TestCaseLibrary.DoesNotExist:
+        return JsonResponse({
+            'success': False,
+            'message': '用例不存在'
+        }, status=404)
+    except json.JSONDecodeError:
+        return JsonResponse({
+            'success': False,
+            'message': '无效的 JSON 数据'
+        }, status=400)
     except Exception as e:
         return JsonResponse({
             'success': False,

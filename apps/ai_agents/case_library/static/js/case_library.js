@@ -90,8 +90,14 @@ document.addEventListener('DOMContentLoaded', function() {
                     
                     // 对话框
                     dialogVisible: false,
+                    editDialogVisible: false,  // 编辑对话框
                     createModuleDialogVisible: false,
                     editModuleDialogVisible: false,
+                    detailDialogVisible: false,
+                    
+                    // 查看详情数据
+                    currentCase: null,
+                    editCaseData: {},  // 编辑用例的数据
                     
                     // 新建模块表单
                     newModule: {
@@ -271,13 +277,258 @@ document.addEventListener('DOMContentLoaded', function() {
                 },
                 
                 // 选择用例
-                selectCase(caseItem) {
+                async selectCase(caseItem) {
                     console.log('选择用例:', caseItem);
-                    // 可以在这里打开详情对话框
+                    // 打开详情对话框
+                    await this.showCaseDetail(caseItem.id);
+                },
+                
+                // 显示编辑用例对话框
+                async showEditDialog(caseId) {
+                    try {
+                        const response = await fetch(`/case_library/api/detail/${caseId}/`);
+                        const data = await response.json();
+                        
+                        if (data.success) {
+                            // 填充编辑表单数据
+                            this.editCaseData = {
+                                id: data.data.id,
+                                title: data.data.title,
+                                module_value: data.data.module || '',
+                                project_name: data.data.project_name || '',
+                                priority: data.data.priority || 'p2',
+                                case_type: data.data.case_type || 'functional',
+                                preconditions: data.data.preconditions || '',
+                                test_steps_list: data.data.test_steps_list || [
+                                    { step_desc: '', expected_result: '' }
+                                ],
+                                remark: data.data.remark || '',
+                                project_id: data.data.project_id
+                            };
+                            this.editDialogVisible = true;
+                        } else {
+                            this.$message.error('加载失败：' + data.message);
+                        }
+                    } catch (error) {
+                        console.error('加载用例详情失败:', error);
+                        this.$message.error('加载失败');
+                    }
+                },
+                
+                // 更新用例
+                async updateCase() {
+                    try {
+                        // 验证表单
+                        if (!this.editCaseData.title) {
+                            this.$message.error('请输入用例名称');
+                            return;
+                        }
+                        if (!this.editCaseData.module_value) {
+                            this.$message.error('请选择所属模块');
+                            return;
+                        }
+                        
+                        // 转换测试步骤为 JSON
+                        const testStepsJson = JSON.stringify(this.editCaseData.test_steps_list);
+                        
+                        const response = await fetch(`/case_library/api/update/${this.editCaseData.id}/`, {
+                            method: 'PUT',
+                            headers: {
+                                'Content-Type': 'application/json',
+                                'X-CSRFToken': this.getCookie('csrftoken')
+                            },
+                            body: JSON.stringify({
+                                title: this.editCaseData.title,
+                                module: this.editCaseData.module_value,
+                                priority: this.editCaseData.priority,
+                                case_type: this.editCaseData.case_type,
+                                preconditions: this.editCaseData.preconditions,
+                                test_steps: testStepsJson,
+                                expected_results: this.editCaseData.test_steps_list.map(s => s.expected_result).join('\n'),
+                                remark: this.editCaseData.remark,
+                                project_id: this.editCaseData.project_id
+                            })
+                        });
+                        
+                        const data = await response.json();
+                        
+                        if (data.success) {
+                            this.$message.success('用例更新成功');
+                            this.editDialogVisible = false;
+                            // 重新加载用例列表
+                            await this.loadCases();
+                        } else {
+                            this.$message.error('更新失败：' + data.message);
+                        }
+                    } catch (error) {
+                        console.error('更新用例失败:', error);
+                        this.$message.error('更新失败');
+                    }
+                },
+                
+                // 删除当前用例（从详情对话框）
+                async deleteCurrentCase() {
+                    if (!this.currentCase || !this.currentCase.id) {
+                        this.$message.warning('用例信息不存在');
+                        return;
+                    }
+                    
+                    // 确认删除
+                    const confirmed = await this.$confirm(`确定要删除用例"${this.currentCase.title}"吗？`, '警告', {
+                        confirmButtonText: '确定',
+                        cancelButtonText: '取消',
+                        type: 'warning'
+                    }).catch(() => false);
+                    
+                    if (!confirmed) {
+                        return;
+                    }
+                    
+                    try {
+                        const response = await fetch('/case_library/api/delete/', {
+                            method: 'DELETE',
+                            headers: {
+                                'Content-Type': 'application/json',
+                                'X-CSRFToken': this.getCookie('csrftoken')
+                            },
+                            body: JSON.stringify({
+                                id: this.currentCase.id
+                            })
+                        });
+                        
+                        const data = await response.json();
+                        
+                        if (data.success) {
+                            this.$message.success('用例删除成功');
+                            this.detailDialogVisible = false;
+                            // 重新加载用例列表
+                            await this.loadCases();
+                        } else {
+                            this.$message.error('删除失败：' + data.message);
+                        }
+                    } catch (error) {
+                        console.error('删除用例失败:', error);
+                        this.$message.error('删除失败');
+                    }
+                },
+                
+                // 删除当前用例（从编辑对话框）
+                async deleteCurrentEditCase() {
+                    if (!this.editCaseData || !this.editCaseData.id) {
+                        this.$message.warning('用例信息不存在');
+                        return;
+                    }
+                    
+                    // 确认删除
+                    const confirmed = await this.$confirm(`确定要删除用例"${this.editCaseData.title}"吗？`, '警告', {
+                        confirmButtonText: '确定',
+                        cancelButtonText: '取消',
+                        type: 'warning'
+                    }).catch(() => false);
+                    
+                    if (!confirmed) {
+                        return;
+                    }
+                    
+                    try {
+                        const response = await fetch('/case_library/api/delete/', {
+                            method: 'DELETE',
+                            headers: {
+                                'Content-Type': 'application/json',
+                                'X-CSRFToken': this.getCookie('csrftoken')
+                            },
+                            body: JSON.stringify({
+                                id: this.editCaseData.id
+                            })
+                        });
+                        
+                        const data = await response.json();
+                        
+                        if (data.success) {
+                            this.$message.success('用例删除成功');
+                            this.editDialogVisible = false;
+                            // 重新加载用例列表
+                            await this.loadCases();
+                        } else {
+                            this.$message.error('删除失败：' + data.message);
+                        }
+                    } catch (error) {
+                        console.error('删除用例失败:', error);
+                        this.$message.error('删除失败');
+                    }
+                },
+                
+                // 从表格中打开编辑对话框
+                async showEditDialogFromTable(caseId) {
+                    await this.showEditDialog(caseId);
+                },
+                
+                // 从表格中删除用例
+                async deleteCaseFromTable(caseId, caseTitle) {
+                    if (!caseId) {
+                        this.$message.warning('用例信息不存在');
+                        return;
+                    }
+                    
+                    // 确认删除
+                    const confirmed = await this.$confirm(`确定要删除用例"${caseTitle}"吗？`, '警告', {
+                        confirmButtonText: '确定',
+                        cancelButtonText: '取消',
+                        type: 'warning'
+                    }).catch(() => false);
+                    
+                    if (!confirmed) {
+                        return;
+                    }
+                    
+                    try {
+                        const response = await fetch('/case_library/api/delete/', {
+                            method: 'DELETE',
+                            headers: {
+                                'Content-Type': 'application/json',
+                                'X-CSRFToken': this.getCookie('csrftoken')
+                            },
+                            body: JSON.stringify({
+                                id: caseId
+                            })
+                        });
+                        
+                        const data = await response.json();
+                        
+                        if (data.success) {
+                            this.$message.success('用例删除成功');
+                            // 重新加载用例列表
+                            await this.loadCases();
+                        } else {
+                            this.$message.error('删除失败：' + data.message);
+                        }
+                    } catch (error) {
+                        console.error('删除用例失败:', error);
+                        this.$message.error('删除失败');
+                    }
+                },
+                
+                // 显示用例详情
+                async showCaseDetail(caseId) {
+                    try {
+                        const response = await fetch(`/case_library/api/detail/${caseId}/`);
+                        const data = await response.json();
+                        
+                        if (data.success) {
+                            this.currentCase = data.data;
+                            this.detailDialogVisible = true;
+                        } else {
+                            this.$message.error('加载失败：' + data.message);
+                        }
+                    } catch (error) {
+                        console.error('加载用例详情失败:', error);
+                        this.$message.error('加载失败');
+                    }
                 },
                 
                 // 全选/取消全选
                 toggleSelectAll(event) {
+                    event.stopPropagation(); // 阻止冒泡
                     if (event.target.checked) {
                         this.selectedCases = this.cases.map(c => c.id);
                     } else {
@@ -548,6 +799,20 @@ document.addEventListener('DOMContentLoaded', function() {
                         return;
                     }
                     this.newCase.test_steps_list.splice(index, 1);
+                },
+                
+                // 添加步骤（编辑对话框）
+                addEditStep() {
+                    this.editCaseData.test_steps_list.push({ step_desc: '', expected_result: '' });
+                },
+                
+                // 删除步骤（编辑对话框）
+                removeEditStep(index) {
+                    if (this.editCaseData.test_steps_list.length <= 1) {
+                        this.$message.warning('至少保留一个步骤');
+                        return;
+                    }
+                    this.editCaseData.test_steps_list.splice(index, 1);
                 },
                 
                 // 关闭对话框时清理 Observer

@@ -435,6 +435,37 @@
     background: #f5f7fa;
 }
 
+/* 用例详情对话框样式 */
+.case-detail-container {
+    max-height: 70vh;
+    overflow-y: auto;
+}
+
+.detail-section {
+    margin-bottom: 24px;
+}
+
+.detail-section:last-child {
+    margin-bottom: 0;
+}
+
+.detail-section-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: #303133;
+    margin-bottom: 12px;
+    padding-left: 12px;
+    border-left: 4px solid #409eff;
+}
+
+.detail-content {
+    padding: 12px;
+    background: #f5f7fa;
+    border-radius: 4px;
+    color: #606266;
+    line-height: 1.8;
+}
+
 .step-number {
     width: 28px;
     height: 28px;
@@ -758,12 +789,12 @@
                     style="width: 100%"
                     @row-click="selectCase"
                 >
-                    <el-table-column width="50">
+                    <el-table-column width="50" @click.stop>
                         <template #header>
                             <input type="checkbox" @change="toggleSelectAll">
                         </template>
                         <template #default="{row}">
-                            <input type="checkbox" :value="row.id" v-model="selectedCases">
+                            <input type="checkbox" :value="row.id" v-model="selectedCases" @click.stop>
                         </template>
                     </el-table-column>
                     <el-table-column prop="case_number" label="编号" width="120"></el-table-column>
@@ -775,11 +806,22 @@
                         </template>
                     </el-table-column>
                     <el-table-column prop="case_type_display" label="类型" width="100"></el-table-column>
-                    <el-table-column prop="status_display" label="状态" width="100">
+                    <el-table-column label="操作" width="150" fixed="right">
                         <template #default="{row}">
-                            <span class="status-tag" :class="row.status">
-                                {{ row.status_display }}
-                            </span>
+                            <el-button 
+                                type="primary" 
+                                size="small" 
+                                @click.stop="showEditDialogFromTable(row.id)"
+                            >
+                                编辑
+                            </el-button>
+                            <el-button 
+                                type="danger" 
+                                size="small" 
+                                @click.stop="deleteCaseFromTable(row.id, row.title)"
+                            >
+                                删除
+                            </el-button>
                         </template>
                     </el-table-column>
                 </el-table>
@@ -807,6 +849,178 @@
             </div>
         </div>
     </div>
+
+<!-- 用例详情对话框 -->
+<el-dialog v-model="detailDialogVisible" title="用例详情" width="1000px" top="5vh">
+    <div v-if="currentCase" class="case-detail-container">
+        <!-- 基本信息 -->
+        <div class="detail-section">
+            <h4 class="detail-section-title">基本信息</h4>
+            <el-descriptions :column="2" border>
+                <el-descriptions-item label="用例编号">{{ currentCase.case_number }}</el-descriptions-item>
+                <el-descriptions-item label="所属模块">{{ currentCase.module_display|default:'未分配' }}</el-descriptions-item>
+                <el-descriptions-item label="优先级">
+                    <span style="color: red; font-weight: bold;">{{ currentCase.priority_display|default:'P2' }}</span>
+                </el-descriptions-item>
+                <el-descriptions-item label="用例类型">{{ currentCase.case_type_display }}</el-descriptions-item>
+                <el-descriptions-item label="创建时间">{{ currentCase.created_at }}</el-descriptions-item>
+                <el-descriptions-item label="更新时间">{{ currentCase.updated_at }}</el-descriptions-item>
+            </el-descriptions>
+        </div>
+        
+        <!-- 用例名称 -->
+        <div class="detail-section">
+            <h4 class="detail-section-title">用例名称</h4>
+            <div class="detail-content">{{ currentCase.title }}</div>
+        </div>
+        
+        <!-- 前置条件 -->
+        <div class="detail-section" v-if="currentCase.preconditions">
+            <h4 class="detail-section-title">前置条件</h4>
+            <div class="detail-content" style="white-space: pre-wrap;">{{ currentCase.preconditions }}</div>
+        </div>
+        
+        <!-- 测试步骤 -->
+        <div class="detail-section" v-if="currentCase.test_steps_list && currentCase.test_steps_list.length > 0">
+            <h4 class="detail-section-title">测试步骤</h4>
+            <el-table :data="currentCase.test_steps_list" border style="margin-top: 10px;">
+                <el-table-column type="index" label="序号" width="60"></el-table-column>
+                <el-table-column prop="step_desc" label="步骤描述" min-width="200"></el-table-column>
+                <el-table-column prop="expected_result" label="预期结果" min-width="200"></el-table-column>
+            </el-table>
+        </div>
+        
+        <!-- 备注 -->
+        <div class="detail-section" v-if="currentCase.remark">
+            <h4 class="detail-section-title">备注</h4>
+            <div class="detail-content" style="white-space: pre-wrap;">{{ currentCase.remark }}</div>
+        </div>
+    </div>
+    <template #footer>
+        <el-button type="primary" @click="detailDialogVisible = false">关闭</el-button>
+    </template>
+</el-dialog>
+
+<!-- 编辑用例对话框 -->
+<el-dialog v-model="editDialogVisible" title="编辑用例" width="1000px" top="5vh">
+    <el-form :model="editCaseData" label-width="110px" :rules="caseRules" ref="editCaseFormRef">
+        <el-row :gutter="24">
+            <!-- 左列 -->
+            <el-col :span="14">
+                <el-form-item label="用例名称" required>
+                    <el-input 
+                        v-model="editCaseData.title" 
+                        placeholder="输入用例名称"
+                        type="textarea"
+                        :rows="2"
+                        maxlength="500"
+                        show-word-limit>
+                    </el-input>
+                </el-form-item>
+                
+                <el-form-item label="前置条件">
+                    <el-input 
+                        v-model="editCaseData.preconditions" 
+                        type="textarea"
+                        :rows="8"
+                        placeholder="请输入前置条件（支持简单的文本格式，如换行、缩进等）">
+                    </el-input>
+                </el-form-item>
+                
+                <el-form-item label="操作步骤">
+                    <div class="steps-container">
+                        <div v-for="(step, index) in editCaseData.test_steps_list" :key="index" class="step-item">
+                            <div class="step-number" v-text="index + 1"></div>
+                            <div class="step-inputs">
+                                <el-input 
+                                    v-model="step.step_desc" 
+                                    placeholder="输入步骤描述"
+                                    class="step-input">
+                                </el-input>
+                                <el-input 
+                                    v-model="step.expected_result" 
+                                    placeholder="输入预期结果"
+                                    class="step-input">
+                                </el-input>
+                            </div>
+                            <!-- 删除按钮 -->
+                            <el-button 
+                                type="danger" 
+                                size="small" 
+                                @click="removeEditStep(index)"
+                                class="remove-step-btn"
+                                :disabled="editCaseData.test_steps_list.length <= 1">
+                                <i class="fas fa-trash"></i>
+                            </el-button>
+                        </div>
+                    </div>
+                    <el-button type="primary" size="small" @click="addEditStep" class="add-step-btn">
+                        <i class="fas fa-plus"></i> 添加步骤
+                    </el-button>
+                </el-form-item>
+                
+                <el-form-item label="备注">
+                    <el-input 
+                        v-model="editCaseData.remark" 
+                        type="textarea"
+                        :rows="8"
+                        placeholder="请输入备注（支持简单的文本格式，如换行、缩进等）">
+                    </el-input>
+                </el-form-item>
+            </el-col>
+            
+            <!-- 右列 -->
+            <el-col :span="10">
+                <el-form-item label="所属用例库" required style="margin-bottom: 48px;">
+                    <el-input v-model="editCaseData.project_name" disabled placeholder="所属用例库"></el-input>
+                </el-form-item>
+                
+                <el-form-item label="所属模块" required style="margin-bottom: 48px;">
+                    <el-cascader
+                        v-model="editCaseData.module_value"
+                        :options="moduleCascaderOptions"
+                        :props="{ value: 'value', label: 'name', children: 'children', checkStrictly: true, emitPath: false }"
+                        placeholder="请选择所属模块"
+                        style="width: 100%;"
+                        filterable
+                        clearable>
+                    </el-cascader>
+                </el-form-item>
+                
+                <el-form-item label="用例类型" style="margin-bottom: 48px;">
+                    <el-select v-model="editCaseData.case_type" class="w-full" placeholder="选择用例类型">
+                        <el-option label="功能测试" value="functional"></el-option>
+                        <el-option label="性能测试" value="performance"></el-option>
+                        <el-option label="兼容性测试" value="compatibility"></el-option>
+                        <el-option label="安全性测试" value="security"></el-option>
+                        <el-option label="UI 测试" value="ui"></el-option>
+                        <el-option label="接口测试" value="api"></el-option>
+                    </el-select>
+                </el-form-item>
+                
+                <el-form-item label="优先级" style="margin-bottom: 48px;">
+                    <el-select v-model="editCaseData.priority" class="w-full" placeholder="选择优先级">
+                        <el-option label="P0" value="p0"></el-option>
+                        <el-option label="P1" value="p1"></el-option>
+                        <el-option label="P2" value="p2"></el-option>
+                        <el-option label="P3" value="p3"></el-option>
+                    </el-select>
+                </el-form-item>
+            </el-col>
+        </el-row>
+    </el-form>
+    <template #footer>
+        <div class="dialog-footer">
+            <div class="dialog-footer-left">
+                <el-checkbox v-model="editCaseData.continue_edit" border>继续编辑下一个</el-checkbox>
+            </div>
+            <div class="dialog-footer-right">
+                <el-button @click="editDialogVisible = false">取消</el-button>
+                <el-button type="primary" @click="updateCase">确定</el-button>
+            </div>
+        </div>
+    </template>
+</el-dialog>
 </div>
 
 <!-- 新建模块对话框 -->
@@ -966,9 +1180,9 @@
 {% endblock %}
 
 {% block extra_js %}
-<!-- Vue 3 (使用 jsdelivr 生产版本) -->
-<script src="https://cdn.jsdelivr.net/npm/vue@3.4.21/dist/vue.global.prod.js"></script>
-<!-- Element Plus (使用 jsdelivr) -->
-<script src="https://cdn.jsdelivr.net/npm/element-plus@2.5.6/dist/index.full.min.js"></script>
+<!-- Vue 3 -->
+<script src="{% static 'js/vue.global.prod.js' %}"></script>
+<!-- Element Plus -->
+<script src="{% static 'js/element-plus.min.js' %}"></script>
 <script src="{% static 'js/case_library.js' %}"></script>
 {% endblock %}

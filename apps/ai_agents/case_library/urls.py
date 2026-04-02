@@ -10,8 +10,9 @@ urlpatterns = [
     # API 路由
     path('api/list/', views.case_library_list, name='case_library_list'),
     path('api/create/', views.create_case, name='create_case'),
-    path('api/update/', views.update_case, name='update_case'),
+    path('api/update/<int:case_id>/', views.update_case, name='update_case'),
     path('api/delete/', views.delete_case, name='delete_case'),
+    path('api/detail/<int:case_id>/', views.get_case_detail, name='get_case_detail'),
     path('api/modules/', views.get_modules, name='get_modules'),
     path('api/modules/create/', views.create_module, name='create_module'),
     path('api/modules/<int:module_id>/update/', views.update_module, name='update_module'),

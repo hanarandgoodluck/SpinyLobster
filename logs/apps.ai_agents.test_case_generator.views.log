@@ -874,3 +874,23 @@ ValueError: DeepSeek API key is required. Set it via DEEPSEEK_API_KEY environmen
 2026-04-01 10:27:31,729 - apps.ai_agents.test_case_generator.views - INFO - [thread=6358691840 Thread-22 (process_request_thread)] - 从数据库加载 AI 配置成功，模型：
 2026-04-01 10:30:37,234 - apps.ai_agents.test_case_generator.views - WARNING - [thread=6120894464 django-main-thread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
 2026-04-01 10:31:27,822 - apps.ai_agents.test_case_generator.views - WARNING - [thread=6112505856 django-main-thread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-04-02 09:14:53,544 - apps.ai_agents.test_case_generator.views - WARNING - [thread=8569212736 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-04-02 14:06:42,306 - apps.ai_agents.test_case_generator.views - WARNING - [thread=6146404352 django-main-thread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-04-02 14:06:52,074 - apps.ai_agents.test_case_generator.views - INFO - [thread=6341865472 Thread-3 (process_request_thread)] - ===== 进入 generate 视图函数 =====
+2026-04-02 14:06:52,079 - apps.ai_agents.test_case_generator.views - INFO - [thread=6341865472 Thread-3 (process_request_thread)] - 请求方法：GET
+2026-04-02 14:06:52,129 - apps.ai_agents.test_case_generator.views - INFO - [thread=6341865472 Thread-3 (process_request_thread)] - 从数据库加载 AI 配置成功，模型：
+2026-04-02 14:08:40,000 - apps.ai_agents.test_case_generator.views - WARNING - [thread=8569212736 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-04-02 14:10:43,461 - apps.ai_agents.test_case_generator.views - WARNING - [thread=6152679424 django-main-thread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-04-02 14:11:02,336 - apps.ai_agents.test_case_generator.views - WARNING - [thread=8569212736 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-04-02 14:11:13,501 - apps.ai_agents.test_case_generator.views - WARNING - [thread=8569212736 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-04-02 14:18:38,091 - apps.ai_agents.test_case_generator.views - WARNING - [thread=6153121792 django-main-thread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-04-02 14:19:21,142 - apps.ai_agents.test_case_generator.views - WARNING - [thread=6186332160 django-main-thread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-04-02 14:23:18,536 - apps.ai_agents.test_case_generator.views - WARNING - [thread=6173274112 django-main-thread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-04-02 14:23:36,292 - apps.ai_agents.test_case_generator.views - WARNING - [thread=8569212736 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-04-02 14:23:47,349 - apps.ai_agents.test_case_generator.views - WARNING - [thread=6183317504 django-main-thread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-04-02 14:45:32,940 - apps.ai_agents.test_case_generator.views - WARNING - [thread=8569212736 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-04-02 14:47:04,469 - apps.ai_agents.test_case_generator.views - WARNING - [thread=6107967488 django-main-thread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-04-02 14:50:22,010 - apps.ai_agents.test_case_generator.views - WARNING - [thread=8569212736 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-04-02 14:53:03,624 - apps.ai_agents.test_case_generator.views - WARNING - [thread=6184546304 django-main-thread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-04-02 14:53:56,463 - apps.ai_agents.test_case_generator.views - WARNING - [thread=6115504128 django-main-thread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-04-02 14:55:01,505 - apps.ai_agents.test_case_generator.views - WARNING - [thread=6179024896 django-main-thread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.

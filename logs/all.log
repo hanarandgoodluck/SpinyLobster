@@ -6376,3 +6376,374 @@ django.template.exceptions.TemplateSyntaxError: Template: /Users/gb/Desktop/mypy
 2026-04-01 11:25:17,574 - django.request - WARNING - [thread=6202404864 Thread-15 (process_request_thread)] - Not Found: /.well-known/appspecific/com.chrome.devtools.json
 2026-04-01 11:33:25,292 - django.request - WARNING - [thread=6185578496 Thread-22 (process_request_thread)] - Not Found: /.well-known/appspecific/com.chrome.devtools.json
 2026-04-01 11:38:39,756 - django.request - WARNING - [thread=6185578496 Thread-24 (process_request_thread)] - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2026-04-02 09:14:44,843 - django.utils.autoreload - INFO - [thread=8569212736 MainThread] - Watching for file changes with StatReloader
+2026-04-02 09:14:52,649 - LLMServiceFactory - INFO - [thread=8569212736 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-04-02 09:14:52,780 - LLMServiceFactory - WARNING - [thread=8569212736 MainThread] - 数据库中 AI 配置的 API Key 为空，使用 settings.py 配置
+2026-04-02 09:14:53,165 - apps.core.views - WARNING - [thread=8569212736 MainThread] - 无法创建 LLM 服务：DeepSeek API key is required. Set it via DEEPSEEK_API_KEY environment variable or pass it directly.
+2026-04-02 09:14:53,165 - apps.core.views - WARNING - [thread=8569212736 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-04-02 09:14:53,541 - LLMServiceFactory - INFO - [thread=8569212736 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-04-02 09:14:53,542 - LLMServiceFactory - WARNING - [thread=8569212736 MainThread] - 数据库中 AI 配置的 API Key 为空，使用 settings.py 配置
+2026-04-02 09:14:53,543 - apps.ai_agents.prd_analyzer.views - WARNING - [thread=8569212736 MainThread] - 无法创建 LLM 服务：DeepSeek API key is required. Set it via DEEPSEEK_API_KEY environment variable or pass it directly.
+2026-04-02 09:14:53,544 - apps.ai_agents.test_case_generator.views - WARNING - [thread=8569212736 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-04-02 09:14:53,564 - LLMServiceFactory - INFO - [thread=8569212736 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-04-02 09:14:53,565 - LLMServiceFactory - WARNING - [thread=8569212736 MainThread] - 数据库中 AI 配置的 API Key 为空，使用 settings.py 配置
+2026-04-02 09:14:53,566 - apps.ai_agents.test_case_reviewer.views - WARNING - [thread=8569212736 MainThread] - 无法创建 LLM 服务：DeepSeek API key is required. Set it via DEEPSEEK_API_KEY environment variable or pass it directly.
+2026-04-02 09:14:53,566 - apps.ai_agents.test_case_reviewer.views - WARNING - [thread=8569212736 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-04-02 14:06:35,554 - django.utils.autoreload - INFO - [thread=8569212736 MainThread] - Watching for file changes with StatReloader
+2026-04-02 14:06:41,408 - LLMServiceFactory - INFO - [thread=6146404352 django-main-thread] - 创建 LLM 服务：provider=deepseek
+2026-04-02 14:06:41,606 - LLMServiceFactory - WARNING - [thread=6146404352 django-main-thread] - 数据库中 AI 配置的 API Key 为空，使用 settings.py 配置
+2026-04-02 14:06:41,966 - apps.core.views - WARNING - [thread=6146404352 django-main-thread] - 无法创建 LLM 服务：DeepSeek API key is required. Set it via DEEPSEEK_API_KEY environment variable or pass it directly.
+2026-04-02 14:06:41,967 - apps.core.views - WARNING - [thread=6146404352 django-main-thread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-04-02 14:06:42,303 - LLMServiceFactory - INFO - [thread=6146404352 django-main-thread] - 创建 LLM 服务：provider=deepseek
+2026-04-02 14:06:42,305 - LLMServiceFactory - WARNING - [thread=6146404352 django-main-thread] - 数据库中 AI 配置的 API Key 为空，使用 settings.py 配置
+2026-04-02 14:06:42,305 - apps.ai_agents.prd_analyzer.views - WARNING - [thread=6146404352 django-main-thread] - 无法创建 LLM 服务：DeepSeek API key is required. Set it via DEEPSEEK_API_KEY environment variable or pass it directly.
+2026-04-02 14:06:42,306 - apps.ai_agents.test_case_generator.views - WARNING - [thread=6146404352 django-main-thread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-04-02 14:06:42,318 - LLMServiceFactory - INFO - [thread=6146404352 django-main-thread] - 创建 LLM 服务：provider=deepseek
+2026-04-02 14:06:42,319 - LLMServiceFactory - WARNING - [thread=6146404352 django-main-thread] - 数据库中 AI 配置的 API Key 为空，使用 settings.py 配置
+2026-04-02 14:06:42,319 - apps.ai_agents.test_case_reviewer.views - WARNING - [thread=6146404352 django-main-thread] - 无法创建 LLM 服务：DeepSeek API key is required. Set it via DEEPSEEK_API_KEY environment variable or pass it directly.
+2026-04-02 14:06:42,320 - apps.ai_agents.test_case_reviewer.views - WARNING - [thread=6146404352 django-main-thread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-04-02 14:06:52,074 - apps.ai_agents.test_case_generator.views - INFO - [thread=6341865472 Thread-3 (process_request_thread)] - ===== 进入 generate 视图函数 =====
+2026-04-02 14:06:52,079 - apps.ai_agents.test_case_generator.views - INFO - [thread=6341865472 Thread-3 (process_request_thread)] - 请求方法：GET
+2026-04-02 14:06:52,129 - apps.ai_agents.test_case_generator.views - INFO - [thread=6341865472 Thread-3 (process_request_thread)] - 从数据库加载 AI 配置成功，模型：
+2026-04-02 14:08:30,229 - django.utils.autoreload - INFO - [thread=8569212736 MainThread] - /Users/gb/Desktop/mypy/SpinyLobster/apps/ai_agents/case_library/views.py changed, reloading.
+2026-04-02 14:08:34,585 - django.utils.autoreload - INFO - [thread=8569212736 MainThread] - Watching for file changes with StatReloader
+2026-04-02 14:08:39,301 - LLMServiceFactory - INFO - [thread=8569212736 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-04-02 14:08:39,376 - LLMServiceFactory - WARNING - [thread=8569212736 MainThread] - 数据库中 AI 配置的 API Key 为空，使用 settings.py 配置
+2026-04-02 14:08:39,647 - apps.core.views - WARNING - [thread=8569212736 MainThread] - 无法创建 LLM 服务：DeepSeek API key is required. Set it via DEEPSEEK_API_KEY environment variable or pass it directly.
+2026-04-02 14:08:39,647 - apps.core.views - WARNING - [thread=8569212736 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-04-02 14:08:39,996 - LLMServiceFactory - INFO - [thread=8569212736 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-04-02 14:08:39,998 - LLMServiceFactory - WARNING - [thread=8569212736 MainThread] - 数据库中 AI 配置的 API Key 为空，使用 settings.py 配置
+2026-04-02 14:08:39,998 - apps.ai_agents.prd_analyzer.views - WARNING - [thread=8569212736 MainThread] - 无法创建 LLM 服务：DeepSeek API key is required. Set it via DEEPSEEK_API_KEY environment variable or pass it directly.
+2026-04-02 14:08:40,000 - apps.ai_agents.test_case_generator.views - WARNING - [thread=8569212736 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-04-02 14:08:40,010 - LLMServiceFactory - INFO - [thread=8569212736 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-04-02 14:08:40,013 - LLMServiceFactory - WARNING - [thread=8569212736 MainThread] - 数据库中 AI 配置的 API Key 为空，使用 settings.py 配置
+2026-04-02 14:08:40,013 - apps.ai_agents.test_case_reviewer.views - WARNING - [thread=8569212736 MainThread] - 无法创建 LLM 服务：DeepSeek API key is required. Set it via DEEPSEEK_API_KEY environment variable or pass it directly.
+2026-04-02 14:08:40,013 - apps.ai_agents.test_case_reviewer.views - WARNING - [thread=8569212736 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-04-02 14:10:34,512 - django.utils.autoreload - INFO - [thread=8569212736 MainThread] - /Users/gb/Desktop/mypy/SpinyLobster/apps/ai_agents/case_library/views.py changed, reloading.
+2026-04-02 14:10:39,123 - django.utils.autoreload - INFO - [thread=8569212736 MainThread] - Watching for file changes with StatReloader
+2026-04-02 14:10:42,899 - LLMServiceFactory - INFO - [thread=6152679424 django-main-thread] - 创建 LLM 服务：provider=deepseek
+2026-04-02 14:10:42,912 - LLMServiceFactory - WARNING - [thread=6152679424 django-main-thread] - 数据库中 AI 配置的 API Key 为空，使用 settings.py 配置
+2026-04-02 14:10:43,178 - apps.core.views - WARNING - [thread=6152679424 django-main-thread] - 无法创建 LLM 服务：DeepSeek API key is required. Set it via DEEPSEEK_API_KEY environment variable or pass it directly.
+2026-04-02 14:10:43,179 - apps.core.views - WARNING - [thread=6152679424 django-main-thread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-04-02 14:10:43,458 - LLMServiceFactory - INFO - [thread=6152679424 django-main-thread] - 创建 LLM 服务：provider=deepseek
+2026-04-02 14:10:43,460 - LLMServiceFactory - WARNING - [thread=6152679424 django-main-thread] - 数据库中 AI 配置的 API Key 为空，使用 settings.py 配置
+2026-04-02 14:10:43,460 - apps.ai_agents.prd_analyzer.views - WARNING - [thread=6152679424 django-main-thread] - 无法创建 LLM 服务：DeepSeek API key is required. Set it via DEEPSEEK_API_KEY environment variable or pass it directly.
+2026-04-02 14:10:43,461 - apps.ai_agents.test_case_generator.views - WARNING - [thread=6152679424 django-main-thread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-04-02 14:10:43,472 - LLMServiceFactory - INFO - [thread=6152679424 django-main-thread] - 创建 LLM 服务：provider=deepseek
+2026-04-02 14:10:43,473 - LLMServiceFactory - WARNING - [thread=6152679424 django-main-thread] - 数据库中 AI 配置的 API Key 为空，使用 settings.py 配置
+2026-04-02 14:10:43,473 - apps.ai_agents.test_case_reviewer.views - WARNING - [thread=6152679424 django-main-thread] - 无法创建 LLM 服务：DeepSeek API key is required. Set it via DEEPSEEK_API_KEY environment variable or pass it directly.
+2026-04-02 14:10:43,474 - apps.ai_agents.test_case_reviewer.views - WARNING - [thread=6152679424 django-main-thread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-04-02 14:10:54,366 - django.utils.autoreload - INFO - [thread=8569212736 MainThread] - /Users/gb/Desktop/mypy/SpinyLobster/apps/ai_agents/case_library/views.py changed, reloading.
+2026-04-02 14:10:58,584 - django.utils.autoreload - INFO - [thread=8569212736 MainThread] - Watching for file changes with StatReloader
+2026-04-02 14:11:01,783 - LLMServiceFactory - INFO - [thread=8569212736 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-04-02 14:11:01,794 - LLMServiceFactory - WARNING - [thread=8569212736 MainThread] - 数据库中 AI 配置的 API Key 为空，使用 settings.py 配置
+2026-04-02 14:11:02,052 - apps.core.views - WARNING - [thread=8569212736 MainThread] - 无法创建 LLM 服务：DeepSeek API key is required. Set it via DEEPSEEK_API_KEY environment variable or pass it directly.
+2026-04-02 14:11:02,052 - apps.core.views - WARNING - [thread=8569212736 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-04-02 14:11:02,333 - LLMServiceFactory - INFO - [thread=8569212736 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-04-02 14:11:02,335 - LLMServiceFactory - WARNING - [thread=8569212736 MainThread] - 数据库中 AI 配置的 API Key 为空，使用 settings.py 配置
+2026-04-02 14:11:02,335 - apps.ai_agents.prd_analyzer.views - WARNING - [thread=8569212736 MainThread] - 无法创建 LLM 服务：DeepSeek API key is required. Set it via DEEPSEEK_API_KEY environment variable or pass it directly.
+2026-04-02 14:11:02,336 - apps.ai_agents.test_case_generator.views - WARNING - [thread=8569212736 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-04-02 14:11:02,346 - LLMServiceFactory - INFO - [thread=8569212736 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-04-02 14:11:02,349 - LLMServiceFactory - WARNING - [thread=8569212736 MainThread] - 数据库中 AI 配置的 API Key 为空，使用 settings.py 配置
+2026-04-02 14:11:02,349 - apps.ai_agents.test_case_reviewer.views - WARNING - [thread=8569212736 MainThread] - 无法创建 LLM 服务：DeepSeek API key is required. Set it via DEEPSEEK_API_KEY environment variable or pass it directly.
+2026-04-02 14:11:02,349 - apps.ai_agents.test_case_reviewer.views - WARNING - [thread=8569212736 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-04-02 14:11:05,887 - django.utils.autoreload - INFO - [thread=8569212736 MainThread] - /Users/gb/Desktop/mypy/SpinyLobster/apps/ai_agents/case_library/urls.py changed, reloading.
+2026-04-02 14:11:09,022 - django.utils.autoreload - INFO - [thread=8569212736 MainThread] - Watching for file changes with StatReloader
+2026-04-02 14:11:12,956 - LLMServiceFactory - INFO - [thread=8569212736 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-04-02 14:11:12,969 - LLMServiceFactory - WARNING - [thread=8569212736 MainThread] - 数据库中 AI 配置的 API Key 为空，使用 settings.py 配置
+2026-04-02 14:11:13,225 - apps.core.views - WARNING - [thread=8569212736 MainThread] - 无法创建 LLM 服务：DeepSeek API key is required. Set it via DEEPSEEK_API_KEY environment variable or pass it directly.
+2026-04-02 14:11:13,226 - apps.core.views - WARNING - [thread=8569212736 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-04-02 14:11:13,498 - LLMServiceFactory - INFO - [thread=8569212736 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-04-02 14:11:13,499 - LLMServiceFactory - WARNING - [thread=8569212736 MainThread] - 数据库中 AI 配置的 API Key 为空，使用 settings.py 配置
+2026-04-02 14:11:13,499 - apps.ai_agents.prd_analyzer.views - WARNING - [thread=8569212736 MainThread] - 无法创建 LLM 服务：DeepSeek API key is required. Set it via DEEPSEEK_API_KEY environment variable or pass it directly.
+2026-04-02 14:11:13,501 - apps.ai_agents.test_case_generator.views - WARNING - [thread=8569212736 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-04-02 14:11:13,510 - LLMServiceFactory - INFO - [thread=8569212736 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-04-02 14:11:13,511 - LLMServiceFactory - WARNING - [thread=8569212736 MainThread] - 数据库中 AI 配置的 API Key 为空，使用 settings.py 配置
+2026-04-02 14:11:13,511 - apps.ai_agents.test_case_reviewer.views - WARNING - [thread=8569212736 MainThread] - 无法创建 LLM 服务：DeepSeek API key is required. Set it via DEEPSEEK_API_KEY environment variable or pass it directly.
+2026-04-02 14:11:13,512 - apps.ai_agents.test_case_reviewer.views - WARNING - [thread=8569212736 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-04-02 14:12:56,406 - django.request - ERROR - [thread=6203518976 Thread-1 (process_request_thread)] - Internal Server Error: /case_library/
+Traceback (most recent call last):
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/gb/Desktop/mypy/SpinyLobster/apps/ai_agents/case_library/views.py", line 364, in case_library_page
+    return render(request, 'case_library/case_library.html', context)
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/backends/django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/engine.py", line 186, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/base.py", line 157, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/base.py", line 199, in compile_nodelist
+    nodelist = parser.parse()
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/base.py", line 585, in parse
+    raise self.error(token, e)
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/base.py", line 583, in parse
+    compiled_result = compile_func(self, token)
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/loader_tags.py", line 307, in do_extends
+    nodelist = parser.parse()
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/base.py", line 585, in parse
+    raise self.error(token, e)
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/base.py", line 583, in parse
+    compiled_result = compile_func(self, token)
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/loader_tags.py", line 235, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/base.py", line 556, in parse
+    raise self.error(token, e)
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/base.py", line 554, in parse
+    filter_expression = self.compile_filter(token.contents)
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/base.py", line 676, in compile_filter
+    return FilterExpression(token, self)
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/base.py", line 776, in __init__
+    raise TemplateSyntaxError(
+    ...<2 lines>...
+    )
+django.template.exceptions.TemplateSyntaxError: Template: /Users/gb/Desktop/mypy/SpinyLobster/apps/ai_agents/case_library/templates/case_library/case_library.html, Could not parse the remainder: ' || '未分配'' from 'currentCase.module_display || '未分配''
+2026-04-02 14:12:56,606 - django.request - WARNING - [thread=6203518976 Thread-1 (process_request_thread)] - Not Found: /favicon.ico
+2026-04-02 14:16:35,008 - django.request - ERROR - [thread=6203518976 Thread-3 (process_request_thread)] - Internal Server Error: /case_library/
+Traceback (most recent call last):
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/base.py", line 577, in parse
+    compile_func = self.tags[command]
+                   ~~~~~~~~~^^^^^^^^^
+KeyError: 'endblock'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/gb/Desktop/mypy/SpinyLobster/apps/ai_agents/case_library/views.py", line 364, in case_library_page
+    return render(request, 'case_library/case_library.html', context)
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/backends/django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/engine.py", line 186, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/base.py", line 157, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/base.py", line 199, in compile_nodelist
+    nodelist = parser.parse()
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/base.py", line 585, in parse
+    raise self.error(token, e)
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/base.py", line 583, in parse
+    compiled_result = compile_func(self, token)
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/loader_tags.py", line 307, in do_extends
+    nodelist = parser.parse()
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/base.py", line 579, in parse
+    self.invalid_block_tag(token, command, parse_until)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gb/Desktop/mypy/.venv/lib/python3.13/site-packages/django/template/base.py", line 644, in invalid_block_tag
+    raise self.error(
+    ...<3 lines>...
+    )
+django.template.exceptions.TemplateSyntaxError: Template: /Users/gb/Desktop/mypy/SpinyLobster/apps/ai_agents/case_library/templates/case_library/case_library.html, Invalid block tag on line 1041: 'endblock'. Did you forget to register or load this tag?
+2026-04-02 14:18:33,339 - django.utils.autoreload - INFO - [thread=8569212736 MainThread] - Watching for file changes with StatReloader
+2026-04-02 14:18:37,442 - LLMServiceFactory - INFO - [thread=6153121792 django-main-thread] - 创建 LLM 服务：provider=deepseek
+2026-04-02 14:18:37,515 - LLMServiceFactory - WARNING - [thread=6153121792 django-main-thread] - 数据库中 AI 配置的 API Key 为空，使用 settings.py 配置
+2026-04-02 14:18:37,789 - apps.core.views - WARNING - [thread=6153121792 django-main-thread] - 无法创建 LLM 服务：DeepSeek API key is required. Set it via DEEPSEEK_API_KEY environment variable or pass it directly.
+2026-04-02 14:18:37,789 - apps.core.views - WARNING - [thread=6153121792 django-main-thread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-04-02 14:18:38,088 - LLMServiceFactory - INFO - [thread=6153121792 django-main-thread] - 创建 LLM 服务：provider=deepseek
+2026-04-02 14:18:38,090 - LLMServiceFactory - WARNING - [thread=6153121792 django-main-thread] - 数据库中 AI 配置的 API Key 为空，使用 settings.py 配置
+2026-04-02 14:18:38,090 - apps.ai_agents.prd_analyzer.views - WARNING - [thread=6153121792 django-main-thread] - 无法创建 LLM 服务：DeepSeek API key is required. Set it via DEEPSEEK_API_KEY environment variable or pass it directly.
+2026-04-02 14:18:38,091 - apps.ai_agents.test_case_generator.views - WARNING - [thread=6153121792 django-main-thread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-04-02 14:18:38,101 - LLMServiceFactory - INFO - [thread=6153121792 django-main-thread] - 创建 LLM 服务：provider=deepseek
+2026-04-02 14:18:38,102 - LLMServiceFactory - WARNING - [thread=6153121792 django-main-thread] - 数据库中 AI 配置的 API Key 为空，使用 settings.py 配置
+2026-04-02 14:18:38,103 - apps.ai_agents.test_case_reviewer.views - WARNING - [thread=6153121792 django-main-thread] - 无法创建 LLM 服务：DeepSeek API key is required. Set it via DEEPSEEK_API_KEY environment variable or pass it directly.
+2026-04-02 14:18:38,103 - apps.ai_agents.test_case_reviewer.views - WARNING - [thread=6153121792 django-main-thread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-04-02 14:19:12,875 - django.utils.autoreload - INFO - [thread=8569212736 MainThread] - Watching for file changes with StatReloader
+2026-04-02 14:19:20,363 - LLMServiceFactory - INFO - [thread=6186332160 django-main-thread] - 创建 LLM 服务：provider=deepseek
+2026-04-02 14:19:20,440 - LLMServiceFactory - WARNING - [thread=6186332160 django-main-thread] - 数据库中 AI 配置的 API Key 为空，使用 settings.py 配置
+2026-04-02 14:19:20,790 - apps.core.views - WARNING - [thread=6186332160 django-main-thread] - 无法创建 LLM 服务：DeepSeek API key is required. Set it via DEEPSEEK_API_KEY environment variable or pass it directly.
+2026-04-02 14:19:20,790 - apps.core.views - WARNING - [thread=6186332160 django-main-thread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-04-02 14:19:21,127 - LLMServiceFactory - INFO - [thread=6186332160 django-main-thread] - 创建 LLM 服务：provider=deepseek
+2026-04-02 14:19:21,130 - LLMServiceFactory - WARNING - [thread=6186332160 django-main-thread] - 数据库中 AI 配置的 API Key 为空，使用 settings.py 配置
+2026-04-02 14:19:21,140 - apps.ai_agents.prd_analyzer.views - WARNING - [thread=6186332160 django-main-thread] - 无法创建 LLM 服务：DeepSeek API key is required. Set it via DEEPSEEK_API_KEY environment variable or pass it directly.
+2026-04-02 14:19:21,142 - apps.ai_agents.test_case_generator.views - WARNING - [thread=6186332160 django-main-thread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-04-02 14:19:21,154 - LLMServiceFactory - INFO - [thread=6186332160 django-main-thread] - 创建 LLM 服务：provider=deepseek
+2026-04-02 14:19:21,155 - LLMServiceFactory - WARNING - [thread=6186332160 django-main-thread] - 数据库中 AI 配置的 API Key 为空，使用 settings.py 配置
+2026-04-02 14:19:21,155 - apps.ai_agents.test_case_reviewer.views - WARNING - [thread=6186332160 django-main-thread] - 无法创建 LLM 服务：DeepSeek API key is required. Set it via DEEPSEEK_API_KEY environment variable or pass it directly.
+2026-04-02 14:19:21,155 - apps.ai_agents.test_case_reviewer.views - WARNING - [thread=6186332160 django-main-thread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-04-02 14:19:54,971 - django.request - WARNING - [thread=6203731968 Thread-1 (process_request_thread)] - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2026-04-02 14:19:57,394 - django.request - WARNING - [thread=6220558336 Thread-2 (process_request_thread)] - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2026-04-02 14:19:58,826 - django.request - WARNING - [thread=6237384704 Thread-4 (process_request_thread)] - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2026-04-02 14:19:59,492 - django.request - WARNING - [thread=6203731968 Thread-3 (process_request_thread)] - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2026-04-02 14:20:00,252 - django.request - WARNING - [thread=6287863808 Thread-7 (process_request_thread)] - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2026-04-02 14:21:35,429 - django.request - WARNING - [thread=6287863808 Thread-11 (process_request_thread)] - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2026-04-02 14:23:08,599 - django.utils.autoreload - INFO - [thread=8569212736 MainThread] - /Users/gb/Desktop/mypy/SpinyLobster/apps/ai_agents/case_library/views.py changed, reloading.
+2026-04-02 14:23:13,324 - django.utils.autoreload - INFO - [thread=8569212736 MainThread] - Watching for file changes with StatReloader
+2026-04-02 14:23:17,973 - LLMServiceFactory - INFO - [thread=6173274112 django-main-thread] - 创建 LLM 服务：provider=deepseek
+2026-04-02 14:23:17,984 - LLMServiceFactory - WARNING - [thread=6173274112 django-main-thread] - 数据库中 AI 配置的 API Key 为空，使用 settings.py 配置
+2026-04-02 14:23:18,249 - apps.core.views - WARNING - [thread=6173274112 django-main-thread] - 无法创建 LLM 服务：DeepSeek API key is required. Set it via DEEPSEEK_API_KEY environment variable or pass it directly.
+2026-04-02 14:23:18,249 - apps.core.views - WARNING - [thread=6173274112 django-main-thread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-04-02 14:23:18,533 - LLMServiceFactory - INFO - [thread=6173274112 django-main-thread] - 创建 LLM 服务：provider=deepseek
+2026-04-02 14:23:18,535 - LLMServiceFactory - WARNING - [thread=6173274112 django-main-thread] - 数据库中 AI 配置的 API Key 为空，使用 settings.py 配置
+2026-04-02 14:23:18,535 - apps.ai_agents.prd_analyzer.views - WARNING - [thread=6173274112 django-main-thread] - 无法创建 LLM 服务：DeepSeek API key is required. Set it via DEEPSEEK_API_KEY environment variable or pass it directly.
+2026-04-02 14:23:18,536 - apps.ai_agents.test_case_generator.views - WARNING - [thread=6173274112 django-main-thread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-04-02 14:23:18,546 - LLMServiceFactory - INFO - [thread=6173274112 django-main-thread] - 创建 LLM 服务：provider=deepseek
+2026-04-02 14:23:18,547 - LLMServiceFactory - WARNING - [thread=6173274112 django-main-thread] - 数据库中 AI 配置的 API Key 为空，使用 settings.py 配置
+2026-04-02 14:23:18,547 - apps.ai_agents.test_case_reviewer.views - WARNING - [thread=6173274112 django-main-thread] - 无法创建 LLM 服务：DeepSeek API key is required. Set it via DEEPSEEK_API_KEY environment variable or pass it directly.
+2026-04-02 14:23:18,547 - apps.ai_agents.test_case_reviewer.views - WARNING - [thread=6173274112 django-main-thread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-04-02 14:23:27,278 - django.utils.autoreload - INFO - [thread=8569212736 MainThread] - /Users/gb/Desktop/mypy/SpinyLobster/apps/ai_agents/case_library/views.py changed, reloading.
+2026-04-02 14:23:31,359 - django.utils.autoreload - INFO - [thread=8569212736 MainThread] - Watching for file changes with StatReloader
+2026-04-02 14:23:35,603 - LLMServiceFactory - INFO - [thread=8569212736 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-04-02 14:23:35,647 - LLMServiceFactory - WARNING - [thread=8569212736 MainThread] - 数据库中 AI 配置的 API Key 为空，使用 settings.py 配置
+2026-04-02 14:23:35,936 - apps.core.views - WARNING - [thread=8569212736 MainThread] - 无法创建 LLM 服务：DeepSeek API key is required. Set it via DEEPSEEK_API_KEY environment variable or pass it directly.
+2026-04-02 14:23:35,936 - apps.core.views - WARNING - [thread=8569212736 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-04-02 14:23:36,289 - LLMServiceFactory - INFO - [thread=8569212736 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-04-02 14:23:36,291 - LLMServiceFactory - WARNING - [thread=8569212736 MainThread] - 数据库中 AI 配置的 API Key 为空，使用 settings.py 配置
+2026-04-02 14:23:36,291 - apps.ai_agents.prd_analyzer.views - WARNING - [thread=8569212736 MainThread] - 无法创建 LLM 服务：DeepSeek API key is required. Set it via DEEPSEEK_API_KEY environment variable or pass it directly.
+2026-04-02 14:23:36,292 - apps.ai_agents.test_case_generator.views - WARNING - [thread=8569212736 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-04-02 14:23:36,303 - LLMServiceFactory - INFO - [thread=8569212736 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-04-02 14:23:36,305 - LLMServiceFactory - WARNING - [thread=8569212736 MainThread] - 数据库中 AI 配置的 API Key 为空，使用 settings.py 配置
+2026-04-02 14:23:36,305 - apps.ai_agents.test_case_reviewer.views - WARNING - [thread=8569212736 MainThread] - 无法创建 LLM 服务：DeepSeek API key is required. Set it via DEEPSEEK_API_KEY environment variable or pass it directly.
+2026-04-02 14:23:36,305 - apps.ai_agents.test_case_reviewer.views - WARNING - [thread=8569212736 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-04-02 14:23:37,791 - django.utils.autoreload - INFO - [thread=8569212736 MainThread] - /Users/gb/Desktop/mypy/SpinyLobster/apps/ai_agents/case_library/urls.py changed, reloading.
+2026-04-02 14:23:42,377 - django.utils.autoreload - INFO - [thread=8569212736 MainThread] - Watching for file changes with StatReloader
+2026-04-02 14:23:46,682 - LLMServiceFactory - INFO - [thread=6183317504 django-main-thread] - 创建 LLM 服务：provider=deepseek
+2026-04-02 14:23:46,691 - LLMServiceFactory - WARNING - [thread=6183317504 django-main-thread] - 数据库中 AI 配置的 API Key 为空，使用 settings.py 配置
+2026-04-02 14:23:46,972 - apps.core.views - WARNING - [thread=6183317504 django-main-thread] - 无法创建 LLM 服务：DeepSeek API key is required. Set it via DEEPSEEK_API_KEY environment variable or pass it directly.
+2026-04-02 14:23:46,972 - apps.core.views - WARNING - [thread=6183317504 django-main-thread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-04-02 14:23:47,344 - LLMServiceFactory - INFO - [thread=6183317504 django-main-thread] - 创建 LLM 服务：provider=deepseek
+2026-04-02 14:23:47,346 - LLMServiceFactory - WARNING - [thread=6183317504 django-main-thread] - 数据库中 AI 配置的 API Key 为空，使用 settings.py 配置
+2026-04-02 14:23:47,347 - apps.ai_agents.prd_analyzer.views - WARNING - [thread=6183317504 django-main-thread] - 无法创建 LLM 服务：DeepSeek API key is required. Set it via DEEPSEEK_API_KEY environment variable or pass it directly.
+2026-04-02 14:23:47,349 - apps.ai_agents.test_case_generator.views - WARNING - [thread=6183317504 django-main-thread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-04-02 14:23:47,359 - LLMServiceFactory - INFO - [thread=6183317504 django-main-thread] - 创建 LLM 服务：provider=deepseek
+2026-04-02 14:23:47,361 - LLMServiceFactory - WARNING - [thread=6183317504 django-main-thread] - 数据库中 AI 配置的 API Key 为空，使用 settings.py 配置
+2026-04-02 14:23:47,361 - apps.ai_agents.test_case_reviewer.views - WARNING - [thread=6183317504 django-main-thread] - 无法创建 LLM 服务：DeepSeek API key is required. Set it via DEEPSEEK_API_KEY environment variable or pass it directly.
+2026-04-02 14:23:47,361 - apps.ai_agents.test_case_reviewer.views - WARNING - [thread=6183317504 django-main-thread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-04-02 14:36:27,933 - django.request - WARNING - [thread=6200717312 Thread-1 (process_request_thread)] - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2026-04-02 14:45:24,225 - django.utils.autoreload - INFO - [thread=8569212736 MainThread] - /Users/gb/Desktop/mypy/SpinyLobster/apps/ai_agents/case_library/views.py changed, reloading.
+2026-04-02 14:45:28,235 - django.utils.autoreload - INFO - [thread=8569212736 MainThread] - Watching for file changes with StatReloader
+2026-04-02 14:45:32,325 - LLMServiceFactory - INFO - [thread=8569212736 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-04-02 14:45:32,348 - LLMServiceFactory - WARNING - [thread=8569212736 MainThread] - 数据库中 AI 配置的 API Key 为空，使用 settings.py 配置
+2026-04-02 14:45:32,618 - apps.core.views - WARNING - [thread=8569212736 MainThread] - 无法创建 LLM 服务：DeepSeek API key is required. Set it via DEEPSEEK_API_KEY environment variable or pass it directly.
+2026-04-02 14:45:32,618 - apps.core.views - WARNING - [thread=8569212736 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-04-02 14:45:32,936 - LLMServiceFactory - INFO - [thread=8569212736 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-04-02 14:45:32,938 - LLMServiceFactory - WARNING - [thread=8569212736 MainThread] - 数据库中 AI 配置的 API Key 为空，使用 settings.py 配置
+2026-04-02 14:45:32,938 - apps.ai_agents.prd_analyzer.views - WARNING - [thread=8569212736 MainThread] - 无法创建 LLM 服务：DeepSeek API key is required. Set it via DEEPSEEK_API_KEY environment variable or pass it directly.
+2026-04-02 14:45:32,940 - apps.ai_agents.test_case_generator.views - WARNING - [thread=8569212736 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-04-02 14:45:32,950 - LLMServiceFactory - INFO - [thread=8569212736 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-04-02 14:45:32,951 - LLMServiceFactory - WARNING - [thread=8569212736 MainThread] - 数据库中 AI 配置的 API Key 为空，使用 settings.py 配置
+2026-04-02 14:45:32,951 - apps.ai_agents.test_case_reviewer.views - WARNING - [thread=8569212736 MainThread] - 无法创建 LLM 服务：DeepSeek API key is required. Set it via DEEPSEEK_API_KEY environment variable or pass it directly.
+2026-04-02 14:45:32,951 - apps.ai_agents.test_case_reviewer.views - WARNING - [thread=8569212736 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-04-02 14:46:55,645 - django.utils.autoreload - INFO - [thread=8569212736 MainThread] - /Users/gb/Desktop/mypy/SpinyLobster/apps/ai_agents/case_library/urls.py changed, reloading.
+2026-04-02 14:47:00,026 - django.utils.autoreload - INFO - [thread=8569212736 MainThread] - Watching for file changes with StatReloader
+2026-04-02 14:47:03,748 - LLMServiceFactory - INFO - [thread=6107967488 django-main-thread] - 创建 LLM 服务：provider=deepseek
+2026-04-02 14:47:03,810 - LLMServiceFactory - WARNING - [thread=6107967488 django-main-thread] - 数据库中 AI 配置的 API Key 为空，使用 settings.py 配置
+2026-04-02 14:47:04,103 - apps.core.views - WARNING - [thread=6107967488 django-main-thread] - 无法创建 LLM 服务：DeepSeek API key is required. Set it via DEEPSEEK_API_KEY environment variable or pass it directly.
+2026-04-02 14:47:04,103 - apps.core.views - WARNING - [thread=6107967488 django-main-thread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-04-02 14:47:04,466 - LLMServiceFactory - INFO - [thread=6107967488 django-main-thread] - 创建 LLM 服务：provider=deepseek
+2026-04-02 14:47:04,468 - LLMServiceFactory - WARNING - [thread=6107967488 django-main-thread] - 数据库中 AI 配置的 API Key 为空，使用 settings.py 配置
+2026-04-02 14:47:04,468 - apps.ai_agents.prd_analyzer.views - WARNING - [thread=6107967488 django-main-thread] - 无法创建 LLM 服务：DeepSeek API key is required. Set it via DEEPSEEK_API_KEY environment variable or pass it directly.
+2026-04-02 14:47:04,469 - apps.ai_agents.test_case_generator.views - WARNING - [thread=6107967488 django-main-thread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-04-02 14:47:04,481 - LLMServiceFactory - INFO - [thread=6107967488 django-main-thread] - 创建 LLM 服务：provider=deepseek
+2026-04-02 14:47:04,482 - LLMServiceFactory - WARNING - [thread=6107967488 django-main-thread] - 数据库中 AI 配置的 API Key 为空，使用 settings.py 配置
+2026-04-02 14:47:04,483 - apps.ai_agents.test_case_reviewer.views - WARNING - [thread=6107967488 django-main-thread] - 无法创建 LLM 服务：DeepSeek API key is required. Set it via DEEPSEEK_API_KEY environment variable or pass it directly.
+2026-04-02 14:47:04,483 - apps.ai_agents.test_case_reviewer.views - WARNING - [thread=6107967488 django-main-thread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-04-02 14:48:26,506 - django.request - WARNING - [thread=12901707776 Thread-1 (process_request_thread)] - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2026-04-02 14:50:12,434 - django.utils.autoreload - INFO - [thread=8569212736 MainThread] - /Users/gb/Desktop/mypy/SpinyLobster/apps/ai_agents/case_library/views.py changed, reloading.
+2026-04-02 14:50:16,795 - django.utils.autoreload - INFO - [thread=8569212736 MainThread] - Watching for file changes with StatReloader
+2026-04-02 14:50:21,360 - LLMServiceFactory - INFO - [thread=8569212736 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-04-02 14:50:21,387 - LLMServiceFactory - WARNING - [thread=8569212736 MainThread] - 数据库中 AI 配置的 API Key 为空，使用 settings.py 配置
+2026-04-02 14:50:21,678 - apps.core.views - WARNING - [thread=8569212736 MainThread] - 无法创建 LLM 服务：DeepSeek API key is required. Set it via DEEPSEEK_API_KEY environment variable or pass it directly.
+2026-04-02 14:50:21,678 - apps.core.views - WARNING - [thread=8569212736 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-04-02 14:50:22,007 - LLMServiceFactory - INFO - [thread=8569212736 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-04-02 14:50:22,009 - LLMServiceFactory - WARNING - [thread=8569212736 MainThread] - 数据库中 AI 配置的 API Key 为空，使用 settings.py 配置
+2026-04-02 14:50:22,009 - apps.ai_agents.prd_analyzer.views - WARNING - [thread=8569212736 MainThread] - 无法创建 LLM 服务：DeepSeek API key is required. Set it via DEEPSEEK_API_KEY environment variable or pass it directly.
+2026-04-02 14:50:22,010 - apps.ai_agents.test_case_generator.views - WARNING - [thread=8569212736 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-04-02 14:50:22,020 - LLMServiceFactory - INFO - [thread=8569212736 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-04-02 14:50:22,021 - LLMServiceFactory - WARNING - [thread=8569212736 MainThread] - 数据库中 AI 配置的 API Key 为空，使用 settings.py 配置
+2026-04-02 14:50:22,021 - apps.ai_agents.test_case_reviewer.views - WARNING - [thread=8569212736 MainThread] - 无法创建 LLM 服务：DeepSeek API key is required. Set it via DEEPSEEK_API_KEY environment variable or pass it directly.
+2026-04-02 14:50:22,021 - apps.ai_agents.test_case_reviewer.views - WARNING - [thread=8569212736 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-04-02 14:50:25,396 - django.request - WARNING - [thread=6191214592 Thread-1 (process_request_thread)] - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2026-04-02 14:52:55,205 - django.utils.autoreload - INFO - [thread=8569212736 MainThread] - /Users/gb/Desktop/mypy/SpinyLobster/apps/ai_agents/case_library/views.py changed, reloading.
+2026-04-02 14:52:59,560 - django.utils.autoreload - INFO - [thread=8569212736 MainThread] - Watching for file changes with StatReloader
+2026-04-02 14:53:03,060 - LLMServiceFactory - INFO - [thread=6184546304 django-main-thread] - 创建 LLM 服务：provider=deepseek
+2026-04-02 14:53:03,076 - LLMServiceFactory - WARNING - [thread=6184546304 django-main-thread] - 数据库中 AI 配置的 API Key 为空，使用 settings.py 配置
+2026-04-02 14:53:03,342 - apps.core.views - WARNING - [thread=6184546304 django-main-thread] - 无法创建 LLM 服务：DeepSeek API key is required. Set it via DEEPSEEK_API_KEY environment variable or pass it directly.
+2026-04-02 14:53:03,342 - apps.core.views - WARNING - [thread=6184546304 django-main-thread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-04-02 14:53:03,621 - LLMServiceFactory - INFO - [thread=6184546304 django-main-thread] - 创建 LLM 服务：provider=deepseek
+2026-04-02 14:53:03,623 - LLMServiceFactory - WARNING - [thread=6184546304 django-main-thread] - 数据库中 AI 配置的 API Key 为空，使用 settings.py 配置
+2026-04-02 14:53:03,623 - apps.ai_agents.prd_analyzer.views - WARNING - [thread=6184546304 django-main-thread] - 无法创建 LLM 服务：DeepSeek API key is required. Set it via DEEPSEEK_API_KEY environment variable or pass it directly.
+2026-04-02 14:53:03,624 - apps.ai_agents.test_case_generator.views - WARNING - [thread=6184546304 django-main-thread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-04-02 14:53:03,635 - LLMServiceFactory - INFO - [thread=6184546304 django-main-thread] - 创建 LLM 服务：provider=deepseek
+2026-04-02 14:53:03,636 - LLMServiceFactory - WARNING - [thread=6184546304 django-main-thread] - 数据库中 AI 配置的 API Key 为空，使用 settings.py 配置
+2026-04-02 14:53:03,636 - apps.ai_agents.test_case_reviewer.views - WARNING - [thread=6184546304 django-main-thread] - 无法创建 LLM 服务：DeepSeek API key is required. Set it via DEEPSEEK_API_KEY environment variable or pass it directly.
+2026-04-02 14:53:03,636 - apps.ai_agents.test_case_reviewer.views - WARNING - [thread=6184546304 django-main-thread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-04-02 14:53:48,308 - django.utils.autoreload - INFO - [thread=8569212736 MainThread] - /Users/gb/Desktop/mypy/SpinyLobster/apps/ai_agents/case_library/views.py changed, reloading.
+2026-04-02 14:53:51,732 - django.utils.autoreload - INFO - [thread=8569212736 MainThread] - Watching for file changes with StatReloader
+2026-04-02 14:53:55,901 - LLMServiceFactory - INFO - [thread=6115504128 django-main-thread] - 创建 LLM 服务：provider=deepseek
+2026-04-02 14:53:55,921 - LLMServiceFactory - WARNING - [thread=6115504128 django-main-thread] - 数据库中 AI 配置的 API Key 为空，使用 settings.py 配置
+2026-04-02 14:53:56,187 - apps.core.views - WARNING - [thread=6115504128 django-main-thread] - 无法创建 LLM 服务：DeepSeek API key is required. Set it via DEEPSEEK_API_KEY environment variable or pass it directly.
+2026-04-02 14:53:56,187 - apps.core.views - WARNING - [thread=6115504128 django-main-thread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-04-02 14:53:56,460 - LLMServiceFactory - INFO - [thread=6115504128 django-main-thread] - 创建 LLM 服务：provider=deepseek
+2026-04-02 14:53:56,462 - LLMServiceFactory - WARNING - [thread=6115504128 django-main-thread] - 数据库中 AI 配置的 API Key 为空，使用 settings.py 配置
+2026-04-02 14:53:56,462 - apps.ai_agents.prd_analyzer.views - WARNING - [thread=6115504128 django-main-thread] - 无法创建 LLM 服务：DeepSeek API key is required. Set it via DEEPSEEK_API_KEY environment variable or pass it directly.
+2026-04-02 14:53:56,463 - apps.ai_agents.test_case_generator.views - WARNING - [thread=6115504128 django-main-thread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-04-02 14:53:56,473 - LLMServiceFactory - INFO - [thread=6115504128 django-main-thread] - 创建 LLM 服务：provider=deepseek
+2026-04-02 14:53:56,475 - LLMServiceFactory - WARNING - [thread=6115504128 django-main-thread] - 数据库中 AI 配置的 API Key 为空，使用 settings.py 配置
+2026-04-02 14:53:56,475 - apps.ai_agents.test_case_reviewer.views - WARNING - [thread=6115504128 django-main-thread] - 无法创建 LLM 服务：DeepSeek API key is required. Set it via DEEPSEEK_API_KEY environment variable or pass it directly.
+2026-04-02 14:53:56,475 - apps.ai_agents.test_case_reviewer.views - WARNING - [thread=6115504128 django-main-thread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-04-02 14:54:53,028 - django.utils.autoreload - INFO - [thread=8569212736 MainThread] - /Users/gb/Desktop/mypy/SpinyLobster/apps/ai_agents/case_library/views.py changed, reloading.
+2026-04-02 14:54:57,563 - django.utils.autoreload - INFO - [thread=8569212736 MainThread] - Watching for file changes with StatReloader
+2026-04-02 14:55:00,920 - LLMServiceFactory - INFO - [thread=6179024896 django-main-thread] - 创建 LLM 服务：provider=deepseek
+2026-04-02 14:55:00,946 - LLMServiceFactory - WARNING - [thread=6179024896 django-main-thread] - 数据库中 AI 配置的 API Key 为空，使用 settings.py 配置
+2026-04-02 14:55:01,219 - apps.core.views - WARNING - [thread=6179024896 django-main-thread] - 无法创建 LLM 服务：DeepSeek API key is required. Set it via DEEPSEEK_API_KEY environment variable or pass it directly.
+2026-04-02 14:55:01,219 - apps.core.views - WARNING - [thread=6179024896 django-main-thread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-04-02 14:55:01,502 - LLMServiceFactory - INFO - [thread=6179024896 django-main-thread] - 创建 LLM 服务：provider=deepseek
+2026-04-02 14:55:01,504 - LLMServiceFactory - WARNING - [thread=6179024896 django-main-thread] - 数据库中 AI 配置的 API Key 为空，使用 settings.py 配置
+2026-04-02 14:55:01,504 - apps.ai_agents.prd_analyzer.views - WARNING - [thread=6179024896 django-main-thread] - 无法创建 LLM 服务：DeepSeek API key is required. Set it via DEEPSEEK_API_KEY environment variable or pass it directly.
+2026-04-02 14:55:01,505 - apps.ai_agents.test_case_generator.views - WARNING - [thread=6179024896 django-main-thread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-04-02 14:55:01,515 - LLMServiceFactory - INFO - [thread=6179024896 django-main-thread] - 创建 LLM 服务：provider=deepseek
+2026-04-02 14:55:01,516 - LLMServiceFactory - WARNING - [thread=6179024896 django-main-thread] - 数据库中 AI 配置的 API Key 为空，使用 settings.py 配置
+2026-04-02 14:55:01,516 - apps.ai_agents.test_case_reviewer.views - WARNING - [thread=6179024896 django-main-thread] - 无法创建 LLM 服务：DeepSeek API key is required. Set it via DEEPSEEK_API_KEY environment variable or pass it directly.
+2026-04-02 14:55:01,517 - apps.ai_agents.test_case_reviewer.views - WARNING - [thread=6179024896 django-main-thread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-04-02 15:03:15,683 - django.request - WARNING - [thread=6250590208 Thread-2 (process_request_thread)] - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2026-04-02 15:03:22,522 - django.request - WARNING - [thread=6271610880 Thread-3 (process_request_thread)] - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2026-04-02 15:03:27,246 - django.request - WARNING - [thread=6305263616 Thread-5 (process_request_thread)] - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2026-04-02 15:03:32,018 - django.request - WARNING - [thread=12918534144 Thread-8 (process_request_thread)] - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2026-04-02 15:03:39,670 - django.request - WARNING - [thread=6305263616 Thread-5 (process_request_thread)] - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2026-04-02 15:03:44,952 - django.request - WARNING - [thread=6288437248 Thread-11 (process_request_thread)] - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2026-04-02 16:00:25,303 - django.request - WARNING - [thread=6250590208 Thread-12 (process_request_thread)] - Not Found: /.well-known/appspecific/com.chrome.devtools.json
