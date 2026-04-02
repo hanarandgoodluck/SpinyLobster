@@ -394,7 +394,7 @@ def project_list_create(request):
                     'description': project.description,
                     'created_at': project.created_at.strftime('%Y-%m-%d %H:%M:%S'),
                     'updated_at': project.updated_at.strftime('%Y-%m-%d %H:%M:%S'),
-                    'test_case_count': project.test_cases.count()
+                    'case_library_count': project.case_library.count()
                 })
             
             return JsonResponse({

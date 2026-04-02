@@ -137,10 +137,10 @@ def create_case(request):
                 import json as json_lib
                 steps_list = json_lib.loads(test_steps)
                 if isinstance(steps_list, list):
-                    # 将步骤列表格式化为文本（只保留步骤描述，不要预期结果）
+                    # 将步骤列表格式化为文本（只保留步骤描述，不要预期结果，不添加序号）
                     test_steps = '\n'.join([
-                        f"{i+1}. {step.get('step_desc', '')}"
-                        for i, step in enumerate(steps_list)
+                        step.get('step_desc', '')
+                        for step in steps_list
                     ])
             except:
                 pass
@@ -285,10 +285,10 @@ def update_case(request, case_id):
                 import json as json_lib
                 steps_list = json_lib.loads(test_steps)
                 if isinstance(steps_list, list):
-                    # 将步骤列表格式化为文本（只保留步骤描述，不要预期结果）
+                    # 将步骤列表格式化为文本（只保留步骤描述，不要预期结果，不添加序号）
                     test_steps = '\n'.join([
-                        f"{i+1}. {step.get('step_desc', '')}"
-                        for i, step in enumerate(steps_list)
+                        step.get('step_desc', '')
+                        for step in steps_list
                     ])
             except:
                 pass

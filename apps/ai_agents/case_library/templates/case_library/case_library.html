@@ -437,8 +437,9 @@
 
 /* 用例详情对话框样式 */
 .case-detail-container {
-    max-height: 70vh;
+    max-height: 75vh;
     overflow-y: auto;
+    padding-right: 10px;
 }
 
 .detail-section {
@@ -693,11 +694,16 @@
 .empty-state-desc {
     font-size: 14px;
 }
+
+/* Vue 加载前隐藏内容，防止闪烁 */
+[v-cloak] {
+    display: none !important;
+}
 </style>
 {% endblock %}
 
 {% block content %}
-<div class="case-library-page" id="app">
+<div class="case-library-page" id="app" v-cloak>
     <div class="case-library-container">
         <!-- 左侧模块树 -->
         <div class="module-tree-panel">
@@ -713,14 +719,14 @@
                         <i class="fas fa-folder"></i>
                         <span>所有用例</span>
                     </div>
-                    <span class="module-item-count">({{ totalCases }})</span>
+                    <span class="module-item-count">({% verbatim %}{{ totalCases }}{% endverbatim %})</span>
                 </div>
                 <div class="module-item" :class="{ active: selectedModule === 'no_module' }" @click="selectModule('no_module')">
                     <div class="module-item-info">
                         <i class="fas fa-folder-open"></i>
                         <span>无所属模块</span>
                     </div>
-                    <span class="module-item-count">({{ noModuleCount }})</span>
+                    <span class="module-item-count">({% verbatim %}{{ noModuleCount }}{% endverbatim %})</span>
                 </div>
                 <!-- 递归渲染模块树 -->
                 <module-tree-item 
@@ -756,25 +762,6 @@
                     <el-button @click="exportCases">导出</el-button>
                 </div>
                 <div class="case-toolbar-right">
-                    <el-select v-model="filterMaintainer" placeholder="维护人" clearable @change="loadCases">
-                        <el-option label="维护人" value=""></el-option>
-                    </el-select>
-                    <el-select v-model="filterPriority" placeholder="优先级" clearable @change="loadCases">
-                        <el-option label="优先级" value=""></el-option>
-                        <el-option label="P0" value="p0"></el-option>
-                        <el-option label="P1" value="p1"></el-option>
-                        <el-option label="P2" value="p2"></el-option>
-                        <el-option label="P3" value="p3"></el-option>
-                    </el-select>
-                    <el-select v-model="filterType" placeholder="类型" clearable @change="loadCases">
-                        <el-option label="类型" value=""></el-option>
-                        <el-option label="功能测试" value="functional"></el-option>
-                        <el-option label="性能测试" value="performance"></el-option>
-                        <el-option label="兼容性测试" value="compatibility"></el-option>
-                        <el-option label="安全性测试" value="security"></el-option>
-                        <el-option label="UI 测试" value="ui"></el-option>
-                        <el-option label="接口测试" value="api"></el-option>
-                    </el-select>
                     <el-button type="primary" @click="showCreateDialog">
                         <i class="fas fa-plus"></i> 新建用例
                     </el-button>
@@ -835,7 +822,7 @@
             <!-- 分页 -->
             <div class="case-pagination" v-if="cases.length > 0">
                 <div class="pagination-info">
-                    第 {{ currentPage }} 页  共计 {{ total }} 条
+                    第 {% verbatim %}{{ currentPage }}{% endverbatim %} 页  共计 {% verbatim %}{{ total }}{% endverbatim %} 条
                 </div>
                 <div>
                     <el-pagination
@@ -857,14 +844,12 @@
         <div class="detail-section">
             <h4 class="detail-section-title">基本信息</h4>
             <el-descriptions :column="2" border>
-                <el-descriptions-item label="用例编号">{{ currentCase.case_number }}</el-descriptions-item>
-                <el-descriptions-item label="所属模块">{{ currentCase.module_display|default:'未分配' }}</el-descriptions-item>
+                <el-descriptions-item label="用例编号">{% verbatim %}{{ currentCase.case_number }}{% endverbatim %}</el-descriptions-item>
+                <el-descriptions-item label="所属模块">{% verbatim %}{{ currentCase.module_display || '未分配' }}{% endverbatim %}</el-descriptions-item>
                 <el-descriptions-item label="优先级">
-                    <span style="color: red; font-weight: bold;">{{ currentCase.priority_display|default:'P2' }}</span>
+                    <span style="color: red; font-weight: bold;">{% verbatim %}{{ currentCase.priority_display || 'P2' }}{% endverbatim %}</span>
                 </el-descriptions-item>
-                <el-descriptions-item label="用例类型">{{ currentCase.case_type_display }}</el-descriptions-item>
-                <el-descriptions-item label="创建时间">{{ currentCase.created_at }}</el-descriptions-item>
-                <el-descriptions-item label="更新时间">{{ currentCase.updated_at }}</el-descriptions-item>
+                <el-descriptions-item label="用例类型">{% verbatim %}{{ currentCase.case_type_display }}{% endverbatim %}</el-descriptions-item>
             </el-descriptions>
         </div>
         
@@ -884,16 +869,17 @@
         <div class="detail-section" v-if="currentCase.test_steps_list && currentCase.test_steps_list.length > 0">
             <h4 class="detail-section-title">测试步骤</h4>
             <el-table :data="currentCase.test_steps_list" border style="margin-top: 10px;">
-                <el-table-column type="index" label="序号" width="60"></el-table-column>
-                <el-table-column prop="step_desc" label="步骤描述" min-width="200"></el-table-column>
-                <el-table-column prop="expected_result" label="预期结果" min-width="200"></el-table-column>
+                <el-table-column prop="step_desc" label="步骤描述" min-width="300"></el-table-column>
+                <el-table-column prop="expected_result" label="预期结果" min-width="300"></el-table-column>
             </el-table>
         </div>
         
         <!-- 备注 -->
-        <div class="detail-section" v-if="currentCase.remark">
+        <div class="detail-section">
             <h4 class="detail-section-title">备注</h4>
-            <div class="detail-content" style="white-space: pre-wrap;">{{ currentCase.remark }}</div>
+            <div class="detail-content" style="white-space: pre-wrap;">
+                {% verbatim %}{{ currentCase.remark || '无' }}{% endverbatim %}
+            </div>
         </div>
     </div>
     <template #footer>
@@ -930,7 +916,6 @@
                 <el-form-item label="操作步骤">
                     <div class="steps-container">
                         <div v-for="(step, index) in editCaseData.test_steps_list" :key="index" class="step-item">
-                            <div class="step-number" v-text="index + 1"></div>
                             <div class="step-inputs">
                                 <el-input 
                                     v-model="step.step_desc" 
@@ -1086,7 +1071,6 @@
                 <el-form-item label="操作步骤">
                     <div class="steps-container">
                         <div v-for="(step, index) in newCase.test_steps_list" :key="index" class="step-item">
-                            <div class="step-number" v-text="index + 1"></div>
                             <div class="step-inputs">
                                 <el-input 
                                     v-model="step.step_desc" 
