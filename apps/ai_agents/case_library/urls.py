@@ -17,4 +17,7 @@ urlpatterns = [
     path('api/modules/create/', views.create_module, name='create_module'),
     path('api/modules/<int:module_id>/update/', views.update_module, name='update_module'),
     path('api/modules/<int:module_id>/delete/', views.delete_module, name='delete_module'),
+    # 关联测试用例
+    path('api/approved-cases/', views.get_approved_test_cases, name='get_approved_test_cases'),
+    path('api/link-cases/', views.link_test_cases, name='link_test_cases'),
 ]

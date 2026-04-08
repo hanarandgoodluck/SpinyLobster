@@ -13,44 +13,20 @@ document.addEventListener('DOMContentLoaded', function() {
         return;
     }
     
-    // 显示通知消息的辅助函数
+    // 显示通知消息的辅助函数（使用 Element Plus）
     window.showNotification = function(message, type = 'info') {
-        let notificationContainer = document.getElementById('notification-container');
-        if (!notificationContainer) {
-            notificationContainer = document.createElement('div');
-            notificationContainer.id = 'notification-container';
-            notificationContainer.style.position = 'fixed';
-            notificationContainer.style.top = '20px';
-            notificationContainer.style.right = '20px';
-            notificationContainer.style.zIndex = '9999';
-            document.body.appendChild(notificationContainer);
+        if (typeof ElementPlus !== 'undefined' && ElementPlus.ElMessage) {
+            const messageType = type === 'error' ? 'error' : (type === 'success' ? 'success' : 'info');
+            ElementPlus.ElMessage({
+                message: message,
+                type: messageType,
+                duration: 3000,
+                showClose: true
+            });
+        } else {
+            // 回退到原生 alert
+            alert(message);
         }
-        
-        const notification = document.createElement('div');
-        notification.className = `alert alert-${type === 'error' ? 'danger' : type}`;
-        notification.style.minWidth = '300px';
-        notification.style.marginBottom = '10px';
-        notification.style.boxShadow = '0 4px 6px rgba(0,0,0,0.1)';
-        notification.textContent = message;
-        
-        const closeButton = document.createElement('button');
-        closeButton.type = 'button';
-        closeButton.className = 'close';
-        closeButton.style.float = 'right';
-        closeButton.style.marginLeft = '10px';
-        closeButton.innerHTML = '&times;';
-        closeButton.onclick = function() {
-            notification.remove();
-        };
-        notification.appendChild(closeButton);
-        
-        notificationContainer.appendChild(notification);
-        
-        setTimeout(() => {
-            if (notification.parentNode) {
-                notification.remove();
-            }
-        }, 5000);
     };
     
     // 全选/取消全选复选框的辅助函数
@@ -294,6 +270,20 @@ document.addEventListener('DOMContentLoaded', function() {
                 const urlParams = new URLSearchParams(window.location.search);
                 const projectId = urlParams.get('project_id');
                 
+                if (!savedTestCases || savedTestCases.length === 0) {
+                    showNotification('没有可保存的测试用例', 'warning');
+                    return;
+                }
+                
+                // 禁用保存按钮，防止重复点击
+                saveButton.disabled = true;
+                saveButton.textContent = '保存中...';
+                
+                console.log('开始保存测试用例...', {
+                    count: savedTestCases.length,
+                    projectId: projectId
+                });
+                
                 fetch('/test_case_generator/save-test-case/', {
                     method: 'POST',
                     headers: {
@@ -307,16 +297,54 @@ document.addEventListener('DOMContentLoaded', function() {
                         project_id: projectId
                     })
                 })
-                .then(response => response.json())
+                .then(response => {
+                    console.log('服务器响应状态:', response.status);
+                    return response.json();
+                })
                 .then(data => {
+                    console.log('保存结果:', data);
+                    
                     if (data.success) {
-                        showNotification('测试用例保存成功', 'success');
+                        showNotification(`测试用例保存成功！共保存 ${data.count} 条用例`, 'success');
+                        
+                        // 清除已保存的数据
+                        sessionStorage.removeItem('generatedTestCases');
+                        
+                        // 延迟后询问用户是否跳转到评审页面
+                        setTimeout(() => {
+                            const shouldRedirect = confirm(
+                                `✅ 已成功保存 ${data.count} 条测试用例！\n\n` +
+                                `是否立即跳转到"测试用例评审"页面查看？`
+                            );
+                            
+                            if (shouldRedirect) {
+                                // 构建评审页面URL
+                                let reviewUrl = '/test_case_reviewer/';
+                                if (projectId) {
+                                    reviewUrl += '?project_id=' + projectId;
+                                }
+                                console.log('跳转到评审页面:', reviewUrl);
+                                window.location.href = reviewUrl;
+                            } else {
+                                // 重置按钮状态
+                                saveButton.disabled = false;
+                                saveButton.textContent = '保存测试用例';
+                                
+                                // 提示用户可以手动刷新评审页面
+                                showNotification('您可以随时在"测试用例评审"菜单中查看已保存的用例', 'info');
+                            }
+                        }, 800);
                     } else {
                         showNotification('保存失败：' + data.message, 'error');
+                        saveButton.disabled = false;
+                        saveButton.textContent = '保存测试用例';
                     }
                 })
                 .catch(error => {
+                    console.error('保存请求失败:', error);
                     showNotification('保存失败：' + error.message, 'error');
+                    saveButton.disabled = false;
+                    saveButton.textContent = '保存测试用例';
                 });
             });
         }

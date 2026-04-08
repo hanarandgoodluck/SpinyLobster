@@ -13,44 +13,20 @@ document.addEventListener('DOMContentLoaded', function() {
         return;
     }
     
-    // 显示通知消息的辅助函数
+    // 显示通知消息的辅助函数（使用 Element Plus）
     window.showNotification = function(message, type = 'info') {
-        let notificationContainer = document.getElementById('notification-container');
-        if (!notificationContainer) {
-            notificationContainer = document.createElement('div');
-            notificationContainer.id = 'notification-container';
-            notificationContainer.style.position = 'fixed';
-            notificationContainer.style.top = '20px';
-            notificationContainer.style.right = '20px';
-            notificationContainer.style.zIndex = '9999';
-            document.body.appendChild(notificationContainer);
+        if (typeof ElementPlus !== 'undefined' && ElementPlus.ElMessage) {
+            const messageType = type === 'error' ? 'error' : (type === 'success' ? 'success' : 'info');
+            ElementPlus.ElMessage({
+                message: message,
+                type: messageType,
+                duration: 3000,
+                showClose: true
+            });
+        } else {
+            // 回退到原生 alert
+            alert(message);
         }
-        
-        const notification = document.createElement('div');
-        notification.className = `alert alert-${type === 'error' ? 'danger' : type}`;
-        notification.style.minWidth = '300px';
-        notification.style.marginBottom = '10px';
-        notification.style.boxShadow = '0 4px 6px rgba(0,0,0,0.1)';
-        notification.textContent = message;
-        
-        const closeButton = document.createElement('button');
-        closeButton.type = 'button';
-        closeButton.className = 'close';
-        closeButton.style.float = 'right';
-        closeButton.style.marginLeft = '10px';
-        closeButton.innerHTML = '&times;';
-        closeButton.onclick = function() {
-            notification.remove();
-        };
-        notification.appendChild(closeButton);
-        
-        notificationContainer.appendChild(notification);
-        
-        setTimeout(() => {
-            if (notification.parentNode) {
-                notification.remove();
-            }
-        }, 5000);
     };
     
     // 全选/取消全选复选框的辅助函数

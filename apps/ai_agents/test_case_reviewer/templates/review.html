@@ -137,6 +137,33 @@
         font-size: 3rem;
         margin-bottom: 1rem;
     }
+    .text-truncate {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 150px;
+    }
+    
+    /* Element Plus Card Tabs - Depressed Effect */
+    .demo-tabs.el-tabs--card > .el-tabs__header {
+        border-bottom: 1px solid #e4e7ed;
+    }
+    .demo-tabs.el-tabs--card > .el-tabs__header .el-tabs__nav {
+        border: 1px solid #e4e7ed;
+        border-bottom: none;
+        border-radius: 4px 4px 0 0;
+    }
+    .demo-tabs.el-tabs--card > .el-tabs__header .el-tabs__item {
+        border-bottom: 1px solid #e4e7ed;
+        transition: all 0.3s;
+    }
+    .demo-tabs.el-tabs--card > .el-tabs__header .el-tabs__item.is-active {
+        border-bottom-color: transparent;
+        background-color: #fff;
+    }
+    .demo-tabs.el-tabs--card > .el-tabs__content {
+        padding: 15px;
+    }
 </style>
 {% endblock %}
 
@@ -148,13 +175,9 @@
                 测试用例评审
             </div>
             <div class="review-body">
-                <el-tabs v-model="activeTab" type="card">
+                <el-tabs v-model="activeTab" type="card" class="demo-tabs">
                     <!-- 待评审标签页 -->
-                    <el-tab-pane label="待评审" name="pending">
-                        <template #label>
-                            <span>待评审</span>
-                            <el-badge :value="pendingCount" class="ml-2" type="warning"></el-badge>
-                        </template>
+                    <el-tab-pane :label="`待评审 ${pendingCount > 0 ? '(' + pendingCount + ')' : ''}`" name="pending">
                         
                         <div v-if="pendingCases.length > 0">
                             <el-table :data="pendingCases" style="width: 100%" @selection-change="handlePendingSelectionChange">
@@ -190,11 +213,7 @@
                     </el-tab-pane>
                     
                     <!-- 已通过标签页 -->
-                    <el-tab-pane label="已通过" name="approved">
-                        <template #label>
-                            <span>已通过</span>
-                            <el-badge :value="approvedCount" class="ml-2" type="success"></el-badge>
-                        </template>
+                    <el-tab-pane :label="`已通过 ${approvedCount > 0 ? '(' + approvedCount + ')' : ''}`" name="approved">
                         
                         <div v-if="approvedCases.length > 0">
                             <el-table :data="approvedCases" style="width: 100%" @selection-change="handleApprovedSelectionChange">
@@ -207,7 +226,11 @@
                                 <el-table-column prop="description" label="用例描述" min-width="200"></el-table-column>
                                 <el-table-column prop="test_steps" label="测试步骤" min-width="150"></el-table-column>
                                 <el-table-column prop="expected_results" label="预期结果" min-width="150"></el-table-column>
-                                <el-table-column prop="review_comments" label="评审意见" min-width="150"></el-table-column>
+                                <el-table-column label="评审意见" min-width="200">
+                                    <template #default="scope">
+                                        <div style="white-space: pre-wrap; word-break: break-word;" v-text="getReviewText(scope.row)"></div>
+                                    </template>
+                                </el-table-column>
                             </el-table>
                             
                             <div class="pagination-info">
@@ -226,11 +249,7 @@
                     </el-tab-pane>
                     
                     <!-- 未通过标签页 -->
-                    <el-tab-pane label="未通过" name="rejected">
-                        <template #label>
-                            <span>未通过</span>
-                            <el-badge :value="rejectedCount" class="ml-2" type="danger"></el-badge>
-                        </template>
+                    <el-tab-pane :label="`未通过 ${rejectedCount > 0 ? '(' + rejectedCount + ')' : ''}`" name="rejected">
                         
                         <div v-if="rejectedCases.length > 0">
                             <el-table :data="rejectedCases" style="width: 100%" @selection-change="handleRejectedSelectionChange">
@@ -243,10 +262,15 @@
                                 <el-table-column prop="description" label="用例描述" min-width="200"></el-table-column>
                                 <el-table-column prop="test_steps" label="测试步骤" min-width="150"></el-table-column>
                                 <el-table-column prop="expected_results" label="预期结果" min-width="150"></el-table-column>
-                                <el-table-column prop="review_comments" label="评审意见" min-width="150"></el-table-column>
-                                <el-table-column label="操作" width="120">
+                                <el-table-column label="评审意见" min-width="200">
+                                    <template #default="scope">
+                                        <div style="white-space: pre-wrap; word-break: break-word;" v-text="getReviewText(scope.row)"></div>
+                                    </template>
+                                </el-table-column>
+                                <el-table-column label="操作" width="200">
                                     <template #default="scope">
                                         <el-button type="primary" size="small" @click="reviewCase(scope.row)">重新AI评审</el-button>
+                                        <el-button type="success" size="small" @click="manualApprove(scope.row)">手动通过</el-button>
                                     </template>
                                 </el-table-column>
                             </el-table>
@@ -280,6 +304,7 @@ const app = createApp({
     data() {
         return {
             activeTab: 'pending',
+            projectId: {% if project_id %}'{{ project_id }}'{% else %}null{% endif %},
             pendingCases: [],
             approvedCases: [],
             rejectedCases: [],
@@ -303,19 +328,27 @@ const app = createApp({
             return document.querySelector('meta[name="csrf-token"]').getAttribute('content');
         },
         
+        getApiUrl(status, page) {
+            let url = `/test_case_reviewer/api/test-cases-list/?status=${status}&page=${page}&page_size=15`;
+            if (this.projectId) {
+                url += `&project_id=${this.projectId}`;
+            }
+            console.log('[DEBUG] API URL:', url, 'projectId:', this.projectId);
+            return url;
+        },
+        
         async loadPendingCases() {
             try {
-                const response = await fetch(`/test_case_reviewer/?pending_page=${this.pendingPage}`);
-                const html = await response.text();
+                const response = await fetch(this.getApiUrl('pending', this.pendingPage));
+                const data = await response.json();
                 
-                // 解析HTML获取数据
-                const parser = new DOMParser();
-                const doc = parser.parseFromString(html, 'text/html');
-                
-                // 这里需要根据实际API调整
-                this.pendingCases = [];
-                this.pendingCount = 0;
-                this.pendingTotalPages = 1;
+                if (data.success) {
+                    this.pendingCases = data.test_cases;
+                    this.pendingCount = data.total;
+                    this.pendingTotalPages = data.total_pages;
+                } else {
+                    ElementPlus.ElMessage.error(data.message || '加载待评审用例失败');
+                }
             } catch (error) {
                 console.error('加载待评审用例失败:', error);
                 ElementPlus.ElMessage.error('加载待评审用例失败');
@@ -324,17 +357,16 @@ const app = createApp({
         
         async loadApprovedCases() {
             try {
-                const response = await fetch(`/test_case_reviewer/?approved_page=${this.approvedPage}`);
-                const html = await response.text();
+                const response = await fetch(this.getApiUrl('approved', this.approvedPage));
+                const data = await response.json();
                 
-                // 解析HTML获取数据
-                const parser = new DOMParser();
-                const doc = parser.parseFromString(html, 'text/html');
-                
-                // 这里需要根据实际API调整
-                this.approvedCases = [];
-                this.approvedCount = 0;
-                this.approvedTotalPages = 1;
+                if (data.success) {
+                    this.approvedCases = data.test_cases;
+                    this.approvedCount = data.total;
+                    this.approvedTotalPages = data.total_pages;
+                } else {
+                    ElementPlus.ElMessage.error(data.message || '加载已通过用例失败');
+                }
             } catch (error) {
                 console.error('加载已通过用例失败:', error);
                 ElementPlus.ElMessage.error('加载已通过用例失败');
@@ -343,17 +375,22 @@ const app = createApp({
         
         async loadRejectedCases() {
             try {
-                const response = await fetch(`/test_case_reviewer/?rejected_page=${this.rejectedPage}`);
-                const html = await response.text();
+                const response = await fetch(this.getApiUrl('rejected', this.rejectedPage));
+                const data = await response.json();
                 
-                // 解析HTML获取数据
-                const parser = new DOMParser();
-                const doc = parser.parseFromString(html, 'text/html');
+                // 调试日志：打印接口返回的数据
+                console.log('[DEBUG] 未通过用例API响应:', data);
+                if (data.test_cases && data.test_cases.length > 0) {
+                    console.log('[DEBUG] 第一条用例的评审意见字段:', data.test_cases[0].review_comments);
+                }
                 
-                // 这里需要根据实际API调整
-                this.rejectedCases = [];
-                this.rejectedCount = 0;
-                this.rejectedTotalPages = 1;
+                if (data.success) {
+                    this.rejectedCases = data.test_cases;
+                    this.rejectedCount = data.total;
+                    this.rejectedTotalPages = data.total_pages;
+                } else {
+                    ElementPlus.ElMessage.error(data.message || '加载未通过用例失败');
+                }
             } catch (error) {
                 console.error('加载未通过用例失败:', error);
                 ElementPlus.ElMessage.error('加载未通过用例失败');
@@ -387,6 +424,11 @@ const app = createApp({
             this.selectedRejectedCases = selection;
         },
         
+        getReviewText(row) {
+            console.log('[DEBUG] getReviewText called for row ID:', row.id, 'review_comments:', row.review_comments);
+            return row.review_comments || '暂无评审意见';
+        },
+        
         reviewCase(testCase) {
             ElementPlus.ElMessageBox.confirm(
                 `确定要对测试用例 "${testCase.description}" 进行AI评审吗？`,
@@ -404,14 +446,62 @@ const app = createApp({
             });
         },
         
-        async performAIReview(testCaseId) {
+        manualApprove(testCase) {
+            ElementPlus.ElMessageBox.confirm(
+                `确定要手动通过测试用例 "${testCase.description}" 吗？`,
+                '手动通过',
+                {
+                    confirmButtonText: '确定',
+                    cancelButtonText: '取消',
+                    type: 'warning'
+                }
+            ).then(() => {
+                this.performManualApprove(testCase.id);
+            }).catch(() => {
+                // 用户取消
+            });
+        },
+        
+        async performManualApprove(testCaseId) {
             try {
-                const response = await fetch(`/test_case_reviewer/api/review/${testCaseId}/`, {
+                const response = await fetch(`/test_case_reviewer/case-review-detail/api/update-test-case/`, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
                         'X-CSRFToken': this.getCSRFToken()
-                    }
+                    },
+                    body: JSON.stringify({ 
+                        test_case_id: testCaseId,
+                        status: 'approved'
+                    })
+                });
+                
+                const data = await response.json();
+                
+                if (data.success) {
+                    ElementPlus.ElMessage.success('已手动通过该测试用例');
+                    // 重新加载所有数据
+                    this.loadPendingCases();
+                    this.loadApprovedCases();
+                    this.loadRejectedCases();
+                } else {
+                    ElementPlus.ElMessage.error('操作失败：' + data.message);
+                }
+            } catch (error) {
+                console.error('手动通过失败:', error);
+                ElementPlus.ElMessage.error('操作失败');
+            }
+        },
+        
+        async performAIReview(testCaseId) {
+            try {
+                const response = await fetch(`/test_case_reviewer/case-review-detail/api/review/`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRFToken': this.getCSRFToken()
+                    },
+                    body: JSON.stringify({ test_case_id: testCaseId })
                 });
                 
                 const data = await response.json();
@@ -570,7 +660,10 @@ const app = createApp({
     },
     
     mounted() {
+        // 初次加载时同时加载所有标签页的数据
         this.loadPendingCases();
+        this.loadApprovedCases();
+        this.loadRejectedCases();
     }
 });
 

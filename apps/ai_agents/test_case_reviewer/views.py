@@ -47,6 +47,8 @@ def review_view(request):
     # 获取项目 ID（从查询参数）
     project_id = request.GET.get('project_id')
     
+    logger.info(f"访问评审页面 - 项目ID: {project_id}")
+    
     # 根据是否有项目 ID，过滤测试用例
     if project_id:
         from apps.core.models import Project
@@ -56,8 +58,10 @@ def review_view(request):
             pending_cases = TestCase.objects.filter(status='pending', project=project).order_by('-created_at')
             approved_cases = TestCase.objects.filter(status='approved', project=project).order_by('-created_at')
             rejected_cases = TestCase.objects.filter(status='rejected', project=project).order_by('-created_at')
+            logger.info(f"项目 {project.name} - 待评审: {pending_cases.count()}, 已通过: {approved_cases.count()}, 未通过: {rejected_cases.count()}")
         else:
             # 项目不存在，返回所有
+            logger.warning(f"项目ID {project_id} 不存在，显示所有用例")
             pending_cases = TestCase.objects.filter(status='pending').order_by('-created_at')
             approved_cases = TestCase.objects.filter(status='approved').order_by('-created_at')
             rejected_cases = TestCase.objects.filter(status='rejected').order_by('-created_at')
@@ -66,6 +70,7 @@ def review_view(request):
         pending_cases = TestCase.objects.filter(status='pending').order_by('-created_at')
         approved_cases = TestCase.objects.filter(status='approved').order_by('-created_at')
         rejected_cases = TestCase.objects.filter(status='rejected').order_by('-created_at')
+        logger.info(f"显示所有项目的用例 - 待评审: {pending_cases.count()}, 已通过: {approved_cases.count()}, 未通过: {rejected_cases.count()}")
     
     # 每页显示 15 条数据
     page_size = 15
@@ -104,7 +109,7 @@ def review_view(request):
         'pending_test_cases': pending_test_cases,
         'approved_test_cases': approved_test_cases,
         'rejected_test_cases': rejected_test_cases,
-        'project_id': project_id,  # 传递项目 ID 到模板
+        'project_id': project_id,
     }
     
     return render(request, 'review.html', context)
@@ -148,9 +153,46 @@ def case_review(request):
         # 从AIMessage对象中提取内容
         review_content = review_result.content if hasattr(review_result, 'content') else str(review_result)
         
+        # 解析评审结果，提取 recommendation
+        new_status = test_case.status  # 默认保持原状态
+        recommendation = ''
+        try:
+            # 尝试从 JSON 中提取 recommendation（支持 ```json 代码块格式）
+            import re
+            # 先尝试匹配 ```json 代码块中的 JSON
+            json_match = re.search(r'```json\s*([\s\S]*?)\s*```', review_content)
+            if not json_match:
+                # 如果没有代码块，直接匹配 JSON 对象
+                json_match = re.search(r'\{[\s\S]*\}', review_content)
+            
+            if json_match:
+                # 如果是代码块匹配，取group(1)，否则取group(0)
+                json_str = json_match.group(1) if json_match.lastindex and json_match.lastindex >= 1 else json_match.group(0)
+                review_json = json.loads(json_str)
+                recommendation = review_json.get('recommendation', '')
+                logger.info(f"解析到的 recommendation: '{recommendation}'")
+                
+                # 根据 recommendation 更新状态
+                if recommendation == '通过' or ('通过' in recommendation and '不' not in recommendation):
+                    new_status = 'approved'
+                elif recommendation == '不通过' or '不通过' in recommendation or '拒绝' in recommendation:
+                    new_status = 'rejected'
+                
+                logger.info(f"AI评审建议: {recommendation}, 新状态: {new_status}")
+                
+                # 保存评审结果到数据库
+                test_case.status = new_status
+                # 使用 actual_results 字段保存评审意见
+                test_case.actual_results = review_content[:2000]
+                test_case.save()
+                logger.info(f"测试用例状态已更新: {test_case.id} from {test_case.status} -> {new_status}")
+        except Exception as e:
+            logger.error(f"解析评审结果失败: {str(e)}，保持原状态: {new_status}", exc_info=True)
+        
         return JsonResponse({
             'success': True,
-            'review_result': review_content  # 只返回评审内容文本
+            'review_result': review_content,  # 只返回评审内容文本
+            'new_status': new_status  # 返回新状态供前端使用
         })
         
     except json.JSONDecodeError:
@@ -210,11 +252,21 @@ def update_test_case(request):
     logger.info(f"更新测试用例数据: {data}")
     try:
         test_case = TestCase.objects.get(id=data['test_case_id'])
-        test_case.status = data['status']
-        test_case.description = data['description']
-        test_case.test_steps = data['test_steps']
-        test_case.expected_results = data['expected_results']
+        
+        # 更新状态（必填）
+        if 'status' in data:
+            test_case.status = data['status']
+        
+        # 更新其他字段（可选）
+        if 'description' in data:
+            test_case.description = data['description']
+        if 'test_steps' in data:
+            test_case.test_steps = data['test_steps']
+        if 'expected_results' in data:
+            test_case.expected_results = data['expected_results']
+        
         test_case.save()
+        logger.info(f"测试用例 {test_case.id} 状态更新为: {test_case.status}")
         return JsonResponse({'success': True})
     except TestCase.DoesNotExist:
         return JsonResponse({'success': False, 'message': '测试用例不存在'})
@@ -332,4 +384,76 @@ def delete_test_cases(request):
         return JsonResponse({
             'success': False,
             'message': f'删除失败: {str(e)}'
-        }) 
+        })
+
+
+@require_http_methods(["GET"])
+def get_test_cases_list(request):
+    """获取测试用例列表（JSON API）"""
+    try:
+        # 获取分页参数
+        status = request.GET.get('status', 'pending')
+        page = int(request.GET.get('page', 1))
+        page_size = int(request.GET.get('page_size', 15))
+        project_id = request.GET.get('project_id', None)
+        
+        logger.info(f"获取测试用例列表 - 状态: {status}, 页码: {page}, 项目ID: {project_id}")
+        
+        # 根据状态过滤
+        queryset = TestCase.objects.filter(status=status)
+        if project_id:
+            queryset = queryset.filter(project_id=project_id)
+        test_cases = queryset.order_by('-created_at')
+        
+        logger.info(f"查询到 {test_cases.count()} 条{status}状态的用例")
+        
+        # 分页
+        paginator = Paginator(test_cases, page_size)
+        page_obj = paginator.get_page(page)
+        
+        # 转换为字典列表
+        cases_data = []
+        for case in page_obj:
+            # 处理评审意见：提取 JSON 中的 comments 字段，如果失败则截取原文
+            review_preview = ''
+            if case.actual_results:
+                try:
+                    import re
+                    json_match = re.search(r'```json\s*([\s\S]*?)\s*```', case.actual_results)
+                    if not json_match:
+                        json_match = re.search(r'\{[\s\S]*\}', case.actual_results)
+                                    
+                    if json_match:
+                        json_str = json_match.group(1) if json_match.lastindex and json_match.lastindex >= 1 else json_match.group(0)
+                        review_json = json.loads(json_str)
+                        review_preview = review_json.get('comments', '') or review_json.get('recommendation', '')
+                    else:
+                        review_preview = case.actual_results[:200]
+                except Exception as e:
+                    logger.warning(f"解析评审意见预览失败: {str(e)}")
+                    review_preview = case.actual_results[:200]
+            
+            cases_data.append({
+                'id': case.id,
+                'description': case.description,
+                'test_steps': case.test_steps,
+                'expected_results': case.expected_results,
+                'status': case.status,
+                'review_comments': review_preview,
+                'created_at': case.created_at.strftime('%Y-%m-%d %H:%M:%S') if case.created_at else '',
+            })
+        
+        return JsonResponse({
+            'success': True,
+            'test_cases': cases_data,
+            'total': paginator.count,
+            'page': page,
+            'page_size': page_size,
+            'total_pages': paginator.num_pages,
+        })
+    except Exception as e:
+        logger.error(f"获取测试用例列表失败: {str(e)}", exc_info=True)
+        return JsonResponse({
+            'success': False,
+            'message': f'获取失败: {str(e)}'
+        }, status=500) 

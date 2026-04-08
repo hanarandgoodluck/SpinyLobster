@@ -22,6 +22,7 @@ urlpatterns = [
 
 
     path('api/test-cases/<str:test_case_ids>/', views.get_test_cases, name='get_test_cases'),
+    path('api/test-cases-list/', views.get_test_cases_list, name='get_test_cases_list'),  # 获取测试用例列表（JSON）
 
 
 

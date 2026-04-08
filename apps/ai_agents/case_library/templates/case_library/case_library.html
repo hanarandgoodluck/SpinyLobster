@@ -721,13 +721,6 @@
                     </div>
                     <span class="module-item-count">({% verbatim %}{{ totalCases }}{% endverbatim %})</span>
                 </div>
-                <div class="module-item" :class="{ active: selectedModule === 'no_module' }" @click="selectModule('no_module')">
-                    <div class="module-item-info">
-                        <i class="fas fa-folder-open"></i>
-                        <span>无所属模块</span>
-                    </div>
-                    <span class="module-item-count">({% verbatim %}{{ noModuleCount }}{% endverbatim %})</span>
-                </div>
                 <!-- 递归渲染模块树 -->
                 <module-tree-item 
                     v-for="module in moduleStats" 
@@ -762,6 +755,9 @@
                     <el-button @click="exportCases">导出</el-button>
                 </div>
                 <div class="case-toolbar-right">
+                    <el-button type="success" @click="showLinkDialog">
+                        <i class="fas fa-link"></i> 关联测试用例
+                    </el-button>
                     <el-button type="primary" @click="showCreateDialog">
                         <i class="fas fa-plus"></i> 新建用例
                     </el-button>
@@ -1006,7 +1002,6 @@
         </div>
     </template>
 </el-dialog>
-</div>
 
 <!-- 新建模块对话框 -->
 <el-dialog v-model="createModuleDialogVisible" title="新建模块" width="400px">
@@ -1161,6 +1156,55 @@
         </div>
     </template>
 </el-dialog>
+
+<!-- 关联测试用例对话框 -->
+<el-dialog v-model="linkDialogVisible" title="关联测试用例" width="900px" top="5vh">
+    <el-alert title="从测试用例评审中筛选已通过的用例进行关联" type="info" :closable="false" style="margin-bottom: 16px;"></el-alert>
+    
+    <div class="link-dialog-options" style="margin-bottom: 16px; display: flex; gap: 16px; align-items: center;">
+        <span style="color: #606266; font-weight: 500; white-space: nowrap;">所属模块：</span>
+        <el-cascader
+            v-model="linkModule"
+            :options="moduleCascaderOptions"
+            :props="{ value: 'value', label: 'name', children: 'children', checkStrictly: true, emitPath: false }"
+            placeholder="请选择所属模块"
+            style="flex: 1; max-width: 300px;"
+            filterable
+            clearable>
+        </el-cascader>
+    </div>
+    
+    <el-table :data="approvedTestCases" style="width: 100%" @selection-change="handleLinkSelectionChange" empty-text="已通过评审的测试用例为空">
+        <el-table-column type="selection" width="55"></el-table-column>
+        <el-table-column prop="id" label="ID" width="60"></el-table-column>
+        <el-table-column prop="description" label="用例描述" min-width="200"></el-table-column>
+        <el-table-column prop="test_steps" label="测试步骤" min-width="150"></el-table-column>
+        <el-table-column prop="expected_results" label="预期结果" min-width="150"></el-table-column>
+    </el-table>
+    
+    <div class="pagination-info" v-if="approvedTestCases.length > 0">
+        <span class="total-records">共 {% verbatim %}{{ approvedTestCaseTotal }}{% endverbatim %} 条</span>
+        <div class="pagination-buttons">
+            <el-button :disabled="approvedTestCasePage === 1" size="small" @click="changeApprovedTestCasePage(approvedTestCasePage - 1)">上一页</el-button>
+            <span class="page-numbers">{{ approvedTestCasePage }} / {{ approvedTestCaseTotalPages }}</span>
+            <el-button :disabled="approvedTestCasePage >= approvedTestCaseTotalPages" size="small" @click="changeApprovedTestCasePage(approvedTestCasePage + 1)">下一页</el-button>
+        </div>
+    </div>
+    
+    <template #footer>
+        <div class="dialog-footer">
+            <div class="dialog-footer-left">
+                <el-alert v-if="selectedLinkCases.length > 0" :title="`已选择 ${selectedLinkCases.length} 条用例`" type="success" :closable="false"></el-alert>
+            </div>
+            <div class="dialog-footer-right">
+                <el-button @click="linkDialogVisible = false">取消</el-button>
+                <el-button type="primary" @click="confirmLink" :disabled="selectedLinkCases.length === 0">确认关联</el-button>
+            </div>
+        </div>
+    </template>
+</el-dialog>
+
+</div>
 {% endblock %}
 
 {% block extra_js %}

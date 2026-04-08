@@ -3,7 +3,7 @@ from django.http import JsonResponse
 from django.views.decorators.http import require_http_methods
 from django.core.paginator import Paginator
 from django.db.models import Q
-from apps.core.models import TestCaseLibrary, Project, TestCaseModule
+from apps.core.models import TestCaseLibrary, Project, TestCaseModule, TestCase
 import json
 
 
@@ -28,6 +28,13 @@ def case_library_list(request):
         # 基础查询集
         queryset = TestCaseLibrary.objects.all()
         
+        # 项目过滤（在所有统计之前应用，确保 total_all 只对当前项目统计）
+        if project_id:
+            queryset = queryset.filter(project_id=project_id)
+        
+        # 统计当前项目的所有用例总数（不受其他过滤条件影响）
+        total_all = queryset.count()
+        
         # 搜索过滤
         if search:
             queryset = queryset.filter(
@@ -36,9 +43,21 @@ def case_library_list(request):
                 Q(tags__icontains=search)
             )
         
-        # 模块过滤
+        # 模块过滤（包含子模块）
         if module:
-            queryset = queryset.filter(module=module)
+            try:
+                parent_mod = TestCaseModule.objects.get(value=module)
+                # 递归获取所有子模块的 value
+                def get_all_module_values(mod):
+                    values = [mod.value]
+                    for child in mod.children.all():
+                        values.extend(get_all_module_values(child))
+                    return values
+                
+                all_values = get_all_module_values(parent_mod)
+                queryset = queryset.filter(module__in=all_values)
+            except TestCaseModule.DoesNotExist:
+                queryset = queryset.filter(module=module)
         
         # 优先级过滤
         if priority:
@@ -47,10 +66,6 @@ def case_library_list(request):
         # 类型过滤
         if case_type:
             queryset = queryset.filter(case_type=case_type)
-        
-        # 项目过滤
-        if project_id:
-            queryset = queryset.filter(project_id=project_id)
         
         # 分页
         paginator = Paginator(queryset.order_by('-case_number'), page_size)
@@ -95,6 +110,7 @@ def case_library_list(request):
             'data': {
                 'cases': cases_data,
                 'total': paginator.count,
+                'total_all': total_all,
                 'page': page,
                 'page_size': page_size,
                 'total_pages': paginator.num_pages,
@@ -330,6 +346,127 @@ def update_case(request, case_id):
         }, status=500)
 
 
+@require_http_methods(["GET"])
+def get_approved_test_cases(request):
+    """获取测试用例评审中已通过的测试用例"""
+    try:
+        project_id = request.GET.get('project_id', '')
+        page = int(request.GET.get('page', 1))
+        page_size = int(request.GET.get('page_size', 15))
+        
+        # 查询已通过的测试用例
+        queryset = TestCase.objects.filter(status='approved')
+        if project_id:
+            queryset = queryset.filter(project_id=project_id)
+        
+        # 分页
+        paginator = Paginator(queryset.order_by('-created_at'), page_size)
+        page_obj = paginator.get_page(page)
+        
+        # 序列化数据
+        cases_data = []
+        for case in page_obj:
+            cases_data.append({
+                'id': case.id,
+                'description': case.description,
+                'test_steps': case.test_steps,
+                'expected_results': case.expected_results,
+                'status': case.status,
+                'created_at': case.created_at.strftime('%Y-%m-%d %H:%M:%S') if case.created_at else '',
+            })
+        
+        return JsonResponse({
+            'success': True,
+            'data': {
+                'cases': cases_data,
+                'total': paginator.count,
+                'page': page,
+                'page_size': page_size,
+                'total_pages': paginator.num_pages,
+            }
+        })
+        
+    except Exception as e:
+        return JsonResponse({
+            'success': False,
+            'message': str(e)
+        }, status=500)
+
+
+@require_http_methods(["POST"])
+def link_test_cases(request):
+    """关联测试用例：将评审通过的用例移入用例库，并从评审列表中移除"""
+    try:
+        data = json.loads(request.body)
+        case_ids = data.get('case_ids', [])
+        project_id = data.get('project_id')
+        module = data.get('module', 'other')
+        
+        if not case_ids:
+            return JsonResponse({
+                'success': False,
+                'message': '请选择要关联的测试用例'
+            }, status=400)
+        
+        linked_count = 0
+        for case_id in case_ids:
+            try:
+                # 获取评审通过的用例
+                test_case = TestCase.objects.get(id=case_id, status='approved')
+                
+                # 生成用例编号
+                last_case = TestCaseLibrary.objects.order_by('-id').first()
+                if last_case:
+                    try:
+                        last_num = int(last_case.case_number.split('-')[-1])
+                        case_number = f"CASE-{last_num + 1:04d}"
+                    except:
+                        case_number = "CASE-0001"
+                else:
+                    case_number = "CASE-0001"
+                
+                # 创建用例库记录
+                TestCaseLibrary.objects.create(
+                    case_number=case_number,
+                    title=test_case.description[:200] if len(test_case.description) > 200 else test_case.description,
+                    module=module,
+                    priority='p2',
+                    case_type='functional',
+                    preconditions='',
+                    test_steps=test_case.test_steps,
+                    expected_results=test_case.expected_results,
+                    status='active',
+                    maintainer='',
+                    tags='AI评审通过',
+                    remark=f'从测试用例评审关联（原ID: {test_case.id}）',
+                    project_id=project_id if project_id else None
+                )
+                
+                # 从评审列表中移除（删除）
+                test_case.delete()
+                linked_count += 1
+                
+            except TestCase.DoesNotExist:
+                continue
+        
+        return JsonResponse({
+            'success': True,
+            'message': f'成功关联 {linked_count} 条测试用例',
+            'data': {'linked_count': linked_count}
+        })
+        
+    except json.JSONDecodeError:
+        return JsonResponse({
+            'success': False,
+            'message': '无效的 JSON 数据'
+        }, status=400)
+    except Exception as e:
+        return JsonResponse({
+            'success': False,
+            'message': f'关联失败：{str(e)}'
+        }, status=500)
+
+
 @require_http_methods(["DELETE"])
 def delete_case(request):
     """删除用例"""
@@ -394,21 +531,29 @@ def get_modules(request):
         if project_id:
             queryset = queryset.filter(project_id=project_id)
         
-        # 序列化数据（递归获取子模块）
         def serialize_module(module):
-            """递归序列化模块及其子模块"""
+            """递归序列化模块及其子模块，并统计包含所有子模块的用例数"""
+            children_data = []
+            children = module.children.all().order_by('order', 'name')
+            for child in children:
+                children_data.append(serialize_module(child))
+            
+            # 计算当前模块直接关联的用例数（按项目过滤）
+            count_query = TestCaseLibrary.objects.filter(module=module.value)
+            if project_id:
+                count_query = count_query.filter(project_id=project_id)
+            direct_count = count_query.count()
+            
+            # 递归求和：当前模块用例数 + 所有子模块用例数
+            children_count = sum(child['count'] for child in children_data)
+            
             module_data = {
                 'id': module.id,
                 'name': module.name,
                 'value': module.value,
-                'count': TestCaseLibrary.objects.filter(module=module.value).count(),
-                'children': []
+                'count': direct_count + children_count,
+                'children': children_data
             }
-            
-            # 获取子模块
-            children = module.children.all().order_by('order', 'name')
-            for child in children:
-                module_data['children'].append(serialize_module(child))
             
             return module_data
         

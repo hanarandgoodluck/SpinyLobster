@@ -59,7 +59,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 selectedModule: 'all',
                 moduleStats: [],
                 totalCases: 0,
-                noModuleCount: 0,
                 selectedCases: [],
                 dialogVisible: false,
                 editDialogVisible: false,
@@ -76,7 +75,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 caseRules: {
                     title: [{ required: true, message: '请输入用例名称', trigger: 'blur' }],
                     module_value: [{ required: true, message: '请选择所属模块', trigger: 'change' }]
-                }
+                },
+                // 关联测试用例相关
+                linkDialogVisible: false,
+                approvedTestCases: [],
+                approvedTestCaseTotal: 0,
+                approvedTestCasePage: 1,
+                approvedTestCaseTotalPages: 1,
+                selectedLinkCases: [],
+                linkModule: 'other'
             };
         },
 
@@ -127,7 +134,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         page: this.currentPage,
                         page_size: this.pageSize,
                         search: this.searchText,
-                        module: this.selectedModule !== 'all' && this.selectedModule !== 'no_module' ? this.selectedModule : '',
+                        module: this.selectedModule !== 'all' ? this.selectedModule : '',
                     });
 
                     const projectId = this.getProjectId();
@@ -144,8 +151,12 @@ document.addEventListener('DOMContentLoaded', () => {
                         this.currentPage = data.data.page;
                         this.pageSize = data.data.page_size;
 
+                        // 使用后端返回的 total_all 作为系统所有用例总数
+                        if (data.data.total_all !== undefined) {
+                            this.totalCases = data.data.total_all;
+                        }
+
                         await this.loadModules();
-                        this.updateModuleCounts();
                     } else {
                         this.$message.error('加载失败：' + data.message);
                     }
@@ -153,18 +164,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     console.error('加载用例列表失败:', error);
                     this.$message.error('加载失败');
                 }
-            },
-
-            updateModuleCounts() {
-                const updateCount = (modules) => {
-                    modules.forEach(module => {
-                        module.count = this.cases.filter(c => c.module === module.value).length;
-                        if (module.children?.length) updateCount(module.children);
-                    });
-                };
-                updateCount(this.moduleStats);
-                this.noModuleCount = this.cases.filter(c => !c.module).length;
-                this.totalCases = this.total;
             },
 
             async loadModules() {
@@ -175,8 +174,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
                     if (data.success) {
                         this.moduleStats = data.data;
-                        this.totalCases = this.total;
-                        this.noModuleCount = this.cases.filter(c => !c.module).length;
                     } else {
                         this.$message.error('加载失败：' + data.message);
                     }
@@ -557,6 +554,94 @@ document.addEventListener('DOMContentLoaded', () => {
 
             exportCases() {
                 this.$message.info('导出功能开发中');
+            },
+
+            // ========== 关联测试用例相关方法 ==========
+            async showLinkDialog() {
+                this.approvedTestCasePage = 1;
+                this.selectedLinkCases = [];
+                this.linkModule = 'other';
+                await this.loadModuleCascaderOptions();
+                this.linkDialogVisible = true;
+                await this.loadApprovedTestCases();
+            },
+
+            async loadApprovedTestCases() {
+                try {
+                    const params = new URLSearchParams({
+                        page: this.approvedTestCasePage,
+                        page_size: 15
+                    });
+
+                    const projectId = this.getProjectId();
+                    if (projectId) params.append('project_id', projectId);
+
+                    const data = await this.fetchApi(`/case_library/api/approved-cases/?${params}`);
+
+                    if (data.success) {
+                        this.approvedTestCases = data.data.cases || [];
+                        this.approvedTestCaseTotal = data.data.total;
+                        this.approvedTestCasePage = data.data.page;
+                        this.approvedTestCaseTotalPages = data.data.total_pages;
+                    } else {
+                        this.$message.error('加载失败：' + data.message);
+                    }
+                } catch (error) {
+                    console.error('加载已通过的测试用例失败:', error);
+                    this.$message.error('加载失败');
+                }
+            },
+
+            handleLinkSelectionChange(selection) {
+                this.selectedLinkCases = selection;
+            },
+
+            changeApprovedTestCasePage(page) {
+                this.approvedTestCasePage = page;
+                this.loadApprovedTestCases();
+            },
+
+            async confirmLink() {
+                if (this.selectedLinkCases.length === 0) {
+                    this.$message.warning('请选择要关联的测试用例');
+                    return;
+                }
+
+                try {
+                    await this.$confirm(
+                        `确定要关联选中的 ${this.selectedLinkCases.length} 条测试用例吗？关联后这些用例将从评审列表中移除。`,
+                        '确认关联',
+                        {
+                            confirmButtonText: '确定',
+                            cancelButtonText: '取消',
+                            type: 'warning'
+                        }
+                    );
+
+                    const caseIds = this.selectedLinkCases.map(c => c.id);
+                    const data = await this.fetchApi('/case_library/api/link-cases/', {
+                        method: 'POST',
+                        body: JSON.stringify({
+                            case_ids: caseIds,
+                            project_id: this.getProjectId(),
+                            module: this.linkModule || 'other'
+                        })
+                    });
+
+                    if (data.success) {
+                        this.$message.success(data.message || '关联成功');
+                        this.linkDialogVisible = false;
+                        this.selectedLinkCases = [];
+                        await this.loadCases();
+                    } else {
+                        this.$message.error('关联失败：' + data.message);
+                    }
+                } catch (error) {
+                    if (error !== 'cancel') {
+                        console.error('关联测试用例失败:', error);
+                        this.$message.error('关联失败');
+                    }
+                }
             }
         },
 
