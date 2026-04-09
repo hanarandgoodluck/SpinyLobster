@@ -17,5 +17,6 @@ urlpatterns = [
     path('test_case_generator/', include('apps.ai_agents.test_case_generator.urls')),
     path('test_case_reviewer/', include('apps.ai_agents.test_case_reviewer.urls')),
     path('case_library/', include('apps.ai_agents.case_library.urls')),
+    path('ui_automation/', include('apps.ai_agents.ui_automation.urls')),
 
 ]

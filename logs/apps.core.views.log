@@ -411,3 +411,20 @@
 2026-04-08 16:12:30,525 - apps.core.views - WARNING - [thread=23084 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
 2026-04-08 16:16:51,051 - apps.core.views - WARNING - [thread=26572 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
 2026-04-08 21:06:19,556 - apps.core.views - WARNING - [thread=4840 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-04-09 11:40:04,343 - apps.core.views - WARNING - [thread=23444 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-04-09 11:41:00,880 - apps.core.views - INFO - [thread=26792 Thread-7 (process_request_thread)] - 创建项目 - name: 云杉医养, version: 1.0.0, description: 云杉养老相关项目
+2026-04-09 11:41:00,893 - apps.core.views - INFO - [thread=26792 Thread-7 (process_request_thread)] - 检查是否存在：name=云杉医养, version=1.0.0, existing=None
+2026-04-09 20:53:37,606 - apps.core.views - WARNING - [thread=32580 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-04-09 20:53:38,176 - apps.core.views - WARNING - [thread=240 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-04-09 20:53:54,471 - apps.core.views - WARNING - [thread=33532 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-04-09 20:57:00,542 - apps.core.views - WARNING - [thread=6980 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-04-09 21:00:05,169 - apps.core.views - WARNING - [thread=30548 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-04-09 21:00:36,751 - apps.core.views - WARNING - [thread=31660 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-04-09 21:04:35,171 - apps.core.views - WARNING - [thread=18152 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-04-09 21:10:01,399 - apps.core.views - WARNING - [thread=12472 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-04-09 21:15:55,821 - apps.core.views - WARNING - [thread=31624 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-04-09 21:16:18,901 - apps.core.views - WARNING - [thread=27776 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-04-09 22:36:24,233 - apps.core.views - WARNING - [thread=23652 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-04-09 22:37:15,578 - apps.core.views - WARNING - [thread=31488 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-04-09 22:44:13,834 - apps.core.views - WARNING - [thread=23964 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-04-09 23:03:20,077 - apps.core.views - WARNING - [thread=17040 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.

@@ -1,5 +1,6 @@
 from django.urls import path
 from . import views
+from .automation import automation_views
 
 app_name = 'case_library'
 
@@ -20,4 +21,13 @@ urlpatterns = [
     # 关联测试用例
     path('api/approved-cases/', views.get_approved_test_cases, name='get_approved_test_cases'),
     path('api/link-cases/', views.link_test_cases, name='link_test_cases'),
+    
+    # 自动化执行 API
+    path('api/automation/execute/', automation_views.execute_test_cases, name='execute_test_cases'),
+    path('api/automation/status/<str:task_uuid>/', automation_views.get_execution_status, name='get_execution_status'),
+    path('api/automation/report/<str:task_uuid>/', automation_views.get_execution_report, name='get_execution_report'),
+    path('api/automation/history/', automation_views.get_execution_history, name='get_execution_history'),
+    
+    # Allure报告静态文件服务
+    path('report/<path:path>', automation_views.serve_allure_report, name='serve_allure_report'),
 ]

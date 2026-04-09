@@ -1080,3 +1080,54 @@ ValueError: DeepSeek API key is required. Set it via DEEPSEEK_API_KEY environmen
 2026-04-08 16:12:30,685 - apps.ai_agents.test_case_generator.views - WARNING - [thread=23084 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
 2026-04-08 16:16:51,228 - apps.ai_agents.test_case_generator.views - WARNING - [thread=26572 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
 2026-04-08 21:06:19,716 - apps.ai_agents.test_case_generator.views - WARNING - [thread=4840 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-04-09 11:40:04,591 - apps.ai_agents.test_case_generator.views - WARNING - [thread=23444 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-04-09 11:40:19,027 - apps.ai_agents.test_case_generator.views - INFO - [thread=26796 Thread-8 (process_request_thread)] - ===== 进入 generate 视图函数 =====
+2026-04-09 11:40:19,027 - apps.ai_agents.test_case_generator.views - INFO - [thread=26796 Thread-8 (process_request_thread)] - 请求方法：GET
+2026-04-09 11:40:19,041 - apps.ai_agents.test_case_generator.views - INFO - [thread=26796 Thread-8 (process_request_thread)] - 从数据库加载 AI 配置成功，模型：deepseek-chat
+2026-04-09 11:40:28,473 - apps.ai_agents.test_case_generator.views - INFO - [thread=26792 Thread-7 (process_request_thread)] - ===== 进入 generate 视图函数 =====
+2026-04-09 11:40:28,474 - apps.ai_agents.test_case_generator.views - INFO - [thread=26792 Thread-7 (process_request_thread)] - 请求方法：GET
+2026-04-09 11:40:28,487 - apps.ai_agents.test_case_generator.views - INFO - [thread=26792 Thread-7 (process_request_thread)] - 从数据库加载 AI 配置成功，模型：deepseek-chat
+2026-04-09 11:41:09,270 - apps.ai_agents.test_case_generator.views - INFO - [thread=26792 Thread-7 (process_request_thread)] - ===== 进入 generate 视图函数 =====
+2026-04-09 11:41:09,270 - apps.ai_agents.test_case_generator.views - INFO - [thread=26792 Thread-7 (process_request_thread)] - 请求方法：GET
+2026-04-09 11:41:09,274 - apps.ai_agents.test_case_generator.views - INFO - [thread=26792 Thread-7 (process_request_thread)] - 从数据库加载 AI 配置成功，模型：deepseek-chat
+2026-04-09 11:41:15,478 - apps.ai_agents.test_case_generator.views - INFO - [thread=26792 Thread-7 (process_request_thread)] - ===== 进入 generate 视图函数 =====
+2026-04-09 11:41:15,478 - apps.ai_agents.test_case_generator.views - INFO - [thread=26792 Thread-7 (process_request_thread)] - 请求方法：GET
+2026-04-09 11:41:15,492 - apps.ai_agents.test_case_generator.views - INFO - [thread=26792 Thread-7 (process_request_thread)] - 从数据库加载 AI 配置成功，模型：deepseek-chat
+2026-04-09 12:32:18,165 - apps.ai_agents.test_case_generator.views - INFO - [thread=7244 Thread-11 (process_request_thread)] - ===== 进入 generate 视图函数 =====
+2026-04-09 12:32:18,165 - apps.ai_agents.test_case_generator.views - INFO - [thread=7244 Thread-11 (process_request_thread)] - 请求方法：GET
+2026-04-09 12:32:18,179 - apps.ai_agents.test_case_generator.views - INFO - [thread=7244 Thread-11 (process_request_thread)] - 从数据库加载 AI 配置成功，模型：deepseek-chat
+2026-04-09 20:53:37,769 - apps.ai_agents.test_case_generator.views - WARNING - [thread=32580 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-04-09 20:53:38,348 - apps.ai_agents.test_case_generator.views - WARNING - [thread=240 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-04-09 20:53:54,638 - apps.ai_agents.test_case_generator.views - WARNING - [thread=33532 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-04-09 20:57:00,697 - apps.ai_agents.test_case_generator.views - WARNING - [thread=6980 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-04-09 21:00:05,335 - apps.ai_agents.test_case_generator.views - WARNING - [thread=30548 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-04-09 21:00:36,904 - apps.ai_agents.test_case_generator.views - WARNING - [thread=31660 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-04-09 21:04:35,324 - apps.ai_agents.test_case_generator.views - WARNING - [thread=18152 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-04-09 21:10:01,564 - apps.ai_agents.test_case_generator.views - WARNING - [thread=12472 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-04-09 21:15:55,998 - apps.ai_agents.test_case_generator.views - WARNING - [thread=31624 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-04-09 21:16:19,078 - apps.ai_agents.test_case_generator.views - WARNING - [thread=27776 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-04-09 22:26:59,286 - apps.ai_agents.test_case_generator.views - INFO - [thread=30040 Thread-13 (process_request_thread)] - ===== 进入 generate 视图函数 =====
+2026-04-09 22:26:59,287 - apps.ai_agents.test_case_generator.views - INFO - [thread=30040 Thread-13 (process_request_thread)] - 请求方法：GET
+2026-04-09 22:26:59,291 - apps.ai_agents.test_case_generator.views - INFO - [thread=30040 Thread-13 (process_request_thread)] - 从数据库加载 AI 配置成功，模型：deepseek-chat
+2026-04-09 22:27:09,976 - apps.ai_agents.test_case_generator.views - INFO - [thread=30040 Thread-13 (process_request_thread)] - ===== 进入 generate 视图函数 =====
+2026-04-09 22:27:09,976 - apps.ai_agents.test_case_generator.views - INFO - [thread=30040 Thread-13 (process_request_thread)] - 请求方法：GET
+2026-04-09 22:27:09,989 - apps.ai_agents.test_case_generator.views - INFO - [thread=30040 Thread-13 (process_request_thread)] - 从数据库加载 AI 配置成功，模型：deepseek-chat
+2026-04-09 22:36:24,411 - apps.ai_agents.test_case_generator.views - WARNING - [thread=23652 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-04-09 22:36:38,067 - apps.ai_agents.test_case_generator.views - INFO - [thread=28080 Thread-20 (process_request_thread)] - ===== 进入 generate 视图函数 =====
+2026-04-09 22:36:38,067 - apps.ai_agents.test_case_generator.views - INFO - [thread=28080 Thread-20 (process_request_thread)] - 请求方法：GET
+2026-04-09 22:36:38,070 - apps.ai_agents.test_case_generator.views - INFO - [thread=28080 Thread-20 (process_request_thread)] - 从数据库加载 AI 配置成功，模型：deepseek-chat
+2026-04-09 22:37:15,742 - apps.ai_agents.test_case_generator.views - WARNING - [thread=31488 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-04-09 22:39:15,374 - apps.ai_agents.test_case_generator.views - INFO - [thread=28232 Thread-17 (process_request_thread)] - ===== 进入 generate 视图函数 =====
+2026-04-09 22:39:15,374 - apps.ai_agents.test_case_generator.views - INFO - [thread=28232 Thread-17 (process_request_thread)] - 请求方法：GET
+2026-04-09 22:39:15,377 - apps.ai_agents.test_case_generator.views - INFO - [thread=28232 Thread-17 (process_request_thread)] - 从数据库加载 AI 配置成功，模型：deepseek-chat
+2026-04-09 22:39:21,131 - apps.ai_agents.test_case_generator.views - INFO - [thread=28520 Thread-24 (process_request_thread)] - ===== 进入 generate 视图函数 =====
+2026-04-09 22:39:21,132 - apps.ai_agents.test_case_generator.views - INFO - [thread=28520 Thread-24 (process_request_thread)] - 请求方法：GET
+2026-04-09 22:39:21,135 - apps.ai_agents.test_case_generator.views - INFO - [thread=28520 Thread-24 (process_request_thread)] - 从数据库加载 AI 配置成功，模型：deepseek-chat
+2026-04-09 22:40:36,406 - apps.ai_agents.test_case_generator.views - INFO - [thread=29224 Thread-29 (process_request_thread)] - ===== 进入 generate 视图函数 =====
+2026-04-09 22:40:36,406 - apps.ai_agents.test_case_generator.views - INFO - [thread=29224 Thread-29 (process_request_thread)] - 请求方法：GET
+2026-04-09 22:40:36,419 - apps.ai_agents.test_case_generator.views - INFO - [thread=29224 Thread-29 (process_request_thread)] - 从数据库加载 AI 配置成功，模型：deepseek-chat
+2026-04-09 22:44:13,991 - apps.ai_agents.test_case_generator.views - WARNING - [thread=23964 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-04-09 23:03:20,234 - apps.ai_agents.test_case_generator.views - WARNING - [thread=17040 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-04-09 23:06:06,244 - apps.ai_agents.test_case_generator.views - INFO - [thread=13128 Thread-18 (process_request_thread)] - ===== 进入 generate 视图函数 =====
+2026-04-09 23:06:06,245 - apps.ai_agents.test_case_generator.views - INFO - [thread=13128 Thread-18 (process_request_thread)] - 请求方法：GET
+2026-04-09 23:06:06,248 - apps.ai_agents.test_case_generator.views - INFO - [thread=13128 Thread-18 (process_request_thread)] - 从数据库加载 AI 配置成功，模型：deepseek-chat

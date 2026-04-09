@@ -167,6 +167,12 @@
                             </a>
                         </li>
                         <li class="nav-item">
+                            <a class="nav-link {% if '/ui_automation/' in request.path %}active{% endif %}" href="/ui_automation/?project_id={{ current_project.id }}">
+                                <i class="fas fa-robot"></i>
+                                自动化测试助手
+                            </a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link {% if '/prd_analyzer/' in request.path %}active{% endif %}" href="/prd_analyzer/?project_id={{ current_project.id }}">
                                 <i class="fas fa-project-diagram"></i>
                                 测试点&场景分析

@@ -231,3 +231,94 @@ class TestCaseModule(models.Model):
         verbose_name = "用例模块"
         verbose_name_plural = "用例模块"
         ordering = ['order', 'name']
+
+
+class AutomationExecutionLog(models.Model):
+    """自动化测试执行日志模型"""
+    STATUS_CHOICES = [
+        ('pending', '等待中'),
+        ('running', '执行中'),
+        ('passed', '通过'),
+        ('failed', '失败'),
+        ('error', '错误'),
+    ]
+    
+    EXECUTION_MODE_CHOICES = [
+        ('single', '单用例执行'),
+        ('batch', '批量执行'),
+    ]
+    
+    BROWSER_CHOICES = [
+        ('chromium', 'Chrome'),
+        ('firefox', 'Firefox'),
+        ('webkit', 'Safari'),
+    ]
+    
+    # 关联用例
+    case = models.ForeignKey(
+        TestCaseLibrary,
+        on_delete=models.CASCADE,
+        related_name='execution_logs',
+        verbose_name="关联用例",
+        null=True,
+        blank=True
+    )
+    
+    # 任务标识
+    task_uuid = models.CharField(max_length=100, unique=True, verbose_name="任务UUID")
+    
+    # 执行状态
+    status = models.CharField(
+        max_length=20,
+        choices=STATUS_CHOICES,
+        default='pending',
+        verbose_name="执行状态"
+    )
+    
+    # 执行模式
+    execution_mode = models.CharField(
+        max_length=20,
+        choices=EXECUTION_MODE_CHOICES,
+        default='single',
+        verbose_name="执行模式"
+    )
+    
+    # 浏览器配置
+    browser = models.CharField(
+        max_length=20,
+        choices=BROWSER_CHOICES,
+        default='chromium',
+        verbose_name="浏览器类型"
+    )
+    
+    headless = models.BooleanField(default=True, verbose_name="无头模式")
+    
+    # AI决策日志
+    ai_decision_log = models.TextField(blank=True, verbose_name="AI决策日志")
+    use_multimodal = models.BooleanField(default=False, verbose_name="是否使用多模态")
+    multimodal_reason = models.TextField(blank=True, verbose_name="多模态使用原因")
+    
+    # Playwright脚本路径
+    script_path = models.CharField(max_length=500, blank=True, verbose_name="脚本路径")
+    
+    # 报告信息
+    report_url = models.CharField(max_length=500, blank=True, verbose_name="Allure报告URL")
+    allure_report_path = models.CharField(max_length=500, blank=True, verbose_name="Allure报告路径")
+    
+    # 执行结果
+    error_message = models.TextField(blank=True, verbose_name="错误信息")
+    execution_time = models.FloatField(null=True, blank=True, verbose_name="执行时长(秒)")
+    
+    # 时间戳
+    started_at = models.DateTimeField(null=True, blank=True, verbose_name="开始时间")
+    completed_at = models.DateTimeField(null=True, blank=True, verbose_name="完成时间")
+    created_at = models.DateTimeField(auto_now_add=True, verbose_name="创建时间")
+    updated_at = models.DateTimeField(auto_now=True, verbose_name="更新时间")
+    
+    def __str__(self):
+        return f"{self.task_uuid} - {self.get_status_display()}"
+    
+    class Meta:
+        verbose_name = "自动化执行日志"
+        verbose_name_plural = "自动化执行日志"
+        ordering = ['-created_at']

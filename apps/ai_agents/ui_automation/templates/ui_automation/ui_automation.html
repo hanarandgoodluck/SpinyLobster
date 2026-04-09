@@ -1,0 +1,610 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}SpinyLobster - 自动化测试助手{% endblock %}
+
+{% block extra_css %}
+<style>
+    /* 全局样式重置 */
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    /* 页面容器 */
+    .container {
+        width: 100%;
+        padding: 0 20px;
+        margin: 0 auto;
+    }
+
+    /* 页面标题区域 */
+    .page-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 30px;
+        padding-bottom: 15px;
+        border-bottom: 1px solid #ebeef5;
+    }
+
+    .page-title {
+        font-size: 24px;
+        font-weight: 600;
+        color: #303133;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    /* 任务卡片 */
+    .task-card {
+        background: #ffffff;
+        border: 1px solid #ebeef5;
+        border-radius: 12px;
+        padding: 24px;
+        margin-bottom: 20px;
+        box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.08);
+        transition: all 0.3s ease;
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .task-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 12px 20px 0 rgba(0, 0, 0, 0.12);
+        border-color: #409eff;
+    }
+
+    .task-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 4px;
+        height: 100%;
+        background: linear-gradient(180deg, #409eff 0%, #66b1ff 100%);
+        border-radius: 12px 0 0 12px;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    .task-card:hover::before {
+        opacity: 1;
+    }
+
+    /* 卡片头部 */
+    .card-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-bottom: 16px;
+    }
+
+    .task-name {
+        font-size: 18px;
+        font-weight: 600;
+        color: #303133;
+        margin: 0;
+        flex: 1;
+    }
+
+    .task-status-badge {
+        background: linear-gradient(135deg, #409eff 0%, #66b1ff 100%);
+        color: white;
+        padding: 6px 12px;
+        border-radius: 20px;
+        font-size: 12px;
+        font-weight: 500;
+        margin-left: 12px;
+    }
+
+    /* 任务描述 */
+    .task-description {
+        color: #606266;
+        font-size: 14px;
+        line-height: 1.5;
+        margin-bottom: 20px;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    /* 任务统计信息 */
+    .task-stats {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+        padding: 12px 16px;
+        background: #f5f7fa;
+        border-radius: 8px;
+    }
+
+    .task-info {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        background: linear-gradient(135deg, #67c23a 0%, #85ce61 100%);
+        color: white;
+        padding: 6px 12px;
+        border-radius: 20px;
+        font-size: 13px;
+        font-weight: 500;
+    }
+
+    .task-date {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        color: #909399;
+        font-size: 13px;
+    }
+
+    /* 操作按钮组 */
+    .action-buttons {
+        display: flex;
+        gap: 8px;
+        border-top: 1px solid #ebeef5;
+        padding-top: 16px;
+    }
+
+    .btn {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 8px 16px;
+        border: 1px solid transparent;
+        border-radius: 6px;
+        font-size: 13px;
+        font-weight: 500;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        gap: 6px;
+    }
+
+    .btn-view {
+        background: #ecf5ff;
+        color: #409eff;
+        border-color: #d9ecff;
+    }
+
+    .btn-view:hover {
+        background: #409eff;
+        color: white;
+    }
+
+    .btn-edit {
+        background: #f0f9eb;
+        color: #67c23a;
+        border-color: #e6f7dd;
+    }
+
+    .btn-edit:hover {
+        background: #67c23a;
+        color: white;
+    }
+
+    .btn-delete {
+        background: #fef0f0;
+        color: #f56c6c;
+        border-color: #fbc4c4;
+    }
+
+    .btn-delete:hover {
+        background: #f56c6c;
+        color: white;
+    }
+
+    /* 响应式布局 */
+    .row {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 -12px;
+    }
+
+    .col-md-6 {
+        flex: 0 0 50%;
+        max-width: 50%;
+        padding: 0 12px;
+    }
+
+    .col-lg-4 {
+        flex: 0 0 33.333333%;
+        max-width: 33.333333%;
+        padding: 0 12px;
+    }
+
+    .col-12 {
+        flex: 0 0 100%;
+        max-width: 100%;
+        padding: 0 12px;
+    }
+
+    /* 加载状态 */
+    .loading-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 400px;
+        padding: 40px 0;
+    }
+
+    .loading-spinner {
+        width: 60px;
+        height: 60px;
+        border: 3px solid #f3f3f3;
+        border-top: 3px solid #409eff;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+        margin-bottom: 20px;
+    }
+
+    @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
+
+    .loading-text {
+        color: #909399;
+        font-size: 14px;
+    }
+
+    /* 空状态 */
+    .empty-state {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 400px;
+        padding: 60px 0;
+        text-align: center;
+    }
+
+    .empty-icon {
+        font-size: 64px;
+        color: #c0c4cc;
+        margin-bottom: 20px;
+        opacity: 0.5;
+    }
+
+    .empty-title {
+        font-size: 18px;
+        font-weight: 600;
+        color: #606266;
+        margin-bottom: 8px;
+    }
+
+    .empty-desc {
+        font-size: 14px;
+        color: #909399;
+        margin-bottom: 30px;
+    }
+
+    /* 新建任务按钮 */
+    .btn-primary {
+        background: linear-gradient(135deg, #409eff 0%, #66b1ff 100%);
+        color: white;
+        border: none;
+        border-radius: 6px;
+        padding: 10px 20px;
+        font-size: 14px;
+        font-weight: 500;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        box-shadow: 0 2px 8px rgba(64, 158, 255, 0.3);
+    }
+
+    .btn-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(64, 158, 255, 0.4);
+    }
+
+    /* 响应式调整 */
+    @media (max-width: 992px) {
+        .col-lg-4 {
+            flex: 0 0 50%;
+            max-width: 50%;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .col-md-6 {
+            flex: 0 0 100%;
+            max-width: 100%;
+        }
+
+        .page-header {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        .task-stats {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .action-buttons {
+            flex-direction: column;
+        }
+
+        .btn {
+            width: 100%;
+        }
+    }
+
+    /* 动画效果 */
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .task-card {
+        animation: fadeInUp 0.5s ease forwards;
+    }
+
+    .task-card:nth-child(1) { animation-delay: 0.1s; }
+    .task-card:nth-child(2) { animation-delay: 0.2s; }
+    .task-card:nth-child(3) { animation-delay: 0.3s; }
+    .task-card:nth-child(4) { animation-delay: 0.4s; }
+    .task-card:nth-child(5) { animation-delay: 0.5s; }
+    .task-card:nth-child(6) { animation-delay: 0.6s; }
+</style>
+{% endblock %}
+
+{% block content %}
+<div id="task-app">
+    <div class="container mt-4">
+        <!-- 从 Django 模板获取 CSRF token -->
+        <meta name="csrf-token" content="{{ csrf_token }}">
+    
+    <div class="page-header">
+        <h2 class="page-title"><i class="fas fa-tasks"></i> 自动化测试助手</h2>
+        <button class="btn-primary" @click="createDialogVisible = true">
+            <i class="fas fa-plus"></i> 新建AI测试任务
+        </button>
+    </div>
+
+    <!-- 任务列表 -->
+    <div class="row" id="taskList">
+        <!-- 加载指示器 -->
+        <div class="col-12" v-if="loading">
+            <div class="loading-container">
+                <div class="loading-spinner"></div>
+                <p class="loading-text">正在加载任务列表...</p>
+            </div>
+        </div>
+        
+        <!-- 空状态 -->
+        <div class="col-12" v-else-if="tasks.length === 0">
+            <div class="empty-state">
+                <i class="fas fa-clipboard-list empty-icon"></i>
+                <h3 class="empty-title">暂无任务</h3>
+                <p class="empty-desc">点击右上角创建第一个AI测试任务吧！</p>
+            </div>
+        </div>
+        
+        <!-- 任务卡片列表 -->
+        <div class="col-md-6 col-lg-4" v-for="task in tasks" :key="task.id">
+            <div class="task-card" @click="viewTask(task.id)">
+                <div class="card-header">
+                    <h3 class="task-name">{% verbatim %}{{ task.name }}{% endverbatim %}</h3>
+                    <span class="task-status-badge">{% verbatim %}{{ task.status_display }}{% endverbatim %}</span>
+                </div>
+                <p class="task-description">{% verbatim %}{{ task.description || '无描述' }}{% endverbatim %}</p>
+                <div class="task-stats">
+                    <span class="task-info">
+                        <i class="fas fa-vial"></i> {% verbatim %}{{ task.case_count }}{% endverbatim %} 条用例
+                    </span>
+                    <span class="task-date">
+                        <i class="far fa-clock"></i> {% verbatim %}{{ task.created_at }}{% endverbatim %}
+                    </span>
+                </div>
+                <div class="action-buttons" @click.stop>
+                    <button class="btn btn-view" @click="viewTask(task.id)">
+                        <i class="fas fa-eye"></i> 查看
+                    </button>
+                    <button class="btn btn-edit" @click="editTask(task.id)">
+                        <i class="fas fa-edit"></i> 编辑
+                    </button>
+                    <button class="btn btn-delete" @click="deleteTask(task.id, task.name)">
+                        <i class="fas fa-trash"></i> 删除
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 创建任务对话框 -->
+<el-dialog v-model="createDialogVisible" title="创建新AI测试任务" width="500px">
+    <el-form :model="createForm" :rules="createRules" ref="createFormRef" label-width="100px">
+        <el-form-item label="任务名称" prop="name">
+            <el-input v-model="createForm.name" placeholder="请输入任务名称"></el-input>
+        </el-form-item>
+        <el-form-item label="任务描述">
+            <el-input v-model="createForm.description" type="textarea" :rows="3" placeholder="请输入任务描述"></el-input>
+        </el-form-item>
+    </el-form>
+    <template #footer>
+        <span class="dialog-footer">
+            <el-button @click="createDialogVisible = false">取消</el-button>
+            <el-button type="primary" @click="createTask">创建</el-button>
+        </span>
+    </template>
+</el-dialog>
+
+<!-- 编辑任务对话框 -->
+<el-dialog v-model="editDialogVisible" title="编辑任务" width="500px">
+    <el-form :model="editForm" :rules="editRules" ref="editFormRef" label-width="100px">
+        <el-form-item label="任务名称" prop="name">
+            <el-input v-model="editForm.name" placeholder="请输入任务名称"></el-input>
+        </el-form-item>
+        <el-form-item label="任务描述">
+            <el-input v-model="editForm.description" type="textarea" :rows="3" placeholder="请输入任务描述"></el-input>
+        </el-form-item>
+    </el-form>
+    <template #footer>
+        <span class="dialog-footer">
+            <el-button @click="editDialogVisible = false">取消</el-button>
+            <el-button type="primary" @click="updateTask">保存</el-button>
+        </span>
+    </template>
+</el-dialog>
+
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'js/vue.global.prod.js' %}"></script>
+<script src="{% static 'js/element-plus.min.js' %}"></script>
+<script>
+const { createApp, ref, reactive } = Vue;
+
+const app = createApp({
+    data() {
+        return {
+            tasks: [],
+            loading: true,
+            createDialogVisible: false,
+            editDialogVisible: false,
+            createForm: {
+                name: '',
+                description: ''
+            },
+            editForm: {
+                id: null,
+                name: '',
+                description: ''
+            },
+            createRules: {
+                name: [
+                    { required: true, message: '任务名称不能为空', trigger: 'blur' }
+                ]
+            },
+            editRules: {
+                name: [
+                    { required: true, message: '任务名称不能为空', trigger: 'blur' }
+                ]
+            }
+        };
+    },
+    
+    methods: {
+        getCSRFToken() {
+            return document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+        },
+        
+        async loadTasks() {
+            try {
+                // TODO: 实现加载任务列表的API调用
+                this.loading = false;
+                this.tasks = [];
+                ElementPlus.ElMessage.info('功能待实现');
+            } catch (error) {
+                console.error('加载任务出错:', error);
+                this.loading = false;
+                ElementPlus.ElMessage.error('加载任务失败');
+            }
+        },
+        
+        viewTask(taskId) {
+            // TODO: 实现查看任务详情
+            ElementPlus.ElMessage.info('查看任务: ' + taskId);
+        },
+        
+        editTask(taskId) {
+            // TODO: 实现编辑任务
+            this.editForm = {
+                id: taskId,
+                name: '',
+                description: ''
+            };
+            this.editDialogVisible = true;
+        },
+        
+        deleteTask(taskId, taskName) {
+            ElementPlus.ElMessageBox.confirm(
+                `确定要删除任务 "${taskName}" 吗？此操作不可撤销。`,
+                '确认删除',
+                {
+                    confirmButtonText: '确定',
+                    cancelButtonText: '取消',
+                    type: 'warning'
+                }
+            ).then(async () => {
+                try {
+                    // TODO: 实现删除任务的API调用
+                    ElementPlus.ElMessage.success('任务删除成功');
+                    await this.loadTasks();
+                } catch (error) {
+                    console.error('删除任务出错:', error);
+                    ElementPlus.ElMessage.error('删除任务失败');
+                }
+            }).catch(() => {
+                // 用户取消删除
+            });
+        },
+        
+        async createTask() {
+            this.$refs.createFormRef.validate(async (valid) => {
+                if (valid) {
+                    try {
+                        // TODO: 实现创建任务的API调用
+                        ElementPlus.ElMessage.success('任务创建成功');
+                        this.createDialogVisible = false;
+                        this.createForm = {
+                            name: '',
+                            description: ''
+                        };
+                        await this.loadTasks();
+                    } catch (error) {
+                        console.error('创建任务出错:', error);
+                        ElementPlus.ElMessage.error('创建任务失败');
+                    }
+                }
+            });
+        },
+        
+        async updateTask() {
+            this.$refs.editFormRef.validate(async (valid) => {
+                if (valid) {
+                    try {
+                        // TODO: 实现更新任务的API调用
+                        ElementPlus.ElMessage.success('任务更新成功');
+                        this.editDialogVisible = false;
+                        await this.loadTasks();
+                    } catch (error) {
+                        console.error('更新任务出错:', error);
+                        ElementPlus.ElMessage.error('更新任务失败');
+                    }
+                }
+            });
+        }
+    },
+    
+    mounted() {
+        this.loadTasks();
+    }
+});
+
+app.use(ElementPlus);
+app.mount('#task-app');
+</script>
+{% endblock %}
