@@ -19,4 +19,18 @@ urlpatterns = [
     
     # Allure报告服务
     path('report/<path:path>', views.serve_allure_report, name='serve_allure_report'),
+    
+    # ==================== 任务卡片管理中心 API ====================
+    # 任务 CRUD
+    path('api/tasks/', views.get_task_list, name='get_task_list'),
+    path('api/tasks/create/', views.create_task, name='create_task'),
+    path('api/tasks/<int:task_id>/', views.get_task_detail, name='get_task_detail'),
+    path('api/tasks/<int:task_id>/update/', views.update_task, name='update_task'),
+    path('api/tasks/<int:task_id>/delete/', views.delete_task, name='delete_task'),
+    
+    # 任务执行
+    path('api/tasks/<int:task_id>/execute/', views.execute_task, name='execute_task'),
+    
+    # 任务执行历史
+    path('api/tasks/<int:task_id>/history/', views.get_task_execution_history, name='get_task_execution_history'),
 ]

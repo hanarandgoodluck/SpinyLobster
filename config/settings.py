@@ -176,6 +176,7 @@ AGENT_LLM_DEFAULTS = {
     "prd_analyzer": {"provider": "deepseek"},
     "java_code_analyzer": {"provider": "deepseek"},
     "iface_case_generator": {"provider": "deepseek"},
+    "case_library": {"provider": "deepseek"},
 }
 
 # Vision 模型默认配置（仅作为参考，实际配置请通过 AI 配置页面设置）

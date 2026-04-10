@@ -2,7 +2,7 @@
 自动化测试执行任务 - 异步处理UI自动化测试
 
 使用后台线程执行测试，避免阻塞Django主线程
-集成AI决策、Playwright执行和Allure报告生成
+集成AI决策、Playwright执行和BeautifulReport报告生成（无需Java环境）
 """
 
 import uuid
@@ -21,8 +21,8 @@ logger = get_logger(__name__)
 
 
 def execute_single_case(case_id: int, task_uuid: str = None, 
-                       browser: str = 'chromium', headless: bool = True,
-                       llm_provider: str = 'deepseek') -> Dict[str, Any]:
+                       browser: str = 'chromium', headless: bool = False,
+                       llm_provider: str = 'deepseek', task_name: str = None, task_id: int = None) -> Dict[str, Any]:
     """
     异步执行单个测试用例
     
@@ -57,6 +57,7 @@ def execute_single_case(case_id: int, task_uuid: str = None,
         # 2. 创建执行日志记录
         execution_log = AutomationExecutionLog.objects.create(
             case=test_case,
+            task_id=task_id,  # 关联到具体任务
             task_uuid=task_uuid,
             status='pending',
             execution_mode='single',
@@ -110,7 +111,8 @@ def execute_single_case(case_id: int, task_uuid: str = None,
             test_case=test_case_data,
             ai_decision=ai_decision,
             browser=browser,
-            headless=headless
+            headless=headless,
+            task_name=task_name  # 传递任务名称
         )
         
         execution_log.script_path = script_path
@@ -126,34 +128,35 @@ def execute_single_case(case_id: int, task_uuid: str = None,
         logger.info(f"[{task_uuid}] 步骤3/4: 执行Playwright测试")
         exec_result = executor.execute_test(script_path, task_uuid)
         
-        # 7. 生成Allure报告
-        logger.info(f"[{task_uuid}] 步骤4/4: 生成Allure报告")
+        # 7. 生成测试报告
+        logger.info(f"[{task_uuid}] 步骤4/4: 生成测试报告")
         set_progress(task_uuid, {
             'step': 4,
-            'message': '正在生成Allure报告...',
+            'message': '正在生成测试报告...',
             'percentage': 80
         })
         
         report_path = ""
-        if exec_result.get('allure_results_dir'):
-            report_path = executor.generate_allure_report(
-                exec_result['allure_results_dir']
-            )
+        if exec_result.get('report_path'):
+            report_path = exec_result['report_path']
         
         # 8. 更新执行日志
         execution_time = time.time() - start_time
         execution_log.execution_time = execution_time
         execution_log.completed_at = timezone.now()
         
+        # 无论成功失败都设置报告路径
+        if report_path:
+            execution_log.report_url = f"/ui_automation/report/{task_uuid}/"
+            execution_log.allure_report_path = report_path
+        
         if exec_result['success']:
             execution_log.status = 'passed'
-            execution_log.report_url = f"/automation/report/{task_uuid}/"
-            execution_log.allure_report_path = report_path
-            logger.info(f"[{task_uuid}] ✅ 测试通过")
+            logger.info(f"[{task_uuid}] [PASS] 测试通过")
         else:
             execution_log.status = 'failed'
             execution_log.error_message = exec_result.get('error_message', '') or exec_result.get('stderr', '')[:500]
-            logger.warning(f"[{task_uuid}] ❌ 测试失败: {execution_log.error_message[:100]}")
+            logger.warning(f"[{task_uuid}] [FAIL] 测试失败: {execution_log.error_message[:100]}")
         
         execution_log.save()
         
@@ -195,8 +198,8 @@ def execute_single_case(case_id: int, task_uuid: str = None,
 
 
 def execute_batch_cases(case_ids: List[int], task_uuid: str = None,
-                       browser: str = 'chromium', headless: bool = True,
-                       llm_provider: str = 'deepseek') -> Dict[str, Any]:
+                       browser: str = 'chromium', headless: bool = False,
+                       llm_provider: str = 'deepseek', task_name: str = None, task_id: int = None) -> Dict[str, Any]:
     """
     批量执行测试用例
     
@@ -239,7 +242,9 @@ def execute_batch_cases(case_ids: List[int], task_uuid: str = None,
                 task_uuid=case_task_uuid,
                 browser=browser,
                 headless=headless,
-                llm_provider=llm_provider
+                llm_provider=llm_provider,
+                task_name=task_name,
+                task_id=task_id  # 传递任务ID
             )
             
             results.append(result)

@@ -1,0 +1,127 @@
+2026-04-10 15:37:20,192 - apps.ai_agents.case_library.automation.playwright_executor - INFO - [thread=28952 task-5-exec] - Playwright执行引擎初始化完成，输出目录: F:\test\TestBranin\automation_results
+2026-04-10 15:37:20,192 - apps.ai_agents.case_library.automation.playwright_executor - INFO - [thread=28952 task-5-exec] - 测试脚本生成成功: F:\test\TestBranin\automation_results\scripts\test_CASE-0006_df3404b5.py
+2026-04-10 15:37:20,194 - apps.ai_agents.case_library.automation.playwright_executor - INFO - [thread=28952 task-5-exec] - 开始执行测试: F:\test\TestBranin\automation_results\scripts\test_CASE-0006_df3404b5.py
+2026-04-10 15:37:20,701 - apps.ai_agents.case_library.automation.playwright_executor - INFO - [thread=28952 task-5-exec] - 测试执行完成 - 状态: failed, 耗时: 0.51s
+2026-04-10 15:37:20,702 - apps.ai_agents.case_library.automation.playwright_executor - INFO - [thread=28952 task-5-exec] - HTML测试报告生成成功: F:\test\TestBranin\automation_results\reports\exec_d0bb2f79d124\report.html
+2026-04-10 15:46:01,743 - apps.ai_agents.case_library.automation.playwright_executor - INFO - [thread=29472 task-4-exec] - Playwright执行引擎初始化完成，输出目录: F:\test\TestBranin\automation_results
+2026-04-10 15:46:01,744 - apps.ai_agents.case_library.automation.playwright_executor - INFO - [thread=29472 task-4-exec] - 测试脚本生成成功: F:\test\TestBranin\automation_results\scripts\test_CASE-0006_b12edd64.py
+2026-04-10 15:46:01,746 - apps.ai_agents.case_library.automation.playwright_executor - INFO - [thread=29472 task-4-exec] - 开始执行测试: F:\test\TestBranin\automation_results\scripts\test_CASE-0006_b12edd64.py
+2026-04-10 15:46:02,226 - apps.ai_agents.case_library.automation.playwright_executor - INFO - [thread=29472 task-4-exec] - 测试执行完成 - 状态: failed, 耗时: 0.48s
+2026-04-10 15:46:02,227 - apps.ai_agents.case_library.automation.playwright_executor - INFO - [thread=29472 task-4-exec] - HTML测试报告生成成功: F:\test\TestBranin\automation_results\reports\exec_587395beb2fa\report.html
+2026-04-10 15:48:51,494 - apps.ai_agents.case_library.automation.playwright_executor - INFO - [thread=28240 task-4-exec] - Playwright执行引擎初始化完成，输出目录: F:\test\TestBranin\automation_results
+2026-04-10 15:48:51,495 - apps.ai_agents.case_library.automation.playwright_executor - INFO - [thread=28240 task-4-exec] - 测试脚本生成成功: F:\test\TestBranin\automation_results\scripts\test_CASE-0006_7cf33f18.py
+2026-04-10 15:48:51,497 - apps.ai_agents.case_library.automation.playwright_executor - INFO - [thread=28240 task-4-exec] - 开始执行测试: F:\test\TestBranin\automation_results\scripts\test_CASE-0006_7cf33f18.py
+2026-04-10 15:48:58,668 - apps.ai_agents.case_library.automation.playwright_executor - INFO - [thread=28240 task-4-exec] - 测试执行完成 - 状态: failed, 耗时: 7.17s
+2026-04-10 15:48:58,669 - apps.ai_agents.case_library.automation.playwright_executor - INFO - [thread=28240 task-4-exec] - HTML测试报告生成成功: F:\test\TestBranin\automation_results\reports\exec_83a5ced0899c\report.html
+2026-04-10 15:51:53,003 - apps.ai_agents.case_library.automation.playwright_executor - INFO - [thread=21540 task-4-exec] - Playwright执行引擎初始化完成，输出目录: F:\test\TestBranin\automation_results
+2026-04-10 15:51:53,004 - apps.ai_agents.case_library.automation.playwright_executor - INFO - [thread=21540 task-4-exec] - 测试脚本生成成功: F:\test\TestBranin\automation_results\scripts\test_CASE-0006_8b222074.py
+2026-04-10 15:51:53,005 - apps.ai_agents.case_library.automation.playwright_executor - INFO - [thread=21540 task-4-exec] - 开始执行测试: F:\test\TestBranin\automation_results\scripts\test_CASE-0006_8b222074.py
+2026-04-10 15:51:56,999 - apps.ai_agents.case_library.automation.playwright_executor - INFO - [thread=21540 task-4-exec] - 测试执行完成 - 状态: failed, 耗时: 3.99s
+2026-04-10 15:51:57,000 - apps.ai_agents.case_library.automation.playwright_executor - INFO - [thread=21540 task-4-exec] - HTML测试报告生成成功: F:\test\TestBranin\automation_results\reports\exec_e29b280a44a3\report.html
+2026-04-10 15:58:35,549 - apps.ai_agents.case_library.automation.playwright_executor - INFO - [thread=16200 task-4-exec] - Playwright执行引擎初始化完成，输出目录: F:\test\TestBranin\automation_results
+2026-04-10 15:58:35,550 - apps.ai_agents.case_library.automation.playwright_executor - INFO - [thread=16200 task-4-exec] - 测试脚本生成成功: F:\test\TestBranin\automation_results\scripts\test_CASE-0006_1b7881a5.py
+2026-04-10 15:58:35,552 - apps.ai_agents.case_library.automation.playwright_executor - INFO - [thread=16200 task-4-exec] - 开始执行测试: F:\test\TestBranin\automation_results\scripts\test_CASE-0006_1b7881a5.py
+2026-04-10 15:58:41,960 - apps.ai_agents.case_library.automation.playwright_executor - INFO - [thread=16200 task-4-exec] - 测试执行完成 - 状态: failed, 耗时: 6.41s
+2026-04-10 15:58:41,961 - apps.ai_agents.case_library.automation.playwright_executor - INFO - [thread=16200 task-4-exec] - HTML测试报告生成成功: F:\test\TestBranin\automation_results\reports\exec_f64f6d6b8718\report.html
+2026-04-10 16:03:25,547 - apps.ai_agents.case_library.automation.playwright_executor - INFO - [thread=3012 task-4-exec] - Playwright执行引擎初始化完成，输出目录: F:\test\TestBranin\automation_results
+2026-04-10 16:03:25,547 - apps.ai_agents.case_library.automation.playwright_executor - INFO - [thread=3012 task-4-exec] - 测试脚本生成成功: F:\test\TestBranin\automation_results\scripts\test_CASE-0006_b51a657d.py
+2026-04-10 16:03:25,550 - apps.ai_agents.case_library.automation.playwright_executor - INFO - [thread=3012 task-4-exec] - 开始执行测试: F:\test\TestBranin\automation_results\scripts\test_CASE-0006_b51a657d.py
+2026-04-10 16:03:29,230 - apps.ai_agents.case_library.automation.playwright_executor - INFO - [thread=3012 task-4-exec] - 测试执行完成 - 状态: failed, 耗时: 3.68s
+2026-04-10 16:03:29,231 - apps.ai_agents.case_library.automation.playwright_executor - INFO - [thread=3012 task-4-exec] - HTML测试报告生成成功: F:\test\TestBranin\automation_results\reports\exec_958dbd524b4f\report.html
+2026-04-10 16:14:03,872 - apps.ai_agents.case_library.automation.playwright_executor - INFO - [thread=26684 task-4-exec] - Playwright执行引擎初始化完成，输出目录: F:\test\TestBranin\automation_results
+2026-04-10 16:14:03,873 - apps.ai_agents.case_library.automation.playwright_executor - INFO - [thread=26684 task-4-exec] - 测试脚本生成成功: F:\test\TestBranin\automation_results\scripts\test_CASE-0006_f558d957.py
+2026-04-10 16:14:03,875 - apps.ai_agents.case_library.automation.playwright_executor - INFO - [thread=26684 task-4-exec] - 开始执行测试: F:\test\TestBranin\automation_results\scripts\test_CASE-0006_f558d957.py
+2026-04-10 16:14:09,302 - apps.ai_agents.case_library.automation.playwright_executor - INFO - [thread=26684 task-4-exec] - 测试执行完成 - 状态: failed, 耗时: 5.43s
+2026-04-10 16:14:09,303 - apps.ai_agents.case_library.automation.playwright_executor - INFO - [thread=26684 task-4-exec] - HTML测试报告生成成功: F:\test\TestBranin\automation_results\reports\exec_cc10ded04267\report.html
+2026-04-10 16:15:49,494 - apps.ai_agents.case_library.automation.playwright_executor - INFO - [thread=18376 task-4-exec] - Playwright执行引擎初始化完成，输出目录: F:\test\TestBranin\automation_results
+2026-04-10 16:15:49,495 - apps.ai_agents.case_library.automation.playwright_executor - INFO - [thread=18376 task-4-exec] - 测试脚本生成成功: F:\test\TestBranin\automation_results\scripts\test_CASE-0006_1ad43210.py
+2026-04-10 16:15:49,497 - apps.ai_agents.case_library.automation.playwright_executor - INFO - [thread=18376 task-4-exec] - 开始执行测试: F:\test\TestBranin\automation_results\scripts\test_CASE-0006_1ad43210.py
+2026-04-10 16:15:52,969 - apps.ai_agents.case_library.automation.playwright_executor - INFO - [thread=18376 task-4-exec] - 测试执行完成 - 状态: failed, 耗时: 3.47s
+2026-04-10 16:15:52,969 - apps.ai_agents.case_library.automation.playwright_executor - INFO - [thread=18376 task-4-exec] - HTML测试报告生成成功: F:\test\TestBranin\automation_results\reports\exec_e4eaecd48996\report.html
+2026-04-10 16:18:39,736 - apps.ai_agents.case_library.automation.playwright_executor - INFO - [thread=25232 task-4-exec] - Playwright执行引擎初始化完成，输出目录: F:\test\TestBranin\automation_results
+2026-04-10 16:18:39,737 - apps.ai_agents.case_library.automation.playwright_executor - INFO - [thread=25232 task-4-exec] - 测试脚本生成成功: F:\test\TestBranin\automation_results\scripts\test_CASE-0006_6bc062d1.py
+2026-04-10 16:18:39,739 - apps.ai_agents.case_library.automation.playwright_executor - INFO - [thread=25232 task-4-exec] - 开始执行测试: F:\test\TestBranin\automation_results\scripts\test_CASE-0006_6bc062d1.py
+2026-04-10 16:18:43,413 - apps.ai_agents.case_library.automation.playwright_executor - INFO - [thread=25232 task-4-exec] - 测试执行完成 - 状态: failed, 耗时: 3.67s
+2026-04-10 16:18:43,413 - apps.ai_agents.case_library.automation.playwright_executor - INFO - [thread=25232 task-4-exec] - HTML测试报告生成成功: F:\test\TestBranin\automation_results\reports\exec_2f37b7408d3b\report.html
+2026-04-10 17:43:10,434 - apps.ai_agents.case_library.automation.playwright_executor - INFO - [thread=24536 task-4-exec] - Playwright执行引擎初始化完成，输出目录: F:\test\TestBranin\automation_results
+2026-04-10 17:43:10,434 - apps.ai_agents.case_library.automation.playwright_executor - INFO - [thread=24536 task-4-exec] - 测试脚本生成成功: F:\test\TestBranin\automation_results\scripts\test_CASE-0006_7ad6e6a5.py
+2026-04-10 17:43:10,436 - apps.ai_agents.case_library.automation.playwright_executor - INFO - [thread=24536 task-4-exec] - 开始执行测试: F:\test\TestBranin\automation_results\scripts\test_CASE-0006_7ad6e6a5.py
+2026-04-10 17:43:18,373 - apps.ai_agents.case_library.automation.playwright_executor - INFO - [thread=24536 task-4-exec] - 测试执行完成 - 状态: passed, 耗时: 7.94s
+2026-04-10 17:43:18,374 - apps.ai_agents.case_library.automation.playwright_executor - INFO - [thread=24536 task-4-exec] - HTML测试报告生成成功: F:\test\TestBranin\automation_results\reports\exec_bf97a2798115\report.html
+2026-04-10 17:55:05,302 - apps.ai_agents.case_library.automation.playwright_executor - INFO - [thread=16308 task-5-exec] - Playwright执行引擎初始化完成，输出目录: F:\test\TestBranin\automation_results
+2026-04-10 17:55:05,302 - apps.ai_agents.case_library.automation.playwright_executor - ERROR - [thread=16308 task-5-exec] - 生成测试脚本失败: 'int(time'
+Traceback (most recent call last):
+  File "F:\test\TestBranin\apps\ai_agents\case_library\automation\playwright_executor.py", line 75, in generate_test_script
+    script_content = self._build_script_content(
+        test_case=test_case,
+    ...<3 lines>...
+        case_number=case_number
+    )
+  File "F:\test\TestBranin\apps\ai_agents\case_library\automation\playwright_executor.py", line 206, in _build_script_content
+    script = script.format(
+        case_number=case_number,
+    ...<10 lines>...
+        actions_code=actions_code
+    )
+KeyError: 'int(time'
+2026-04-10 17:55:59,698 - apps.ai_agents.case_library.automation.playwright_executor - INFO - [thread=13832 task-5-exec] - Playwright执行引擎初始化完成，输出目录: F:\test\TestBranin\automation_results
+2026-04-10 17:55:59,698 - apps.ai_agents.case_library.automation.playwright_executor - ERROR - [thread=13832 task-5-exec] - 生成测试脚本失败: 'int(time'
+Traceback (most recent call last):
+  File "F:\test\TestBranin\apps\ai_agents\case_library\automation\playwright_executor.py", line 75, in generate_test_script
+    script_content = self._build_script_content(
+        test_case=test_case,
+    ...<3 lines>...
+        case_number=case_number
+    )
+  File "F:\test\TestBranin\apps\ai_agents\case_library\automation\playwright_executor.py", line 206, in _build_script_content
+    script = script.format(
+        case_number=case_number,
+    ...<10 lines>...
+        actions_code=actions_code
+    )
+KeyError: 'int(time'
+2026-04-10 17:58:30,506 - apps.ai_agents.case_library.automation.playwright_executor - INFO - [thread=31976 task-5-exec] - Playwright执行引擎初始化完成，输出目录: F:\test\TestBranin\automation_results
+2026-04-10 17:58:30,507 - apps.ai_agents.case_library.automation.playwright_executor - INFO - [thread=31976 task-5-exec] - 测试脚本生成成功: F:\test\TestBranin\automation_results\scripts\test_CASE-0006_bb7e6a37.py
+2026-04-10 17:58:30,509 - apps.ai_agents.case_library.automation.playwright_executor - INFO - [thread=31976 task-5-exec] - 开始执行测试: F:\test\TestBranin\automation_results\scripts\test_CASE-0006_bb7e6a37.py
+2026-04-10 17:58:38,263 - apps.ai_agents.case_library.automation.playwright_executor - INFO - [thread=31976 task-5-exec] - 测试执行完成 - 状态: failed, 耗时: 7.75s
+2026-04-10 17:58:38,264 - apps.ai_agents.case_library.automation.playwright_executor - INFO - [thread=31976 task-5-exec] - HTML测试报告生成成功: F:\test\TestBranin\automation_results\reports\exec_8508cd447d5d\report.html
+2026-04-10 18:00:39,986 - apps.ai_agents.case_library.automation.playwright_executor - INFO - [thread=31152 task-5-exec] - Playwright执行引擎初始化完成，输出目录: F:\test\TestBranin\automation_results
+2026-04-10 18:00:39,987 - apps.ai_agents.case_library.automation.playwright_executor - INFO - [thread=31152 task-5-exec] - 测试脚本生成成功: F:\test\TestBranin\automation_results\scripts\test_CASE-0006_1df84611.py
+2026-04-10 18:00:39,989 - apps.ai_agents.case_library.automation.playwright_executor - INFO - [thread=31152 task-5-exec] - 开始执行测试: F:\test\TestBranin\automation_results\scripts\test_CASE-0006_1df84611.py
+2026-04-10 18:00:47,645 - apps.ai_agents.case_library.automation.playwright_executor - INFO - [thread=31152 task-5-exec] - 测试执行完成 - 状态: passed, 耗时: 7.66s
+2026-04-10 18:00:47,646 - apps.ai_agents.case_library.automation.playwright_executor - INFO - [thread=31152 task-5-exec] - HTML测试报告生成成功: F:\test\TestBranin\automation_results\reports\exec_a45ba5244164\report.html
+2026-04-10 18:05:33,233 - apps.ai_agents.case_library.automation.playwright_executor - INFO - [thread=9724 task-3-exec] - Playwright执行引擎初始化完成，输出目录: F:\test\TestBranin\automation_results
+2026-04-10 18:05:33,234 - apps.ai_agents.case_library.automation.playwright_executor - INFO - [thread=9724 task-3-exec] - 测试脚本生成成功: F:\test\TestBranin\automation_results\scripts\test_CASE-0006_22e70e62.py
+2026-04-10 18:05:33,236 - apps.ai_agents.case_library.automation.playwright_executor - INFO - [thread=9724 task-3-exec] - 开始执行测试: F:\test\TestBranin\automation_results\scripts\test_CASE-0006_22e70e62.py
+2026-04-10 18:05:41,062 - apps.ai_agents.case_library.automation.playwright_executor - INFO - [thread=9724 task-3-exec] - 测试执行完成 - 状态: passed, 耗时: 7.83s
+2026-04-10 18:05:41,063 - apps.ai_agents.case_library.automation.playwright_executor - INFO - [thread=9724 task-3-exec] - HTML测试报告生成成功: F:\test\TestBranin\automation_results\reports\exec_d64a2fbb581e\report.html
+2026-04-10 18:35:04,618 - apps.ai_agents.case_library.automation.playwright_executor - INFO - [thread=35440 task-3-exec] - Playwright执行引擎初始化完成，输出目录: F:\test\TestBranin\automation_results
+2026-04-10 18:35:04,618 - apps.ai_agents.case_library.automation.playwright_executor - INFO - [thread=35440 task-3-exec] - 测试脚本生成成功: F:\test\TestBranin\automation_results\scripts\test_CASE-0006_4d69c033.py
+2026-04-10 18:35:04,621 - apps.ai_agents.case_library.automation.playwright_executor - INFO - [thread=35440 task-3-exec] - 开始执行测试: F:\test\TestBranin\automation_results\scripts\test_CASE-0006_4d69c033.py
+2026-04-10 18:35:12,346 - apps.ai_agents.case_library.automation.playwright_executor - INFO - [thread=35440 task-3-exec] - 测试执行完成 - 状态: passed, 耗时: 7.73s
+2026-04-10 18:35:12,347 - apps.ai_agents.case_library.automation.playwright_executor - ERROR - [thread=35440 task-3-exec] - 生成HTML报告异常: 'PlaywrightExecutor' object has no attribute '_generate_case_list'
+Traceback (most recent call last):
+  File "F:\test\TestBranin\apps\ai_agents\case_library\automation\playwright_executor.py", line 492, in _generate_html_report
+    {self._generate_case_list(case_number, title, success, execution_time, stdout, stderr, task_uuid)}
+     ^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'PlaywrightExecutor' object has no attribute '_generate_case_list'
+2026-04-10 18:36:04,988 - apps.ai_agents.case_library.automation.playwright_executor - INFO - [thread=33076 task-2-exec] - Playwright执行引擎初始化完成，输出目录: F:\test\TestBranin\automation_results
+2026-04-10 18:36:04,988 - apps.ai_agents.case_library.automation.playwright_executor - INFO - [thread=33076 task-2-exec] - 测试脚本生成成功: F:\test\TestBranin\automation_results\scripts\test_CASE-0006_706bb27b.py
+2026-04-10 18:36:04,990 - apps.ai_agents.case_library.automation.playwright_executor - INFO - [thread=33076 task-2-exec] - 开始执行测试: F:\test\TestBranin\automation_results\scripts\test_CASE-0006_706bb27b.py
+2026-04-10 18:36:12,727 - apps.ai_agents.case_library.automation.playwright_executor - INFO - [thread=33076 task-2-exec] - 测试执行完成 - 状态: passed, 耗时: 7.74s
+2026-04-10 18:36:12,727 - apps.ai_agents.case_library.automation.playwright_executor - ERROR - [thread=33076 task-2-exec] - 生成HTML报告异常: 'PlaywrightExecutor' object has no attribute '_generate_case_list'
+Traceback (most recent call last):
+  File "F:\test\TestBranin\apps\ai_agents\case_library\automation\playwright_executor.py", line 492, in _generate_html_report
+    {self._generate_case_list(case_number, title, success, execution_time, stdout, stderr, task_uuid)}
+     ^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'PlaywrightExecutor' object has no attribute '_generate_case_list'
+2026-04-10 18:37:39,715 - apps.ai_agents.case_library.automation.playwright_executor - INFO - [thread=9504 task-2-exec] - Playwright执行引擎初始化完成，输出目录: F:\test\TestBranin\automation_results
+2026-04-10 18:37:39,715 - apps.ai_agents.case_library.automation.playwright_executor - INFO - [thread=9504 task-2-exec] - 测试脚本生成成功: F:\test\TestBranin\automation_results\scripts\test_CASE-0006_64e61424.py
+2026-04-10 18:37:39,717 - apps.ai_agents.case_library.automation.playwright_executor - INFO - [thread=9504 task-2-exec] - 开始执行测试: F:\test\TestBranin\automation_results\scripts\test_CASE-0006_64e61424.py
+2026-04-10 18:37:39,759 - apps.ai_agents.case_library.automation.playwright_executor - INFO - [thread=9504 task-2-exec] - 测试执行完成 - 状态: failed, 耗时: 0.04s
+2026-04-10 18:37:39,760 - apps.ai_agents.case_library.automation.playwright_executor - INFO - [thread=9504 task-2-exec] - HTML测试报告生成成功: F:\test\TestBranin\automation_results\reports\exec_93d479d12bad\report.html
+2026-04-10 18:40:35,807 - apps.ai_agents.case_library.automation.playwright_executor - INFO - [thread=11676 task-2-exec] - Playwright执行引擎初始化完成，输出目录: F:\test\TestBranin\automation_results
+2026-04-10 18:40:35,807 - apps.ai_agents.case_library.automation.playwright_executor - INFO - [thread=11676 task-2-exec] - 测试脚本生成成功: F:\test\TestBranin\automation_results\scripts\test_CASE-0006_cee9ee08.py
+2026-04-10 18:40:35,810 - apps.ai_agents.case_library.automation.playwright_executor - INFO - [thread=11676 task-2-exec] - 开始执行测试: F:\test\TestBranin\automation_results\scripts\test_CASE-0006_cee9ee08.py
+2026-04-10 18:40:43,427 - apps.ai_agents.case_library.automation.playwright_executor - INFO - [thread=11676 task-2-exec] - 测试执行完成 - 状态: passed, 耗时: 7.62s
+2026-04-10 18:40:43,428 - apps.ai_agents.case_library.automation.playwright_executor - INFO - [thread=11676 task-2-exec] - HTML测试报告生成成功: F:\test\TestBranin\automation_results\reports\exec_28d675891b22\report.html

@@ -3069,3 +3069,278 @@ Traceback (most recent call last):
     ...<2 lines>...
     )
 django.template.exceptions.TemplateSyntaxError: Template: F:\test\TestBranin\apps\ai_agents\ui_automation\templates\ui_automation\ui_automation.html, Could not parse the remainder: ' || 'P2'' from 'row.priority_display || 'P2''
+2026-04-10 10:58:21,867 - django.request - ERROR - [thread=25384 Thread-5 (process_request_thread)] - Internal Server Error: /ui_automation/
+Traceback (most recent call last):
+  File "C:\Users\ke\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\ke\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "F:\test\TestBranin\apps\ai_agents\ui_automation\views.py", line 35, in ui_automation_page
+    return render(request, 'ui_automation/ui_automation_v2.html', context)
+  File "C:\Users\ke\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\ke\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\ke\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\ke\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\ke\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\django\template\engine.py", line 186, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\ke\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\Users\ke\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "C:\Users\ke\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "C:\Users\ke\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\django\template\base.py", line 157, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\ke\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\django\template\base.py", line 199, in compile_nodelist
+    nodelist = parser.parse()
+  File "C:\Users\ke\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\django\template\base.py", line 585, in parse
+    raise self.error(token, e)
+  File "C:\Users\ke\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\django\template\base.py", line 583, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\ke\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\django\template\loader_tags.py", line 307, in do_extends
+    nodelist = parser.parse()
+  File "C:\Users\ke\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\django\template\base.py", line 585, in parse
+    raise self.error(token, e)
+  File "C:\Users\ke\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\django\template\base.py", line 583, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\ke\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\django\template\loader_tags.py", line 235, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "C:\Users\ke\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\django\template\base.py", line 556, in parse
+    raise self.error(token, e)
+  File "C:\Users\ke\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\django\template\base.py", line 554, in parse
+    filter_expression = self.compile_filter(token.contents)
+  File "C:\Users\ke\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\django\template\base.py", line 676, in compile_filter
+    return FilterExpression(token, self)
+  File "C:\Users\ke\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\django\template\base.py", line 776, in __init__
+    raise TemplateSyntaxError(
+    ...<2 lines>...
+    )
+django.template.exceptions.TemplateSyntaxError: Template: F:\test\TestBranin\apps\ai_agents\ui_automation\templates\ui_automation\ui_automation_v2.html, Could not parse the remainder: ' || '无描述'' from 'task.description || '无描述''
+2026-04-10 14:38:03,640 - apps.ai_agents.case_library.automation.ai_decision_engine - ERROR - [thread=23188 task-2-exec] - AI决策引擎初始化失败: 'NoneType' object has no attribute 'get'
+2026-04-10 14:38:03,640 - apps.ai_agents.case_library.automation.tasks - ERROR - [thread=23188 task-2-exec] - [exec_a7643b1b0bbf] 执行异常: 'NoneType' object has no attribute 'get'
+Traceback (most recent call last):
+  File "F:\test\TestBranin\apps\ai_agents\case_library\automation\tasks.py", line 80, in execute_single_case
+    ai_engine = AIDecisionEngine(llm_provider=llm_provider)
+  File "F:\test\TestBranin\apps\ai_agents\case_library\automation\ai_decision_engine.py", line 34, in __init__
+    DEFAULT_PROVIDER, PROVIDERS = get_agent_llm_configs("case_library")
+                                  ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "F:\test\TestBranin\apps\llm\utils.py", line 15, in get_agent_llm_configs
+    agent_provider = agent_defaults.get(agent_name).get("provider", global_default_provider)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'get'
+2026-04-10 14:57:42,782 - apps.ai_agents.case_library.automation.ai_decision_engine - ERROR - [thread=24820 task-2-exec] - AI决策引擎初始化失败: 'NoneType' object has no attribute 'get'
+2026-04-10 14:57:42,782 - apps.ai_agents.case_library.automation.tasks - ERROR - [thread=24820 task-2-exec] - [exec_d3eda29abb9c] 执行异常: 'NoneType' object has no attribute 'get'
+Traceback (most recent call last):
+  File "F:\test\TestBranin\apps\ai_agents\case_library\automation\tasks.py", line 80, in execute_single_case
+    ai_engine = AIDecisionEngine(llm_provider=llm_provider)
+  File "F:\test\TestBranin\apps\ai_agents\case_library\automation\ai_decision_engine.py", line 34, in __init__
+    DEFAULT_PROVIDER, PROVIDERS = get_agent_llm_configs("case_library")
+                                  ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "F:\test\TestBranin\apps\llm\utils.py", line 15, in get_agent_llm_configs
+    agent_provider = agent_defaults.get(agent_name).get("provider", global_default_provider)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'get'
+2026-04-10 14:57:49,482 - apps.ai_agents.case_library.automation.ai_decision_engine - ERROR - [thread=20988 task-3-exec] - AI决策引擎初始化失败: 'NoneType' object has no attribute 'get'
+2026-04-10 14:57:49,482 - apps.ai_agents.case_library.automation.tasks - ERROR - [thread=20988 task-3-exec] - [exec_47d7f4042d58] 执行异常: 'NoneType' object has no attribute 'get'
+Traceback (most recent call last):
+  File "F:\test\TestBranin\apps\ai_agents\case_library\automation\tasks.py", line 80, in execute_single_case
+    ai_engine = AIDecisionEngine(llm_provider=llm_provider)
+  File "F:\test\TestBranin\apps\ai_agents\case_library\automation\ai_decision_engine.py", line 34, in __init__
+    DEFAULT_PROVIDER, PROVIDERS = get_agent_llm_configs("case_library")
+                                  ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "F:\test\TestBranin\apps\llm\utils.py", line 15, in get_agent_llm_configs
+    agent_provider = agent_defaults.get(agent_name).get("provider", global_default_provider)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'get'
+2026-04-10 14:57:56,888 - apps.ai_agents.case_library.automation.ai_decision_engine - ERROR - [thread=7392 task-3-exec] - AI决策引擎初始化失败: 'NoneType' object has no attribute 'get'
+2026-04-10 14:57:56,889 - apps.ai_agents.case_library.automation.tasks - ERROR - [thread=7392 task-3-exec] - [exec_579cc7818905] 执行异常: 'NoneType' object has no attribute 'get'
+Traceback (most recent call last):
+  File "F:\test\TestBranin\apps\ai_agents\case_library\automation\tasks.py", line 80, in execute_single_case
+    ai_engine = AIDecisionEngine(llm_provider=llm_provider)
+  File "F:\test\TestBranin\apps\ai_agents\case_library\automation\ai_decision_engine.py", line 34, in __init__
+    DEFAULT_PROVIDER, PROVIDERS = get_agent_llm_configs("case_library")
+                                  ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "F:\test\TestBranin\apps\llm\utils.py", line 15, in get_agent_llm_configs
+    agent_provider = agent_defaults.get(agent_name).get("provider", global_default_provider)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'get'
+2026-04-10 15:01:09,930 - apps.ai_agents.case_library.automation.ai_decision_engine - ERROR - [thread=26884 task-4-exec] - AI决策引擎初始化失败: 'NoneType' object has no attribute 'get'
+2026-04-10 15:01:09,930 - apps.ai_agents.case_library.automation.tasks - ERROR - [thread=26884 task-4-exec] - [exec_c95dca8834fb] 执行异常: 'NoneType' object has no attribute 'get'
+Traceback (most recent call last):
+  File "F:\test\TestBranin\apps\ai_agents\case_library\automation\tasks.py", line 80, in execute_single_case
+    ai_engine = AIDecisionEngine(llm_provider=llm_provider)
+  File "F:\test\TestBranin\apps\ai_agents\case_library\automation\ai_decision_engine.py", line 34, in __init__
+    DEFAULT_PROVIDER, PROVIDERS = get_agent_llm_configs("case_library")
+                                  ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "F:\test\TestBranin\apps\llm\utils.py", line 15, in get_agent_llm_configs
+    agent_provider = agent_defaults.get(agent_name).get("provider", global_default_provider)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'get'
+2026-04-10 15:04:28,567 - apps.ai_agents.case_library.automation.ai_decision_engine - ERROR - [thread=21408 task-4-exec] - AI决策引擎初始化失败: 'NoneType' object has no attribute 'get'
+2026-04-10 15:04:28,567 - apps.ai_agents.case_library.automation.tasks - ERROR - [thread=21408 task-4-exec] - [exec_b02bec784d2a] 执行异常: 'NoneType' object has no attribute 'get'
+Traceback (most recent call last):
+  File "F:\test\TestBranin\apps\ai_agents\case_library\automation\tasks.py", line 80, in execute_single_case
+    ai_engine = AIDecisionEngine(llm_provider=llm_provider)
+  File "F:\test\TestBranin\apps\ai_agents\case_library\automation\ai_decision_engine.py", line 34, in __init__
+    DEFAULT_PROVIDER, PROVIDERS = get_agent_llm_configs("case_library")
+                                  ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "F:\test\TestBranin\apps\llm\utils.py", line 15, in get_agent_llm_configs
+    agent_provider = agent_defaults.get(agent_name).get("provider", global_default_provider)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'get'
+2026-04-10 15:24:50,470 - apps.ai_agents.case_library.automation.ai_decision_engine - ERROR - [thread=12892 task-5-exec] - AI决策引擎初始化失败: 'NoneType' object has no attribute 'get'
+2026-04-10 15:24:50,471 - apps.ai_agents.case_library.automation.tasks - ERROR - [thread=12892 task-5-exec] - [exec_454a8344c0b6] 执行异常: 'NoneType' object has no attribute 'get'
+Traceback (most recent call last):
+  File "F:\test\TestBranin\apps\ai_agents\case_library\automation\tasks.py", line 80, in execute_single_case
+    ai_engine = AIDecisionEngine(llm_provider=llm_provider)
+  File "F:\test\TestBranin\apps\ai_agents\case_library\automation\ai_decision_engine.py", line 34, in __init__
+    DEFAULT_PROVIDER, PROVIDERS = get_agent_llm_configs("case_library")
+                                  ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "F:\test\TestBranin\apps\llm\utils.py", line 15, in get_agent_llm_configs
+    agent_provider = agent_defaults.get(agent_name).get("provider", global_default_provider)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'get'
+2026-04-10 15:24:57,637 - apps.ai_agents.case_library.automation.ai_decision_engine - ERROR - [thread=26260 task-5-exec] - AI决策引擎初始化失败: 'NoneType' object has no attribute 'get'
+2026-04-10 15:24:57,637 - apps.ai_agents.case_library.automation.tasks - ERROR - [thread=26260 task-5-exec] - [exec_b6faea4c12b1] 执行异常: 'NoneType' object has no attribute 'get'
+Traceback (most recent call last):
+  File "F:\test\TestBranin\apps\ai_agents\case_library\automation\tasks.py", line 80, in execute_single_case
+    ai_engine = AIDecisionEngine(llm_provider=llm_provider)
+  File "F:\test\TestBranin\apps\ai_agents\case_library\automation\ai_decision_engine.py", line 34, in __init__
+    DEFAULT_PROVIDER, PROVIDERS = get_agent_llm_configs("case_library")
+                                  ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "F:\test\TestBranin\apps\llm\utils.py", line 15, in get_agent_llm_configs
+    agent_provider = agent_defaults.get(agent_name).get("provider", global_default_provider)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'get'
+2026-04-10 15:31:55,832 - apps.ai_agents.case_library.automation.ai_decision_engine - ERROR - [thread=29008 task-5-exec] - AI决策引擎初始化失败: 'NoneType' object has no attribute 'get'
+2026-04-10 15:31:55,833 - apps.ai_agents.case_library.automation.tasks - ERROR - [thread=29008 task-5-exec] - [exec_f6f1138cbc81] 执行异常: 'NoneType' object has no attribute 'get'
+Traceback (most recent call last):
+  File "F:\test\TestBranin\apps\ai_agents\case_library\automation\tasks.py", line 80, in execute_single_case
+    ai_engine = AIDecisionEngine(llm_provider=llm_provider)
+  File "F:\test\TestBranin\apps\ai_agents\case_library\automation\ai_decision_engine.py", line 34, in __init__
+    DEFAULT_PROVIDER, PROVIDERS = get_agent_llm_configs("case_library")
+                                  ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "F:\test\TestBranin\apps\llm\utils.py", line 15, in get_agent_llm_configs
+    agent_provider = agent_defaults.get(agent_name).get("provider", global_default_provider)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'get'
+2026-04-10 15:32:14,979 - apps.ai_agents.case_library.automation.ai_decision_engine - ERROR - [thread=28784 task-4-exec] - AI决策引擎初始化失败: 'NoneType' object has no attribute 'get'
+2026-04-10 15:32:14,980 - apps.ai_agents.case_library.automation.tasks - ERROR - [thread=28784 task-4-exec] - [exec_17203f7d123b] 执行异常: 'NoneType' object has no attribute 'get'
+Traceback (most recent call last):
+  File "F:\test\TestBranin\apps\ai_agents\case_library\automation\tasks.py", line 80, in execute_single_case
+    ai_engine = AIDecisionEngine(llm_provider=llm_provider)
+  File "F:\test\TestBranin\apps\ai_agents\case_library\automation\ai_decision_engine.py", line 34, in __init__
+    DEFAULT_PROVIDER, PROVIDERS = get_agent_llm_configs("case_library")
+                                  ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "F:\test\TestBranin\apps\llm\utils.py", line 15, in get_agent_llm_configs
+    agent_provider = agent_defaults.get(agent_name).get("provider", global_default_provider)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'get'
+2026-04-10 15:32:28,631 - apps.ai_agents.case_library.automation.ai_decision_engine - ERROR - [thread=29596 task-4-exec] - AI决策引擎初始化失败: 'NoneType' object has no attribute 'get'
+2026-04-10 15:32:28,631 - apps.ai_agents.case_library.automation.tasks - ERROR - [thread=29596 task-4-exec] - [exec_bda099d14686] 执行异常: 'NoneType' object has no attribute 'get'
+Traceback (most recent call last):
+  File "F:\test\TestBranin\apps\ai_agents\case_library\automation\tasks.py", line 80, in execute_single_case
+    ai_engine = AIDecisionEngine(llm_provider=llm_provider)
+  File "F:\test\TestBranin\apps\ai_agents\case_library\automation\ai_decision_engine.py", line 34, in __init__
+    DEFAULT_PROVIDER, PROVIDERS = get_agent_llm_configs("case_library")
+                                  ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "F:\test\TestBranin\apps\llm\utils.py", line 15, in get_agent_llm_configs
+    agent_provider = agent_defaults.get(agent_name).get("provider", global_default_provider)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'get'
+2026-04-10 17:55:05,302 - apps.ai_agents.case_library.automation.playwright_executor - ERROR - [thread=16308 task-5-exec] - 生成测试脚本失败: 'int(time'
+Traceback (most recent call last):
+  File "F:\test\TestBranin\apps\ai_agents\case_library\automation\playwright_executor.py", line 75, in generate_test_script
+    script_content = self._build_script_content(
+        test_case=test_case,
+    ...<3 lines>...
+        case_number=case_number
+    )
+  File "F:\test\TestBranin\apps\ai_agents\case_library\automation\playwright_executor.py", line 206, in _build_script_content
+    script = script.format(
+        case_number=case_number,
+    ...<10 lines>...
+        actions_code=actions_code
+    )
+KeyError: 'int(time'
+2026-04-10 17:55:05,304 - apps.ai_agents.case_library.automation.tasks - ERROR - [thread=16308 task-5-exec] - [exec_f2db3cbac764] 执行异常: 'int(time'
+Traceback (most recent call last):
+  File "F:\test\TestBranin\apps\ai_agents\case_library\automation\tasks.py", line 109, in execute_single_case
+    script_path = executor.generate_test_script(
+        test_case=test_case_data,
+    ...<2 lines>...
+        headless=headless
+    )
+  File "F:\test\TestBranin\apps\ai_agents\case_library\automation\playwright_executor.py", line 75, in generate_test_script
+    script_content = self._build_script_content(
+        test_case=test_case,
+    ...<3 lines>...
+        case_number=case_number
+    )
+  File "F:\test\TestBranin\apps\ai_agents\case_library\automation\playwright_executor.py", line 206, in _build_script_content
+    script = script.format(
+        case_number=case_number,
+    ...<10 lines>...
+        actions_code=actions_code
+    )
+KeyError: 'int(time'
+2026-04-10 17:55:59,698 - apps.ai_agents.case_library.automation.playwright_executor - ERROR - [thread=13832 task-5-exec] - 生成测试脚本失败: 'int(time'
+Traceback (most recent call last):
+  File "F:\test\TestBranin\apps\ai_agents\case_library\automation\playwright_executor.py", line 75, in generate_test_script
+    script_content = self._build_script_content(
+        test_case=test_case,
+    ...<3 lines>...
+        case_number=case_number
+    )
+  File "F:\test\TestBranin\apps\ai_agents\case_library\automation\playwright_executor.py", line 206, in _build_script_content
+    script = script.format(
+        case_number=case_number,
+    ...<10 lines>...
+        actions_code=actions_code
+    )
+KeyError: 'int(time'
+2026-04-10 17:55:59,699 - apps.ai_agents.case_library.automation.tasks - ERROR - [thread=13832 task-5-exec] - [exec_d5932b8e746c] 执行异常: 'int(time'
+Traceback (most recent call last):
+  File "F:\test\TestBranin\apps\ai_agents\case_library\automation\tasks.py", line 109, in execute_single_case
+    script_path = executor.generate_test_script(
+        test_case=test_case_data,
+    ...<2 lines>...
+        headless=headless
+    )
+  File "F:\test\TestBranin\apps\ai_agents\case_library\automation\playwright_executor.py", line 75, in generate_test_script
+    script_content = self._build_script_content(
+        test_case=test_case,
+    ...<3 lines>...
+        case_number=case_number
+    )
+  File "F:\test\TestBranin\apps\ai_agents\case_library\automation\playwright_executor.py", line 206, in _build_script_content
+    script = script.format(
+        case_number=case_number,
+    ...<10 lines>...
+        actions_code=actions_code
+    )
+KeyError: 'int(time'
+2026-04-10 18:35:12,347 - apps.ai_agents.case_library.automation.playwright_executor - ERROR - [thread=35440 task-3-exec] - 生成HTML报告异常: 'PlaywrightExecutor' object has no attribute '_generate_case_list'
+Traceback (most recent call last):
+  File "F:\test\TestBranin\apps\ai_agents\case_library\automation\playwright_executor.py", line 492, in _generate_html_report
+    {self._generate_case_list(case_number, title, success, execution_time, stdout, stderr, task_uuid)}
+     ^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'PlaywrightExecutor' object has no attribute '_generate_case_list'
+2026-04-10 18:36:12,727 - apps.ai_agents.case_library.automation.playwright_executor - ERROR - [thread=33076 task-2-exec] - 生成HTML报告异常: 'PlaywrightExecutor' object has no attribute '_generate_case_list'
+Traceback (most recent call last):
+  File "F:\test\TestBranin\apps\ai_agents\case_library\automation\playwright_executor.py", line 492, in _generate_html_report
+    {self._generate_case_list(case_number, title, success, execution_time, stdout, stderr, task_uuid)}
+     ^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'PlaywrightExecutor' object has no attribute '_generate_case_list'

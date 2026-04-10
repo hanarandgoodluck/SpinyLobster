@@ -264,6 +264,16 @@ class AutomationExecutionLog(models.Model):
         blank=True
     )
     
+    # 关联任务（关键：用于隔离不同任务的执行记录）
+    task = models.ForeignKey(
+        'AutomationTask',  # 使用字符串引用，因为 AutomationTask 在后面定义
+        on_delete=models.CASCADE,
+        related_name='execution_logs',
+        verbose_name="关联任务",
+        null=True,
+        blank=True
+    )
+    
     # 任务标识
     task_uuid = models.CharField(max_length=100, unique=True, verbose_name="任务UUID")
     
@@ -321,4 +331,148 @@ class AutomationExecutionLog(models.Model):
     class Meta:
         verbose_name = "自动化执行日志"
         verbose_name_plural = "自动化执行日志"
+        ordering = ['-created_at']
+
+
+class AutomationTask(models.Model):
+    """UI自动化测试任务模型 - 任务卡片管理中心核心"""
+    TASK_TYPE_CHOICES = [
+        ('web', 'Web测试'),
+        ('api', '接口测试'),
+    ]
+    
+    STATUS_CHOICES = [
+        ('active', '启用'),
+        ('inactive', '停用'),
+    ]
+    
+    name = models.CharField(max_length=200, verbose_name="任务名称")
+    description = models.TextField(blank=True, verbose_name="任务描述")
+    task_type = models.CharField(
+        max_length=10,
+        choices=TASK_TYPE_CHOICES,
+        default='web',
+        verbose_name="测试类型"
+    )
+    
+    # 任务配置（JSON格式存储差异化配置）
+    # Web类型: {"url": "...", "username": "...", "password": "...", "manual_captcha": false}
+    # API类型: {"base_url": "...", "token": "...", "headers": {...}}
+    config = models.JSONField(default=dict, verbose_name="任务配置")
+    
+    # AI配置
+    use_multimodal = models.BooleanField(default=True, verbose_name="启用多模态视觉分析")
+    llm_provider = models.CharField(max_length=50, default='deepseek', verbose_name="LLM提供商")
+    
+    # 状态管理
+    status = models.CharField(
+        max_length=20,
+        choices=STATUS_CHOICES,
+        default='active',
+        verbose_name="任务状态"
+    )
+    
+    # 最近执行信息
+    last_run_time = models.DateTimeField(null=True, blank=True, verbose_name="最近执行时间")
+    last_run_status = models.CharField(
+        max_length=20,
+        choices=AutomationExecutionLog.STATUS_CHOICES,
+        null=True,
+        blank=True,
+        verbose_name="最近执行状态"
+    )
+    
+    # 统计信息
+    total_executions = models.IntegerField(default=0, verbose_name="总执行次数")
+    success_count = models.IntegerField(default=0, verbose_name="成功次数")
+    failed_count = models.IntegerField(default=0, verbose_name="失败次数")
+    
+    # 关联项目
+    project = models.ForeignKey(
+        Project,
+        on_delete=models.SET_NULL,
+        related_name='automation_tasks',
+        verbose_name="所属项目",
+        null=True,
+        blank=True
+    )
+    
+    created_by = models.ForeignKey(
+        'auth.User',
+        on_delete=models.SET_NULL,
+        related_name='created_automation_tasks',
+        verbose_name="创建者",
+        null=True,
+        blank=True
+    )
+    
+    created_at = models.DateTimeField(auto_now_add=True, verbose_name="创建时间")
+    updated_at = models.DateTimeField(auto_now=True, verbose_name="更新时间")
+    
+    def __str__(self):
+        return f"{self.name} ({self.get_task_type_display()})"
+    
+    class Meta:
+        verbose_name = "自动化测试任务"
+        verbose_name_plural = "自动化测试任务"
+        ordering = ['-created_at']
+
+
+class TaskCaseRelation(models.Model):
+    """任务与用例关联关系表"""
+    task = models.ForeignKey(
+        AutomationTask,
+        on_delete=models.CASCADE,
+        related_name='case_relations',
+        verbose_name="关联任务"
+    )
+    case = models.ForeignKey(
+        TestCaseLibrary,
+        on_delete=models.CASCADE,
+        related_name='task_relations',
+        verbose_name="关联用例"
+    )
+    order = models.IntegerField(default=0, verbose_name="执行顺序")
+    created_at = models.DateTimeField(auto_now_add=True, verbose_name="创建时间")
+    
+    def __str__(self):
+        return f"Task {self.task.id} - Case {self.case.id} (Order: {self.order})"
+    
+    class Meta:
+        verbose_name = "任务用例关联"
+        verbose_name_plural = "任务用例关联"
+        ordering = ['task', 'order']
+        unique_together = ['task', 'case']
+
+
+class TaskExecutionReport(models.Model):
+    """任务执行报告模型 - 用于存储和管理 Allure 报告信息"""
+    STATUS_CHOICES = [
+        ('SUCCESS', '成功'),
+        ('FAILED', '失败'),
+        ('ERROR', '错误'),
+    ]
+    
+    task_uuid = models.CharField(max_length=100, unique=True, verbose_name='任务UUID')
+    report_path = models.CharField(max_length=500, verbose_name='报告存储路径')
+    status = models.CharField(
+        max_length=20,
+        choices=STATUS_CHOICES,
+        verbose_name='报告状态'
+    )
+    error_log_summary = models.TextField(blank=True, verbose_name='错误日志摘要')
+    error_stack_trace = models.TextField(blank=True, verbose_name='错误堆栈信息')
+    screenshot_path = models.CharField(max_length=500, blank=True, verbose_name='失败现场截图路径')
+    ai_diagnosis = models.TextField(blank=True, verbose_name='AI诊断建议')
+    execution_time = models.FloatField(null=True, blank=True, verbose_name='执行时长(秒)')
+    
+    created_at = models.DateTimeField(auto_now_add=True, verbose_name='创建时间')
+    updated_at = models.DateTimeField(auto_now=True, verbose_name='更新时间')
+    
+    def __str__(self):
+        return f"{self.task_uuid} - {self.get_status_display()}"
+    
+    class Meta:
+        verbose_name = "任务执行报告"
+        verbose_name_plural = "任务执行报告"
         ordering = ['-created_at']

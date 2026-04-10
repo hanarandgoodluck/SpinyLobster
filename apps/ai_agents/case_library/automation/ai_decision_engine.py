@@ -98,7 +98,7 @@ class AIDecisionEngine:
         expected = test_case.get('expected_results', '')
         preconditions = test_case.get('preconditions', '')
         
-        prompt = f"""你是一位资深的UI自动化测试专家。请分析以下测试用例，判断是否需要使用多模态（视觉）模型进行验证。
+        prompt = f"""你是一位资深的UI自动化测试专家。请分析以下测试用例，生成 Playwright 自动化测试脚本的操作步骤。
 
 ## 测试用例信息
 
@@ -112,14 +112,29 @@ class AIDecisionEngine:
 **预期结果**:
 {expected}
 
-## 分析要求
+## 可用操作类型（playwright_actions）
 
-请从以下维度分析：
+请根据测试步骤选择以下操作类型：
 
-1. **视觉验证需求**: 是否涉及颜色、布局、样式、图片、图标等视觉元素的验证？
-2. **复杂UI交互**: 是否涉及拖拽、动画、Canvas、SVG等复杂UI组件？
-3. **验证码/OCR**: 是否需要识别图片验证码或文字？
-4. **布局比对**: 是否需要对比页面布局变化或截图差异？
+### 页面操作
+- **goto**: 导航到URL，target为完整URL
+- **click**: 点击元素，target为CSS选择器
+- **fill**: 填写输入框，target为选择器，value为输入内容
+- **type**: 模拟键盘输入，target为选择器，value为输入内容
+- **check**: 勾选复选框，target为选择器
+- **uncheck**: 取消勾选复选框，target为选择器
+- **select**: 下拉框选择，target为选择器，value为选项值
+
+### 断言验证（重要：所有预期结果必须使用断言）
+- **expect_visible**: 验证元素可见，target为选择器
+- **expect_hidden**: 验证元素隐藏，target为选择器
+- **expect_text**: 验证元素包含指定文本，target为选择器，value为预期文本
+- **expect_url**: 验证当前URL，target为URL（完全匹配）
+- **expect_count**: 验证元素数量，target为选择器，value为数量（数字字符串）
+
+### 其他操作
+- **screenshot**: 截图，用于关键步骤记录
+- **wait**: 等待，value为秒数（如 "2"）
 
 ## 输出格式
 
@@ -127,27 +142,34 @@ class AIDecisionEngine:
 
 ```json
 {{
-  "use_multimodal": true/false,
-  "reason": "详细说明为什么需要/不需要多模态的原因",
+  "use_multimodal": false,
+  "reason": "基于页面元素和验证需求的分析",
   "playwright_actions": [
     {{
-      "action": "goto/click/fill/check/screenshot/etc",
-      "target": "CSS选择器或XPath",
-      "value": "输入值（如适用）",
-      "description": "操作描述"
+      "action": "goto",
+      "target": "https://www.baidu.com",
+      "value": "",
+      "description": "导航至百度首页"
+    }},
+    {{
+      "action": "expect_visible",
+      "target": "input#kw",
+      "value": "",
+      "description": "验证搜索输入框存在且可见"
     }}
   ],
-  "confidence": 0.0-1.0,
-  "ai_analysis": "完整的AI分析过程和推理"
+  "confidence": 0.9,
+  "ai_analysis": "详细的分析过程"
 }}
 ```
 
-## 判断规则
+## 重要规则
 
-- 如果涉及**纯功能逻辑**（如API调用、数据验证），设置 use_multimodal = false
-- 如果涉及**视觉元素验证**（如颜色、布局、图片显示），设置 use_multimodal = true
-- confidence 表示你对判断的置信度（0-1之间）
-- playwright_actions 应该包含完整的操作步骤序列
+1. **每个测试步骤**都应该有对应的 playwright action
+2. **预期结果必须使用断言**（expect_visible/expect_text/expect_url 等）
+3. **选择器要准确**：使用 id、class 或其他可靠的 CSS 选择器
+4. **goto 必须是第一个操作**，用于打开目标页面
+5. **复杂操作可以拆分为多个步骤**
 
 请开始分析：
 """
