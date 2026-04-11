@@ -466,7 +466,7 @@ if __name__ == "__main__":
 <body>
     <div class="container">
         <div class="header">
-            <h1>📊 {task_name}测试报告</h1>
+            <h1>📊 {case_number}测试报告</h1>
             <div class="meta">
                 <span>任务ID: {task_uuid}</span> | 
                 <span>用例编号: {case_number}</span> | 

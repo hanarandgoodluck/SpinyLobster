@@ -11755,3 +11755,217 @@ AttributeError: 'PlaywrightExecutor' object has no attribute '_generate_case_lis
 2026-04-10 20:50:47,187 - django.utils.autoreload - INFO - [thread=31256 MainThread] - F:\test\TestBranin\apps\core\models.py changed, reloading.
 2026-04-10 20:50:52,123 - django.utils.autoreload - INFO - [thread=32848 MainThread] - Watching for file changes with StatReloader
 2026-04-10 20:50:52,124 - django.utils.autoreload - INFO - [thread=13152 MainThread] - Watching for file changes with StatReloader
+2026-04-11 13:17:51,562 - django.utils.autoreload - INFO - [thread=25156 MainThread] - Watching for file changes with StatReloader
+2026-04-11 13:17:59,179 - LLMServiceFactory - INFO - [thread=25156 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-04-11 13:17:59,206 - LLMServiceFactory - INFO - [thread=25156 MainThread] - 使用数据库中的 AI 配置
+2026-04-11 13:18:00,497 - apps.core.views - WARNING - [thread=25156 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-04-11 13:18:00,745 - LLMServiceFactory - INFO - [thread=25156 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-04-11 13:18:00,747 - LLMServiceFactory - INFO - [thread=25156 MainThread] - 使用数据库中的 AI 配置
+2026-04-11 13:18:00,750 - apps.ai_agents.test_case_generator.views - WARNING - [thread=25156 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-04-11 13:18:00,773 - LLMServiceFactory - INFO - [thread=25156 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-04-11 13:18:00,774 - LLMServiceFactory - INFO - [thread=25156 MainThread] - 使用数据库中的 AI 配置
+2026-04-11 13:18:00,775 - apps.ai_agents.test_case_reviewer.views - WARNING - [thread=25156 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-04-11 13:18:22,966 - apps.ai_agents.test_case_generator.views - INFO - [thread=6220 Thread-5 (process_request_thread)] - ===== 进入 generate 视图函数 =====
+2026-04-11 13:18:22,966 - apps.ai_agents.test_case_generator.views - INFO - [thread=6220 Thread-5 (process_request_thread)] - 请求方法：GET
+2026-04-11 13:18:22,979 - apps.ai_agents.test_case_generator.views - INFO - [thread=6220 Thread-5 (process_request_thread)] - 从数据库加载 AI 配置成功，模型：deepseek-chat
+2026-04-11 13:18:28,200 - django.request - WARNING - [thread=6220 Thread-5 (process_request_thread)] - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2026-04-11 13:18:46,047 - apps.ai_agents.case_library.automation.tasks - INFO - [thread=2840 task-5-exec] - [exec_4f9c1cd38836] 开始执行测试用例 ID=14
+2026-04-11 13:18:46,068 - apps.ai_agents.case_library.automation.tasks - INFO - [thread=2840 task-5-exec] - [exec_4f9c1cd38836] 步骤1/4: AI决策分析
+2026-04-11 13:18:46,069 - LLMServiceFactory - INFO - [thread=2840 task-5-exec] - 创建 LLM 服务：provider=deepseek
+2026-04-11 13:18:46,070 - LLMServiceFactory - INFO - [thread=2840 task-5-exec] - 使用数据库中的 AI 配置
+2026-04-11 13:18:46,071 - apps.ai_agents.case_library.automation.ai_decision_engine - INFO - [thread=2840 task-5-exec] - AI决策引擎初始化成功，使用LLM: deepseek
+2026-04-11 13:18:46,072 - apps.ai_agents.case_library.automation.ai_decision_engine - INFO - [thread=2840 task-5-exec] - 开始分析测试用例: 打开百度
+2026-04-11 13:18:46,076 - LoggingCallbackHandler - INFO - [thread=2840 task-5-exec] - 开始LLM调用...
+2026-04-11 13:18:46,217 - httpx - INFO - [thread=2840 task-5-exec] - HTTP Request: POST https://api.deepseek.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-11 13:18:59,684 - LoggingCallbackHandler - INFO - [thread=2840 task-5-exec] - LLM调用完成
+2026-04-11 13:18:59,684 - apps.ai_agents.case_library.automation.ai_decision_engine - INFO - [thread=2840 task-5-exec] - AI决策完成 - 使用多模态: False, 原因: 测试用例仅要求'打开百度'，这是一个简单的页面导航操作。需要验证页面成功加载，最直接的验证方式是检查
+2026-04-11 13:18:59,689 - apps.ai_agents.case_library.automation.tasks - INFO - [thread=2840 task-5-exec] - [exec_4f9c1cd38836] 步骤2/4: 生成Playwright测试脚本
+2026-04-11 13:18:59,690 - apps.ai_agents.case_library.automation.playwright_executor - INFO - [thread=2840 task-5-exec] - Playwright执行引擎初始化完成，输出目录: F:\test\TestBranin\automation_results
+2026-04-11 13:18:59,691 - apps.ai_agents.case_library.automation.playwright_executor - INFO - [thread=2840 task-5-exec] - 测试脚本生成成功: F:\test\TestBranin\automation_results\scripts\test_CASE-0006_2ebfb032.py
+2026-04-11 13:18:59,692 - apps.ai_agents.case_library.automation.tasks - INFO - [thread=2840 task-5-exec] - [exec_4f9c1cd38836] 步骤3/4: 执行Playwright测试
+2026-04-11 13:18:59,693 - apps.ai_agents.case_library.automation.playwright_executor - INFO - [thread=2840 task-5-exec] - 开始执行测试: F:\test\TestBranin\automation_results\scripts\test_CASE-0006_2ebfb032.py
+2026-04-11 13:19:05,703 - apps.ai_agents.case_library.automation.playwright_executor - INFO - [thread=2840 task-5-exec] - 测试执行完成 - 状态: passed, 耗时: 6.01s
+2026-04-11 13:19:05,729 - apps.ai_agents.case_library.automation.tasks - INFO - [thread=2840 task-5-exec] - [exec_4f9c1cd38836] 步骤4/4: 生成测试报告
+2026-04-11 13:19:05,729 - apps.ai_agents.case_library.automation.tasks - INFO - [thread=2840 task-5-exec] - [exec_4f9c1cd38836] [PASS] 测试通过
+2026-04-11 13:19:05,736 - apps.ai_agents.ui_automation.views - INFO - [thread=2840 task-5-exec] - 任务 5 执行完成，状态: passed
+2026-04-11 13:19:53,736 - django.utils.autoreload - INFO - [thread=25156 MainThread] - F:\test\TestBranin\apps\ai_agents\case_library\automation\playwright_executor.py changed, reloading.
+2026-04-11 13:19:58,850 - django.utils.autoreload - INFO - [thread=18252 MainThread] - Watching for file changes with StatReloader
+2026-04-11 13:20:04,103 - LLMServiceFactory - INFO - [thread=18252 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-04-11 13:20:04,118 - LLMServiceFactory - INFO - [thread=18252 MainThread] - 使用数据库中的 AI 配置
+2026-04-11 13:20:05,174 - apps.core.views - WARNING - [thread=18252 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-04-11 13:20:05,336 - LLMServiceFactory - INFO - [thread=18252 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-04-11 13:20:05,338 - LLMServiceFactory - INFO - [thread=18252 MainThread] - 使用数据库中的 AI 配置
+2026-04-11 13:20:05,339 - apps.ai_agents.test_case_generator.views - WARNING - [thread=18252 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-04-11 13:20:05,352 - LLMServiceFactory - INFO - [thread=18252 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-04-11 13:20:05,353 - LLMServiceFactory - INFO - [thread=18252 MainThread] - 使用数据库中的 AI 配置
+2026-04-11 13:20:05,354 - apps.ai_agents.test_case_reviewer.views - WARNING - [thread=18252 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-04-11 13:20:09,849 - django.utils.autoreload - INFO - [thread=18252 MainThread] - F:\test\TestBranin\apps\ai_agents\case_library\automation\playwright_executor.py changed, reloading.
+2026-04-11 13:20:14,364 - django.utils.autoreload - INFO - [thread=20096 MainThread] - Watching for file changes with StatReloader
+2026-04-11 13:20:17,871 - LLMServiceFactory - INFO - [thread=20096 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-04-11 13:20:17,887 - LLMServiceFactory - INFO - [thread=20096 MainThread] - 使用数据库中的 AI 配置
+2026-04-11 13:20:18,928 - apps.core.views - WARNING - [thread=20096 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-04-11 13:20:19,086 - LLMServiceFactory - INFO - [thread=20096 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-04-11 13:20:19,088 - LLMServiceFactory - INFO - [thread=20096 MainThread] - 使用数据库中的 AI 配置
+2026-04-11 13:20:19,089 - apps.ai_agents.test_case_generator.views - WARNING - [thread=20096 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-04-11 13:20:19,100 - LLMServiceFactory - INFO - [thread=20096 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-04-11 13:20:19,101 - LLMServiceFactory - INFO - [thread=20096 MainThread] - 使用数据库中的 AI 配置
+2026-04-11 13:20:19,102 - apps.ai_agents.test_case_reviewer.views - WARNING - [thread=20096 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-04-11 13:21:49,626 - django.utils.autoreload - INFO - [thread=11600 MainThread] - Watching for file changes with StatReloader
+2026-04-11 13:21:53,203 - LLMServiceFactory - INFO - [thread=11600 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-04-11 13:21:53,219 - LLMServiceFactory - INFO - [thread=11600 MainThread] - 使用数据库中的 AI 配置
+2026-04-11 13:21:54,216 - apps.core.views - WARNING - [thread=11600 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-04-11 13:21:54,377 - LLMServiceFactory - INFO - [thread=11600 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-04-11 13:21:54,378 - LLMServiceFactory - INFO - [thread=11600 MainThread] - 使用数据库中的 AI 配置
+2026-04-11 13:21:54,380 - apps.ai_agents.test_case_generator.views - WARNING - [thread=11600 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-04-11 13:21:54,392 - LLMServiceFactory - INFO - [thread=11600 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-04-11 13:21:54,393 - LLMServiceFactory - INFO - [thread=11600 MainThread] - 使用数据库中的 AI 配置
+2026-04-11 13:21:54,394 - apps.ai_agents.test_case_reviewer.views - WARNING - [thread=11600 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-04-11 13:22:00,683 - apps.ai_agents.test_case_generator.views - INFO - [thread=8660 Thread-5 (process_request_thread)] - ===== 进入 generate 视图函数 =====
+2026-04-11 13:22:00,684 - apps.ai_agents.test_case_generator.views - INFO - [thread=8660 Thread-5 (process_request_thread)] - 请求方法：GET
+2026-04-11 13:22:00,688 - apps.ai_agents.test_case_generator.views - INFO - [thread=8660 Thread-5 (process_request_thread)] - 从数据库加载 AI 配置成功，模型：deepseek-chat
+2026-04-11 13:22:28,279 - apps.ai_agents.case_library.automation.tasks - INFO - [thread=4264 task-5-exec] - [exec_2ec1756e9a1a] 开始执行测试用例 ID=14
+2026-04-11 13:22:28,298 - apps.ai_agents.case_library.automation.tasks - INFO - [thread=4264 task-5-exec] - [exec_2ec1756e9a1a] 步骤1/4: AI决策分析
+2026-04-11 13:22:28,298 - LLMServiceFactory - INFO - [thread=4264 task-5-exec] - 创建 LLM 服务：provider=deepseek
+2026-04-11 13:22:28,300 - LLMServiceFactory - INFO - [thread=4264 task-5-exec] - 使用数据库中的 AI 配置
+2026-04-11 13:22:28,300 - apps.ai_agents.case_library.automation.ai_decision_engine - INFO - [thread=4264 task-5-exec] - AI决策引擎初始化成功，使用LLM: deepseek
+2026-04-11 13:22:28,301 - apps.ai_agents.case_library.automation.ai_decision_engine - INFO - [thread=4264 task-5-exec] - 开始分析测试用例: 打开百度
+2026-04-11 13:22:28,304 - LoggingCallbackHandler - INFO - [thread=4264 task-5-exec] - 开始LLM调用...
+2026-04-11 13:22:28,537 - httpx - INFO - [thread=4264 task-5-exec] - HTTP Request: POST https://api.deepseek.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-11 13:22:42,306 - LoggingCallbackHandler - INFO - [thread=4264 task-5-exec] - LLM调用完成
+2026-04-11 13:22:42,307 - apps.ai_agents.case_library.automation.ai_decision_engine - INFO - [thread=4264 task-5-exec] - AI决策完成 - 使用多模态: False, 原因: 测试用例的核心操作是'打开百度'。这通常意味着导航到百度首页，并验证页面已成功加载。验证可以通过检查
+2026-04-11 13:22:42,310 - apps.ai_agents.case_library.automation.tasks - INFO - [thread=4264 task-5-exec] - [exec_2ec1756e9a1a] 步骤2/4: 生成Playwright测试脚本
+2026-04-11 13:22:42,310 - apps.ai_agents.case_library.automation.playwright_executor - INFO - [thread=4264 task-5-exec] - Playwright执行引擎初始化完成，输出目录: F:\test\TestBranin\automation_results
+2026-04-11 13:22:42,311 - apps.ai_agents.case_library.automation.playwright_executor - INFO - [thread=4264 task-5-exec] - 测试脚本生成成功: F:\test\TestBranin\automation_results\scripts\test_CASE-0006_46931639.py
+2026-04-11 13:22:42,313 - apps.ai_agents.case_library.automation.tasks - INFO - [thread=4264 task-5-exec] - [exec_2ec1756e9a1a] 步骤3/4: 执行Playwright测试
+2026-04-11 13:22:42,313 - apps.ai_agents.case_library.automation.playwright_executor - INFO - [thread=4264 task-5-exec] - 开始执行测试: F:\test\TestBranin\automation_results\scripts\test_CASE-0006_46931639.py
+2026-04-11 13:22:50,203 - apps.ai_agents.case_library.automation.playwright_executor - INFO - [thread=4264 task-5-exec] - 测试执行完成 - 状态: passed, 耗时: 7.89s
+2026-04-11 13:22:50,204 - apps.ai_agents.case_library.automation.playwright_executor - INFO - [thread=4264 task-5-exec] - HTML测试报告生成成功: F:\test\TestBranin\automation_results\reports\exec_2ec1756e9a1a\report.html
+2026-04-11 13:22:50,204 - apps.ai_agents.case_library.automation.tasks - INFO - [thread=4264 task-5-exec] - [exec_2ec1756e9a1a] 步骤4/4: 生成测试报告
+2026-04-11 13:22:50,204 - apps.ai_agents.case_library.automation.tasks - INFO - [thread=4264 task-5-exec] - [exec_2ec1756e9a1a] [PASS] 测试通过
+2026-04-11 13:22:50,209 - apps.ai_agents.ui_automation.views - INFO - [thread=4264 task-5-exec] - 任务 5 执行完成，状态: passed
+2026-04-11 13:22:59,027 - django.request - WARNING - [thread=8660 Thread-5 (process_request_thread)] - Not Found: /favicon.ico
+2026-04-11 13:26:28,584 - django.utils.autoreload - INFO - [thread=11600 MainThread] - F:\test\TestBranin\apps\ai_agents\ui_automation\views.py changed, reloading.
+2026-04-11 13:26:33,268 - django.utils.autoreload - INFO - [thread=11340 MainThread] - Watching for file changes with StatReloader
+2026-04-11 13:26:36,691 - LLMServiceFactory - INFO - [thread=11340 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-04-11 13:26:36,708 - LLMServiceFactory - INFO - [thread=11340 MainThread] - 使用数据库中的 AI 配置
+2026-04-11 13:26:37,728 - apps.core.views - WARNING - [thread=11340 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-04-11 13:26:37,894 - LLMServiceFactory - INFO - [thread=11340 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-04-11 13:26:37,896 - LLMServiceFactory - INFO - [thread=11340 MainThread] - 使用数据库中的 AI 配置
+2026-04-11 13:26:37,897 - apps.ai_agents.test_case_generator.views - WARNING - [thread=11340 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-04-11 13:26:37,909 - LLMServiceFactory - INFO - [thread=11340 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-04-11 13:26:37,910 - LLMServiceFactory - INFO - [thread=11340 MainThread] - 使用数据库中的 AI 配置
+2026-04-11 13:26:37,910 - apps.ai_agents.test_case_reviewer.views - WARNING - [thread=11340 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-04-11 13:26:47,157 - LLMServiceFactory - INFO - [thread=18228 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-04-11 13:26:47,173 - LLMServiceFactory - INFO - [thread=18228 MainThread] - 使用数据库中的 AI 配置
+2026-04-11 13:26:48,217 - apps.core.views - WARNING - [thread=18228 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-04-11 13:26:48,387 - LLMServiceFactory - INFO - [thread=18228 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-04-11 13:26:48,388 - LLMServiceFactory - INFO - [thread=18228 MainThread] - 使用数据库中的 AI 配置
+2026-04-11 13:26:48,390 - apps.ai_agents.test_case_generator.views - WARNING - [thread=18228 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-04-11 13:26:48,400 - LLMServiceFactory - INFO - [thread=18228 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-04-11 13:26:48,402 - LLMServiceFactory - INFO - [thread=18228 MainThread] - 使用数据库中的 AI 配置
+2026-04-11 13:26:48,402 - apps.ai_agents.test_case_reviewer.views - WARNING - [thread=18228 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-04-11 13:27:02,416 - LLMServiceFactory - INFO - [thread=29404 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-04-11 13:27:02,431 - LLMServiceFactory - INFO - [thread=29404 MainThread] - 使用数据库中的 AI 配置
+2026-04-11 13:27:03,483 - apps.core.views - WARNING - [thread=29404 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-04-11 13:27:03,661 - LLMServiceFactory - INFO - [thread=29404 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-04-11 13:27:03,662 - LLMServiceFactory - INFO - [thread=29404 MainThread] - 使用数据库中的 AI 配置
+2026-04-11 13:27:03,664 - apps.ai_agents.test_case_generator.views - WARNING - [thread=29404 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-04-11 13:27:03,676 - LLMServiceFactory - INFO - [thread=29404 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-04-11 13:27:03,677 - LLMServiceFactory - INFO - [thread=29404 MainThread] - 使用数据库中的 AI 配置
+2026-04-11 13:27:03,678 - apps.ai_agents.test_case_reviewer.views - WARNING - [thread=29404 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-04-11 13:39:36,715 - django.utils.autoreload - INFO - [thread=11340 MainThread] - F:\test\TestBranin\apps\ai_agents\ui_automation\views.py changed, reloading.
+2026-04-11 13:39:48,973 - django.utils.autoreload - INFO - [thread=9552 MainThread] - Watching for file changes with StatReloader
+2026-04-11 13:39:55,746 - LLMServiceFactory - INFO - [thread=9552 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-04-11 13:39:55,763 - LLMServiceFactory - INFO - [thread=9552 MainThread] - 使用数据库中的 AI 配置
+2026-04-11 13:39:56,835 - apps.core.views - WARNING - [thread=9552 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-04-11 13:39:57,015 - LLMServiceFactory - INFO - [thread=9552 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-04-11 13:39:57,016 - LLMServiceFactory - INFO - [thread=9552 MainThread] - 使用数据库中的 AI 配置
+2026-04-11 13:39:57,018 - apps.ai_agents.test_case_generator.views - WARNING - [thread=9552 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-04-11 13:39:57,029 - LLMServiceFactory - INFO - [thread=9552 MainThread] - 创建 LLM 服务：provider=deepseek
+2026-04-11 13:39:57,030 - LLMServiceFactory - INFO - [thread=9552 MainThread] - 使用数据库中的 AI 配置
+2026-04-11 13:39:57,031 - apps.ai_agents.test_case_reviewer.views - WARNING - [thread=9552 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-04-11 13:49:03,754 - apps.ai_agents.test_case_reviewer.views - INFO - [thread=1280 Thread-5 (process_request_thread)] - 访问评审页面 - 项目ID: 1
+2026-04-11 13:49:03,771 - apps.ai_agents.test_case_reviewer.views - INFO - [thread=1280 Thread-5 (process_request_thread)] - 项目  测试 - 待评审: 15, 已通过: 0, 未通过: 1
+2026-04-11 13:49:03,818 - apps.ai_agents.test_case_reviewer.views - INFO - [thread=1280 Thread-5 (process_request_thread)] - 获取测试用例列表 - 状态: pending, 页码: 1, 项目ID: 1
+2026-04-11 13:49:03,818 - apps.ai_agents.test_case_reviewer.views - INFO - [thread=27092 Thread-6 (process_request_thread)] - 获取测试用例列表 - 状态: approved, 页码: 1, 项目ID: 1
+2026-04-11 13:49:03,818 - apps.ai_agents.test_case_reviewer.views - INFO - [thread=24384 Thread-7 (process_request_thread)] - 获取测试用例列表 - 状态: rejected, 页码: 1, 项目ID: 1
+2026-04-11 13:49:03,822 - apps.ai_agents.test_case_reviewer.views - INFO - [thread=1280 Thread-5 (process_request_thread)] - 查询到 15 条pending状态的用例
+2026-04-11 13:49:03,823 - apps.ai_agents.test_case_reviewer.views - INFO - [thread=27092 Thread-6 (process_request_thread)] - 查询到 0 条approved状态的用例
+2026-04-11 13:49:03,832 - apps.ai_agents.test_case_reviewer.views - INFO - [thread=24384 Thread-7 (process_request_thread)] - 查询到 1 条rejected状态的用例
+2026-04-11 13:49:04,695 - apps.ai_agents.test_case_generator.views - INFO - [thread=24384 Thread-7 (process_request_thread)] - ===== 进入 generate 视图函数 =====
+2026-04-11 13:49:04,696 - apps.ai_agents.test_case_generator.views - INFO - [thread=24384 Thread-7 (process_request_thread)] - 请求方法：GET
+2026-04-11 13:49:04,709 - apps.ai_agents.test_case_generator.views - INFO - [thread=24384 Thread-7 (process_request_thread)] - 从数据库加载 AI 配置成功，模型：deepseek-chat
+2026-04-11 13:50:01,092 - apps.ai_agents.iface_case_generator.views - INFO - [thread=24384 Thread-7 (process_request_thread)] - ===== 进入iface_case_generator视图函数 =====
+2026-04-11 13:50:01,093 - apps.ai_agents.iface_case_generator.views - INFO - [thread=24384 Thread-7 (process_request_thread)] - 请求方法: GET
+2026-04-11 13:50:02,316 - apps.ai_agents.iface_case_generator.views - INFO - [thread=24384 Thread-7 (process_request_thread)] - ===== 进入iface_case_generator视图函数 =====
+2026-04-11 13:50:02,316 - apps.ai_agents.iface_case_generator.views - INFO - [thread=24384 Thread-7 (process_request_thread)] - 请求方法: GET
+2026-04-11 13:50:03,053 - apps.ai_agents.iface_case_generator.views - INFO - [thread=24384 Thread-7 (process_request_thread)] - ===== 进入iface_case_generator视图函数 =====
+2026-04-11 13:50:03,053 - apps.ai_agents.iface_case_generator.views - INFO - [thread=24384 Thread-7 (process_request_thread)] - 请求方法: GET
+2026-04-11 13:50:03,973 - apps.ai_agents.iface_case_generator.views - INFO - [thread=24384 Thread-7 (process_request_thread)] - ===== 进入iface_case_generator视图函数 =====
+2026-04-11 13:50:03,973 - apps.ai_agents.iface_case_generator.views - INFO - [thread=24384 Thread-7 (process_request_thread)] - 请求方法: GET
+2026-04-11 13:50:13,062 - apps.ai_agents.test_case_generator.views - INFO - [thread=24384 Thread-7 (process_request_thread)] - ===== 进入 generate 视图函数 =====
+2026-04-11 13:50:13,063 - apps.ai_agents.test_case_generator.views - INFO - [thread=24384 Thread-7 (process_request_thread)] - 请求方法：GET
+2026-04-11 13:50:13,076 - apps.ai_agents.test_case_generator.views - INFO - [thread=24384 Thread-7 (process_request_thread)] - 从数据库加载 AI 配置成功，模型：deepseek-chat
+2026-04-11 13:50:53,448 - apps.ai_agents.test_case_generator.views - INFO - [thread=24384 Thread-7 (process_request_thread)] - ===== 进入 generate 视图函数 =====
+2026-04-11 13:50:53,448 - apps.ai_agents.test_case_generator.views - INFO - [thread=24384 Thread-7 (process_request_thread)] - 请求方法：GET
+2026-04-11 13:50:53,463 - apps.ai_agents.test_case_generator.views - INFO - [thread=24384 Thread-7 (process_request_thread)] - 从数据库加载 AI 配置成功，模型：deepseek-chat
+2026-04-11 13:50:59,282 - apps.ai_agents.iface_case_generator.views - INFO - [thread=24384 Thread-7 (process_request_thread)] - ===== 进入iface_case_generator视图函数 =====
+2026-04-11 13:50:59,282 - apps.ai_agents.iface_case_generator.views - INFO - [thread=24384 Thread-7 (process_request_thread)] - 请求方法: GET
+2026-04-11 13:51:04,168 - apps.ai_agents.test_case_reviewer.views - INFO - [thread=24384 Thread-7 (process_request_thread)] - 访问评审页面 - 项目ID: 1
+2026-04-11 13:51:04,184 - apps.ai_agents.test_case_reviewer.views - INFO - [thread=24384 Thread-7 (process_request_thread)] - 项目  测试 - 待评审: 15, 已通过: 0, 未通过: 1
+2026-04-11 13:51:04,215 - apps.ai_agents.test_case_reviewer.views - INFO - [thread=24384 Thread-7 (process_request_thread)] - 获取测试用例列表 - 状态: pending, 页码: 1, 项目ID: 1
+2026-04-11 13:51:04,215 - apps.ai_agents.test_case_reviewer.views - INFO - [thread=27092 Thread-6 (process_request_thread)] - 获取测试用例列表 - 状态: rejected, 页码: 1, 项目ID: 1
+2026-04-11 13:51:04,215 - apps.ai_agents.test_case_reviewer.views - INFO - [thread=1280 Thread-5 (process_request_thread)] - 获取测试用例列表 - 状态: approved, 页码: 1, 项目ID: 1
+2026-04-11 13:51:04,219 - apps.ai_agents.test_case_reviewer.views - INFO - [thread=24384 Thread-7 (process_request_thread)] - 查询到 15 条pending状态的用例
+2026-04-11 13:51:04,230 - apps.ai_agents.test_case_reviewer.views - INFO - [thread=27092 Thread-6 (process_request_thread)] - 查询到 1 条rejected状态的用例
+2026-04-11 13:51:04,230 - apps.ai_agents.test_case_reviewer.views - INFO - [thread=1280 Thread-5 (process_request_thread)] - 查询到 0 条approved状态的用例
+2026-04-11 13:51:04,884 - apps.ai_agents.test_case_generator.views - INFO - [thread=27092 Thread-6 (process_request_thread)] - ===== 进入 generate 视图函数 =====
+2026-04-11 13:51:04,884 - apps.ai_agents.test_case_generator.views - INFO - [thread=27092 Thread-6 (process_request_thread)] - 请求方法：GET
+2026-04-11 13:51:04,897 - apps.ai_agents.test_case_generator.views - INFO - [thread=27092 Thread-6 (process_request_thread)] - 从数据库加载 AI 配置成功，模型：deepseek-chat
+2026-04-11 13:51:05,364 - apps.ai_agents.test_case_reviewer.views - INFO - [thread=27092 Thread-6 (process_request_thread)] - 访问评审页面 - 项目ID: 1
+2026-04-11 13:51:05,369 - apps.ai_agents.test_case_reviewer.views - INFO - [thread=27092 Thread-6 (process_request_thread)] - 项目  测试 - 待评审: 15, 已通过: 0, 未通过: 1
+2026-04-11 13:51:05,396 - apps.ai_agents.test_case_reviewer.views - INFO - [thread=27092 Thread-6 (process_request_thread)] - 获取测试用例列表 - 状态: pending, 页码: 1, 项目ID: 1
+2026-04-11 13:51:05,397 - apps.ai_agents.test_case_reviewer.views - INFO - [thread=1280 Thread-5 (process_request_thread)] - 获取测试用例列表 - 状态: approved, 页码: 1, 项目ID: 1
+2026-04-11 13:51:05,398 - apps.ai_agents.test_case_reviewer.views - INFO - [thread=24384 Thread-7 (process_request_thread)] - 获取测试用例列表 - 状态: rejected, 页码: 1, 项目ID: 1
+2026-04-11 13:51:05,401 - apps.ai_agents.test_case_reviewer.views - INFO - [thread=27092 Thread-6 (process_request_thread)] - 查询到 15 条pending状态的用例
+2026-04-11 13:51:05,401 - apps.ai_agents.test_case_reviewer.views - INFO - [thread=1280 Thread-5 (process_request_thread)] - 查询到 0 条approved状态的用例
+2026-04-11 13:51:05,401 - apps.ai_agents.test_case_reviewer.views - INFO - [thread=24384 Thread-7 (process_request_thread)] - 查询到 1 条rejected状态的用例
+2026-04-11 13:51:07,075 - apps.ai_agents.iface_case_generator.views - INFO - [thread=27092 Thread-6 (process_request_thread)] - ===== 进入iface_case_generator视图函数 =====
+2026-04-11 13:51:07,075 - apps.ai_agents.iface_case_generator.views - INFO - [thread=27092 Thread-6 (process_request_thread)] - 请求方法: GET
+2026-04-11 13:51:11,385 - apps.ai_agents.test_case_reviewer.views - INFO - [thread=27092 Thread-6 (process_request_thread)] - 访问评审页面 - 项目ID: 1
+2026-04-11 13:51:11,400 - apps.ai_agents.test_case_reviewer.views - INFO - [thread=27092 Thread-6 (process_request_thread)] - 项目  测试 - 待评审: 15, 已通过: 0, 未通过: 1
+2026-04-11 13:51:11,430 - apps.ai_agents.test_case_reviewer.views - INFO - [thread=27092 Thread-6 (process_request_thread)] - 获取测试用例列表 - 状态: pending, 页码: 1, 项目ID: 1
+2026-04-11 13:51:11,430 - apps.ai_agents.test_case_reviewer.views - INFO - [thread=1280 Thread-5 (process_request_thread)] - 获取测试用例列表 - 状态: rejected, 页码: 1, 项目ID: 1
+2026-04-11 13:51:11,431 - apps.ai_agents.test_case_reviewer.views - INFO - [thread=24384 Thread-7 (process_request_thread)] - 获取测试用例列表 - 状态: approved, 页码: 1, 项目ID: 1
+2026-04-11 13:51:11,435 - apps.ai_agents.test_case_reviewer.views - INFO - [thread=1280 Thread-5 (process_request_thread)] - 查询到 1 条rejected状态的用例
+2026-04-11 13:51:11,436 - apps.ai_agents.test_case_reviewer.views - INFO - [thread=27092 Thread-6 (process_request_thread)] - 查询到 15 条pending状态的用例
+2026-04-11 13:51:11,446 - apps.ai_agents.test_case_reviewer.views - INFO - [thread=24384 Thread-7 (process_request_thread)] - 查询到 0 条approved状态的用例
+2026-04-11 13:51:14,899 - apps.ai_agents.test_case_reviewer.views - INFO - [thread=24384 Thread-7 (process_request_thread)] - 获取测试用例列表 - 状态: approved, 页码: 1, 项目ID: 1
+2026-04-11 13:51:14,913 - apps.ai_agents.test_case_reviewer.views - INFO - [thread=24384 Thread-7 (process_request_thread)] - 查询到 0 条approved状态的用例
+2026-04-11 13:51:15,371 - apps.ai_agents.test_case_reviewer.views - INFO - [thread=24384 Thread-7 (process_request_thread)] - 获取测试用例列表 - 状态: rejected, 页码: 1, 项目ID: 1
+2026-04-11 13:51:15,384 - apps.ai_agents.test_case_reviewer.views - INFO - [thread=24384 Thread-7 (process_request_thread)] - 查询到 1 条rejected状态的用例
+2026-04-11 13:51:15,762 - apps.ai_agents.test_case_reviewer.views - INFO - [thread=24384 Thread-7 (process_request_thread)] - 获取测试用例列表 - 状态: approved, 页码: 1, 项目ID: 1
+2026-04-11 13:51:15,775 - apps.ai_agents.test_case_reviewer.views - INFO - [thread=24384 Thread-7 (process_request_thread)] - 查询到 0 条approved状态的用例
+2026-04-11 13:51:16,062 - apps.ai_agents.test_case_reviewer.views - INFO - [thread=24384 Thread-7 (process_request_thread)] - 获取测试用例列表 - 状态: pending, 页码: 1, 项目ID: 1
+2026-04-11 13:51:16,075 - apps.ai_agents.test_case_reviewer.views - INFO - [thread=24384 Thread-7 (process_request_thread)] - 查询到 15 条pending状态的用例
+2026-04-11 13:51:17,133 - apps.ai_agents.iface_case_generator.views - INFO - [thread=24384 Thread-7 (process_request_thread)] - ===== 进入iface_case_generator视图函数 =====
+2026-04-11 13:51:17,133 - apps.ai_agents.iface_case_generator.views - INFO - [thread=24384 Thread-7 (process_request_thread)] - 请求方法: GET
+2026-04-11 13:51:20,823 - apps.ai_agents.iface_case_generator.views - INFO - [thread=24384 Thread-7 (process_request_thread)] - ===== 进入iface_case_generator视图函数 =====
+2026-04-11 13:51:20,824 - apps.ai_agents.iface_case_generator.views - INFO - [thread=24384 Thread-7 (process_request_thread)] - 请求方法: GET
+2026-04-11 14:15:57,270 - apps.ai_agents.test_case_generator.views - INFO - [thread=5496 Thread-10 (process_request_thread)] - ===== 进入 generate 视图函数 =====
+2026-04-11 14:15:57,271 - apps.ai_agents.test_case_generator.views - INFO - [thread=5496 Thread-10 (process_request_thread)] - 请求方法：GET
+2026-04-11 14:15:57,273 - apps.ai_agents.test_case_generator.views - INFO - [thread=5496 Thread-10 (process_request_thread)] - 从数据库加载 AI 配置成功，模型：deepseek-chat
+2026-04-11 14:16:14,118 - apps.ai_agents.test_case_generator.views - INFO - [thread=5496 Thread-10 (process_request_thread)] - ===== 进入 generate 视图函数 =====
+2026-04-11 14:16:14,118 - apps.ai_agents.test_case_generator.views - INFO - [thread=5496 Thread-10 (process_request_thread)] - 请求方法：GET
+2026-04-11 14:16:14,121 - apps.ai_agents.test_case_generator.views - INFO - [thread=5496 Thread-10 (process_request_thread)] - 从数据库加载 AI 配置成功，模型：deepseek-chat
+2026-04-11 14:16:15,469 - apps.ai_agents.test_case_reviewer.views - INFO - [thread=5496 Thread-10 (process_request_thread)] - 访问评审页面 - 项目ID: 2
+2026-04-11 14:16:15,483 - apps.ai_agents.test_case_reviewer.views - INFO - [thread=5496 Thread-10 (process_request_thread)] - 项目 云杉医养 - 待评审: 0, 已通过: 0, 未通过: 0
+2026-04-11 14:16:15,507 - apps.ai_agents.test_case_reviewer.views - INFO - [thread=5496 Thread-10 (process_request_thread)] - 获取测试用例列表 - 状态: pending, 页码: 1, 项目ID: 2
+2026-04-11 14:16:15,507 - apps.ai_agents.test_case_reviewer.views - INFO - [thread=21240 Thread-11 (process_request_thread)] - 获取测试用例列表 - 状态: approved, 页码: 1, 项目ID: 2
+2026-04-11 14:16:15,508 - apps.ai_agents.test_case_reviewer.views - INFO - [thread=14932 Thread-12 (process_request_thread)] - 获取测试用例列表 - 状态: rejected, 页码: 1, 项目ID: 2
+2026-04-11 14:16:15,512 - apps.ai_agents.test_case_reviewer.views - INFO - [thread=5496 Thread-10 (process_request_thread)] - 查询到 0 条pending状态的用例
+2026-04-11 14:16:15,512 - apps.ai_agents.test_case_reviewer.views - INFO - [thread=21240 Thread-11 (process_request_thread)] - 查询到 0 条approved状态的用例
+2026-04-11 14:16:15,512 - apps.ai_agents.test_case_reviewer.views - INFO - [thread=14932 Thread-12 (process_request_thread)] - 查询到 0 条rejected状态的用例
+2026-04-11 14:16:15,868 - apps.ai_agents.test_case_generator.views - INFO - [thread=14932 Thread-12 (process_request_thread)] - ===== 进入 generate 视图函数 =====
+2026-04-11 14:16:15,868 - apps.ai_agents.test_case_generator.views - INFO - [thread=14932 Thread-12 (process_request_thread)] - 请求方法：GET
+2026-04-11 14:16:15,871 - apps.ai_agents.test_case_generator.views - INFO - [thread=14932 Thread-12 (process_request_thread)] - 从数据库加载 AI 配置成功，模型：deepseek-chat

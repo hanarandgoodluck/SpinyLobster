@@ -28,3 +28,5 @@
 2026-04-10 18:36:12,733 - apps.ai_agents.ui_automation.views - INFO - [thread=33076 task-2-exec] - 任务 2 执行完成，状态: passed
 2026-04-10 18:37:39,764 - apps.ai_agents.ui_automation.views - INFO - [thread=9504 task-2-exec] - 任务 2 执行完成，状态: failed
 2026-04-10 18:40:43,433 - apps.ai_agents.ui_automation.views - INFO - [thread=11676 task-2-exec] - 任务 2 执行完成，状态: passed
+2026-04-11 13:19:05,736 - apps.ai_agents.ui_automation.views - INFO - [thread=2840 task-5-exec] - 任务 5 执行完成，状态: passed
+2026-04-11 13:22:50,209 - apps.ai_agents.ui_automation.views - INFO - [thread=4264 task-5-exec] - 任务 5 执行完成，状态: passed

@@ -310,3 +310,15 @@ KeyError: 'int(time'
 2026-04-10 18:40:35,810 - apps.ai_agents.case_library.automation.tasks - INFO - [thread=11676 task-2-exec] - [exec_28d675891b22] 步骤3/4: 执行Playwright测试
 2026-04-10 18:40:43,428 - apps.ai_agents.case_library.automation.tasks - INFO - [thread=11676 task-2-exec] - [exec_28d675891b22] 步骤4/4: 生成测试报告
 2026-04-10 18:40:43,428 - apps.ai_agents.case_library.automation.tasks - INFO - [thread=11676 task-2-exec] - [exec_28d675891b22] [PASS] 测试通过
+2026-04-11 13:18:46,047 - apps.ai_agents.case_library.automation.tasks - INFO - [thread=2840 task-5-exec] - [exec_4f9c1cd38836] 开始执行测试用例 ID=14
+2026-04-11 13:18:46,068 - apps.ai_agents.case_library.automation.tasks - INFO - [thread=2840 task-5-exec] - [exec_4f9c1cd38836] 步骤1/4: AI决策分析
+2026-04-11 13:18:59,689 - apps.ai_agents.case_library.automation.tasks - INFO - [thread=2840 task-5-exec] - [exec_4f9c1cd38836] 步骤2/4: 生成Playwright测试脚本
+2026-04-11 13:18:59,692 - apps.ai_agents.case_library.automation.tasks - INFO - [thread=2840 task-5-exec] - [exec_4f9c1cd38836] 步骤3/4: 执行Playwright测试
+2026-04-11 13:19:05,729 - apps.ai_agents.case_library.automation.tasks - INFO - [thread=2840 task-5-exec] - [exec_4f9c1cd38836] 步骤4/4: 生成测试报告
+2026-04-11 13:19:05,729 - apps.ai_agents.case_library.automation.tasks - INFO - [thread=2840 task-5-exec] - [exec_4f9c1cd38836] [PASS] 测试通过
+2026-04-11 13:22:28,279 - apps.ai_agents.case_library.automation.tasks - INFO - [thread=4264 task-5-exec] - [exec_2ec1756e9a1a] 开始执行测试用例 ID=14
+2026-04-11 13:22:28,298 - apps.ai_agents.case_library.automation.tasks - INFO - [thread=4264 task-5-exec] - [exec_2ec1756e9a1a] 步骤1/4: AI决策分析
+2026-04-11 13:22:42,310 - apps.ai_agents.case_library.automation.tasks - INFO - [thread=4264 task-5-exec] - [exec_2ec1756e9a1a] 步骤2/4: 生成Playwright测试脚本
+2026-04-11 13:22:42,313 - apps.ai_agents.case_library.automation.tasks - INFO - [thread=4264 task-5-exec] - [exec_2ec1756e9a1a] 步骤3/4: 执行Playwright测试
+2026-04-11 13:22:50,204 - apps.ai_agents.case_library.automation.tasks - INFO - [thread=4264 task-5-exec] - [exec_2ec1756e9a1a] 步骤4/4: 生成测试报告
+2026-04-11 13:22:50,204 - apps.ai_agents.case_library.automation.tasks - INFO - [thread=4264 task-5-exec] - [exec_2ec1756e9a1a] [PASS] 测试通过

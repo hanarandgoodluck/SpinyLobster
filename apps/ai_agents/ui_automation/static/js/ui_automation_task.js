@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         token: ''
                     },
                     case_ids: [],
-                    use_multimodal: true,
+                    use_multimodal: false,
                     llm_provider: 'deepseek',
                     project_id: null
                 },
@@ -404,7 +404,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         token: ''
                     },
                     case_ids: [],
-                    use_multimodal: true,
+                    use_multimodal: false,
                     llm_provider: 'deepseek',
                     project_id: null
                 };

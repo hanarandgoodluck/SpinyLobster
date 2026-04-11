@@ -125,3 +125,12 @@ AttributeError: 'PlaywrightExecutor' object has no attribute '_generate_case_lis
 2026-04-10 18:40:35,810 - apps.ai_agents.case_library.automation.playwright_executor - INFO - [thread=11676 task-2-exec] - 开始执行测试: F:\test\TestBranin\automation_results\scripts\test_CASE-0006_cee9ee08.py
 2026-04-10 18:40:43,427 - apps.ai_agents.case_library.automation.playwright_executor - INFO - [thread=11676 task-2-exec] - 测试执行完成 - 状态: passed, 耗时: 7.62s
 2026-04-10 18:40:43,428 - apps.ai_agents.case_library.automation.playwright_executor - INFO - [thread=11676 task-2-exec] - HTML测试报告生成成功: F:\test\TestBranin\automation_results\reports\exec_28d675891b22\report.html
+2026-04-11 13:18:59,690 - apps.ai_agents.case_library.automation.playwright_executor - INFO - [thread=2840 task-5-exec] - Playwright执行引擎初始化完成，输出目录: F:\test\TestBranin\automation_results
+2026-04-11 13:18:59,691 - apps.ai_agents.case_library.automation.playwright_executor - INFO - [thread=2840 task-5-exec] - 测试脚本生成成功: F:\test\TestBranin\automation_results\scripts\test_CASE-0006_2ebfb032.py
+2026-04-11 13:18:59,693 - apps.ai_agents.case_library.automation.playwright_executor - INFO - [thread=2840 task-5-exec] - 开始执行测试: F:\test\TestBranin\automation_results\scripts\test_CASE-0006_2ebfb032.py
+2026-04-11 13:19:05,703 - apps.ai_agents.case_library.automation.playwright_executor - INFO - [thread=2840 task-5-exec] - 测试执行完成 - 状态: passed, 耗时: 6.01s
+2026-04-11 13:22:42,310 - apps.ai_agents.case_library.automation.playwright_executor - INFO - [thread=4264 task-5-exec] - Playwright执行引擎初始化完成，输出目录: F:\test\TestBranin\automation_results
+2026-04-11 13:22:42,311 - apps.ai_agents.case_library.automation.playwright_executor - INFO - [thread=4264 task-5-exec] - 测试脚本生成成功: F:\test\TestBranin\automation_results\scripts\test_CASE-0006_46931639.py
+2026-04-11 13:22:42,313 - apps.ai_agents.case_library.automation.playwright_executor - INFO - [thread=4264 task-5-exec] - 开始执行测试: F:\test\TestBranin\automation_results\scripts\test_CASE-0006_46931639.py
+2026-04-11 13:22:50,203 - apps.ai_agents.case_library.automation.playwright_executor - INFO - [thread=4264 task-5-exec] - 测试执行完成 - 状态: passed, 耗时: 7.89s
+2026-04-11 13:22:50,204 - apps.ai_agents.case_library.automation.playwright_executor - INFO - [thread=4264 task-5-exec] - HTML测试报告生成成功: F:\test\TestBranin\automation_results\reports\exec_2ec1756e9a1a\report.html

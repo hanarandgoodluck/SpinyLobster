@@ -26,3 +26,19 @@
 2026-04-09 11:41:12,644 - apps.ai_agents.iface_case_generator.views - INFO - [thread=26792 Thread-7 (process_request_thread)] - 请求方法: GET
 2026-04-09 22:27:26,130 - apps.ai_agents.iface_case_generator.views - INFO - [thread=30040 Thread-13 (process_request_thread)] - ===== 进入iface_case_generator视图函数 =====
 2026-04-09 22:27:26,130 - apps.ai_agents.iface_case_generator.views - INFO - [thread=30040 Thread-13 (process_request_thread)] - 请求方法: GET
+2026-04-11 13:50:01,092 - apps.ai_agents.iface_case_generator.views - INFO - [thread=24384 Thread-7 (process_request_thread)] - ===== 进入iface_case_generator视图函数 =====
+2026-04-11 13:50:01,093 - apps.ai_agents.iface_case_generator.views - INFO - [thread=24384 Thread-7 (process_request_thread)] - 请求方法: GET
+2026-04-11 13:50:02,316 - apps.ai_agents.iface_case_generator.views - INFO - [thread=24384 Thread-7 (process_request_thread)] - ===== 进入iface_case_generator视图函数 =====
+2026-04-11 13:50:02,316 - apps.ai_agents.iface_case_generator.views - INFO - [thread=24384 Thread-7 (process_request_thread)] - 请求方法: GET
+2026-04-11 13:50:03,053 - apps.ai_agents.iface_case_generator.views - INFO - [thread=24384 Thread-7 (process_request_thread)] - ===== 进入iface_case_generator视图函数 =====
+2026-04-11 13:50:03,053 - apps.ai_agents.iface_case_generator.views - INFO - [thread=24384 Thread-7 (process_request_thread)] - 请求方法: GET
+2026-04-11 13:50:03,973 - apps.ai_agents.iface_case_generator.views - INFO - [thread=24384 Thread-7 (process_request_thread)] - ===== 进入iface_case_generator视图函数 =====
+2026-04-11 13:50:03,973 - apps.ai_agents.iface_case_generator.views - INFO - [thread=24384 Thread-7 (process_request_thread)] - 请求方法: GET
+2026-04-11 13:50:59,282 - apps.ai_agents.iface_case_generator.views - INFO - [thread=24384 Thread-7 (process_request_thread)] - ===== 进入iface_case_generator视图函数 =====
+2026-04-11 13:50:59,282 - apps.ai_agents.iface_case_generator.views - INFO - [thread=24384 Thread-7 (process_request_thread)] - 请求方法: GET
+2026-04-11 13:51:07,075 - apps.ai_agents.iface_case_generator.views - INFO - [thread=27092 Thread-6 (process_request_thread)] - ===== 进入iface_case_generator视图函数 =====
+2026-04-11 13:51:07,075 - apps.ai_agents.iface_case_generator.views - INFO - [thread=27092 Thread-6 (process_request_thread)] - 请求方法: GET
+2026-04-11 13:51:17,133 - apps.ai_agents.iface_case_generator.views - INFO - [thread=24384 Thread-7 (process_request_thread)] - ===== 进入iface_case_generator视图函数 =====
+2026-04-11 13:51:17,133 - apps.ai_agents.iface_case_generator.views - INFO - [thread=24384 Thread-7 (process_request_thread)] - 请求方法: GET
+2026-04-11 13:51:20,823 - apps.ai_agents.iface_case_generator.views - INFO - [thread=24384 Thread-7 (process_request_thread)] - ===== 进入iface_case_generator视图函数 =====
+2026-04-11 13:51:20,824 - apps.ai_agents.iface_case_generator.views - INFO - [thread=24384 Thread-7 (process_request_thread)] - 请求方法: GET

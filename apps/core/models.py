@@ -361,7 +361,7 @@ class AutomationTask(models.Model):
     config = models.JSONField(default=dict, verbose_name="任务配置")
     
     # AI配置
-    use_multimodal = models.BooleanField(default=True, verbose_name="启用多模态视觉分析")
+    use_multimodal = models.BooleanField(default=False, verbose_name="启用多模态视觉分析")
     llm_provider = models.CharField(max_length=50, default='deepseek', verbose_name="LLM提供商")
     
     # 状态管理

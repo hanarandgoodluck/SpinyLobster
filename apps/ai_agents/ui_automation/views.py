@@ -408,7 +408,7 @@ def create_task(request):
                 description=data.get('description', ''),
                 task_type=task_type,
                 config=data.get('config', {}),
-                use_multimodal=data.get('use_multimodal', True),
+                use_multimodal=data.get('use_multimodal', False),
                 llm_provider=data.get('llm_provider', 'deepseek'),
                 project_id=data.get('project_id') if data.get('project_id') else None,
                 created_by=request.user if request.user.is_authenticated else None

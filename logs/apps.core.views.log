@@ -541,3 +541,11 @@
 2026-04-10 20:49:44,351 - apps.core.views - WARNING - [thread=31256 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
 2026-04-10 20:49:56,467 - apps.core.views - WARNING - [thread=27564 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
 2026-04-10 20:50:13,227 - apps.core.views - WARNING - [thread=10768 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-04-11 13:18:00,497 - apps.core.views - WARNING - [thread=25156 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-04-11 13:20:05,174 - apps.core.views - WARNING - [thread=18252 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-04-11 13:20:18,928 - apps.core.views - WARNING - [thread=20096 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-04-11 13:21:54,216 - apps.core.views - WARNING - [thread=11600 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-04-11 13:26:37,728 - apps.core.views - WARNING - [thread=11340 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-04-11 13:26:48,217 - apps.core.views - WARNING - [thread=18228 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-04-11 13:27:03,483 - apps.core.views - WARNING - [thread=29404 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
+2026-04-11 13:39:56,835 - apps.core.views - WARNING - [thread=9552 MainThread] - 无法创建 Knowledge 服务：No installed app with label 'knowledge'.
