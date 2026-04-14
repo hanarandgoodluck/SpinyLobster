@@ -63,6 +63,7 @@ INSTALLED_APPS = [
     'apps.ai_agents.test_case_reviewer.apps.TestCaseReviewerConfig',
     'apps.ai_agents.case_library.apps.CaseLibraryConfig',
     'apps.ai_agents.ui_automation.apps.UiAutomationConfig',
+    'apps.ai_agents.ai_requirement_analysis.apps.AiRequirementAnalysisConfig',
 
 ]
 

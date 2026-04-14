@@ -319,7 +319,8 @@ const app = createApp({
             rejectedCount: 0,
             selectedPendingCases: [],
             selectedApprovedCases: [],
-            selectedRejectedCases: []
+            selectedRejectedCases: [],
+            reviewing: false
         };
     },
     
@@ -494,6 +495,14 @@ const app = createApp({
         },
         
         async performAIReview(testCaseId) {
+            // 显示 loading
+            this.reviewing = true;
+            const loading = ElementPlus.ElLoading.service({
+                lock: true,
+                text: 'AI评审中，请稍候...',
+                background: 'rgba(0, 0, 0, 0.7)'
+            });
+            
             try {
                 const response = await fetch(`/test_case_reviewer/case-review-detail/api/review/`, {
                     method: 'POST',
@@ -508,13 +517,20 @@ const app = createApp({
                 
                 if (data.success) {
                     ElementPlus.ElMessage.success('AI评审完成');
-                    // 重新加载数据
-                    this.loadPendingCases();
+                    // 关闭 loading
+                    loading.close();
+                    this.reviewing = false;
+                    // 刷新整个页面
+                    window.location.reload();
                 } else {
+                    loading.close();
+                    this.reviewing = false;
                     ElementPlus.ElMessage.error('AI评审失败：' + data.message);
                 }
             } catch (error) {
                 console.error('AI评审失败:', error);
+                loading.close();
+                this.reviewing = false;
                 ElementPlus.ElMessage.error('AI评审失败');
             }
         },

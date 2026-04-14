@@ -149,6 +149,12 @@
                     <!-- 项目功能菜单 - 当选择具体项目时显示 -->
                     {% if current_project %}
                         <li class="nav-item">
+                            <a class="nav-link" href="/ai_requirement_analysis/?project_id={{ current_project.id }}">
+                                <i class="fas fa-file-import"></i>
+                                需求导入
+                            </a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link {% if '/test_case_generator/' in request.path %}active{% endif %}" href="/test_case_generator/?project_id={{ current_project.id }}">
                                 <i class="fas fa-plus-circle"></i>
                                 测试用例生成
