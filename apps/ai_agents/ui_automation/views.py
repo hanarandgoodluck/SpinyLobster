@@ -385,10 +385,12 @@ def create_task(request):
     """创建新任务"""
     try:
         data = json.loads(request.body)
+        logger.info(f'创建任务请求数据: {data}')
         
         # 验证必填字段
         name = data.get('name', '').strip()
         if not name:
+            logger.warning('任务名称为空')
             return JsonResponse({
                 'success': False,
                 'message': '任务名称不能为空'
@@ -396,9 +398,10 @@ def create_task(request):
         
         task_type = data.get('task_type', 'web')
         if task_type not in ['web', 'api']:
+            logger.warning(f'无效的测试类型: {task_type}')
             return JsonResponse({
                 'success': False,
-                'message': '无效的测试类型'
+                'message': f'无效的测试类型: {task_type}'
             }, status=400)
         
         # 创建任务

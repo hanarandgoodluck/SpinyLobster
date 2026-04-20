@@ -131,6 +131,65 @@
     transform: translateY(0);
 }
 
+/* 关联需求对话框样式 */
+.current-row {
+    background-color: #ecf5ff !important;
+}
+
+.current-row:hover > td {
+    background-color: #ecf5ff !important;
+}
+
+/* 选择按钮样式 */
+.select-btn {
+    width: 32px !important;
+    height: 32px !important;
+    padding: 0 !important;
+    border-radius: 50% !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    transition: all 0.3s ease !important;
+    box-shadow: 0 2px 6px rgba(64, 158, 255, 0.3);
+}
+
+.select-btn:hover:not(:disabled) {
+    transform: scale(1.15) !important;
+    box-shadow: 0 4px 12px rgba(64, 158, 255, 0.5) !important;
+}
+
+.select-btn:active:not(:disabled) {
+    transform: scale(0.95) !important;
+}
+
+.select-btn.selected {
+    background: linear-gradient(135deg, #67c23a 0%, #85ce61 100%) !important;
+    border: none !important;
+    box-shadow: 0 2px 6px rgba(103, 194, 58, 0.3) !important;
+}
+
+.select-btn.selected:hover {
+    box-shadow: 0 4px 12px rgba(103, 194, 58, 0.5) !important;
+}
+
+.select-btn i {
+    font-size: 14px !important;
+}
+
+/* 表格行悬停效果 */
+.el-table__row:hover .select-btn:not(:disabled) {
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        box-shadow: 0 2px 6px rgba(64, 158, 255, 0.3);
+    }
+    50% {
+        box-shadow: 0 4px 12px rgba(64, 158, 255, 0.6);
+    }
+}
+
 /* 加载指示器样式 */
 #loading-indicator {
     padding: 40px 20px;
@@ -307,19 +366,60 @@
             </div>
             
             <div class="form-group">
-                <label class="form-label" for="input-text">
-                    <i class="fas fa-file-alt"></i>
-                    需求描述:
+                <label class="form-label">
+                    <i class="fas fa-link"></i>
+                    关联需求:
                 </label>
-                <el-input
-                    id="input-text"
-                    v-model="requirements"
-                    type="textarea"
-                    :rows="12"
-                    placeholder="请详细描述您的需求，包括功能点、业务场景、用户角色等信息，以便 AI 生成更精准的测试用例..."
-                    required
-                    class="w-full"
-                ></el-input>
+                <el-button type="primary" @click="showLinkRequirementDialog" style="margin-bottom: 10px;">
+                    <i class="fas fa-plus"></i> 选择需求
+                </el-button>
+                
+                <!-- 已选需求列表 -->
+                <div v-if="selectedRequirements.length > 0">
+                    <div v-for="(req, index) in selectedRequirements" :key="req.id" 
+                         style="padding: 16px; margin-bottom: 12px; background: white; border: 1px solid #e4e7ed; border-radius: 8px; box-shadow: 0 1px 2px rgba(0,0,0,0.05);">
+                        <!-- 第一行：序号 + 路径 + 删除按钮 -->
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <div style="flex: 1;">
+                                <!-- 序号（只有当名称不是纯数字时才显示） -->
+                                <div v-if="!isPureNumber(req.name)" style="font-size: 18px; font-weight: 600; color: #303133; margin-bottom: 6px;">
+                                    {% verbatim %}{{ req.name }}{% endverbatim %}
+                                </div>
+                                <!-- 路径 -->
+                                <div style="font-size: 13px; color: #909399; line-height: 1.5;">
+                                    {% verbatim %}{{ req.path }}{% endverbatim %}
+                                </div>
+                            </div>
+                            <!-- 删除按钮 -->
+                            <el-button 
+                                link 
+                                type="danger"
+                                @click="removeRequirement(req.id)"
+                                size="large"
+                                style="padding: 8px; font-size: 18px; opacity: 0.6; transition: opacity 0.2s;"
+                                @mouseenter="$event.currentTarget.style.opacity = 1"
+                                @mouseleave="$event.currentTarget.style.opacity = 0.6">
+                                <i class="fas fa-times"></i>
+                            </el-button>
+                        </div>
+                        
+                        <!-- 第二行：查看/编辑按钮 -->
+                        <div style="margin-top: 12px; padding-top: 12px; border-top: 1px dashed #e4e7ed;">
+                            <el-button 
+                                type="primary" 
+                                size="small"
+                                plain
+                                @click="showRequirementDetail(req)"
+                                style="width: 100%;">
+                                <i class="fas fa-edit" style="margin-right: 6px;"></i>查看/编辑需求详情
+                            </el-button>
+                        </div>
+                    </div>
+                </div>
+                <div v-else style="color: #909399; font-size: 14px; padding: 20px; text-align: center; border: 1px dashed #dcdfe6; border-radius: 8px;">
+                    暂未选择需求，请点击上方按钮选择
+                </div>
+                <div class="form-text">从需求导入模块中选择已导入的需求条目</div>
             </div>
             
             <div class="row" style="margin-bottom: 24px;">
@@ -413,6 +513,128 @@
         </div>
     </div>
 </div>
+
+<!-- 关联需求对话框 -->
+<el-dialog v-model="linkRequirementDialogVisible" title="关联需求" width="1200px" top="5vh">
+    <el-alert title="从需求导入模块中选择已导入的需求条目" type="info" :closable="false" style="margin-bottom: 16px;"></el-alert>
+    
+    <div style="border: 1px solid #e4e7ed; border-radius: 8px; overflow: hidden; height: 500px; display: flex; flex-direction: column;">
+        <div style="padding: 12px; border-bottom: 1px solid #e4e7ed; background: #f5f7fa;">
+                <el-input 
+                    v-model="searchKeyword"
+                    placeholder="搜索需求名称或模块"
+                    clearable
+                    @input="filterRequirements"
+                    size="small">
+                    <template #prefix>
+                        <i class="fas fa-search"></i>
+                    </template>
+                </el-input>
+            </div>
+            
+            <div style="flex: 1; overflow-y: auto;">
+                <el-table 
+                    :data="filteredRequirements" 
+                    style="width: 100%" 
+                    empty-text="暂无可用需求"
+                    highlight-current-row
+                    @current-change="handleRequirementSelect"
+                    :row-class-name="tableRowClassName">
+                    <el-table-column prop="name" label="需求名称" min-width="150">
+                        <template #default="scope">
+                            <span style="font-weight: 500; font-size: 13px;">{% verbatim %}{{ scope.row.name }}{% endverbatim %}</span>
+                        </template>
+                    </el-table-column>
+                    <el-table-column label="操作" width="80" align="center">
+                        <template #default="scope">
+                            <el-tooltip 
+                                :content="selectedRequirements.some(r => r.id === scope.row.id) ? '已添加' : '添加到已选列表'" 
+                                placement="top">
+                                <el-button 
+                                    class="select-btn"
+                                    :class="{selected: selectedRequirements.some(r => r.id === scope.row.id)}"
+                                    :type="selectedRequirements.some(r => r.id === scope.row.id) ? 'success' : 'primary'"
+                                    @click="addRequirement(scope.row)"
+                                    :disabled="selectedRequirements.some(r => r.id === scope.row.id)"
+                                    circle>
+                                    <i :class="selectedRequirements.some(r => r.id === scope.row.id) ? 'fas fa-check' : 'fas fa-plus'"></i>
+                                </el-button>
+                            </el-tooltip>
+                        </template>
+                    </el-table-column>
+                </el-table>
+            </div>
+    </div>
+    
+    <template #footer>
+        <span class="dialog-footer">
+            <el-button @click="linkRequirementDialogVisible = false">关闭</el-button>
+        </span>
+    </template>
+</el-dialog>
+
+<!-- 需求详情编辑对话框 -->
+<el-dialog v-model="detailDialogVisible" :title="'需求详情 - ' + (editingRequirement ? editingRequirement.name : '')" width="800px" top="10vh">
+    <div v-if="editingRequirement">
+        <!-- 需求名称 -->
+        <div style="margin-bottom: 20px;">
+            <label style="display: block; font-size: 14px; font-weight: 600; color: #606266; margin-bottom: 8px;">
+                <i class="fas fa-tag" style="color: #409eff; margin-right: 6px;"></i>
+                需求名称
+            </label>
+            <el-input 
+                v-model="editingRequirement.name"
+                size="default"
+                @input="markDetailEdited">
+            </el-input>
+        </div>
+        
+        <!-- 需求路径 -->
+        <div style="margin-bottom: 20px;">
+            <label style="display: block; font-size: 14px; font-weight: 600; color: #606266; margin-bottom: 8px;">
+                <i class="fas fa-folder-tree" style="color: #409eff; margin-right: 6px;"></i>
+                需求路径
+            </label>
+            <el-input 
+                v-model="editingRequirement.path"
+                disabled
+                size="default">
+            </el-input>
+        </div>
+        
+        <!-- 需求内容 -->
+        <div>
+            <label style="display: block; font-size: 14px; font-weight: 600; color: #606266; margin-bottom: 8px;">
+                <i class="fas fa-file-alt" style="color: #409eff; margin-right: 6px;"></i>
+                需求内容
+            </label>
+            <el-input 
+                v-model="editingRequirement.content"
+                type="textarea"
+                :rows="20"
+                placeholder="请输入需求内容..."
+                @input="markDetailEdited"
+                style="font-size: 13px; line-height: 1.8;">
+            </el-input>
+            <div style="margin-top: 10px; font-size: 12px; color: #909399;">
+                <i class="fas fa-info-circle"></i>
+                提示：此处编辑仅对本次生成有效，不会保存到需求库
+                <el-tag v-if="detailEdited" type="warning" size="small" style="margin-left: 8px;">
+                    <i class="fas fa-edit"></i> 已编辑
+                </el-tag>
+            </div>
+        </div>
+    </div>
+    
+    <template #footer>
+        <span class="dialog-footer">
+            <el-button @click="detailDialogVisible = false">关闭</el-button>
+            <el-button type="primary" @click="saveRequirementDetail">
+                <i class="fas fa-save"></i> 保存修改
+            </el-button>
+        </span>
+    </template>
+</el-dialog>
 </div>
 
 
@@ -435,11 +657,185 @@
             data() {
                 return {
                     llmModelName: '{{ llm_model_name }}',
-                    requirements: '{{ requirements }}',
                     caseDesignMethods: [],
                     caseCategories: [],
-                    caseCount: 'auto'  // 默认值为 auto
+                    caseCount: 'auto',
+                    // 关联需求相关
+                    linkRequirementDialogVisible: false,
+                    requirementTreeData: [],
+                    searchKeyword: '',  // 搜索关键词
+                    filteredRequirements: [],
+                    selectedRequirements: [],
+                    projectId: null,  // 将从 URL 参数中获取
+                    currentRequirement: null,  // 当前选中的需求
+                    contentEdited: false,  // 内容是否被编辑
+                    // 需求详情对话框
+                    detailDialogVisible: false,
+                    editingRequirement: null,
+                    detailEdited: false
                 };
+            },
+            methods: {
+                getProjectIdFromUrl() {
+                    const urlParams = new URLSearchParams(window.location.search);
+                    return urlParams.get('project_id');
+                },
+                
+                async showLinkRequirementDialog() {
+                    // 从 URL 获取项目 ID
+                    this.projectId = this.getProjectIdFromUrl();
+                    
+                    if (!this.projectId) {
+                        ElementPlus.ElMessage.warning('URL 中缺少项目 ID 参数');
+                        return;
+                    }
+                    
+                    this.linkRequirementDialogVisible = true;
+                    await this.loadRequirementTree();
+                },
+                
+                async loadRequirementTree() {
+                    try {
+                        const response = await fetch(`/ai_requirement_analysis/api/tree/?project_id=${this.projectId}`);
+                        const data = await response.json();
+                        
+                        if (data.success) {
+                            this.requirementTreeData = this.flattenTree(data.tree);
+                            this.filteredRequirements = this.requirementTreeData.filter(r => r.node_type === 'requirement');
+                        } else {
+                            ElementPlus.ElMessage.error(data.message || '加载需求失败');
+                        }
+                    } catch (error) {
+                        console.error('加载需求树失败:', error);
+                        ElementPlus.ElMessage.error('加载需求失败');
+                    }
+                },
+                
+                flattenTree(nodes, parentPath = '') {
+                    let result = [];
+                    nodes.forEach(node => {
+                        const currentPath = parentPath ? `${parentPath} / ${node.name}` : node.name;
+                        result.push({
+                            ...node,
+                            path: currentPath
+                        });
+                        if (node.children && node.children.length > 0) {
+                            result = result.concat(this.flattenTree(node.children, currentPath));
+                        }
+                    });
+                    return result;
+                },
+                
+                tableRowClassName({row}) {
+                    if (this.currentRequirement && row.id === this.currentRequirement.id) {
+                        return 'current-row';
+                    }
+                    return '';
+                },
+                
+                handleRequirementSelect(row) {
+                    if (row) {
+                        // 深拷贝需求对象，避免直接修改原始数据
+                        this.currentRequirement = JSON.parse(JSON.stringify(row));
+                        this.contentEdited = false;
+                    }
+                },
+                
+                markContentEdited() {
+                    this.contentEdited = true;
+                },
+                
+                filterRequirements() {
+                    if (!this.searchKeyword || this.searchKeyword.trim() === '') {
+                        // 过滤掉纯数字名称的需求项，只显示有意义的目录标题
+                        this.filteredRequirements = this.requirementTreeData.filter(r => {
+                            if (r.node_type !== 'requirement') return false;
+                            // 过滤掉纯数字名称（如 "1", "2" 等）
+                            return !this.isPureNumber(r.name);
+                        });
+                    } else {
+                        const keyword = this.searchKeyword.trim().toLowerCase();
+                        
+                        // 只搜索需求名称，不搜索路径（路径包含父级会导致误匹配）
+                        this.filteredRequirements = this.requirementTreeData.filter(r => {
+                            if (r.node_type !== 'requirement') {
+                                return false;
+                            }
+                            
+                            // 过滤掉纯数字名称
+                            if (this.isPureNumber(r.name)) {
+                                return false;
+                            }
+                            
+                            // 只匹配需求名称
+                            const nameMatch = r.name && r.name.toLowerCase().includes(keyword);
+                            
+                            return nameMatch;
+                        });
+                    }
+                },
+                
+                // 判断是否为纯数字
+                isPureNumber(name) {
+                    if (!name) return false;
+                    return /^\d+$/.test(name.trim());
+                },
+                
+                addRequirement(req) {
+                    // 如果编辑了当前需求，使用编辑后的内容
+                    if (this.currentRequirement && this.currentRequirement.id === req.id && this.contentEdited) {
+                        req = JSON.parse(JSON.stringify(this.currentRequirement));
+                    }
+                    
+                    if (!this.selectedRequirements.find(r => r.id === req.id)) {
+                        this.selectedRequirements.push(req);
+                        ElementPlus.ElMessage.success('添加成功');
+                    } else {
+                        ElementPlus.ElMessage.warning('该需求已添加');
+                    }
+                },
+                
+                removeRequirement(reqId) {
+                    this.selectedRequirements = this.selectedRequirements.filter(r => r.id !== reqId);
+                },
+                
+                // 显示需求详情对话框
+                showRequirementDetail(req) {
+                    // 深拷贝需求对象，避免直接修改原始数据
+                    this.editingRequirement = JSON.parse(JSON.stringify(req));
+                    // 将HTML内容转换为纯文本
+                    if (this.editingRequirement.content) {
+                        this.editingRequirement.content = this.htmlToText(this.editingRequirement.content);
+                    }
+                    this.detailEdited = false;
+                    this.detailDialogVisible = true;
+                },
+                
+                // HTML转纯文本工具方法
+                htmlToText(html) {
+                    if (!html) return '';
+                    // 创建临时元素来解析HTML
+                    const temp = document.createElement('div');
+                    temp.innerHTML = html;
+                    // 获取纯文本内容
+                    return temp.textContent || temp.innerText || '';
+                },
+                
+                markDetailEdited() {
+                    this.detailEdited = true;
+                },
+                
+                saveRequirementDetail() {
+                    if (!this.editingRequirement) return;
+                    
+                    // 更新 selectedRequirements 中的对应需求
+                    const index = this.selectedRequirements.findIndex(r => r.id === this.editingRequirement.id);
+                    if (index !== -1) {
+                        this.selectedRequirements[index] = JSON.parse(JSON.stringify(this.editingRequirement));
+                        ElementPlus.ElMessage.success('保存成功');
+                        this.detailDialogVisible = false;
+                    }
+                }
             }
         }).use(ElementPlus).mount('#app');
     }

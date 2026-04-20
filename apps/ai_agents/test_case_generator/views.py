@@ -73,11 +73,26 @@ def generate(request):
         }, status=400)
     
     # 参数获取和验证
-    requirements = data.get('requirements', '')
-    if not requirements:
+    # 支持两种模式：1. 关联需求（新） 2. 文本描述（旧，已废弃）
+    requirement_ids = data.get('requirement_ids', [])
+    requirements_list = data.get('requirements', [])
+    
+    # 将需求列表转换为文本（用于生成测试用例）
+    if requirement_ids and requirements_list:
+        # 新模式：使用关联的需求
+        requirements_text = '\n\n'.join([
+            f"【{req.get('name', '')}】\n{req.get('content', '')}"
+            for req in requirements_list
+        ])
+        logger.info(f"使用关联的 {len(requirement_ids)} 个需求生成测试用例")
+    else:
+        # 兼容旧模式（如果有的话）
+        requirements_text = data.get('requirements', '')
+    
+    if not requirements_text:
         return JsonResponse({
             'success': False,
-            'message': '需求描述不能为空'
+            'message': '需求内容不能为空'
         })
             
     llm_model_name = data.get('llm_model_name', 'deepseek-chat')  # 从 AI 配置读取的模型名称
@@ -95,13 +110,13 @@ def generate(request):
         
         
         generator_agent = TestCaseGeneratorAgent(llm_service=llm_service, knowledge_service=knowledge_service, case_design_methods=case_design_methods, case_categories=case_categories, case_count=case_count)
-        logger.info(f"开始生成测试用例 - 需求: {requirements}...")
+        logger.info(f"开始生成测试用例 - 需求长度: {len(requirements_text)} 字符...")
         logger.info(f"选择的测试用例设计方法: {case_design_methods}")
         logger.info(f"选择的测试用例类型: {case_categories}")
         logger.info(f"需要生成的用例条数: {case_count}")
         
         # 生成测试用例（同步方式）
-        test_cases = generator_agent.generate(requirements, input_type="requirement")
+        test_cases = generator_agent.generate(requirements_text, input_type="requirement")
 
         logger.info(f"测试用例生成成功 - 生成数量：{len(test_cases)}")
                 
@@ -126,18 +141,27 @@ def save_test_case(request):
     
     try:
         data = json.loads(request.body)
-        requirement = data.get('requirement')
+        requirement_ids = data.get('requirement_ids', [])
+        requirements_list = data.get('requirements', [])
         test_cases_list = data.get('test_cases', [])
         llm_model_name = data.get('llm_model_name', 'deepseek-chat')
         project_id = data.get('project_id')
         
-        logger.info(f"接收到保存请求 - 用例数量: {len(test_cases_list)}, 项目ID: {project_id}")
+        logger.info(f"接收到保存请求 - 用例数量: {len(test_cases_list)}, 需求数量: {len(requirement_ids)}, 项目ID: {project_id}")
         
         if not test_cases_list:
             return JsonResponse({
                 'success': False,
                 'message': '测试用例数据为空'
             }, status=400)
+        
+        # 构建需求描述文本
+        requirement_description = ''
+        if requirement_ids and requirements_list:
+            requirement_description = '\n\n'.join([
+                f"【{req.get('name', '')}】\n{req.get('content', '')}"
+                for req in requirements_list
+            ])
         
         # 验证项目是否存在（如果提供了project_id）
         project = None
@@ -159,7 +183,7 @@ def save_test_case(request):
                 description=test_case.get('description', ''),
                 test_steps='\n'.join(test_steps) if isinstance(test_steps, list) else test_steps,
                 expected_results='\n'.join(expected_results) if isinstance(expected_results, list) else expected_results,
-                requirements=requirement,
+                requirements=requirement_description,
                 llm_provider=llm_model_name,
                 status='pending',
                 project=project
@@ -176,7 +200,7 @@ def save_test_case(request):
                 # 根据描述和要求获取刚创建的用例
                 created_ids = list(
                     TestCase.objects.filter(
-                        requirements=requirement,
+                        requirements=requirement_description,
                         status='pending'
                     ).order_by('-id').values_list('id', flat=True)[:len(created_test_cases)]
                 )

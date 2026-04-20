@@ -149,7 +149,7 @@
                     <!-- 项目功能菜单 - 当选择具体项目时显示 -->
                     {% if current_project %}
                         <li class="nav-item">
-                            <a class="nav-link" href="/ai_requirement_analysis/?project_id={{ current_project.id }}">
+                            <a class="nav-link {% if '/ai_requirement_analysis/' in request.path %}active{% endif %}" href="/ai_requirement_analysis/?project_id={{ current_project.id }}">
                                 <i class="fas fa-file-import"></i>
                                 需求导入
                             </a>

@@ -568,6 +568,8 @@
                 v-model:current-page="historyPage"
                 :page-size="historyPageSize"
                 :total="historyTotal"
+                layout="total, prev, pager, next, jumper"
+                :pager-count="5"
                 @current-change="loadHistory">
             </el-pagination>
         </div>
@@ -578,5 +580,16 @@
 {% block extra_js %}
 <script src="{% static 'js/vue.global.prod.js' %}"></script>
 <script src="{% static 'js/element-plus.min.js' %}"></script>
-<script src="{% static 'js/ui_automation_task.js' %}"></script>
+<script src="{% static 'js/ui_automation_task.js' %}?v=202604201730"></script>
+<script>
+// 配置 Element Plus 中文语言包
+const app = window.caseLibraryApp || Vue.createApp({});
+if (typeof ElementPlus !== 'undefined') {
+    const zhCn = ElementPlus.lang.zhCn;
+    if (zhCn && zhCn.el) {
+        // 修改分页的 Total 文本
+        zhCn.el.pagination.total = '条数';
+    }
+}
+</script>
 {% endblock %}

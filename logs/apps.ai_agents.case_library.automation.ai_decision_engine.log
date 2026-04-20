@@ -72,3 +72,6 @@
 2026-04-11 13:22:28,300 - apps.ai_agents.case_library.automation.ai_decision_engine - INFO - [thread=4264 task-5-exec] - AI决策引擎初始化成功，使用LLM: deepseek
 2026-04-11 13:22:28,301 - apps.ai_agents.case_library.automation.ai_decision_engine - INFO - [thread=4264 task-5-exec] - 开始分析测试用例: 打开百度
 2026-04-11 13:22:42,307 - apps.ai_agents.case_library.automation.ai_decision_engine - INFO - [thread=4264 task-5-exec] - AI决策完成 - 使用多模态: False, 原因: 测试用例的核心操作是'打开百度'。这通常意味着导航到百度首页，并验证页面已成功加载。验证可以通过检查
+2026-04-20 20:03:59,187 - apps.ai_agents.case_library.automation.ai_decision_engine - INFO - [thread=20092 task-5-exec] - AI决策引擎初始化成功，使用LLM: deepseek
+2026-04-20 20:03:59,187 - apps.ai_agents.case_library.automation.ai_decision_engine - INFO - [thread=20092 task-5-exec] - 开始分析测试用例: 打开百度
+2026-04-20 20:04:18,588 - apps.ai_agents.case_library.automation.ai_decision_engine - INFO - [thread=20092 task-5-exec] - AI决策完成 - 使用多模态: False, 原因: 测试用例要求打开百度，这是一个简单的页面访问操作。需要验证页面是否成功加载，可以通过验证页面标题或关

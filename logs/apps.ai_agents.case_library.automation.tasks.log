@@ -322,3 +322,9 @@ KeyError: 'int(time'
 2026-04-11 13:22:42,313 - apps.ai_agents.case_library.automation.tasks - INFO - [thread=4264 task-5-exec] - [exec_2ec1756e9a1a] 步骤3/4: 执行Playwright测试
 2026-04-11 13:22:50,204 - apps.ai_agents.case_library.automation.tasks - INFO - [thread=4264 task-5-exec] - [exec_2ec1756e9a1a] 步骤4/4: 生成测试报告
 2026-04-11 13:22:50,204 - apps.ai_agents.case_library.automation.tasks - INFO - [thread=4264 task-5-exec] - [exec_2ec1756e9a1a] [PASS] 测试通过
+2026-04-20 20:03:59,173 - apps.ai_agents.case_library.automation.tasks - INFO - [thread=20092 task-5-exec] - [exec_b3658f996925] 开始执行测试用例 ID=14
+2026-04-20 20:03:59,184 - apps.ai_agents.case_library.automation.tasks - INFO - [thread=20092 task-5-exec] - [exec_b3658f996925] 步骤1/4: AI决策分析
+2026-04-20 20:04:18,591 - apps.ai_agents.case_library.automation.tasks - INFO - [thread=20092 task-5-exec] - [exec_b3658f996925] 步骤2/4: 生成Playwright测试脚本
+2026-04-20 20:04:18,594 - apps.ai_agents.case_library.automation.tasks - INFO - [thread=20092 task-5-exec] - [exec_b3658f996925] 步骤3/4: 执行Playwright测试
+2026-04-20 20:04:29,946 - apps.ai_agents.case_library.automation.tasks - INFO - [thread=20092 task-5-exec] - [exec_b3658f996925] 步骤4/4: 生成测试报告
+2026-04-20 20:04:29,946 - apps.ai_agents.case_library.automation.tasks - INFO - [thread=20092 task-5-exec] - [exec_b3658f996925] [PASS] 测试通过

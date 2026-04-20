@@ -13,10 +13,9 @@ const ModuleTreeItem = {
     },
     template: `
         <div class="module-tree-node">
-            <div class="module-item" :class="{ active: selectedModule === module.value }" @click="$emit('select', module.value)">
+            <div class="module-item" :class="{ active: selectedModule === module.value }" @click="$emit('select', module.value); if (module.children?.length) expanded = !expanded;">
                 <div class="module-item-info">
-                    <i v-if="module.children?.length" class="fas" :class="expanded ? 'fa-chevron-down' : 'fa-chevron-right'"
-                       @click.stop="expanded = !expanded" style="cursor: pointer; width: 16px;"></i>
+                    <i v-if="module.children?.length" class="fas" :class="expanded ? 'fa-chevron-down' : 'fa-chevron-right'"></i>
                     <i v-else class="fas fa-folder" style="width: 16px;"></i>
                     <span v-text="module.name"></span>
                 </div>
@@ -210,6 +209,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
             async showEditDialog(caseId) {
                 try {
+                    // 先加载模块选项
+                    await this.loadModuleCascaderOptions();
+                    
                     const data = await this.fetchApi(`/case_library/api/detail/${caseId}/`);
                     if (data.success) {
                         this.editCaseData = {
@@ -560,8 +562,18 @@ document.addEventListener('DOMContentLoaded', () => {
             async showLinkDialog() {
                 this.approvedTestCasePage = 1;
                 this.selectedLinkCases = [];
-                this.linkModule = 'other';
+                
+                // 先加载模块选项
                 await this.loadModuleCascaderOptions();
+                
+                // 先设置模块值，再打开对话框（确保对话框打开时已经有正确的值）
+                if (this.selectedModule && this.selectedModule !== 'all') {
+                    this.linkModule = this.selectedModule;
+                } else {
+                    this.linkModule = 'other';
+                }
+                
+                // 最后打开对话框
                 this.linkDialogVisible = true;
                 await this.loadApprovedTestCases();
             },
@@ -619,12 +631,14 @@ document.addEventListener('DOMContentLoaded', () => {
                     );
 
                     const caseIds = this.selectedLinkCases.map(c => c.id);
+                    const moduleToSend = this.linkModule || 'other';
+                    
                     const data = await this.fetchApi('/case_library/api/link-cases/', {
                         method: 'POST',
                         body: JSON.stringify({
                             case_ids: caseIds,
                             project_id: this.getProjectId(),
-                            module: this.linkModule || 'other'
+                            module: moduleToSend
                         })
                     });
 

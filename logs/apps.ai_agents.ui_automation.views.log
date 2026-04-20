@@ -30,3 +30,8 @@
 2026-04-10 18:40:43,433 - apps.ai_agents.ui_automation.views - INFO - [thread=11676 task-2-exec] - 任务 2 执行完成，状态: passed
 2026-04-11 13:19:05,736 - apps.ai_agents.ui_automation.views - INFO - [thread=2840 task-5-exec] - 任务 5 执行完成，状态: passed
 2026-04-11 13:22:50,209 - apps.ai_agents.ui_automation.views - INFO - [thread=4264 task-5-exec] - 任务 5 执行完成，状态: passed
+2026-04-20 18:28:52,448 - apps.ai_agents.ui_automation.views - INFO - [thread=20540 Thread-5 (process_request_thread)] - 创建任务请求数据: {'id': None, 'name': '', 'description': '', 'task_type': 'web', 'config': {'url': '', 'username': '', 'password': '', 'manual_captcha': False, 'base_url': '', 'token': ''}, 'case_ids': [23], 'use_multimodal': False, 'llm_provider': 'deepseek', 'project_id': '1'}
+2026-04-20 18:28:52,449 - apps.ai_agents.ui_automation.views - WARNING - [thread=20540 Thread-5 (process_request_thread)] - 任务名称为空
+2026-04-20 18:29:38,521 - apps.ai_agents.ui_automation.views - INFO - [thread=20540 Thread-5 (process_request_thread)] - 创建任务请求数据: {'id': None, 'name': '', 'description': '', 'task_type': 'web', 'config': {'url': '', 'username': '', 'password': '', 'manual_captcha': False, 'base_url': '', 'token': ''}, 'case_ids': [23], 'use_multimodal': False, 'llm_provider': 'deepseek', 'project_id': '1'}
+2026-04-20 18:29:38,521 - apps.ai_agents.ui_automation.views - WARNING - [thread=20540 Thread-5 (process_request_thread)] - 任务名称为空
+2026-04-20 20:04:29,953 - apps.ai_agents.ui_automation.views - INFO - [thread=20092 task-5-exec] - 任务 5 执行完成，状态: passed

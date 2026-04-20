@@ -1,15 +1,24 @@
 from django.shortcuts import render
 from django.http import JsonResponse
 from django.views.decorators.http import require_http_methods
+from django.views.decorators.cache import never_cache
 from django.core.paginator import Paginator
 from django.db.models import Q
 from apps.core.models import TestCaseLibrary, Project, TestCaseModule, TestCase
 import json
+import logging
+
+logger = logging.getLogger(__name__)
 
 
+@never_cache
 def case_library_page(request):
     """用例库页面"""
-    return render(request, 'case_library/test.html')
+    response = render(request, 'case_library/test.html')
+    response['Cache-Control'] = 'no-cache, no-store, must-revalidate'
+    response['Pragma'] = 'no-cache'
+    response['Expires'] = '0'
+    return response
 
 
 @require_http_methods(["GET"])
@@ -46,7 +55,11 @@ def case_library_list(request):
         # 模块过滤（包含子模块）
         if module:
             try:
+                logger.info(f'模块过滤: module参数={module}, 类型={type(module)}')
+                
                 parent_mod = TestCaseModule.objects.get(value=module)
+                logger.info(f'找到模块: id={parent_mod.id}, name={parent_mod.name}, value={parent_mod.value}')
+                
                 # 递归获取所有子模块的 value
                 def get_all_module_values(mod):
                     values = [mod.value]
@@ -55,8 +68,13 @@ def case_library_list(request):
                     return values
                 
                 all_values = get_all_module_values(parent_mod)
+                logger.info(f'模块树所有value: {all_values}')
                 queryset = queryset.filter(module__in=all_values)
             except TestCaseModule.DoesNotExist:
+                logger.warning(f'模块不存在: {module}，使用直接过滤')
+                queryset = queryset.filter(module=module)
+            except Exception as e:
+                logger.error(f'模块过滤异常: {str(e)}', exc_info=True)
                 queryset = queryset.filter(module=module)
         
         # 优先级过滤
@@ -87,16 +105,33 @@ def case_library_list(request):
                 }
                 priority_display = priority_map.get(case.priority, 'P2')
             
+            # 处理模块显示：如果模块值不在预定义choices中，则查询模块名称或直接显示模块值
+            module_display = case.get_module_display()
+            if not module_display or module_display == case.module:
+                # 尝试从 TestCaseModule 表中查询模块名称
+                try:
+                    module_obj = TestCaseModule.objects.get(value=case.module)
+                    module_display = module_obj.name
+                except:
+                    # 如果查询失败，直接显示模块值
+                    module_display = case.module
+            
+            # 处理用例类型显示，容错处理
+            try:
+                case_type_display = case.get_case_type_display()
+            except (ValueError, AttributeError):
+                case_type_display = case.case_type
+            
             cases_data.append({
                 'id': case.id,
                 'case_number': case.case_number,
                 'title': case.title,
                 'module': case.module,
-                'module_display': case.get_module_display(),
+                'module_display': module_display,
                 'priority': case.priority,
                 'priority_display': priority_display,
                 'case_type': case.case_type,
-                'case_type_display': case.get_case_type_display(),
+                'case_type_display': case_type_display,
                 'maintainer': case.maintainer,
                 'project_id': case.project.id if case.project else None,
                 'project_name': case.project.name if case.project else None,
@@ -118,6 +153,9 @@ def case_library_list(request):
         })
         
     except Exception as e:
+        import traceback
+        logger.error(f'用例列表接口异常: {str(e)}', exc_info=True)
+        logger.error(f'异常堆栈: {traceback.format_exc()}')
         return JsonResponse({
             'success': False,
             'message': str(e)
@@ -239,12 +277,21 @@ def get_case_detail(request, case_id):
                 if not step.get('expected_result') and i < len(expected_results_lines):
                     step['expected_result'] = expected_results_lines[i]
         
+        # 处理模块显示
+        module_display = case.get_module_display()
+        if not module_display or module_display == case.module:
+            try:
+                module_obj = TestCaseModule.objects.get(value=case.module)
+                module_display = module_obj.name
+            except:
+                module_display = case.module
+        
         case_data = {
             'id': case.id,
             'case_number': case.case_number,
             'title': case.title,
             'module': case.module,
-            'module_display': case.get_module_display(),
+            'module_display': module_display,
             'priority': case.priority,
             'priority_display': priority_display,
             'case_type': case.case_type,

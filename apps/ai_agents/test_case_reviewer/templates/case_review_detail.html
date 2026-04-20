@@ -238,7 +238,6 @@
                         this.formData.feature = data.feature || '';
                         this.formData.priority = data.priority || '';
                     } catch (error) {
-                        console.error('获取测试用例数据失败:', error);
                         ElementPlus.ElMessage.error('获取测试用例数据失败');
                     }
                 }
@@ -275,7 +274,6 @@
                         ElementPlus.ElMessage.error('评审失败：' + data.message);
                     }
                 } catch (error) {
-                    console.error('评审请求失败:', error);
                     this.formData.ai_review_result = '评审请求失败，请查看控制台获取详细信息';
                     ElementPlus.ElMessage.error('评审请求失败');
                 } finally {
@@ -320,7 +318,6 @@
                         ElementPlus.ElMessage.error('保存失败：' + data.message);
                     }
                 } catch (error) {
-                    console.error('保存失败:', error);
                     ElementPlus.ElMessage.error('保存失败');
                 }
             },

@@ -7,6 +7,7 @@ from apps.ai_agents.test_case_reviewer.reviewer import TestCaseReviewerAgent
 from django.http import JsonResponse
 import xlwt
 from django.views.decorators.http import require_http_methods
+from django.views.decorators.cache import never_cache
 from datetime import datetime
 from django.http import HttpResponse
 from django.conf import settings
@@ -42,6 +43,7 @@ except (LookupError, ImportError) as e:
 
 
 # @login_required 先屏蔽登录
+@never_cache
 def review_view(request):
     """页面 - 测试用例评审页面视图"""
     # 获取项目 ID（从查询参数）
@@ -112,7 +114,11 @@ def review_view(request):
         'project_id': project_id,
     }
     
-    return render(request, 'review.html', context)
+    response = render(request, 'review.html', context)
+    response['Cache-Control'] = 'no-cache, no-store, must-revalidate'
+    response['Pragma'] = 'no-cache'
+    response['Expires'] = '0'
+    return response
 
 
 # @login_required 先屏蔽登录
@@ -209,8 +215,13 @@ def case_review(request):
         }, status=500)
 
 
+@never_cache
 def case_review_detail(request):
-    return render(request, 'case_review_detail.html')
+    response = render(request, 'case_review_detail.html')
+    response['Cache-Control'] = 'no-cache, no-store, must-revalidate'
+    response['Pragma'] = 'no-cache'
+    response['Expires'] = '0'
+    return response
 
 
 @require_http_methods(["GET"])

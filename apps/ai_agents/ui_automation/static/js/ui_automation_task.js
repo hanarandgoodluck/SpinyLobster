@@ -440,6 +440,11 @@ document.addEventListener('DOMContentLoaded', function() {
         },
         
         mounted() {
+            // 配置 Element Plus 中文语言包
+            if (ElementPlus && ElementPlus.lang && ElementPlus.lang.zhCn) {
+                ElementPlus.lang.zhCn.el.pagination.total = '条数';
+            }
+            
             this.loadTasks();
             
             // 点击外部关闭下拉菜单

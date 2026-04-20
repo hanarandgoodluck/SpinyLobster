@@ -134,3 +134,8 @@ AttributeError: 'PlaywrightExecutor' object has no attribute '_generate_case_lis
 2026-04-11 13:22:42,313 - apps.ai_agents.case_library.automation.playwright_executor - INFO - [thread=4264 task-5-exec] - 开始执行测试: F:\test\TestBranin\automation_results\scripts\test_CASE-0006_46931639.py
 2026-04-11 13:22:50,203 - apps.ai_agents.case_library.automation.playwright_executor - INFO - [thread=4264 task-5-exec] - 测试执行完成 - 状态: passed, 耗时: 7.89s
 2026-04-11 13:22:50,204 - apps.ai_agents.case_library.automation.playwright_executor - INFO - [thread=4264 task-5-exec] - HTML测试报告生成成功: F:\test\TestBranin\automation_results\reports\exec_2ec1756e9a1a\report.html
+2026-04-20 20:04:18,591 - apps.ai_agents.case_library.automation.playwright_executor - INFO - [thread=20092 task-5-exec] - Playwright执行引擎初始化完成，输出目录: F:\test\TestBranin\automation_results
+2026-04-20 20:04:18,592 - apps.ai_agents.case_library.automation.playwright_executor - INFO - [thread=20092 task-5-exec] - 测试脚本生成成功: F:\test\TestBranin\automation_results\scripts\test_CASE-0006_a0b92b9f.py
+2026-04-20 20:04:18,594 - apps.ai_agents.case_library.automation.playwright_executor - INFO - [thread=20092 task-5-exec] - 开始执行测试: F:\test\TestBranin\automation_results\scripts\test_CASE-0006_a0b92b9f.py
+2026-04-20 20:04:29,945 - apps.ai_agents.case_library.automation.playwright_executor - INFO - [thread=20092 task-5-exec] - 测试执行完成 - 状态: passed, 耗时: 11.35s
+2026-04-20 20:04:29,946 - apps.ai_agents.case_library.automation.playwright_executor - INFO - [thread=20092 task-5-exec] - HTML测试报告生成成功: F:\test\TestBranin\automation_results\reports\exec_b3658f996925\report.html
