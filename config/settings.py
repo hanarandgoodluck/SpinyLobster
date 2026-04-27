@@ -21,14 +21,13 @@ if str(BASE_DIR) not in sys.path:
 SECRET_KEY = 'django-insecure-your-secret-key-here'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = [
     'localhost',
     '127.0.0.1',
     '0.0.0.0',
-    '172.16.32.88',
-    '172.16.56.57',
+    '106.12.23.83',
 ]
 
 # 是否启用Milvus
@@ -104,8 +103,8 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'test_brain_db',
         'USER': 'root',
-        'PASSWORD': '1234',
-        'HOST': 'localhost',
+        'PASSWORD': '583471755a',
+        'HOST': '127.0.0.1',
         'PORT': '3306',
     }
 }
@@ -132,6 +131,7 @@ USE_I18N = True
 
 # Static files (CSS, JavaScript, Images)
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]

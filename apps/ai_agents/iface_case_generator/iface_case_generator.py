@@ -229,10 +229,10 @@ class APITestCaseGeneratorAgent:
 
         # 2.填充用户设置的用例优先级和代码中设置的用例标签
         full_case['priority'] = priority
-        full_case['tags'] = ['SpinyLobster']
+        full_case['tags'] = ['StarDragon']
 
         # 3.填充用例名称
-        name = minimal_case.get('name') or 'SpinyLobster 生成的用例'
+        name = minimal_case.get('name') or 'StarDragon 生成的用例'
         full_case['name'] = name
         full_case['request']['name'] = name
 

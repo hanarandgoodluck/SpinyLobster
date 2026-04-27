@@ -1,0 +1,27 @@
+[Unit]
+Description=StarDragon Django Application
+After=network.target
+
+[Service]
+User=root
+Group=root
+WorkingDirectory=/opt/stardragon
+Environment="PATH=/opt/stardragon/venv/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+Environment="DJANGO_SETTINGS_MODULE=config.settings"
+ExecStart=/opt/stardragon/venv/bin/gunicorn --config gunicorn_config.py config.wsgi:application
+
+Restart=on-failure
+RestartSec=5s
+
+# 日志
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=stardragon
+
+# 安全设置
+PrivateTmp=true
+# ProtectSystem=strict 会导致 Gunicorn 无法写入 PID 文件和日志
+# ReadWritePaths=/opt/stardragon/uploads /opt/stardragon/logs
+
+[Install]
+WantedBy=multi-user.target
